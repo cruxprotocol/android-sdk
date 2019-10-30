@@ -102,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    public static void makeFunctionAsyncOnGlobalScope(JSContext context, JSFunction function, String asyncNameOfFunction){
+        String syncNameOfFunction = "sync_" + asyncNameOfFunction;
+        context.property(syncNameOfFunction, function);
+        context.evaluateScript(asyncNameOfFunction + " = function() { return new Promise(function(resolve, reject){resolve("+syncNameOfFunction +"())})}");
+    }
+
     public String runScript3(Context androidContextObject) throws IOException {
         System.out.println("====== START runScript3 ========");
         JSContext context = new JSContext();
@@ -148,10 +155,12 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(context.evaluateScript("asyncFoo().then(function(res){console.log(res)})"));
 
 
+        System.out.println("====== END foo injected logic ========");
 
 
-
-
+        MainActivity.makeFunctionAsyncOnGlobalScope(context, javaSyncFoo, "lolAsync");
+        System.out.println(context.evaluateScript("lolAsync().then(function(res){console.log(res)})"));
+        System.out.println("====== END makeFunctionAsyncOnGlobalScope ========");
 //        JSFunction foo = new JSFunction(context,"foo") {
 //            public JSValue foo() {
 //                JSFunction promiseExecutor = new JSFunction(context, "promiseExecutor") {
