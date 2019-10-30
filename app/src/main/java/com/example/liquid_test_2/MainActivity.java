@@ -110,20 +110,21 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.fixLogging(context);
 //        String myFile = MainActivity.getFromFile(androidContextObject,"android-test-dom.js");
 
-
-        context.evaluateScript("var window = this");
-        context.evaluateScript("var self = this");
-
-
         AsyncObj fetchPolyfill = new AsyncObj(context);
         context.property("fetchPolyfill", fetchPolyfill);
+
+        context.evaluateScript("var window = this");
+        context.evaluateScript("var self = this; window.fetch = fetchPolyfill.fetch;");
+
+
+
         context.evaluateScript(
                 "console.log('Please call me back in 5 seconds');\n" +
-                        "fetchPolyfill.fetch(5000, function(msg) {\n" +
+                        "fetch(5000, function(msg) {\n" +
                         "    console.log(msg);\n" +
                         "    console.log('Whoomp. There it is.');\n" +
                         "});\n" +
-                        "console.log('fetchPolyfill.fetch() has returned, but wait for it ...');\n"
+                        "console.log('fetch() has returned, but wait for it ...');\n"
         );
 
 //        try {
