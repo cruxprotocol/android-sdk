@@ -17,6 +17,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -106,13 +107,36 @@ public class MainActivity extends AppCompatActivity {
     public static void makeFunctionAsyncOnGlobalScope(JSContext context, JSFunction function, String asyncNameOfFunction){
         String syncNameOfFunction = "____sync_" + asyncNameOfFunction;
         context.property(syncNameOfFunction, function);
-        context.evaluateScript(asyncNameOfFunction + " = function() { return new Promise(function(resolve, reject){resolve("+syncNameOfFunction +"())})}");
+        context.evaluateScript(asyncNameOfFunction + " = function(...params) { return new Promise(function(resolve, reject){resolve("+syncNameOfFunction +"(...params))})}");
     }
 
     public String runScript3(Context androidContextObject) throws IOException {
         System.out.println("====== START runScript3 ========");
         JSContext context = new JSContext();
         MainActivity.fixLogging(context);
+
+
+        System.out.println("====== Factorial Start ========");
+        JSFunction factorial = new JSFunction(context,"factorial") {
+            public Integer factorial(Integer x) {
+                System.out.println("Inside Factorial");
+                System.out.println(x);
+//                System.out.println(in);
+                int factorial = 1;
+                for (; x > 1; x--) {
+                    factorial *= x;
+                }
+                System.out.println("Factorial Result = " + factorial);
+                return factorial;
+            }
+        };
+//        context.property("factorial", factorial);
+
+        MainActivity.makeFunctionAsyncOnGlobalScope(context, factorial, "asyncFactorial");
+        System.out.println(context.evaluateScript("asyncFactorial(4)"));
+
+
+        System.out.println("====== Factorial End ========");
 
 
 
@@ -129,6 +153,20 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("====== END makeFunctionAsyncOnGlobalScope ========");
 
 
+        JSFunction xfetch = new JSFunction(context,"xfetch") {
+            public String xfetch(String url, String method) throws Exception {
+                System.out.println("Inside JSFunction fetch");
+                System.out.println(url);
+//                throw new JSException(context, "javaSyncFoo has had a problem");
+//                throw new Exception("javaSyncFoo has had a problem");
+                return method + url;
+            }
+        };
+        MainActivity.makeFunctionAsyncOnGlobalScope(context, xfetch, "xFetch");
+        System.out.println(context.evaluateScript("xFetch('https://api.ipify.org', 'GET').then(function(res){console.log(res)}).catch(function(err){console.log('errlol');console.log(err)})"));
+
+
+        System.out.println("====== END fetch ========");
         return null;
     }
 
