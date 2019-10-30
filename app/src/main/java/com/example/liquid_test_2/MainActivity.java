@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public static void makeFunctionAsyncOnGlobalScope(JSContext context, JSFunction function, String asyncNameOfFunction){
-        String syncNameOfFunction = "sync_" + asyncNameOfFunction;
+        String syncNameOfFunction = "____sync_" + asyncNameOfFunction;
         context.property(syncNameOfFunction, function);
         context.evaluateScript(asyncNameOfFunction + " = function() { return new Promise(function(resolve, reject){resolve("+syncNameOfFunction +"())})}");
     }
@@ -113,68 +113,20 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("====== START runScript3 ========");
         JSContext context = new JSContext();
         MainActivity.fixLogging(context);
-//        String myFile = MainActivity.getFromFile(androidContextObject,"android-test-dom.js");
-
-
-
-
-        JSFunction factorial = new JSFunction(context,"factorial") {
-            public Integer factorial(Integer x) {
-                int factorial = 1;
-                for (; x > 1; x--) {
-                    factorial *= x;
-                }
-                return factorial;
-            }
-        };
-        context.property("factorial", factorial);
-        System.out.println(context.evaluateScript("factorial"));
-        System.out.println(context.evaluateScript("factorial(4)"));
-
-
-        System.out.println("========== factorial done ========== ");
-
-
-        context.evaluateScript("foo = function() { return new Promise(function(resolve, reject){resolve('inside foo new promise')})}");
-
-
-        System.out.println(context.evaluateScript("foo().then(function(res){console.log(res)})"));
-
-        System.out.println("====== END foo normal ========");
 
 
 
         JSFunction javaSyncFoo = new JSFunction(context,"javaSyncFoo") {
-            public String javaSyncFoo() {
+            public String javaSyncFoo() throws Exception {
+//                throw new JSException(context, "javaSyncFoo has had a problem");
+//                throw new Exception("javaSyncFoo has had a problem");
                 return "inside foo new promise";
             }
         };
-        context.property("javaSyncFoo", javaSyncFoo);
-
-        context.evaluateScript("asyncFoo = function() { return new Promise(function(resolve, reject){resolve(javaSyncFoo())})}");
-        System.out.println(context.evaluateScript("asyncFoo().then(function(res){console.log(res)})"));
-
-
-        System.out.println("====== END foo injected logic ========");
-
 
         MainActivity.makeFunctionAsyncOnGlobalScope(context, javaSyncFoo, "lolAsync");
-        System.out.println(context.evaluateScript("lolAsync().then(function(res){console.log(res)})"));
+        System.out.println(context.evaluateScript("lolAsync().then(function(res){console.log(res)}).catch(function(err){console.log('errlol');console.log(err)})"));
         System.out.println("====== END makeFunctionAsyncOnGlobalScope ========");
-//        JSFunction foo = new JSFunction(context,"foo") {
-//            public JSValue foo() {
-//                JSFunction promiseExecutor = new JSFunction(context, "promiseExecutor") {
-//                    public String promiseExecutor(JSFunction resolve, JSFunction reject){
-//                        resolve("FooCalled");
-//                    }
-//                };
-//
-//                context.property("promiseExecutor", promiseExecutor);
-//                return context.evaluateScript("new Promise(promiseExecutor);");
-//            }
-//        };
-//
-//        context.property("foo", foo);
 
 
         return null;
