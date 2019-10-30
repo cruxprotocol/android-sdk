@@ -115,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
         context.evaluateScript("var self = this");
 
 
-        AsyncObj fetch = new AsyncObj(context);
-        context.property("fetch", fetch);
+        AsyncObj async = new AsyncObj(context);
+        context.property("async", async);
         context.evaluateScript(
                 "console.log('Please call me back in 5 seconds');\n" +
                         "async.callMeMaybe(5000, function(msg) {\n" +
