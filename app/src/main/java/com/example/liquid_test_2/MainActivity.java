@@ -27,13 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
     public interface IAsyncObj {
         @SuppressWarnings("unused")
-        void callMeMaybe(Integer ms, JSValue callback) throws JSException;
+        void fetch(Integer ms, JSValue callback) throws JSException;
     }
 
     public class AsyncObj extends JSObject implements IAsyncObj {
         public AsyncObj(JSContext ctx) throws JSException { super(ctx,IAsyncObj.class); }
         @Override
-        public void callMeMaybe(final Integer ms, final JSValue callback) throws JSException {
+        public void fetch(final Integer ms, final JSValue callback) throws JSException {
             Handler handler = new Handler(Looper.getMainLooper());
             handler.post(
                     new Runnable() {
@@ -115,15 +115,15 @@ public class MainActivity extends AppCompatActivity {
         context.evaluateScript("var self = this");
 
 
-        AsyncObj async = new AsyncObj(context);
-        context.property("async", async);
+        AsyncObj fetchPolyfill = new AsyncObj(context);
+        context.property("fetchPolyfill", fetchPolyfill);
         context.evaluateScript(
                 "console.log('Please call me back in 5 seconds');\n" +
-                        "async.callMeMaybe(5000, function(msg) {\n" +
+                        "fetchPolyfill.fetch(5000, function(msg) {\n" +
                         "    console.log(msg);\n" +
                         "    console.log('Whoomp. There it is.');\n" +
                         "});\n" +
-                        "console.log('async.callMeMaybe() has returned, but wait for it ...');\n"
+                        "console.log('fetchPolyfill.fetch() has returned, but wait for it ...');\n"
         );
 
 //        try {
