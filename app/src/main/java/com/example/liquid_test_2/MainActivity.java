@@ -20,19 +20,14 @@ import java.io.InputStreamReader;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    public interface IAsyncObj {
-        @SuppressWarnings("unused")
-        void fetch(Integer ms, JSValue callback) throws JSException;
-    }
 
-    public class AsyncObj extends JSObject implements IAsyncObj {
-        public AsyncObj(JSContext ctx) throws JSException { super(ctx,IAsyncObj.class); }
-        @Override
+
+    public class AsyncObj extends JSObject {
+        public AsyncObj(JSContext ctx) throws JSException { }
         public void fetch(final Integer ms, final JSValue callback) throws JSException {
             Handler handler = new Handler(Looper.getMainLooper());
             handler.post(
@@ -81,9 +76,12 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 //            runScript(this);
-            runScript2(this);
+            runScript3(this);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (JSException e) {
+            System.out.println("JSEXCEPTION DETECTED");
+            System.out.println(e.stack());
         }
     }
 
@@ -103,6 +101,76 @@ public class MainActivity extends AppCompatActivity {
         return new String(returnString);
 
     }
+
+    public String runScript3(Context androidContextObject) throws IOException {
+        System.out.println("====== START runScript3 ========");
+        JSContext context = new JSContext();
+        MainActivity.fixLogging(context);
+//        String myFile = MainActivity.getFromFile(androidContextObject,"android-test-dom.js");
+
+
+
+
+        JSFunction factorial = new JSFunction(context,"factorial") {
+            public Integer factorial(Integer x) {
+                int factorial = 1;
+                for (; x > 1; x--) {
+                    factorial *= x;
+                }
+                return factorial;
+            }
+        };
+        context.property("factorial", factorial);
+        System.out.println(context.evaluateScript("factorial"));
+        System.out.println(context.evaluateScript("factorial(4)"));
+
+
+        System.out.println("========== factorial done ========== ");
+
+
+        context.evaluateScript("foo = function() { return new Promise(function(resolve, reject){resolve('inside foo new promise')})}");
+
+
+        System.out.println(context.evaluateScript("foo().then(function(res){console.log(res)})"));
+
+        System.out.println("====== END foo normal ========");
+
+
+
+        JSFunction javaSyncFoo = new JSFunction(context,"javaSyncFoo") {
+            public String javaSyncFoo() {
+                return "inside foo new promise";
+            }
+        };
+        context.property("javaSyncFoo", javaSyncFoo);
+
+        context.evaluateScript("asyncFoo = function() { return new Promise(function(resolve, reject){resolve(javaSyncFoo())})}");
+        System.out.println(context.evaluateScript("asyncFoo().then(function(res){console.log(res)})"));
+
+
+
+
+
+
+//        JSFunction foo = new JSFunction(context,"foo") {
+//            public JSValue foo() {
+//                JSFunction promiseExecutor = new JSFunction(context, "promiseExecutor") {
+//                    public String promiseExecutor(JSFunction resolve, JSFunction reject){
+//                        resolve("FooCalled");
+//                    }
+//                };
+//
+//                context.property("promiseExecutor", promiseExecutor);
+//                return context.evaluateScript("new Promise(promiseExecutor);");
+//            }
+//        };
+//
+//        context.property("foo", foo);
+
+
+        return null;
+    }
+
 
     public String runScript2(Context androidContextObject) throws IOException {
         System.out.println("====== START runScript2 ========");
@@ -125,6 +193,27 @@ public class MainActivity extends AppCompatActivity {
                         "    console.log('Whoomp. There it is.');\n" +
                         "});\n" +
                         "console.log('fetch() has returned, but wait for it ...');\n"
+        );
+
+
+        context.evaluateScript("fetch('https://www.google.com')"
+                        + "  .then("
+                        + "    function(response) {"
+                        + "      if (response.status !== 200) {"
+                        + "        console.log('Looks like there was a problem. Status Code: ' +"
+                        + "          response.status);"
+                        + "        return;"
+                        + "      }"
+
+                        + "      // Examine the text in the response"
+                        + "      response.json().then(function(data) {"
+                        + "        console.log(data);"
+                        + "      });"
+                        + "    }"
+                        + "  )"
+                        + "  .catch(function(err) {"
+                        + "    console.log('Fetch Error :-S', err);"
+                        + "  });"
         );
 
 //        try {
