@@ -17,12 +17,99 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.Charset;
 
 import android.os.Handler;
 import android.os.Looper;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.RequestFuture;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 public class MainActivity extends AppCompatActivity {
+
+    private static class FetchTaskParams {
+        public String url;
+        public String method;
+
+        FetchTaskParams(String url, String method) {
+            this.url = url;
+            this.method = method;
+        }
+    }
+
+    private class FetchTask extends AsyncTask<FetchTaskParams, Void, String> {
+
+        private String downloadContent(String myurl) throws IOException {
+            InputStream is = null;
+            int length = 500;
+
+            try {
+                URL url = new URL(myurl);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(10000 /* milliseconds */);
+                conn.setConnectTimeout(15000 /* milliseconds */);
+                conn.setRequestMethod("GET");
+                conn.setDoInput(true);
+                conn.connect();
+                int response = conn.getResponseCode();
+                System.out.println("The response is: " + response);
+                is = conn.getInputStream();
+
+                // Convert the InputStream into a string
+                String contentAsString = convert(is);
+                return contentAsString;
+            } finally {
+                if (is != null) {
+                    is.close();
+                }
+            }
+        }
+
+        public String convert(InputStream inputStream) throws IOException {
+
+            StringBuilder stringBuilder = new StringBuilder();
+            String line = null;
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF8"));
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+            return stringBuilder.toString();
+        }
+
+
+        public String convertInputStreamToString(InputStream stream, int length) throws IOException, UnsupportedEncodingException {
+            Reader reader = null;
+            reader = new InputStreamReader(stream, "UTF-8");
+            char[] buffer = new char[length];
+            reader.read(buffer);
+            return new String(buffer);
+        }
+
+        protected String doInBackground(FetchTaskParams... params) {
+
+            String content = "";
+            System.out.println("FetchTask doInBackground start");
+            try {
+                content = downloadContent(params[0].url);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println(content);
+            System.out.println("FetchTask doInBackground stop");
+
+            return content;
+        }
+    }
 
 
 
@@ -110,60 +197,23 @@ public class MainActivity extends AppCompatActivity {
         context.evaluateScript(asyncNameOfFunction + " = function(...params) { return new Promise(function(resolve, reject){resolve("+syncNameOfFunction +"(...params))})}");
     }
 
-    public String runScript3(Context androidContextObject) throws IOException {
+    public String runScript3(final Context androidContextObject) throws IOException {
         System.out.println("====== START runScript3 ========");
         JSContext context = new JSContext();
         MainActivity.fixLogging(context);
 
-
-        System.out.println("====== Factorial Start ========");
-        JSFunction factorial = new JSFunction(context,"factorial") {
-            public Integer factorial(Integer x) {
-                System.out.println("Inside Factorial");
-                System.out.println(x);
-//                System.out.println(in);
-                int factorial = 1;
-                for (; x > 1; x--) {
-                    factorial *= x;
-                }
-                System.out.println("Factorial Result = " + factorial);
-                return factorial;
-            }
-        };
-//        context.property("factorial", factorial);
-
-        MainActivity.makeFunctionAsyncOnGlobalScope(context, factorial, "asyncFactorial");
-        System.out.println(context.evaluateScript("asyncFactorial(4)"));
-
-
-        System.out.println("====== Factorial End ========");
-
-
-
-        JSFunction javaSyncFoo = new JSFunction(context,"javaSyncFoo") {
-            public String javaSyncFoo() throws Exception {
-//                throw new JSException(context, "javaSyncFoo has had a problem");
-//                throw new Exception("javaSyncFoo has had a problem");
-                return "inside foo new promise";
+        JSFunction fetch = new JSFunction(context,"fetch") {
+            public String fetch(String url, String method) throws Exception {
+                System.out.println("fetch start with " + url + ", " + method);
+                FetchTaskParams params = new FetchTaskParams("https://api.ipify.org", "GRT");
+                FetchTask fetchTask = new FetchTask();
+                fetchTask.execute(params);
+                return fetchTask.get();
             }
         };
 
-        MainActivity.makeFunctionAsyncOnGlobalScope(context, javaSyncFoo, "lolAsync");
-        System.out.println(context.evaluateScript("lolAsync().then(function(res){console.log(res)}).catch(function(err){console.log('errlol');console.log(err)})"));
-        System.out.println("====== END makeFunctionAsyncOnGlobalScope ========");
-
-
-        JSFunction xfetch = new JSFunction(context,"xfetch") {
-            public String xfetch(String url, String method) throws Exception {
-                System.out.println("Inside JSFunction fetch");
-                System.out.println(url);
-//                throw new JSException(context, "javaSyncFoo has had a problem");
-//                throw new Exception("javaSyncFoo has had a problem");
-                return method + url;
-            }
-        };
-        MainActivity.makeFunctionAsyncOnGlobalScope(context, xfetch, "xFetch");
-        System.out.println(context.evaluateScript("xFetch('https://api.ipify.org', 'GET').then(function(res){console.log(res)}).catch(function(err){console.log('errlol');console.log(err)})"));
+        MainActivity.makeFunctionAsyncOnGlobalScope(context, fetch, "fetch");
+        System.out.println(context.evaluateScript("fetch('https://api.ipify.org', 'GET').then(function(res){console.log('Promise.then');console.log(res)}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
 
 
         System.out.println("====== END fetch ========");
