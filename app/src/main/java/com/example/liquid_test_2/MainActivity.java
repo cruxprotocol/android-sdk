@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
         JSFunction fetch = new JSFunction(context,"fetch") {
             public String fetch(String url, String method) throws Exception {
                 System.out.println("fetch start with " + url + ", " + method);
-                FetchTaskParams params = new FetchTaskParams("https://api.ipify.org", "GRT");
+                FetchTaskParams params = new FetchTaskParams(url, method);
                 FetchTask fetchTask = new FetchTask();
                 fetchTask.execute(params);
                 return fetchTask.get();
@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         MainActivity.makeFunctionAsyncOnGlobalScope(context, fetch, "fetch");
-        System.out.println(context.evaluateScript("fetch('https://api.ipify.org', 'GET').then(function(res){console.log('Promise.then');console.log(res)}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
+        System.out.println(context.evaluateScript("fetch('https://www.google.com', 'GET').then(function(res){console.log('Promise.then');console.log(res)}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
 
 
         System.out.println("====== END fetch ========");
