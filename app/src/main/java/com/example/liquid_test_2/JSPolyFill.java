@@ -18,17 +18,29 @@ import java.net.URL;
 
 class FetchTaskParams {
     public String url;
-    public String method;
+    public FetchTaskSettings settings;
 
-    FetchTaskParams(String url, String method) {
+    FetchTaskParams(String url, FetchTaskSettings settings) {
         this.url = url;
+        this.settings = settings;
+    }
+}
+
+class FetchTaskSettings {
+    public String method;
+    public String credentials;
+    public String body;
+
+    FetchTaskSettings(String method, String credentials, String body) {
         this.method = method;
+        this.credentials = credentials;
+        this.body = body;
     }
 }
 
 class FetchTask extends AsyncTask<FetchTaskParams, Void, String> {
 
-    private String downloadContent(String myurl, String method) throws IOException {
+    private String downloadContent(String myurl, FetchTaskSettings settings) throws IOException {
         InputStream is = null;
 
         try {
@@ -36,7 +48,7 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, String> {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000 /* milliseconds */);
             conn.setConnectTimeout(15000 /* milliseconds */);
-            conn.setRequestMethod(method);
+            conn.setRequestMethod("GET");
             conn.setDoInput(true);
             conn.connect();
             int response = conn.getResponseCode();
@@ -70,7 +82,7 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, String> {
         String content = "";
         System.out.println("FetchTask doInBackground start");
         try {
-            content = downloadContent(params[0].url, params[0].method);
+            content = downloadContent(params[0].url, params[0].settings);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -91,12 +103,31 @@ public class JSPolyFill {
 
     static void addFetch(JSContext jsContext) {
         JSFunction fetch = new JSFunction(jsContext,"fetch") {
-            public String fetch(String url, String method) throws Exception {
-                if (method == null) {
-                    method = "GET";
+            public String fetch(String url, JSObject settings) throws Exception {
+
+
+                String method = null;
+                String credentials = null;
+                String body = null;
+
+                String methodProperty = settings.property("method").toString();
+                String credentialsProperty = settings.property("credentials").toString();
+                String bodyProperty = settings.property("body").toString();
+
+                if (!methodProperty.equals("undefined")) {
+                    method = methodProperty;
                 }
-                System.out.println("fetch start with " + url + ", " + method);
-                FetchTaskParams params = new FetchTaskParams(url, method);
+                if (!credentialsProperty.equals("undefined")) {
+                    credentials = credentialsProperty;
+                }
+                if (!bodyProperty.equals("undefined")) {
+                    body = bodyProperty;
+                }
+
+
+                FetchTaskSettings fetchSettings = new FetchTaskSettings(method, credentials, body);
+
+                FetchTaskParams params = new FetchTaskParams(url, fetchSettings);
                 FetchTask fetchTask = new FetchTask();
                 fetchTask.execute(params);
                 return fetchTask.get();

@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         JSPolyFill.fixConsoleLog(context);
         JSPolyFill.addFetch(context);
 
-        System.out.println(context.evaluateScript("fetch('https://www.google.com').then(function(res){console.log('Promise.then');console.log(res)}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
+        System.out.println(context.evaluateScript("fetch('https://www.google.com', {'method': 'GET', 'b': 3}).then(function(res){console.log('Promise.then');console.log(res)}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
         System.out.println("====== END fetch ========");
         return null;
     }
