@@ -183,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
     public String runScript3(final Context androidContextObject) throws IOException {
         System.out.println("====== START runScript fetch wali ========");
         JSContext context = new JSContext();
-
         JSPolyFill.fixConsoleLog(context);
         JSPolyFill.addFetch(context);
 
