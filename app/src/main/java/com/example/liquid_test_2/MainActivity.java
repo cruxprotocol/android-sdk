@@ -177,16 +177,15 @@ public class MainActivity extends AppCompatActivity {
             returnString.append("\n");
         }
         return new String(returnString);
-
     }
 
     public String runScript3(final Context androidContextObject) throws IOException {
         System.out.println("====== START runScript fetch wali ========");
         JSContext context = new JSContext();
         JSPolyFill.fixConsoleLog(context);
-        JSPolyFill.addFetch(context);
-
-        System.out.println(context.evaluateScript("fetch('https://www.google.com', {method: 'GET', headers:{'a':'asdasd'}}).then(function(res){console.log('Promise.then');console.log(res)}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
+        JSPolyFill.addFetch(context, androidContextObject);
+        System.out.println(context.evaluateScript("Response;"));
+        System.out.println(context.evaluateScript("fetch('https://www.google.com', {method: 'GET', headers:{'a':'asdasd'}}).then(function(res){console.log('Promise.then');console.log(res);console.log(res.content);console.log('=Promise.then over=')}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
         System.out.println("====== END fetch ========");
         return null;
     }
