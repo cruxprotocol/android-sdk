@@ -5,10 +5,8 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
 
-import org.json.JSONObject;
 import org.liquidplayer.javascript.JSContext;
 import org.liquidplayer.javascript.JSFunction;
-import org.liquidplayer.javascript.JSON;
 import org.liquidplayer.javascript.JSObject;
 import org.liquidplayer.javascript.JSValue;
 
@@ -67,11 +65,12 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, FetchResponse> {
 
     private void addHeadersToConnection(HttpURLConnection conn, HashMap<String, String> headers) {
         if (headers != null) {
-            for (String name: headers.keySet()) {
+            for (String name : headers.keySet()) {
                 conn.setRequestProperty(name, headers.get(name));
             }
         }
     }
+
     private FetchResponse downloadContent(String myurl, FetchTaskSettings settings) throws IOException {
         System.out.println(">>>" + myurl + " " + settings.method);
         InputStream is = null;
@@ -154,7 +153,7 @@ class GenericUtils {
         BufferedReader input = new BufferedReader(isr);
         String line;
         StringBuilder returnString = new StringBuilder();
-        while ((line = input.readLine())!= null) {
+        while ((line = input.readLine()) != null) {
             returnString.append(line);
             returnString.append("\n");
         }
@@ -164,13 +163,12 @@ class GenericUtils {
 }
 
 
-
 public class JSPolyFill {
 
-    private static void makeFunctionAsyncOnGlobalScope(JSContext context, JSFunction function, String asyncNameOfFunction){
+    private static void makeFunctionAsyncOnGlobalScope(JSContext context, JSFunction function, String asyncNameOfFunction) {
         String syncNameOfFunction = "____sync_" + asyncNameOfFunction;
         context.property(syncNameOfFunction, function);
-        context.evaluateScript(asyncNameOfFunction + " = function(...params) { return new Promise(function(resolve, reject){resolve("+syncNameOfFunction +"(...params))})}");
+        context.evaluateScript(asyncNameOfFunction + " = function(...params) { return new Promise(function(resolve, reject){resolve(" + syncNameOfFunction + "(...params))})}");
     }
 
 
@@ -187,7 +185,7 @@ public class JSPolyFill {
 
     public static void addFetch(JSContext jsContext, Context androidContext) {
         JSPolyFill.addPreRequirements(jsContext, androidContext);
-        JSFunction fetch = new JSFunction(jsContext,"fetch") {
+        JSFunction fetch = new JSFunction(jsContext, "fetch") {
             public JSValue fetch(String url, JSObject settings) throws Exception {
                 String method = null;
                 String credentials = null;
@@ -201,10 +199,10 @@ public class JSPolyFill {
                 String headerProperty = settings.property("headers").toString();
 
 
-                if(!headerProperty.equals("undefined")) {
+                if (!headerProperty.equals("undefined")) {
                     headers = settings.property("headers").toObject();
                     if (headers != null) {
-                        for (String name: headers.propertyNames()) {
+                        for (String name : headers.propertyNames()) {
                             headersMap.put(name, headers.property(name).toString());
                         }
                     }
@@ -228,7 +226,7 @@ public class JSPolyFill {
                 FetchResponse response = fetchTask.get();
 
                 String uuid = UUID.randomUUID().toString().replace('-', '0');
-                String bodyVarName = "tmpJsValForBody_"+uuid;
+                String bodyVarName = "tmpJsValForBody_" + uuid;
 
                 context.property(bodyVarName, response.body);
                 System.out.println(context.evaluateScript(bodyVarName));
