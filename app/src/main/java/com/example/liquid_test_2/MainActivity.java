@@ -49,16 +49,15 @@ public class MainActivity extends AppCompatActivity {
 
     private class FetchTask extends AsyncTask<FetchTaskParams, Void, String> {
 
-        private String downloadContent(String myurl) throws IOException {
+        private String downloadContent(String myurl, String method) throws IOException {
             InputStream is = null;
-            int length = 500;
 
             try {
                 URL url = new URL(myurl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setReadTimeout(10000 /* milliseconds */);
                 conn.setConnectTimeout(15000 /* milliseconds */);
-                conn.setRequestMethod("GET");
+                conn.setRequestMethod(method);
                 conn.setDoInput(true);
                 conn.connect();
                 int response = conn.getResponseCode();
@@ -87,26 +86,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        public String convertInputStreamToString(InputStream stream, int length) throws IOException, UnsupportedEncodingException {
-            Reader reader = null;
-            reader = new InputStreamReader(stream, "UTF-8");
-            char[] buffer = new char[length];
-            reader.read(buffer);
-            return new String(buffer);
-        }
-
         protected String doInBackground(FetchTaskParams... params) {
 
             String content = "";
             System.out.println("FetchTask doInBackground start");
             try {
-                content = downloadContent(params[0].url);
+                content = downloadContent(params[0].url, params[0].method);
             } catch (IOException e) {
                 e.printStackTrace();
             }
             System.out.println(content);
             System.out.println("FetchTask doInBackground stop");
-
             return content;
         }
     }
