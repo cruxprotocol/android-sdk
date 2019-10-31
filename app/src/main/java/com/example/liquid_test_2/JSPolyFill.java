@@ -3,8 +3,10 @@ package com.example.liquid_test_2;
 
 import android.os.AsyncTask;
 
+import org.json.JSONObject;
 import org.liquidplayer.javascript.JSContext;
 import org.liquidplayer.javascript.JSFunction;
+import org.liquidplayer.javascript.JSON;
 import org.liquidplayer.javascript.JSObject;
 import org.liquidplayer.javascript.JSValue;
 
@@ -14,6 +16,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 
 
 class FetchTaskParams {
@@ -30,25 +33,41 @@ class FetchTaskSettings {
     public String method;
     public String credentials;
     public String body;
+    public HashMap<String, String> headers;
 
-    FetchTaskSettings(String method, String credentials, String body) {
+    FetchTaskSettings(String method, String credentials, String body, HashMap<String, String> headers) {
         this.method = method;
         this.credentials = credentials;
         this.body = body;
+        this.headers = headers;
     }
 }
 
 class FetchTask extends AsyncTask<FetchTaskParams, Void, String> {
 
+    private void addHeadersToConnection(HttpURLConnection conn, HashMap<String, String> headers) {
+        if (headers != null) {
+            for (String name: headers.keySet()) {
+                conn.setRequestProperty(name, headers.get(name));
+            }
+        }
+    }
     private String downloadContent(String myurl, FetchTaskSettings settings) throws IOException {
+        System.out.println(">>>" + myurl + " " + settings.method);
         InputStream is = null;
 
+        if (settings.method == null) {
+            settings.method = "GET";
+        }
+
         try {
+
             URL url = new URL(myurl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            addHeadersToConnection(conn, settings.headers);
             conn.setReadTimeout(10000 /* milliseconds */);
             conn.setConnectTimeout(15000 /* milliseconds */);
-            conn.setRequestMethod("GET");
+            conn.setRequestMethod(settings.method);
             conn.setDoInput(true);
             conn.connect();
             int response = conn.getResponseCode();
@@ -82,8 +101,13 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, String> {
         String content = "";
         System.out.println("FetchTask doInBackground start");
         try {
+            System.out.println("=DownloadContent starting");
             content = downloadContent(params[0].url, params[0].settings);
-        } catch (IOException e) {
+//            content = "Asd";
+//            content = testfunc("https://googlelolol", params[0].settings);
+            System.out.println("DownloadContent ended");
+        } catch (Exception e) {
+            System.out.println("IPExc");
             e.printStackTrace();
         }
         System.out.println(content);
@@ -109,11 +133,23 @@ public class JSPolyFill {
                 String method = null;
                 String credentials = null;
                 String body = null;
+                JSObject headers = null;
+                HashMap<String, String> headersMap = new HashMap<String, String>();
 
                 String methodProperty = settings.property("method").toString();
                 String credentialsProperty = settings.property("credentials").toString();
                 String bodyProperty = settings.property("body").toString();
+                String headerProperty = settings.property("headers").toString();
 
+
+                if(!headerProperty.equals("undefined")) {
+                    headers = settings.property("headers").toObject();
+                    if (headers != null) {
+                        for (String name: headers.propertyNames()) {
+                            headersMap.put(name, headers.property(name).toString());
+                        }
+                    }
+                }
                 if (!methodProperty.equals("undefined")) {
                     method = methodProperty;
                 }
@@ -125,7 +161,7 @@ public class JSPolyFill {
                 }
 
 
-                FetchTaskSettings fetchSettings = new FetchTaskSettings(method, credentials, body);
+                FetchTaskSettings fetchSettings = new FetchTaskSettings(method, credentials, body, headersMap);
 
                 FetchTaskParams params = new FetchTaskParams(url, fetchSettings);
                 FetchTask fetchTask = new FetchTask();
