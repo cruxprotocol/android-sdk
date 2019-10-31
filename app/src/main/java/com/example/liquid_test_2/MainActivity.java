@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
 
     public String runScript3(final Context androidContextObject) throws IOException {
         System.out.println("====== START runScript fetch wali ========");
-        String sdkFile = GenericUtils.getFromFile(androidContextObject,"crux-test-sdk.js");
+        String sdkFile = GenericUtils.getFromFile(androidContextObject,"sdk-snapshot-1.js");
         JSContext context = new JSContext();
         JSPolyFill.fixConsoleLog(context);
         JSPolyFill.addFetch(context, androidContextObject);
@@ -178,7 +178,10 @@ public class MainActivity extends AppCompatActivity {
         context.evaluateScript("var window = this;");
         context.evaluateScript(sdkFile);
         System.out.println("SDK FILE EVALUATED!");
-        System.out.println(context.evaluateScript("CruxClient"));
+        System.out.println(context.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', getEncryptionKey: function(){return 'dummyUserPass'}})"));
+        System.out.println(context.evaluateScript("cc.init()"));
+        System.out.println(context.evaluateScript("cc.getCruxIDState().then(function(res){console.log('getCruxIdState result');console.log(res);})"));
+
         System.out.println("====== END fetch ========");
         return null;
     }
