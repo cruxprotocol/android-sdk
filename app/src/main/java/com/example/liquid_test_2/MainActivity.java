@@ -164,28 +164,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private static String getFromFile(Context androidContextObject, String fileName) throws IOException {
-        AssetManager assetManager = androidContextObject.getAssets();
-        System.out.println(assetManager.list("/"));
-        InputStream is = assetManager.open(fileName);
-        InputStreamReader isr = new InputStreamReader(is);
-        BufferedReader input = new BufferedReader(isr);
-        String line;
-        StringBuilder returnString = new StringBuilder();
-        while ((line = input.readLine())!= null) {
-            returnString.append(line);
-            returnString.append("\n");
-        }
-        return new String(returnString);
-    }
 
     public String runScript3(final Context androidContextObject) throws IOException {
         System.out.println("====== START runScript fetch wali ========");
+        String sdkFile = GenericUtils.getFromFile(androidContextObject,"crux-test-sdk.js");
         JSContext context = new JSContext();
         JSPolyFill.fixConsoleLog(context);
         JSPolyFill.addFetch(context, androidContextObject);
-        System.out.println(context.evaluateScript("Response;"));
-        System.out.println(context.evaluateScript("fetch('https://www.google.com', {method: 'GET', headers:{'a':'asdasd'}}).then(function(res){console.log('Promise.then');console.log(res);console.log(res.content);console.log('=Promise.then over=')}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
+//        System.out.println(context.evaluateScript("Response;"));
+//        System.out.println(context.evaluateScript("fetch('https://www.google.com', {method: 'GET', headers:{'a':'asdasd'}}).then(function(res){console.log('Promise.then');console.log(res);console.log(res.content);console.log('=Promise.then over=')}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
+
+        System.out.println("\n\n\n\n====+++++====++++====++\n\n\n\n");
+        context.evaluateScript("var window = this;");
+        context.evaluateScript(sdkFile);
+        System.out.println("SDK FILE EVALUATED!");
+        System.out.println(context.evaluateScript("CruxClient"));
         System.out.println("====== END fetch ========");
         return null;
     }
@@ -194,8 +187,8 @@ public class MainActivity extends AppCompatActivity {
     public String runScript2(Context androidContextObject) throws IOException {
         System.out.println("====== START runScript2 ========");
         JSContext context = new JSContext();
-        MainActivity.fixLogging(context);
-//        String myFile = MainActivity.getFromFile(androidContextObject,"android-test-dom.js");
+        JSPolyFill.fixConsoleLog(context);
+        String sdkFile = GenericUtils.getFromFile(androidContextObject,"android-test-dom.js");
 
         AsyncObj fetchPolyfill = new AsyncObj(context);
         context.property("fetchPolyfill", fetchPolyfill);
@@ -244,10 +237,6 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println("====== END ========");
         return null;
-    }
-
-    private static void fixLogging(JSContext context) {
-        JSPolyFill.fixConsoleLog(context);
     }
 
 //    public static String runScript(Context androidContextObject) {
