@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         context.evaluateScript("var window = this;");
         context.evaluateScript(sdkFile);
         System.out.println("SDK FILE EVALUATED!");
-        System.out.println(context.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', getEncryptionKey: function(){return 'dummyUserPass'}})"));
+        System.out.println(context.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', getEncryptionKey: function(){return 'fookey'}})"));
         System.out.println(context.evaluateScript("cc.init()"));
-        System.out.println(context.evaluateScript("cc.getCruxIDState().then(function(res){console.log('getCruxIdState result');console.log(res);})"));
+        System.out.println(context.evaluateScript("cc.getCruxIDState().then(function(res){console.log('getCruxIdState result');console.log(res);}).catch(function(err){console.log('errtime');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
 
         System.out.println("====== END fetch ========");
         return null;

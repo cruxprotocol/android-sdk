@@ -107286,6 +107286,8 @@ function () {
             try {
               ptBuffer = decrypt(ctBuffer, iv, pwHash, 16);
             } catch (err) {
+              console.log("====== sdksnapshop1 =====");
+              console.log(err);
               if (err instanceof DOMException) {
                 throw _error.ErrorHelper.getPackageError(_error.PackageErrorCode.DecryptionFailed);
               }
@@ -111627,7 +111629,7 @@ var __extends = void 0 && (void 0).__extends || function () {
 
 var log = (0, _.getLogger)(__filename);
 var dataMemory = {}; // LocalStorage service implementation
-
+dataMemory.payIDClaim = JSON.stringify({identitySecrets: "{\"iv\":\"59ZAnVm5vyC6zIZz\",\"encBuffer\":\"1JstBA1vk8LpSfI9kPlGtWytcAZUbGN51g5E8NA/OVXjSsygdjdceeW0bb/2GbR9qkkq4P7nuP9lCjxbXWcsJaj/0AWUOA82AmZnbP7yUH8ATQwdSgyhUQDGboSVsO2JYFg1tPg2P+kA0jIoRYYGpAlcT8hhEe5jRSp9NBZ2cFWV/z3yDRMZtXHUQtwY/bPenREqBv7iBgwnqWLzrDMoY+KrjOXzUC3BWCByYfj02WkXLq6tQnJyPepCl1OGhpfoDCBgRbrIZ+uJxDp0RrAbp52OSREPaHPF/6oShTm5Pre1ZswBxufqwWMfNARY0wA=\"}", virtualAddress: "yadu007@cruxdev.crux"});
 var LocalStorage =
 /** @class */
 function (_super) {
