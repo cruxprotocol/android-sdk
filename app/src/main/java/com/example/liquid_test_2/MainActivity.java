@@ -180,35 +180,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public static void makeFunctionAsyncOnGlobalScope(JSContext context, JSFunction function, String asyncNameOfFunction){
-        String syncNameOfFunction = "____sync_" + asyncNameOfFunction;
-        context.property(syncNameOfFunction, function);
-        context.evaluateScript(asyncNameOfFunction + " = function(...params) { return new Promise(function(resolve, reject){resolve("+syncNameOfFunction +"(...params))})}");
-    }
-
     public String runScript3(final Context androidContextObject) throws IOException {
-        System.out.println("====== START runScript3 ========");
+        System.out.println("====== START runScript fetch wali ========");
         JSContext context = new JSContext();
-        MainActivity.fixLogging(context);
 
-        JSFunction fetch = new JSFunction(context,"fetch") {
-            public String fetch(String url, String method) throws Exception {
-                if (method == null) {
-                    method = "GET";
-                }
-                System.out.println("fetch start with " + url + ", " + method);
-                FetchTaskParams params = new FetchTaskParams(url, method);
-                FetchTask fetchTask = new FetchTask();
-                fetchTask.execute(params);
-                return fetchTask.get();
-            }
-        };
+        JSPolyFill.fixConsoleLog(context);
+        JSPolyFill.addFetch(context);
 
-        MainActivity.makeFunctionAsyncOnGlobalScope(context, fetch, "fetch");
         System.out.println(context.evaluateScript("fetch('https://www.google.com').then(function(res){console.log('Promise.then');console.log(res)}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
-
-
         System.out.println("====== END fetch ========");
         return null;
     }
@@ -270,13 +249,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private static void fixLogging(JSContext context) {
-        JSObject console = new JSObject(context);
-        console.property("log", new JSFunction(context, "log") {
-            public void log(JSValue message) {
-                System.out.println("JSConsoleLog: " + message.toJSON());
-            }
-        });
-        context.property("console", console);
+        JSPolyFill.fixConsoleLog(context);
     }
 
 //    public static String runScript(Context androidContextObject) {
