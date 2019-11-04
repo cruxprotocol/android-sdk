@@ -107653,6 +107653,11 @@ var httpJSONRequest = function httpJSONRequest(options) {
       url += options.url;
     }
 
+    console.log("options.body")
+    console.log(options.body)
+    console.log(options)
+    console.log("====")
+
     if (options.body) {
       fetchOptions.body = JSON.stringify(options.body);
     }
@@ -110886,6 +110891,10 @@ var getContentFromGaiaHub = function getContentFromGaiaHub(blockstackId, filenam
 
         case 4:
           error_1 = _a.sent();
+          console.log(">>>Throwing error lol")
+          console.log(error_1);
+          console.log(error_1.stack)
+          console.log(">>><<<<")
           packageErrorCode = nameservice.BlockstackService.getGetPackageErrorCodeForFilename(filename);
           throw _error.ErrorHelper.getPackageError(packageErrorCode, filename, error_1);
 
