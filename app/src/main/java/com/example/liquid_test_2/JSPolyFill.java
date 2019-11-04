@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -254,5 +255,16 @@ public class JSPolyFill {
             }
         });
         jsContext.property("console", console);
+    }
+
+    static void fixRandomInt(JSContext jsContext) {
+        JSObject crypto = new JSObject(jsContext);
+        crypto.property("randomInt", new JSFunction(jsContext, "randomInt"){ public int randomInt() {
+            SecureRandom random = new SecureRandom();
+            int randomInteger = random.nextInt(256);
+            return randomInteger;
+        }
+        });
+        jsContext.property("crypto", crypto);
     }
 }
