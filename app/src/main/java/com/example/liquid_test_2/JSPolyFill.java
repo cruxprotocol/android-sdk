@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
@@ -89,6 +90,11 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, FetchResponse> {
             conn.setRequestMethod(settings.method);
             conn.setDoInput(true);
             conn.connect();
+            if(settings.body != null) {
+                OutputStream op = conn.getOutputStream();
+                byte[] bodyBytes = settings.body.getBytes();
+                op.write(bodyBytes);
+            }
             int responseCode = conn.getResponseCode();
             System.out.println("The response is: " + responseCode);
             is = conn.getInputStream();

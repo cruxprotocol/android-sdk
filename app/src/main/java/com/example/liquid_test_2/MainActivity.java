@@ -39,17 +39,20 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println(context.evaluateScript("Response;"));
 //        System.out.println(context.evaluateScript("fetch('https://www.google.com', {method: 'GET', headers:{'a':'asdasd'}}).then(function(res){console.log('Promise.then');console.log(res);console.log(res.content);console.log('=Promise.then over=')}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
 
+
         System.out.println("\n\n\n\n====+++++====++++====++\n\n\n\n");
         context.evaluateScript("var window = this;");
+        context.evaluateScript("window.crypto = {}; window.crypto.getRandomValues = function(array){for (let i = 0, l = array.length; i < l; i++) {array[i] = Math.floor(Math.random() * 256);}return array;};");
         context.evaluateScript(sdkFile);
         System.out.println("SDK FILE EVALUATED!");
         System.out.println(context.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', storage: inmemStorageWithClaim, getEncryptionKey: function(){return 'fookey'}})"));
         System.out.println(context.evaluateScript("cc.init()"));
         System.out.println(context.evaluateScript("cc.getCruxIDState().then(function(res){console.log('getCruxIdState result');console.log(res);}).catch(function(err){console.log('errtime getCruxIDState');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
-//        System.out.println(context.evaluateScript("cc.getAddressMap().then(function(res){console.log('getAddressMap result');console.log(res);}).catch(function(err){console.log('errtime getAddressMap');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
+        System.out.println(context.evaluateScript("cc.getAddressMap().then(function(res){console.log('getAddressMap result');console.log(res);}).catch(function(err){console.log('errtime getAddressMap');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
 
         System.out.println("====== Changeing address map! ========");
-        System.out.println(context.evaluateScript("cc.putAddressMap({'bitcoin': {'addressHash': '1HX4KvtPdg9QUYwQE1kNqTAjmNaDG7w82V'}, 'ethereum': {'addressHash': '0x0a2311594059b468c9897338b027c8782398b481'}, 'ripple': {'addressHash': 'rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h', 'secIdentifier': '007778'}, 'tron': {'addressHash': 'TG3iFaVvUs34SGpWq8RG9gnagDLTe1jdyz'}}).catch(function(err){console.log('errtime putAddressMap');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
+//        System.out.println(context.evaluateScript("cc.putAddressMap({'bitcoin': {'addressHash': '1HX4KvtPdg9QUYwQE1kNqTAjmNaDG7w82V'}, 'ethereum': {'addressHash': '0x0a2311594059b468c9897338b027c8782398b481'}, 'ripple': {'addressHash': 'rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h', 'secIdentifier': '008888'}, 'tron': {'addressHash': 'TG3iFaVvUs34SGpWq8RG9gnagDLTe1jdyz'}}).catch(function(err){console.log('errtime putAddressMap');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
+        System.out.println(context.evaluateScript("cc.putAddressMap({'btc': {'addressHash': '1HX4KvtPdg9QUYwQE1kNqTAjmNaDG7MMMM'}}).catch(function(err){console.log('errtime putAddressMap');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
 //        System.out.println("====== Getting address map again! ========");
 //        System.out.println(context.evaluateScript("cc.getAddressMap().then(function(res){console.log('getAddressMap result');console.log(res);})"));
 //        System.out.println("====== END fetch ========");

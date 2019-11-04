@@ -1775,7 +1775,10 @@ function (_super) {
 
   CruxClientError.fromError = function (error, messagePrefix) {
     var msgPrefix = messagePrefix === undefined ? "" : messagePrefix + " : ";
-
+    console.log("====== CruxClientError.fromError ==== ");
+    console.log(error);
+    console.log(error.stack);
+    console.log("====== END CruxClientError.fromError ==== ");
     if (error instanceof CruxClientError) {
       if (error.message !== undefined) {
         error.message = msgPrefix + error.message;
@@ -117140,37 +117143,7 @@ var cryptoClients_1 = require("./cryptoClients");
 exports.SECP256K1Client = cryptoClients_1.SECP256K1Client;
 exports.cryptoClients = cryptoClients_1.cryptoClients;
 
-},{"./signer":"vlzQ","./verifier":"ucpS","./decode":"ZM9j","./errors":"rdic","./cryptoClients":"GcyT"}],"KBaF":[function(require,module,exports) {
-
-"use strict"; // ref: https://github.com/tc39/proposal-global
-
-var getGlobal = function () {
-  // the only reliable means to get the global object is
-  // `Function('return this')()`
-  // However, this causes CSP violations in Chrome apps.
-  if (typeof self !== 'undefined') {
-    return self;
-  }
-
-  if (typeof window !== 'undefined') {
-    return window;
-  }
-
-  if (typeof global !== 'undefined') {
-    return global;
-  }
-
-  throw new Error('unable to locate global object');
-};
-
-var global = getGlobal();
-module.exports = exports = global.fetch; // Needed for TypeScript and Webpack.
-
-exports.default = global.fetch.bind(global);
-exports.Headers = global.Headers;
-exports.Request = global.Request;
-exports.Response = global.Response;
-},{}],"DXq1":[function(require,module,exports) {
+},{"./signer":"vlzQ","./verifier":"ucpS","./decode":"ZM9j","./errors":"rdic","./cryptoClients":"GcyT"}],"DXq1":[function(require,module,exports) {
 var __filename = "/Users/ankit/Dev/openpay/js-sdk/src/packages/utils.ts";
 var Buffer = require("buffer").Buffer;
 "use strict";
@@ -117182,13 +117155,9 @@ exports.getKeyPairFromPrivKey = exports.cachedFunctionCall = exports.sanitizePri
 
 var bitcoin = _interopRequireWildcard(require("bitcoinjs-lib"));
 
-var _nodeFetch = _interopRequireDefault(require("node-fetch"));
-
 var _index = require("../index");
 
 var _error = require("./error");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -117347,7 +117316,7 @@ var httpJSONRequest = function httpJSONRequest(options) {
         url = _a.url,
         fetchOptions = _a.fetchOptions;
 
-    (0, _nodeFetch.default)(url, fetchOptions).then(function (res) {
+    fetch(url, fetchOptions).then(function (res) {
       return res.json();
     }).then(function (json) {
       return resolve(json);
@@ -117522,7 +117491,7 @@ var getKeyPairFromPrivKey = function getKeyPairFromPrivKey(privKey) {
 };
 
 exports.getKeyPairFromPrivKey = getKeyPairFromPrivKey;
-},{"bitcoinjs-lib":"bZOe","node-fetch":"KBaF","../index":"QCba","./error":"yXIU","buffer":"dskh"}],"Svqq":[function(require,module,exports) {
+},{"bitcoinjs-lib":"bZOe","../index":"QCba","./error":"yXIU","buffer":"dskh"}],"Svqq":[function(require,module,exports) {
 var __filename = "/Users/ankit/Dev/openpay/js-sdk/src/packages/gaia-service/index.ts";
 "use strict";
 
@@ -120691,7 +120660,10 @@ function (_super) {
 
             case 3:
               error_2 = _a.sent();
-
+              console.log("==error_2 = _a.sent()===")
+              console.log(error_2);
+              console.log(error_2.stack);
+              console.log("========================")
               if (error_2 instanceof _packageError.PackageError && error_2.errorCode) {
                 throw error_2;
               } else {
