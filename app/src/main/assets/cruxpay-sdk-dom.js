@@ -1775,10 +1775,7 @@ function (_super) {
 
   CruxClientError.fromError = function (error, messagePrefix) {
     var msgPrefix = messagePrefix === undefined ? "" : messagePrefix + " : ";
-    console.log("====== CruxClientError.fromError ==== ");
-    console.log(error);
-    console.log(error.stack);
-    console.log("====== END CruxClientError.fromError ==== ");
+
     if (error instanceof CruxClientError) {
       if (error.message !== undefined) {
         error.message = msgPrefix + error.message;
@@ -21280,7 +21277,7 @@ exports.fromSeed = bip32_1.fromSeed;
 exports.fromBase58 = bip32_1.fromBase58;
 exports.fromPublicKey = bip32_1.fromPublicKey;
 exports.fromPrivateKey = bip32_1.fromPrivateKey;
-},{"./bip32":"iQbK"}],"LuAr":[function(require,module,exports) {
+},{"./bip32":"iQbK"}],"rvS6":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -21319,7 +21316,7 @@ exports.testnet = {
   scriptHash: 0xc4,
   wif: 0xef
 };
-},{}],"wihG":[function(require,module,exports) {
+},{}],"P3Rn":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -21386,7 +21383,7 @@ function encode(_number) {
 }
 
 exports.encode = encode;
-},{"buffer":"dskh"}],"mf8L":[function(require,module,exports) {
+},{"buffer":"dskh"}],"TQ2w":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -21574,7 +21571,7 @@ module.exports = {
   encode: encode
 }
 
-},{"safe-buffer":"Wugr"}],"n7qe":[function(require,module,exports) {
+},{"safe-buffer":"Wugr"}],"d9co":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -21646,7 +21643,7 @@ function encode(signature, hashType) {
 }
 
 exports.encode = encode;
-},{"./types":"mf8L","bip66":"qbEO","typeforce":"PKU7","buffer":"dskh"}],"T5UE":[function(require,module,exports) {
+},{"./types":"TQ2w","bip66":"qbEO","typeforce":"PKU7","buffer":"dskh"}],"T5UE":[function(require,module,exports) {
 module.exports = {
   "OP_FALSE": 0,
   "OP_0": 0,
@@ -21871,7 +21868,7 @@ for (var op in OPS) {
 
 module.exports = map
 
-},{"./index.json":"T5UE"}],"zCpQ":[function(require,module,exports) {
+},{"./index.json":"T5UE"}],"Fa8t":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -22086,7 +22083,7 @@ exports.isCanonicalScriptSignature = isCanonicalScriptSignature; // tslint:disab
 
 exports.number = scriptNumber;
 exports.signature = scriptSignature;
-},{"./script_number":"wihG","./script_signature":"n7qe","./types":"mf8L","bip66":"qbEO","tiny-secp256k1":"fCMY","pushdata-bitcoin":"HZCS","typeforce":"PKU7","bitcoin-ops":"T5UE","bitcoin-ops/map":"XAxl","buffer":"dskh"}],"SsCk":[function(require,module,exports) {
+},{"./script_number":"P3Rn","./script_signature":"d9co","./types":"TQ2w","bip66":"qbEO","tiny-secp256k1":"fCMY","pushdata-bitcoin":"HZCS","typeforce":"PKU7","bitcoin-ops":"T5UE","bitcoin-ops/map":"XAxl","buffer":"dskh"}],"JBHK":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -22127,7 +22124,7 @@ function value(f) {
 }
 
 exports.value = value;
-},{}],"GxwO":[function(require,module,exports) {
+},{}],"q7Hj":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -22189,7 +22186,7 @@ function p2data(a, opts) {
 }
 
 exports.p2data = p2data;
-},{"../networks":"LuAr","../script":"zCpQ","./lazy":"SsCk","typeforce":"PKU7"}],"N5r7":[function(require,module,exports) {
+},{"../networks":"rvS6","../script":"Fa8t","./lazy":"JBHK","typeforce":"PKU7"}],"SY7q":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -22329,7 +22326,7 @@ function p2ms(a, opts) {
 }
 
 exports.p2ms = p2ms;
-},{"../networks":"LuAr","../script":"zCpQ","./lazy":"SsCk","typeforce":"PKU7","tiny-secp256k1":"fCMY"}],"q45I":[function(require,module,exports) {
+},{"../networks":"rvS6","../script":"Fa8t","./lazy":"JBHK","typeforce":"PKU7","tiny-secp256k1":"fCMY"}],"jLkq":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -22414,7 +22411,7 @@ function p2pk(a, opts) {
 }
 
 exports.p2pk = p2pk;
-},{"../networks":"LuAr","../script":"zCpQ","./lazy":"SsCk","typeforce":"PKU7","tiny-secp256k1":"fCMY"}],"wHwg":[function(require,module,exports) {
+},{"../networks":"rvS6","../script":"Fa8t","./lazy":"JBHK","typeforce":"PKU7","tiny-secp256k1":"fCMY"}],"uv3I":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -22456,7 +22453,7 @@ function hash256(buffer) {
 }
 
 exports.hash256 = hash256;
-},{"create-hash":"LF8r"}],"sm5n":[function(require,module,exports) {
+},{"create-hash":"LF8r"}],"lzf5":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -22593,7 +22590,7 @@ function p2pkh(a, opts) {
 }
 
 exports.p2pkh = p2pkh;
-},{"../crypto":"wHwg","../networks":"LuAr","../script":"zCpQ","./lazy":"SsCk","typeforce":"PKU7","tiny-secp256k1":"fCMY","bs58check":"lJVR","buffer":"dskh"}],"IpD6":[function(require,module,exports) {
+},{"../crypto":"uv3I","../networks":"rvS6","../script":"Fa8t","./lazy":"JBHK","typeforce":"PKU7","tiny-secp256k1":"fCMY","bs58check":"lJVR","buffer":"dskh"}],"pamC":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -22790,7 +22787,7 @@ function p2sh(a, opts) {
 }
 
 exports.p2sh = p2sh;
-},{"../crypto":"wHwg","../networks":"LuAr","../script":"zCpQ","./lazy":"SsCk","typeforce":"PKU7","bs58check":"lJVR","buffer":"dskh"}],"gbth":[function(require,module,exports) {
+},{"../crypto":"uv3I","../networks":"rvS6","../script":"Fa8t","./lazy":"JBHK","typeforce":"PKU7","bs58check":"lJVR","buffer":"dskh"}],"gbth":[function(require,module,exports) {
 'use strict'
 var ALPHABET = 'qpzry9x8gf2tvdw0s3jn54khce6mua7l'
 
@@ -22939,7 +22936,7 @@ module.exports = {
   fromWords: fromWords
 }
 
-},{}],"ktg4":[function(require,module,exports) {
+},{}],"ThHa":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -23074,7 +23071,7 @@ function p2wpkh(a, opts) {
 }
 
 exports.p2wpkh = p2wpkh;
-},{"../crypto":"wHwg","../networks":"LuAr","../script":"zCpQ","./lazy":"SsCk","typeforce":"PKU7","tiny-secp256k1":"fCMY","bech32":"gbth","buffer":"dskh"}],"awsQ":[function(require,module,exports) {
+},{"../crypto":"uv3I","../networks":"rvS6","../script":"Fa8t","./lazy":"JBHK","typeforce":"PKU7","tiny-secp256k1":"fCMY","bech32":"gbth","buffer":"dskh"}],"dY19":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -23248,7 +23245,7 @@ function p2wsh(a, opts) {
 }
 
 exports.p2wsh = p2wsh;
-},{"../crypto":"wHwg","../networks":"LuAr","../script":"zCpQ","./lazy":"SsCk","typeforce":"PKU7","bech32":"gbth","buffer":"dskh"}],"M8O6":[function(require,module,exports) {
+},{"../crypto":"uv3I","../networks":"rvS6","../script":"Fa8t","./lazy":"JBHK","typeforce":"PKU7","bech32":"gbth","buffer":"dskh"}],"kEsd":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -23283,7 +23280,7 @@ var p2wsh_1 = require('./p2wsh');
 
 exports.p2wsh = p2wsh_1.p2wsh; // TODO
 // witness commitment
-},{"./embed":"GxwO","./p2ms":"N5r7","./p2pk":"q45I","./p2pkh":"sm5n","./p2sh":"IpD6","./p2wpkh":"ktg4","./p2wsh":"awsQ"}],"kxhz":[function(require,module,exports) {
+},{"./embed":"q7Hj","./p2ms":"SY7q","./p2pk":"jLkq","./p2pkh":"lzf5","./p2sh":"pamC","./p2wpkh":"ThHa","./p2wsh":"dY19"}],"wUUe":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -23426,7 +23423,7 @@ function toOutputScript(address, network) {
 }
 
 exports.toOutputScript = toOutputScript;
-},{"./networks":"LuAr","./payments":"M8O6","./script":"zCpQ","./types":"mf8L","bech32":"gbth","bs58check":"lJVR","typeforce":"PKU7","buffer":"dskh"}],"XJNj":[function(require,module,exports) {
+},{"./networks":"rvS6","./payments":"kEsd","./script":"Fa8t","./types":"TQ2w","bech32":"gbth","bs58check":"lJVR","typeforce":"PKU7","buffer":"dskh"}],"XJNj":[function(require,module,exports) {
 
 var global = arguments[3];
 var process = require("process");
@@ -23481,7 +23478,7 @@ function randomBytes (size, cb) {
   return bytes
 }
 
-},{"safe-buffer":"Wugr","process":"pBGv"}],"SRL3":[function(require,module,exports) {
+},{"safe-buffer":"Wugr","process":"pBGv"}],"ZFsm":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -23631,7 +23628,7 @@ function makeRandom(options) {
 }
 
 exports.makeRandom = makeRandom;
-},{"./networks":"LuAr","./types":"mf8L","tiny-secp256k1":"fCMY","randombytes":"XJNj","typeforce":"PKU7","wif":"zCNS","buffer":"dskh"}],"kTjr":[function(require,module,exports) {
+},{"./networks":"rvS6","./types":"TQ2w","tiny-secp256k1":"fCMY","randombytes":"XJNj","typeforce":"PKU7","wif":"zCNS","buffer":"dskh"}],"jFwl":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -23773,7 +23770,7 @@ function encodingLength (number) {
 
 module.exports = { encode: encode, decode: decode, encodingLength: encodingLength }
 
-},{"safe-buffer":"Wugr"}],"kntI":[function(require,module,exports) {
+},{"safe-buffer":"Wugr"}],"Y9UO":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -24329,7 +24326,7 @@ Transaction.SIGHASH_ANYONECANPAY = 0x80;
 Transaction.ADVANCED_TRANSACTION_MARKER = 0x00;
 Transaction.ADVANCED_TRANSACTION_FLAG = 0x01;
 exports.Transaction = Transaction;
-},{"./bufferutils":"kTjr","./crypto":"wHwg","./script":"zCpQ","./types":"mf8L","typeforce":"PKU7","varuint-bitcoin":"xFE2","buffer":"dskh"}],"DNBG":[function(require,module,exports) {
+},{"./bufferutils":"jFwl","./crypto":"uv3I","./script":"Fa8t","./types":"TQ2w","typeforce":"PKU7","varuint-bitcoin":"xFE2","buffer":"dskh"}],"DNBG":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 // constant-space merkle root calculation algorithm
 module.exports = function fastRoot (values, digestFn) {
@@ -24356,7 +24353,7 @@ module.exports = function fastRoot (values, digestFn) {
   return results[0]
 }
 
-},{"buffer":"dskh"}],"n2sH":[function(require,module,exports) {
+},{"buffer":"dskh"}],"lHho":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -24640,7 +24637,7 @@ function anyTxHasWitness(transactions) {
     });
   });
 }
-},{"./bufferutils":"kTjr","./crypto":"wHwg","./transaction":"kntI","./types":"mf8L","merkle-lib/fastRoot":"DNBG","typeforce":"PKU7","varuint-bitcoin":"xFE2","buffer":"dskh"}],"TcPe":[function(require,module,exports) {
+},{"./bufferutils":"jFwl","./crypto":"uv3I","./transaction":"Y9UO","./types":"TQ2w","merkle-lib/fastRoot":"DNBG","typeforce":"PKU7","varuint-bitcoin":"xFE2","buffer":"dskh"}],"TcPe":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26718,7 +26715,7 @@ function () {
 }();
 
 exports.Psbt = Psbt;
-},{"./combiner":"qsU6","./parser":"jTIM","./typeFields":"TcPe","./utils":"GfFi","buffer":"dskh"}],"GRRo":[function(require,module,exports) {
+},{"./combiner":"qsU6","./parser":"jTIM","./typeFields":"TcPe","./utils":"GfFi","buffer":"dskh"}],"CbJH":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -28191,7 +28188,7 @@ function classifyScript(script) {
 function range(n) {
   return _toConsumableArray(Array(n).keys());
 }
-},{"bip174":"Kgzo","bip174/src/lib/converter/varint":"ViXA","bip174/src/lib/utils":"GfFi","./address":"kxhz","./bufferutils":"kTjr","./crypto":"wHwg","./ecpair":"SRL3","./networks":"LuAr","./payments":"M8O6","./script":"zCpQ","./transaction":"kntI","buffer":"dskh"}],"qcLI":[function(require,module,exports) {
+},{"bip174":"Kgzo","bip174/src/lib/converter/varint":"ViXA","bip174/src/lib/utils":"GfFi","./address":"wUUe","./bufferutils":"jFwl","./crypto":"uv3I","./ecpair":"ZFsm","./networks":"rvS6","./payments":"kEsd","./script":"Fa8t","./transaction":"Y9UO","buffer":"dskh"}],"rcO3":[function(require,module,exports) {
 'use strict'; // OP_0 [signatures ...]
 
 Object.defineProperty(exports, '__esModule', {
@@ -28223,7 +28220,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'multisig input';
 };
-},{"../../script":"zCpQ"}],"K6n3":[function(require,module,exports) {
+},{"../../script":"Fa8t"}],"p6tM":[function(require,module,exports) {
 'use strict'; // m [pubKeys ...] n OP_CHECKMULTISIG
 
 Object.defineProperty(exports, '__esModule', {
@@ -28260,7 +28257,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'multi-sig output';
 };
-},{"../../script":"zCpQ","../../types":"mf8L"}],"dh2f":[function(require,module,exports) {
+},{"../../script":"Fa8t","../../types":"TQ2w"}],"tAvT":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -28274,7 +28271,7 @@ exports.input = input;
 var output = require('./output');
 
 exports.output = output;
-},{"./input":"qcLI","./output":"K6n3"}],"YIHc":[function(require,module,exports) {
+},{"./input":"rcO3","./output":"p6tM"}],"fKxi":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -28300,7 +28297,7 @@ var output = {
   check: check
 };
 exports.output = output;
-},{"../script":"zCpQ"}],"QV0D":[function(require,module,exports) {
+},{"../script":"Fa8t"}],"X9Co":[function(require,module,exports) {
 'use strict'; // {signature}
 
 Object.defineProperty(exports, '__esModule', {
@@ -28319,7 +28316,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'pubKey input';
 };
-},{"../../script":"zCpQ"}],"xhy1":[function(require,module,exports) {
+},{"../../script":"Fa8t"}],"ugmf":[function(require,module,exports) {
 'use strict'; // {pubKey} OP_CHECKSIG
 
 Object.defineProperty(exports, '__esModule', {
@@ -28340,7 +28337,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'pubKey output';
 };
-},{"../../script":"zCpQ"}],"E3Ef":[function(require,module,exports) {
+},{"../../script":"Fa8t"}],"l7Lh":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -28354,7 +28351,7 @@ exports.input = input;
 var output = require('./output');
 
 exports.output = output;
-},{"./input":"QV0D","./output":"xhy1"}],"rXOy":[function(require,module,exports) {
+},{"./input":"X9Co","./output":"ugmf"}],"dYUv":[function(require,module,exports) {
 'use strict'; // {signature} {pubKey}
 
 Object.defineProperty(exports, '__esModule', {
@@ -28373,7 +28370,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'pubKeyHash input';
 };
-},{"../../script":"zCpQ"}],"mh5j":[function(require,module,exports) {
+},{"../../script":"Fa8t"}],"omA2":[function(require,module,exports) {
 'use strict'; // OP_DUP OP_HASH160 {pubKeyHash} OP_EQUALVERIFY OP_CHECKSIG
 
 Object.defineProperty(exports, '__esModule', {
@@ -28394,7 +28391,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'pubKeyHash output';
 };
-},{"../../script":"zCpQ"}],"Ozlu":[function(require,module,exports) {
+},{"../../script":"Fa8t"}],"Sk1x":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -28408,7 +28405,7 @@ exports.input = input;
 var output = require('./output');
 
 exports.output = output;
-},{"./input":"rXOy","./output":"mh5j"}],"G1IW":[function(require,module,exports) {
+},{"./input":"dYUv","./output":"omA2"}],"eaHZ":[function(require,module,exports) {
 'use strict'; // OP_0 {pubKeyHash}
 
 Object.defineProperty(exports, '__esModule', {
@@ -28429,7 +28426,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'Witness pubKeyHash output';
 };
-},{"../../script":"zCpQ"}],"uP37":[function(require,module,exports) {
+},{"../../script":"Fa8t"}],"n1wb":[function(require,module,exports) {
 'use strict'; // OP_0 {scriptHash}
 
 Object.defineProperty(exports, '__esModule', {
@@ -28450,7 +28447,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'Witness scriptHash output';
 };
-},{"../../script":"zCpQ"}],"NCja":[function(require,module,exports) {
+},{"../../script":"Fa8t"}],"yF64":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict'; // <scriptSig> {serialized scriptPubKey script}
 
@@ -28498,7 +28495,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'scriptHash input';
 };
-},{"../../script":"zCpQ","../multisig":"dh2f","../pubkey":"E3Ef","../pubkeyhash":"Ozlu","../witnesspubkeyhash/output":"G1IW","../witnessscripthash/output":"uP37","buffer":"dskh"}],"fjnZ":[function(require,module,exports) {
+},{"../../script":"Fa8t","../multisig":"tAvT","../pubkey":"l7Lh","../pubkeyhash":"Sk1x","../witnesspubkeyhash/output":"eaHZ","../witnessscripthash/output":"n1wb","buffer":"dskh"}],"cCec":[function(require,module,exports) {
 'use strict'; // OP_HASH160 {scriptHash} OP_EQUAL
 
 Object.defineProperty(exports, '__esModule', {
@@ -28519,7 +28516,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'scriptHash output';
 };
-},{"../../script":"zCpQ"}],"fq1j":[function(require,module,exports) {
+},{"../../script":"Fa8t"}],"g7LS":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -28533,7 +28530,7 @@ exports.input = input;
 var output = require('./output');
 
 exports.output = output;
-},{"./input":"NCja","./output":"fjnZ"}],"BCOX":[function(require,module,exports) {
+},{"./input":"yF64","./output":"cCec"}],"hYj9":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict'; // OP_RETURN {aa21a9ed} {commitment}
 
@@ -28578,7 +28575,7 @@ function decode(buffer) {
 }
 
 exports.decode = decode;
-},{"../../script":"zCpQ","../../types":"mf8L","typeforce":"PKU7","buffer":"dskh"}],"gtgV":[function(require,module,exports) {
+},{"../../script":"Fa8t","../../types":"TQ2w","typeforce":"PKU7","buffer":"dskh"}],"ieyO":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -28588,7 +28585,7 @@ Object.defineProperty(exports, '__esModule', {
 var output = require('./output');
 
 exports.output = output;
-},{"./output":"BCOX"}],"XYWP":[function(require,module,exports) {
+},{"./output":"hYj9"}],"SH0d":[function(require,module,exports) {
 'use strict'; // {signature} {pubKey}
 
 Object.defineProperty(exports, '__esModule', {
@@ -28611,7 +28608,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'witnessPubKeyHash input';
 };
-},{"../../script":"zCpQ"}],"dUCE":[function(require,module,exports) {
+},{"../../script":"Fa8t"}],"ytFA":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -28625,7 +28622,7 @@ exports.input = input;
 var output = require('./output');
 
 exports.output = output;
-},{"./input":"XYWP","./output":"G1IW"}],"SHiP":[function(require,module,exports) {
+},{"./input":"SH0d","./output":"eaHZ"}],"sLl4":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict'; // <scriptSig> {serialized scriptPubKey script}
 
@@ -28664,7 +28661,7 @@ exports.check = check;
 check.toJSON = function () {
   return 'witnessScriptHash input';
 };
-},{"../../script":"zCpQ","typeforce":"PKU7","../multisig":"dh2f","../pubkey":"E3Ef","../pubkeyhash":"Ozlu","buffer":"dskh"}],"bFJ9":[function(require,module,exports) {
+},{"../../script":"Fa8t","typeforce":"PKU7","../multisig":"tAvT","../pubkey":"l7Lh","../pubkeyhash":"Sk1x","buffer":"dskh"}],"kzpC":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -28678,7 +28675,7 @@ exports.input = input;
 var output = require('./output');
 
 exports.output = output;
-},{"./input":"SHiP","./output":"uP37"}],"YNBe":[function(require,module,exports) {
+},{"./input":"sLl4","./output":"n1wb"}],"I041":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -28756,7 +28753,7 @@ function classifyWitness(script, allowIncomplete) {
 }
 
 exports.witness = classifyWitness;
-},{"./script":"zCpQ","./templates/multisig":"dh2f","./templates/nulldata":"YIHc","./templates/pubkey":"E3Ef","./templates/pubkeyhash":"Ozlu","./templates/scripthash":"fq1j","./templates/witnesscommitment":"gtgV","./templates/witnesspubkeyhash":"dUCE","./templates/witnessscripthash":"bFJ9"}],"Y73L":[function(require,module,exports) {
+},{"./script":"Fa8t","./templates/multisig":"tAvT","./templates/nulldata":"fKxi","./templates/pubkey":"l7Lh","./templates/pubkeyhash":"Sk1x","./templates/scripthash":"g7LS","./templates/witnesscommitment":"ieyO","./templates/witnesspubkeyhash":"ytFA","./templates/witnessscripthash":"kzpC"}],"k6oC":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -29876,7 +29873,7 @@ function getSigningData(network, inputs, needsOutputs, tx, signParams, keyPair, 
     useLowR: !!useLowR
   };
 }
-},{"./address":"kxhz","./bufferutils":"kTjr","./classify":"YNBe","./crypto":"wHwg","./ecpair":"SRL3","./networks":"LuAr","./payments":"M8O6","./script":"zCpQ","./transaction":"kntI","./types":"mf8L","typeforce":"PKU7","buffer":"dskh"}],"Bcue":[function(require,module,exports) {
+},{"./address":"wUUe","./bufferutils":"jFwl","./classify":"I041","./crypto":"uv3I","./ecpair":"ZFsm","./networks":"rvS6","./payments":"kEsd","./script":"Fa8t","./transaction":"Y9UO","./types":"TQ2w","typeforce":"PKU7","buffer":"dskh"}],"bZOe":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -29930,7 +29927,7 @@ exports.Transaction = transaction_1.Transaction;
 var transaction_builder_1 = require('./transaction_builder');
 
 exports.TransactionBuilder = transaction_builder_1.TransactionBuilder;
-},{"bip32":"pelw","./address":"kxhz","./crypto":"wHwg","./ecpair":"SRL3","./networks":"LuAr","./payments":"M8O6","./script":"zCpQ","./block":"n2sH","./psbt":"GRRo","./transaction":"kntI","./transaction_builder":"Y73L"}],"iC5B":[function(require,module,exports) {
+},{"bip32":"pelw","./address":"wUUe","./crypto":"uv3I","./ecpair":"ZFsm","./networks":"rvS6","./payments":"kEsd","./script":"Fa8t","./block":"lHho","./psbt":"CbJH","./transaction":"Y9UO","./transaction_builder":"k6oC"}],"iC5B":[function(require,module,exports) {
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function (obj) { return typeof obj; }; } else { _typeof = function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /* eslint-env browser */
@@ -30446,23 +30443,18 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var bitcoinjs_lib_1 = require("bitcoinjs-lib");
 
-var form_data_1 = __importDefault(require("form-data"));
+var FormData = require("form-data"); // @ts-ignore
 
-var bn_js_1 = __importDefault(require("bn.js"));
 
-var ripemd160_1 = __importDefault(require("ripemd160"));
+var BN = require("bn.js");
+
+var RIPEMD160 = require("ripemd160");
 
 var errors_1 = require("./errors");
 
@@ -30601,7 +30593,7 @@ function () {
 
         var result = {
           units: 'BTC',
-          amount: new bn_js_1.default(String(namePrice.satoshis))
+          amount: new BN(String(namePrice.satoshis))
         };
         return result;
       });
@@ -30638,7 +30630,7 @@ function () {
 
         var result = {
           units: 'BTC',
-          amount: new bn_js_1.default(String(namespacePrice.satoshis))
+          amount: new BN(String(namespacePrice.satoshis))
         };
         return result;
       });
@@ -30673,12 +30665,12 @@ function () {
 
         var result = {
           units: namePrice.units,
-          amount: new bn_js_1.default(namePrice.amount)
+          amount: new BN(namePrice.amount)
         };
 
         if (namePrice.units === 'BTC') {
           // must be at least dust-minimum
-          var dustMin = new bn_js_1.default(String(_this3.DUST_MINIMUM));
+          var dustMin = new BN(String(_this3.DUST_MINIMUM));
 
           if (result.amount.ucmp(dustMin) < 0) {
             result.amount = dustMin;
@@ -30716,12 +30708,12 @@ function () {
 
         var result = {
           units: namespacePrice.units,
-          amount: new bn_js_1.default(namespacePrice.amount)
+          amount: new BN(namespacePrice.amount)
         };
 
         if (namespacePrice.units === 'BTC') {
           // must be at least dust-minimum
-          var dustMin = new bn_js_1.default(String(_this4.DUST_MINIMUM));
+          var dustMin = new BN(String(_this4.DUST_MINIMUM));
 
           if (result.amount.ucmp(dustMin) < 0) {
             result.amount = dustMin;
@@ -30927,7 +30919,7 @@ function () {
         if (resp.status === 200) {
           return resp.text().then(function (body) {
             var sha256 = bitcoinjs_lib_1.crypto.sha256(Buffer.from(body));
-            var h = new ripemd160_1.default().update(sha256).digest('hex');
+            var h = new RIPEMD160().update(sha256).digest('hex');
 
             if (h !== zonefileHash) {
               throw new Error("Zone file contents hash to ".concat(h, ", not ").concat(zonefileHash));
@@ -30966,8 +30958,8 @@ function () {
         // coerce all addresses, and convert credit/debit to biginteger
         var formattedStatus = Object.assign({}, accountStatus, {
           address: _this10.coerceAddress(accountStatus.address),
-          debit_value: new bn_js_1.default(String(accountStatus.debit_value)),
-          credit_value: new bn_js_1.default(String(accountStatus.credit_value))
+          debit_value: new BN(String(accountStatus.debit_value)),
+          credit_value: new BN(String(accountStatus.credit_value))
         });
         return formattedStatus;
       });
@@ -31002,8 +30994,8 @@ function () {
 
         return historyList.map(function (histEntry) {
           histEntry.address = _this11.coerceAddress(histEntry.address);
-          histEntry.debit_value = new bn_js_1.default(String(histEntry.debit_value));
-          histEntry.credit_value = new bn_js_1.default(String(histEntry.credit_value));
+          histEntry.debit_value = new BN(String(histEntry.debit_value));
+          histEntry.credit_value = new BN(String(histEntry.credit_value));
           return histEntry;
         });
       });
@@ -31040,8 +31032,8 @@ function () {
 
         return historyList.map(function (histEntry) {
           histEntry.address = _this12.coerceAddress(histEntry.address);
-          histEntry.debit_value = new bn_js_1.default(String(histEntry.debit_value));
-          histEntry.credit_value = new bn_js_1.default(String(histEntry.credit_value));
+          histEntry.debit_value = new BN(String(histEntry.debit_value));
+          histEntry.credit_value = new BN(String(histEntry.credit_value));
           return histEntry;
         });
       });
@@ -31088,7 +31080,7 @@ function () {
         if (resp.status === 404) {
           // talking to an older blockstack core node without the accounts API
           return Promise.resolve().then(function () {
-            return new bn_js_1.default('0');
+            return new BN('0');
           });
         } else if (resp.status !== 200) {
           throw new Error("Bad response status: ".concat(resp.status));
@@ -31106,7 +31098,7 @@ function () {
           balance = tokenBalance.balance;
         }
 
-        return new bn_js_1.default(balance);
+        return new BN(balance);
       });
     }
     /**
@@ -31846,7 +31838,7 @@ function (_BitcoinNetwork3) {
   }, {
     key: "broadcastTransaction",
     value: function broadcastTransaction(transaction) {
-      var form = new form_data_1.default();
+      var form = new FormData();
       form.append('tx', transaction);
       return fetchUtil_1.fetchPrivate("".concat(this.utxoProviderUrl, "/pushtx?cors=true"), {
         method: 'POST',
@@ -31910,7 +31902,7 @@ exports.network = {
     MAINNET_DEFAULT: MAINNET_DEFAULT
   }
 };
-},{"bitcoinjs-lib":"Bcue","form-data":"iC5B","bn.js":"BOxy","ripemd160":"quyi","./errors":"V7fS","./logger":"qjRs","./config":"GmrD","./fetchUtil":"bSeT","buffer":"dskh"}],"GmrD":[function(require,module,exports) {
+},{"bitcoinjs-lib":"bZOe","form-data":"iC5B","bn.js":"BOxy","ripemd160":"quyi","./errors":"V7fS","./logger":"qjRs","./config":"GmrD","./fetchUtil":"bSeT","buffer":"dskh"}],"GmrD":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31933,17 +31925,11 @@ var Buffer = require("buffer").Buffer;
 var global = arguments[3];
 "use strict";
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var url_1 = __importDefault(require("url"));
+var url = require("url");
 
 var bitcoinjs_lib_1 = require("bitcoinjs-lib");
 
@@ -32131,8 +32117,8 @@ exports.makeUUID4 = makeUUID4;
  */
 
 function isSameOriginAbsoluteUrl(uri1, uri2) {
-  var parsedUri1 = url_1.default.parse(uri1);
-  var parsedUri2 = url_1.default.parse(uri2);
+  var parsedUri1 = url.parse(uri1);
+  var parsedUri2 = url.parse(uri2);
   var port1 = parseInt(parsedUri1.port || '0', 10) | 0 || (parsedUri1.protocol === 'https:' ? 443 : 80);
   var port2 = parseInt(parsedUri2.port || '0', 10) | 0 || (parsedUri2.protocol === 'https:' ? 443 : 80);
   var match = {
@@ -32216,7 +32202,7 @@ function getGlobalObject(name) {
   }
 
   if (throwIfUnavailable) {
-    var errMsg = getAPIUsageErrorMessage(globalScope, name, usageDesc);
+    var errMsg = getAPIUsageErrorMessage(globalScope, name.toString(), usageDesc);
     logger_1.Logger.error(errMsg);
     throw new Error(errMsg);
   }
@@ -32252,7 +32238,7 @@ function getGlobalObjects(names) {
     logger_1.Logger.error("Error getting global scope: ".concat(error));
 
     if (throwIfUnavailable) {
-      var errMsg = getAPIUsageErrorMessage(globalScope, names[0], usageDesc);
+      var errMsg = getAPIUsageErrorMessage(globalScope, names[0].toString(), usageDesc);
       logger_1.Logger.error(errMsg);
       throw errMsg;
     } else if (returnEmptyObject) {
@@ -32272,7 +32258,7 @@ function getGlobalObjects(names) {
         if (obj) {
           result[name] = obj;
         } else if (throwIfUnavailable) {
-          var _errMsg = getAPIUsageErrorMessage(globalScope, name, usageDesc);
+          var _errMsg = getAPIUsageErrorMessage(globalScope, name.toString(), usageDesc);
 
           logger_1.Logger.error(_errMsg);
           throw new Error(_errMsg);
@@ -32282,7 +32268,7 @@ function getGlobalObjects(names) {
       }
     } catch (error) {
       if (throwIfUnavailable) {
-        var _errMsg2 = getAPIUsageErrorMessage(globalScope, name, usageDesc);
+        var _errMsg2 = getAPIUsageErrorMessage(globalScope, name.toString(), usageDesc);
 
         logger_1.Logger.error(_errMsg2);
         throw new Error(_errMsg2);
@@ -32294,7 +32280,7 @@ function getGlobalObjects(names) {
 }
 
 exports.getGlobalObjects = getGlobalObjects;
-},{"url":"Mej7","bitcoinjs-lib":"Bcue","./config":"GmrD","./logger":"qjRs","buffer":"dskh"}],"k09H":[function(require,module,exports) {
+},{"url":"Mej7","bitcoinjs-lib":"bZOe","./config":"GmrD","./logger":"qjRs","buffer":"dskh"}],"k09H":[function(require,module,exports) {
 "use strict";
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40939,4418 +40925,717 @@ asn1.constants = require('./asn1/constants');
 asn1.decoders = require('./asn1/decoders');
 asn1.encoders = require('./asn1/encoders');
 
-},{"bn.js":"BOxy","./asn1/api":"gOko","./asn1/base":"G4cX","./asn1/constants":"yW9S","./asn1/decoders":"Sn5H","./asn1/encoders":"YGCS"}],"hKQx":[function(require,module,exports) {
+},{"bn.js":"BOxy","./asn1/api":"gOko","./asn1/base":"G4cX","./asn1/constants":"yW9S","./asn1/decoders":"Sn5H","./asn1/encoders":"YGCS"}],"sYCp":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
-'use strict'
-
-var asn1 = require('asn1.js'),
-    BN = require('bn.js'),
-    EC = require('elliptic').ec
-
-var ECPrivateKeyASN = asn1.define('ECPrivateKey', function() {
-    this.seq().obj(
-        this.key('version').int(),
-        this.key('privateKey').octstr(),
-        this.key('parameters').explicit(0).objid().optional(),
-        this.key('publicKey').explicit(1).bitstr().optional()
-    )
-})
-
-var SubjectPublicKeyInfoASN = asn1.define('SubjectPublicKeyInfo', function() {
-    this.seq().obj(
-        this.key('algorithm').seq().obj(
-            this.key("id").objid(),
-            this.key("curve").objid()
-        ),
-        this.key('pub').bitstr()
-    )
-})
-
-var curves = {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const bn_js_1 = __importDefault(require("bn.js"));
+const elliptic_1 = require("elliptic");
+// @ts-ignore
+const asn1_js_1 = __importDefault(require("asn1.js"));
+const ECPrivateKeyASN = asn1_js_1.default.define('ECPrivateKey', function () {
+    // @ts-ignore
+    const self = this;
+    self.seq().obj(self.key('version').int(), self.key('privateKey').octstr(), self.key('parameters').explicit(0).objid().optional(), self.key('publicKey').explicit(1).bitstr().optional());
+});
+const SubjectPublicKeyInfoASN = asn1_js_1.default.define('SubjectPublicKeyInfo', function () {
+    // @ts-ignore
+    const self = this;
+    self.seq().obj(self.key('algorithm').seq().obj(self.key("id").objid(), self.key("curve").objid()), self.key('pub').bitstr());
+});
+const curves = {
     secp256k1: {
         curveParameters: [1, 3, 132, 0, 10],
-        privatePEMOptions: {label: 'EC PRIVATE KEY'},
-        publicPEMOptions: {label: 'PUBLIC KEY'},
-        curve: new EC('secp256k1')
+        privatePEMOptions: { label: 'EC PRIVATE KEY' },
+        publicPEMOptions: { label: 'PUBLIC KEY' },
+        curve: new elliptic_1.ec('secp256k1')
     }
-}
-
-function assert(val, msg) {
-    if (!val) {
-        throw new Error(msg || 'Assertion failed')
+};
+class KeyEncoder {
+    constructor(options) {
+        if (typeof options === 'string') {
+            if (options !== 'secp256k1') {
+                throw new Error('Unknown curve ' + options);
+            }
+            options = curves[options];
+        }
+        this.options = options;
+        this.algorithmID = [1, 2, 840, 10045, 2, 1];
     }
-}
-
-function KeyEncoder(options) {
-    if (typeof options === 'string') {
-        assert(curves.hasOwnProperty(options), 'Unknown curve ' + options)
-        options = curves[options]
+    privateKeyObject(rawPrivateKey, rawPublicKey) {
+        const privateKeyObject = {
+            version: new bn_js_1.default(1),
+            privateKey: Buffer.from(rawPrivateKey, 'hex'),
+            parameters: this.options.curveParameters
+        };
+        if (rawPublicKey) {
+            privateKeyObject.publicKey = {
+                unused: 0,
+                data: Buffer.from(rawPublicKey, 'hex')
+            };
+        }
+        return privateKeyObject;
     }
-    this.options = options
-    this.algorithmID = [1, 2, 840, 10045, 2, 1]
-}
-
-KeyEncoder.ECPrivateKeyASN = ECPrivateKeyASN
-KeyEncoder.SubjectPublicKeyInfoASN = SubjectPublicKeyInfoASN
-
-KeyEncoder.prototype.privateKeyObject = function(rawPrivateKey, rawPublicKey) {
-    var privateKeyObject = {
-        version: new BN(1),
-        privateKey: new Buffer(rawPrivateKey, 'hex'),
-        parameters: this.options.curveParameters
+    publicKeyObject(rawPublicKey) {
+        return {
+            algorithm: {
+                id: this.algorithmID,
+                curve: this.options.curveParameters
+            },
+            pub: {
+                unused: 0,
+                data: Buffer.from(rawPublicKey, 'hex')
+            }
+        };
     }
-
-    if (rawPublicKey) {
-        privateKeyObject.publicKey = {
-            unused: 0,
-            data: new Buffer(rawPublicKey, 'hex')
+    encodePrivate(privateKey, originalFormat, destinationFormat) {
+        let privateKeyObject;
+        /* Parse the incoming private key and convert it to a private key object */
+        if (originalFormat === 'raw') {
+            if (typeof privateKey !== 'string') {
+                throw 'private key must be a string';
+            }
+            let keyPair = this.options.curve.keyFromPrivate(privateKey, 'hex');
+            let rawPublicKey = keyPair.getPublic('hex');
+            privateKeyObject = this.privateKeyObject(privateKey, rawPublicKey);
+        }
+        else if (originalFormat === 'der') {
+            if (typeof privateKey !== 'string') {
+                // do nothing
+            }
+            else if (typeof privateKey === 'string') {
+                privateKey = Buffer.from(privateKey, 'hex');
+            }
+            else {
+                throw 'private key must be a buffer or a string';
+            }
+            privateKeyObject = ECPrivateKeyASN.decode(privateKey, 'der');
+        }
+        else if (originalFormat === 'pem') {
+            if (typeof privateKey !== 'string') {
+                throw 'private key must be a string';
+            }
+            privateKeyObject = ECPrivateKeyASN.decode(privateKey, 'pem', this.options.privatePEMOptions);
+        }
+        else {
+            throw 'invalid private key format';
+        }
+        /* Export the private key object to the desired format */
+        if (destinationFormat === 'raw') {
+            return privateKeyObject.privateKey.toString('hex');
+        }
+        else if (destinationFormat === 'der') {
+            return ECPrivateKeyASN.encode(privateKeyObject, 'der').toString('hex');
+        }
+        else if (destinationFormat === 'pem') {
+            return ECPrivateKeyASN.encode(privateKeyObject, 'pem', this.options.privatePEMOptions);
+        }
+        else {
+            throw 'invalid destination format for private key';
         }
     }
-
-    return privateKeyObject
-}
-
-KeyEncoder.prototype.publicKeyObject = function(rawPublicKey) {
-    return {
-        algorithm: {
-            id: this.algorithmID,
-            curve: this.options.curveParameters
-        },
-        pub: {
-            unused: 0,
-            data: new Buffer(rawPublicKey, 'hex')
+    encodePublic(publicKey, originalFormat, destinationFormat) {
+        let publicKeyObject;
+        /* Parse the incoming public key and convert it to a public key object */
+        if (originalFormat === 'raw') {
+            if (typeof publicKey !== 'string') {
+                throw 'public key must be a string';
+            }
+            publicKeyObject = this.publicKeyObject(publicKey);
+        }
+        else if (originalFormat === 'der') {
+            if (typeof publicKey !== 'string') {
+                // do nothing
+            }
+            else if (typeof publicKey === 'string') {
+                publicKey = Buffer.from(publicKey, 'hex');
+            }
+            else {
+                throw 'public key must be a buffer or a string';
+            }
+            publicKeyObject = SubjectPublicKeyInfoASN.decode(publicKey, 'der');
+        }
+        else if (originalFormat === 'pem') {
+            if (typeof publicKey !== 'string') {
+                throw 'public key must be a string';
+            }
+            publicKeyObject = SubjectPublicKeyInfoASN.decode(publicKey, 'pem', this.options.publicPEMOptions);
+        }
+        else {
+            throw 'invalid public key format';
+        }
+        /* Export the private key object to the desired format */
+        if (destinationFormat === 'raw') {
+            return publicKeyObject.pub.data.toString('hex');
+        }
+        else if (destinationFormat === 'der') {
+            return SubjectPublicKeyInfoASN.encode(publicKeyObject, 'der').toString('hex');
+        }
+        else if (destinationFormat === 'pem') {
+            return SubjectPublicKeyInfoASN.encode(publicKeyObject, 'pem', this.options.publicPEMOptions);
+        }
+        else {
+            throw 'invalid destination format for public key';
         }
     }
 }
+KeyEncoder.ECPrivateKeyASN = ECPrivateKeyASN;
+KeyEncoder.SubjectPublicKeyInfoASN = SubjectPublicKeyInfoASN;
+exports.default = KeyEncoder;
 
-KeyEncoder.prototype.encodePrivate = function(privateKey, originalFormat, destinationFormat) {
-    var privateKeyObject
-
-    /* Parse the incoming private key and convert it to a private key object */
-    if (originalFormat === 'raw') {
-        if (!typeof privateKey === 'string') {
-            throw 'private key must be a string'
-        }
-        var privateKeyObject = this.options.curve.keyFromPrivate(privateKey, 'hex'),
-            rawPublicKey = privateKeyObject.getPublic('hex')
-        privateKeyObject = this.privateKeyObject(privateKey, rawPublicKey)
-    } else if (originalFormat === 'der') {
-        if (typeof privateKey === 'buffer') {
-            // do nothing
-        } else if (typeof privateKey === 'string') {
-            privateKey = new Buffer(privateKey, 'hex')
-        } else {
-            throw 'private key must be a buffer or a string'
-        }
-        privateKeyObject = ECPrivateKeyASN.decode(privateKey, 'der')
-    } else if (originalFormat === 'pem') {
-        if (!typeof privateKey === 'string') {
-            throw 'private key must be a string'
-        }
-        privateKeyObject = ECPrivateKeyASN.decode(privateKey, 'pem', this.options.privatePEMOptions)
-    } else {
-        throw 'invalid private key format'
-    }
-
-    /* Export the private key object to the desired format */
-    if (destinationFormat === 'raw') {
-        return privateKeyObject.privateKey.toString('hex')
-    } else if (destinationFormat === 'der') {
-        return ECPrivateKeyASN.encode(privateKeyObject, 'der').toString('hex')
-    } else if (destinationFormat === 'pem') {
-        return ECPrivateKeyASN.encode(privateKeyObject, 'pem', this.options.privatePEMOptions)
-    } else {
-        throw 'invalid destination format for private key'
-    }
-}
-
-KeyEncoder.prototype.encodePublic = function(publicKey, originalFormat, destinationFormat) {
-    var publicKeyObject
-
-    /* Parse the incoming public key and convert it to a public key object */
-    if (originalFormat === 'raw') {
-        if (!typeof publicKey === 'string') {
-            throw 'public key must be a string'
-        }
-        publicKeyObject = this.publicKeyObject(publicKey)
-    } else if (originalFormat === 'der') {
-        if (typeof publicKey === 'buffer') {
-            // do nothing
-        } else if (typeof publicKey === 'string') {
-            publicKey = new Buffer(publicKey, 'hex')
-        } else {
-            throw 'public key must be a buffer or a string'
-        }
-        publicKeyObject = SubjectPublicKeyInfoASN.decode(publicKey, 'der')
-    } else if (originalFormat === 'pem') {
-        if (!typeof publicKey === 'string') {
-            throw 'public key must be a string'
-        }
-        publicKeyObject = SubjectPublicKeyInfoASN.decode(publicKey, 'pem', this.options.publicPEMOptions)
-    } else {
-        throw 'invalid public key format'
-    }
-
-    /* Export the private key object to the desired format */
-    if (destinationFormat === 'raw') {
-        return publicKeyObject.pub.data.toString('hex')
-    } else if (destinationFormat === 'der') {
-        return SubjectPublicKeyInfoASN.encode(publicKeyObject, 'der').toString('hex')
-    } else if (destinationFormat === 'pem') {
-        return SubjectPublicKeyInfoASN.encode(publicKeyObject, 'pem', this.options.publicPEMOptions)
-    } else {
-        throw 'invalid destination format for public key'
-    }
-}
-
-module.exports = KeyEncoder
-},{"asn1.js":"NNmB","bn.js":"BOxy","elliptic":"xha3","buffer":"dskh"}],"tVya":[function(require,module,exports) {
-'use strict'
-
-module.exports = require('./lib/key-encoder')
-},{"./lib/key-encoder":"hKQx"}],"d3m2":[function(require,module,exports) {
+},{"bn.js":"BOxy","elliptic":"xha3","asn1.js":"NNmB","buffer":"dskh"}],"le8S":[function(require,module,exports) {
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = assertString;
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-
-function assertString(input) {
-  var isString = typeof input === 'string' || input instanceof String;
-
-  if (!isString) {
-    var invalidType;
-
-    if (input === null) {
-      invalidType = 'null';
-    } else {
-      invalidType = _typeof(input);
-
-      if (invalidType === 'object' && input.constructor && input.constructor.hasOwnProperty('name')) {
-        invalidType = input.constructor.name;
-      } else {
-        invalidType = "a ".concat(invalidType);
-      }
-    }
-
-    throw new TypeError("Expected string but received ".concat(invalidType, "."));
-  }
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{}],"G1eO":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = toDate;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function toDate(date) {
-  (0, _assertString.default)(date);
-  date = Date.parse(date);
-  return !isNaN(date) ? new Date(date) : null;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"b3Og":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = toFloat;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function toFloat(str) {
-  (0, _assertString.default)(str);
-  return parseFloat(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"jURK":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = toInt;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function toInt(str, radix) {
-  (0, _assertString.default)(str);
-  return parseInt(str, radix || 10);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"rSZP":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = toBoolean;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function toBoolean(str, strict) {
-  (0, _assertString.default)(str);
-
-  if (strict) {
-    return str === '1' || str === 'true';
-  }
-
-  return str !== '0' && str !== 'false' && str !== '';
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"JWD8":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = equals;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function equals(str, comparison) {
-  (0, _assertString.default)(str);
-  return str === comparison;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"Gmuz":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = toString;
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-
-function toString(input) {
-  if (_typeof(input) === 'object' && input !== null) {
-    if (typeof input.toString === 'function') {
-      input = input.toString();
-    } else {
-      input = '[object Object]';
-    }
-  } else if (input === null || typeof input === 'undefined' || isNaN(input) && !input.length) {
-    input = '';
-  }
-
-  return String(input);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{}],"EKzH":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = contains;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _toString = _interopRequireDefault(require("./util/toString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function contains(str, elem) {
-  (0, _assertString.default)(str);
-  return str.indexOf((0, _toString.default)(elem)) >= 0;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./util/toString":"Gmuz"}],"J5fp":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = matches;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function matches(str, pattern, modifiers) {
-  (0, _assertString.default)(str);
-
-  if (Object.prototype.toString.call(pattern) !== '[object RegExp]') {
-    pattern = new RegExp(pattern, modifiers);
-  }
-
-  return pattern.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"hxfi":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = merge;
-
-function merge() {
-  var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var defaults = arguments.length > 1 ? arguments[1] : undefined;
-
-  for (var key in defaults) {
-    if (typeof obj[key] === 'undefined') {
-      obj[key] = defaults[key];
-    }
-  }
-
-  return obj;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{}],"jY1m":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isByteLength;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-/* eslint-disable prefer-rest-params */
-
-
-function isByteLength(str, options) {
-  (0, _assertString.default)(str);
-  var min;
-  var max;
-
-  if (_typeof(options) === 'object') {
-    min = options.min || 0;
-    max = options.max;
-  } else {
-    // backwards compatibility: isByteLength(str, min [, max])
-    min = arguments[1];
-    max = arguments[2];
-  }
-
-  var len = encodeURI(str).split(/%..|./).length - 1;
-  return len >= min && (typeof max === 'undefined' || len <= max);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"KGu6":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isFQDN;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _merge = _interopRequireDefault(require("./util/merge"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var default_fqdn_options = {
-  require_tld: true,
-  allow_underscores: false,
-  allow_trailing_dot: false
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-
-function isFQDN(str, options) {
-  (0, _assertString.default)(str);
-  options = (0, _merge.default)(options, default_fqdn_options);
-  /* Remove the optional trailing dot before checking validity */
-
-  if (options.allow_trailing_dot && str[str.length - 1] === '.') {
-    str = str.substring(0, str.length - 1);
-  }
-
-  var parts = str.split('.');
-
-  for (var i = 0; i < parts.length; i++) {
-    if (parts[i].length > 63) {
-      return false;
-    }
-  }
-
-  if (options.require_tld) {
-    var tld = parts.pop();
-
-    if (!parts.length || !/^([a-z\u00a1-\uffff]{2,}|xn[a-z0-9-]{2,})$/i.test(tld)) {
-      return false;
-    } // disallow spaces
-
-
-    if (/[\s\u2002-\u200B\u202F\u205F\u3000\uFEFF\uDB40\uDC20]/.test(tld)) {
-      return false;
-    }
-  }
-
-  for (var part, _i = 0; _i < parts.length; _i++) {
-    part = parts[_i];
-
-    if (options.allow_underscores) {
-      part = part.replace(/_/g, '');
-    }
-
-    if (!/^[a-z\u00a1-\uffff0-9-]+$/i.test(part)) {
-      return false;
-    } // disallow full-width chars
-
-
-    if (/[\uff01-\uff5e]/.test(part)) {
-      return false;
-    }
-
-    if (part[0] === '-' || part[part.length - 1] === '-') {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./util/merge":"hxfi"}],"NHAn":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isIP;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var ipv4Maybe = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/;
-var ipv6Block = /^[0-9A-F]{1,4}$/i;
-
-function isIP(str) {
-  var version = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-  (0, _assertString.default)(str);
-  version = String(version);
-
-  if (!version) {
-    return isIP(str, 4) || isIP(str, 6);
-  } else if (version === '4') {
-    if (!ipv4Maybe.test(str)) {
-      return false;
-    }
-
-    var parts = str.split('.').sort(function (a, b) {
-      return a - b;
-    });
-    return parts[3] <= 255;
-  } else if (version === '6') {
-    var blocks = str.split(':');
-    var foundOmissionBlock = false; // marker to indicate ::
-    // At least some OS accept the last 32 bits of an IPv6 address
-    // (i.e. 2 of the blocks) in IPv4 notation, and RFC 3493 says
-    // that '::ffff:a.b.c.d' is valid for IPv4-mapped IPv6 addresses,
-    // and '::a.b.c.d' is deprecated, but also valid.
-
-    var foundIPv4TransitionBlock = isIP(blocks[blocks.length - 1], 4);
-    var expectedNumberOfBlocks = foundIPv4TransitionBlock ? 7 : 8;
-
-    if (blocks.length > expectedNumberOfBlocks) {
-      return false;
-    } // initial or final ::
-
-
-    if (str === '::') {
-      return true;
-    } else if (str.substr(0, 2) === '::') {
-      blocks.shift();
-      blocks.shift();
-      foundOmissionBlock = true;
-    } else if (str.substr(str.length - 2) === '::') {
-      blocks.pop();
-      blocks.pop();
-      foundOmissionBlock = true;
-    }
-
-    for (var i = 0; i < blocks.length; ++i) {
-      // test for a :: which can not be at the string start/end
-      // since those cases have been handled above
-      if (blocks[i] === '' && i > 0 && i < blocks.length - 1) {
-        if (foundOmissionBlock) {
-          return false; // multiple :: in address
-        }
-
-        foundOmissionBlock = true;
-      } else if (foundIPv4TransitionBlock && i === blocks.length - 1) {// it has been checked before that the last
-        // block is a valid IPv4 address
-      } else if (!ipv6Block.test(blocks[i])) {
-        return false;
-      }
-    }
-
-    if (foundOmissionBlock) {
-      return blocks.length >= 1;
-    }
-
-    return blocks.length === expectedNumberOfBlocks;
-  }
-
-  return false;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"khkS":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isEmail;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _merge = _interopRequireDefault(require("./util/merge"));
-
-var _isByteLength = _interopRequireDefault(require("./isByteLength"));
-
-var _isFQDN = _interopRequireDefault(require("./isFQDN"));
-
-var _isIP = _interopRequireDefault(require("./isIP"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var default_email_options = {
-  allow_display_name: false,
-  require_display_name: false,
-  allow_utf8_local_part: true,
-  require_tld: true
-};
-/* eslint-disable max-len */
-
-/* eslint-disable no-control-regex */
-
-var displayName = /^[a-z\d!#\$%&'\*\+\-\/=\?\^_`{\|}~\.\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+[a-z\d!#\$%&'\*\+\-\/=\?\^_`{\|}~\,\.\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\s]*<(.+)>$/i;
-var emailUserPart = /^[a-z\d!#\$%&'\*\+\-\/=\?\^_`{\|}~]+$/i;
-var gmailUserPart = /^[a-z\d]+$/;
-var quotedEmailUser = /^([\s\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e]|(\\[\x01-\x09\x0b\x0c\x0d-\x7f]))*$/i;
-var emailUserUtf8Part = /^[a-z\d!#\$%&'\*\+\-\/=\?\^_`{\|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+$/i;
-var quotedEmailUserUtf8 = /^([\s\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|(\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*$/i;
-/* eslint-enable max-len */
-
-/* eslint-enable no-control-regex */
-
-function isEmail(str, options) {
-  (0, _assertString.default)(str);
-  options = (0, _merge.default)(options, default_email_options);
-
-  if (options.require_display_name || options.allow_display_name) {
-    var display_email = str.match(displayName);
-
-    if (display_email) {
-      str = display_email[1];
-    } else if (options.require_display_name) {
-      return false;
-    }
-  }
-
-  var parts = str.split('@');
-  var domain = parts.pop();
-  var user = parts.join('@');
-  var lower_domain = domain.toLowerCase();
-
-  if (options.domain_specific_validation && (lower_domain === 'gmail.com' || lower_domain === 'googlemail.com')) {
-    /*
-      Previously we removed dots for gmail addresses before validating.
-      This was removed because it allows `multiple..dots@gmail.com`
-      to be reported as valid, but it is not.
-      Gmail only normalizes single dots, removing them from here is pointless,
-      should be done in normalizeEmail
-    */
-    user = user.toLowerCase(); // Removing sub-address from username before gmail validation
-
-    var username = user.split('+')[0]; // Dots are not included in gmail length restriction
-
-    if (!(0, _isByteLength.default)(username.replace('.', ''), {
-      min: 6,
-      max: 30
-    })) {
-      return false;
-    }
-
-    var _user_parts = username.split('.');
-
-    for (var i = 0; i < _user_parts.length; i++) {
-      if (!gmailUserPart.test(_user_parts[i])) {
-        return false;
-      }
-    }
-  }
-
-  if (!(0, _isByteLength.default)(user, {
-    max: 64
-  }) || !(0, _isByteLength.default)(domain, {
-    max: 254
-  })) {
-    return false;
-  }
-
-  if (!(0, _isFQDN.default)(domain, {
-    require_tld: options.require_tld
-  })) {
-    if (!options.allow_ip_domain) {
-      return false;
-    }
-
-    if (!(0, _isIP.default)(domain)) {
-      if (!domain.startsWith('[') || !domain.endsWith(']')) {
-        return false;
-      }
-
-      var noBracketdomain = domain.substr(1, domain.length - 2);
-
-      if (noBracketdomain.length === 0 || !(0, _isIP.default)(noBracketdomain)) {
-        return false;
-      }
-    }
-  }
-
-  if (user[0] === '"') {
-    user = user.slice(1, user.length - 1);
-    return options.allow_utf8_local_part ? quotedEmailUserUtf8.test(user) : quotedEmailUser.test(user);
-  }
-
-  var pattern = options.allow_utf8_local_part ? emailUserUtf8Part : emailUserPart;
-  var user_parts = user.split('.');
-
-  for (var _i = 0; _i < user_parts.length; _i++) {
-    if (!pattern.test(user_parts[_i])) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./util/merge":"hxfi","./isByteLength":"jY1m","./isFQDN":"KGu6","./isIP":"NHAn"}],"XMVV":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isURL;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _isFQDN = _interopRequireDefault(require("./isFQDN"));
-
-var _isIP = _interopRequireDefault(require("./isIP"));
-
-var _merge = _interopRequireDefault(require("./util/merge"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var default_url_options = {
-  protocols: ['http', 'https', 'ftp'],
-  require_tld: true,
-  require_protocol: false,
-  require_host: true,
-  require_valid_protocol: true,
-  allow_underscores: false,
-  allow_trailing_dot: false,
-  allow_protocol_relative_urls: false
-};
-var wrapped_ipv6 = /^\[([^\]]+)\](?::([0-9]+))?$/;
-
-function isRegExp(obj) {
-  return Object.prototype.toString.call(obj) === '[object RegExp]';
-}
-
-function checkHost(host, matches) {
-  for (var i = 0; i < matches.length; i++) {
-    var match = matches[i];
-
-    if (host === match || isRegExp(match) && match.test(host)) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-function isURL(url, options) {
-  (0, _assertString.default)(url);
-
-  if (!url || url.length >= 2083 || /[\s<>]/.test(url)) {
-    return false;
-  }
-
-  if (url.indexOf('mailto:') === 0) {
-    return false;
-  }
-
-  options = (0, _merge.default)(options, default_url_options);
-  var protocol, auth, host, hostname, port, port_str, split, ipv6;
-  split = url.split('#');
-  url = split.shift();
-  split = url.split('?');
-  url = split.shift();
-  split = url.split('://');
-
-  if (split.length > 1) {
-    protocol = split.shift().toLowerCase();
-
-    if (options.require_valid_protocol && options.protocols.indexOf(protocol) === -1) {
-      return false;
-    }
-  } else if (options.require_protocol) {
-    return false;
-  } else if (url.substr(0, 2) === '//') {
-    if (!options.allow_protocol_relative_urls) {
-      return false;
-    }
-
-    split[0] = url.substr(2);
-  }
-
-  url = split.join('://');
-
-  if (url === '') {
-    return false;
-  }
-
-  split = url.split('/');
-  url = split.shift();
-
-  if (url === '' && !options.require_host) {
-    return true;
-  }
-
-  split = url.split('@');
-
-  if (split.length > 1) {
-    if (options.disallow_auth) {
-      return false;
-    }
-
-    auth = split.shift();
-
-    if (auth.indexOf(':') >= 0 && auth.split(':').length > 2) {
-      return false;
-    }
-  }
-
-  hostname = split.join('@');
-  port_str = null;
-  ipv6 = null;
-  var ipv6_match = hostname.match(wrapped_ipv6);
-
-  if (ipv6_match) {
-    host = '';
-    ipv6 = ipv6_match[1];
-    port_str = ipv6_match[2] || null;
-  } else {
-    split = hostname.split(':');
-    host = split.shift();
-
-    if (split.length) {
-      port_str = split.join(':');
-    }
-  }
-
-  if (port_str !== null) {
-    port = parseInt(port_str, 10);
-
-    if (!/^[0-9]+$/.test(port_str) || port <= 0 || port > 65535) {
-      return false;
-    }
-  }
-
-  if (!(0, _isIP.default)(host) && !(0, _isFQDN.default)(host, options) && (!ipv6 || !(0, _isIP.default)(ipv6, 6))) {
-    return false;
-  }
-
-  host = host || ipv6;
-
-  if (options.host_whitelist && !checkHost(host, options.host_whitelist)) {
-    return false;
-  }
-
-  if (options.host_blacklist && checkHost(host, options.host_blacklist)) {
-    return false;
-  }
-
-  return true;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./isFQDN":"KGu6","./isIP":"NHAn","./util/merge":"hxfi"}],"Rpi3":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isMACAddress;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var macAddress = /^([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])$/;
-var macAddressNoColons = /^([0-9a-fA-F]){12}$/;
-
-function isMACAddress(str, options) {
-  (0, _assertString.default)(str);
-
-  if (options && options.no_colons) {
-    return macAddressNoColons.test(str);
-  }
-
-  return macAddress.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"fBjy":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isIPRange;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _isIP = _interopRequireDefault(require("./isIP"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var subnetMaybe = /^\d{1,2}$/;
-
-function isIPRange(str) {
-  (0, _assertString.default)(str);
-  var parts = str.split('/'); // parts[0] -> ip, parts[1] -> subnet
-
-  if (parts.length !== 2) {
-    return false;
-  }
-
-  if (!subnetMaybe.test(parts[1])) {
-    return false;
-  } // Disallow preceding 0 i.e. 01, 02, ...
-
-
-  if (parts[1].length > 1 && parts[1].startsWith('0')) {
-    return false;
-  }
-
-  return (0, _isIP.default)(parts[0], 4) && parts[1] <= 32 && parts[1] >= 0;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./isIP":"NHAn"}],"nMXH":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isBoolean;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isBoolean(str) {
-  (0, _assertString.default)(str);
-  return ['true', 'false', '1', '0'].indexOf(str) >= 0;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"qIyI":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.commaDecimal = exports.dotDecimal = exports.arabicLocales = exports.englishLocales = exports.decimal = exports.alphanumeric = exports.alpha = void 0;
-var alpha = {
-  'en-US': /^[A-Z]+$/i,
-  'bg-BG': /^[А-Я]+$/i,
-  'cs-CZ': /^[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]+$/i,
-  'da-DK': /^[A-ZÆØÅ]+$/i,
-  'de-DE': /^[A-ZÄÖÜß]+$/i,
-  'el-GR': /^[Α-ω]+$/i,
-  'es-ES': /^[A-ZÁÉÍÑÓÚÜ]+$/i,
-  'fr-FR': /^[A-ZÀÂÆÇÉÈÊËÏÎÔŒÙÛÜŸ]+$/i,
-  'it-IT': /^[A-ZÀÉÈÌÎÓÒÙ]+$/i,
-  'nb-NO': /^[A-ZÆØÅ]+$/i,
-  'nl-NL': /^[A-ZÁÉËÏÓÖÜÚ]+$/i,
-  'nn-NO': /^[A-ZÆØÅ]+$/i,
-  'hu-HU': /^[A-ZÁÉÍÓÖŐÚÜŰ]+$/i,
-  'pl-PL': /^[A-ZĄĆĘŚŁŃÓŻŹ]+$/i,
-  'pt-PT': /^[A-ZÃÁÀÂÇÉÊÍÕÓÔÚÜ]+$/i,
-  'ru-RU': /^[А-ЯЁ]+$/i,
-  'sl-SI': /^[A-ZČĆĐŠŽ]+$/i,
-  'sk-SK': /^[A-ZÁČĎÉÍŇÓŠŤÚÝŽĹŔĽÄÔ]+$/i,
-  'sr-RS@latin': /^[A-ZČĆŽŠĐ]+$/i,
-  'sr-RS': /^[А-ЯЂЈЉЊЋЏ]+$/i,
-  'sv-SE': /^[A-ZÅÄÖ]+$/i,
-  'tr-TR': /^[A-ZÇĞİıÖŞÜ]+$/i,
-  'uk-UA': /^[А-ЩЬЮЯЄIЇҐі]+$/i,
-  'ku-IQ': /^[ئابپتجچحخدرڕزژسشعغفڤقکگلڵمنوۆھەیێيطؤثآإأكضصةظذ]+$/i,
-  ar: /^[ءآأؤإئابةتثجحخدذرزسشصضطظعغفقكلمنهوىيًٌٍَُِّْٰ]+$/
-};
-exports.alpha = alpha;
-var alphanumeric = {
-  'en-US': /^[0-9A-Z]+$/i,
-  'bg-BG': /^[0-9А-Я]+$/i,
-  'cs-CZ': /^[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]+$/i,
-  'da-DK': /^[0-9A-ZÆØÅ]+$/i,
-  'de-DE': /^[0-9A-ZÄÖÜß]+$/i,
-  'el-GR': /^[0-9Α-ω]+$/i,
-  'es-ES': /^[0-9A-ZÁÉÍÑÓÚÜ]+$/i,
-  'fr-FR': /^[0-9A-ZÀÂÆÇÉÈÊËÏÎÔŒÙÛÜŸ]+$/i,
-  'it-IT': /^[0-9A-ZÀÉÈÌÎÓÒÙ]+$/i,
-  'hu-HU': /^[0-9A-ZÁÉÍÓÖŐÚÜŰ]+$/i,
-  'nb-NO': /^[0-9A-ZÆØÅ]+$/i,
-  'nl-NL': /^[0-9A-ZÁÉËÏÓÖÜÚ]+$/i,
-  'nn-NO': /^[0-9A-ZÆØÅ]+$/i,
-  'pl-PL': /^[0-9A-ZĄĆĘŚŁŃÓŻŹ]+$/i,
-  'pt-PT': /^[0-9A-ZÃÁÀÂÇÉÊÍÕÓÔÚÜ]+$/i,
-  'ru-RU': /^[0-9А-ЯЁ]+$/i,
-  'sl-SI': /^[0-9A-ZČĆĐŠŽ]+$/i,
-  'sk-SK': /^[0-9A-ZÁČĎÉÍŇÓŠŤÚÝŽĹŔĽÄÔ]+$/i,
-  'sr-RS@latin': /^[0-9A-ZČĆŽŠĐ]+$/i,
-  'sr-RS': /^[0-9А-ЯЂЈЉЊЋЏ]+$/i,
-  'sv-SE': /^[0-9A-ZÅÄÖ]+$/i,
-  'tr-TR': /^[0-9A-ZÇĞİıÖŞÜ]+$/i,
-  'uk-UA': /^[0-9А-ЩЬЮЯЄIЇҐі]+$/i,
-  'ku-IQ': /^[٠١٢٣٤٥٦٧٨٩0-9ئابپتجچحخدرڕزژسشعغفڤقکگلڵمنوۆھەیێيطؤثآإأكضصةظذ]+$/i,
-  ar: /^[٠١٢٣٤٥٦٧٨٩0-9ءآأؤإئابةتثجحخدذرزسشصضطظعغفقكلمنهوىيًٌٍَُِّْٰ]+$/
-};
-exports.alphanumeric = alphanumeric;
-var decimal = {
-  'en-US': '.',
-  ar: '٫'
-};
-exports.decimal = decimal;
-var englishLocales = ['AU', 'GB', 'HK', 'IN', 'NZ', 'ZA', 'ZM'];
-exports.englishLocales = englishLocales;
-
-for (var locale, i = 0; i < englishLocales.length; i++) {
-  locale = "en-".concat(englishLocales[i]);
-  alpha[locale] = alpha['en-US'];
-  alphanumeric[locale] = alphanumeric['en-US'];
-  decimal[locale] = decimal['en-US'];
-} // Source: http://www.localeplanet.com/java/
-
-
-var arabicLocales = ['AE', 'BH', 'DZ', 'EG', 'IQ', 'JO', 'KW', 'LB', 'LY', 'MA', 'QM', 'QA', 'SA', 'SD', 'SY', 'TN', 'YE'];
-exports.arabicLocales = arabicLocales;
-
-for (var _locale, _i = 0; _i < arabicLocales.length; _i++) {
-  _locale = "ar-".concat(arabicLocales[_i]);
-  alpha[_locale] = alpha.ar;
-  alphanumeric[_locale] = alphanumeric.ar;
-  decimal[_locale] = decimal.ar;
-} // Source: https://en.wikipedia.org/wiki/Decimal_mark
-
-
-var dotDecimal = [];
-exports.dotDecimal = dotDecimal;
-var commaDecimal = ['bg-BG', 'cs-CZ', 'da-DK', 'de-DE', 'el-GR', 'es-ES', 'fr-FR', 'it-IT', 'ku-IQ', 'hu-HU', 'nb-NO', 'nn-NO', 'nl-NL', 'pl-PL', 'pt-PT', 'ru-RU', 'sl-SI', 'sr-RS@latin', 'sr-RS', 'sv-SE', 'tr-TR', 'uk-UA'];
-exports.commaDecimal = commaDecimal;
-
-for (var _i2 = 0; _i2 < dotDecimal.length; _i2++) {
-  decimal[dotDecimal[_i2]] = decimal['en-US'];
-}
-
-for (var _i3 = 0; _i3 < commaDecimal.length; _i3++) {
-  decimal[commaDecimal[_i3]] = ',';
-}
-
-alpha['pt-BR'] = alpha['pt-PT'];
-alphanumeric['pt-BR'] = alphanumeric['pt-PT'];
-decimal['pt-BR'] = decimal['pt-PT']; // see #862
-
-alpha['pl-Pl'] = alpha['pl-PL'];
-alphanumeric['pl-Pl'] = alphanumeric['pl-PL'];
-decimal['pl-Pl'] = decimal['pl-PL'];
-},{}],"I8yr":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isAlpha;
-exports.locales = void 0;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _alpha = require("./alpha");
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isAlpha(str) {
-  var locale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'en-US';
-  (0, _assertString.default)(str);
-
-  if (locale in _alpha.alpha) {
-    return _alpha.alpha[locale].test(str);
-  }
-
-  throw new Error("Invalid locale '".concat(locale, "'"));
-}
-
-var locales = Object.keys(_alpha.alpha);
-exports.locales = locales;
-},{"./util/assertString":"d3m2","./alpha":"qIyI"}],"AlV0":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isAlphanumeric;
-exports.locales = void 0;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _alpha = require("./alpha");
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isAlphanumeric(str) {
-  var locale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'en-US';
-  (0, _assertString.default)(str);
-
-  if (locale in _alpha.alphanumeric) {
-    return _alpha.alphanumeric[locale].test(str);
-  }
-
-  throw new Error("Invalid locale '".concat(locale, "'"));
-}
-
-var locales = Object.keys(_alpha.alphanumeric);
-exports.locales = locales;
-},{"./util/assertString":"d3m2","./alpha":"qIyI"}],"VmGc":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isNumeric;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var numeric = /^[+-]?([0-9]*[.])?[0-9]+$/;
-var numericNoSymbols = /^[0-9]+$/;
-
-function isNumeric(str, options) {
-  (0, _assertString.default)(str);
-
-  if (options && options.no_symbols) {
-    return numericNoSymbols.test(str);
-  }
-
-  return numeric.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"Nqtv":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isInt;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var int = /^(?:[-+]?(?:0|[1-9][0-9]*))$/;
-var intLeadingZeroes = /^[-+]?[0-9]+$/;
-
-function isInt(str, options) {
-  (0, _assertString.default)(str);
-  options = options || {}; // Get the regex to use for testing, based on whether
-  // leading zeroes are allowed or not.
-
-  var regex = options.hasOwnProperty('allow_leading_zeroes') && !options.allow_leading_zeroes ? int : intLeadingZeroes; // Check min/max/lt/gt
-
-  var minCheckPassed = !options.hasOwnProperty('min') || str >= options.min;
-  var maxCheckPassed = !options.hasOwnProperty('max') || str <= options.max;
-  var ltCheckPassed = !options.hasOwnProperty('lt') || str < options.lt;
-  var gtCheckPassed = !options.hasOwnProperty('gt') || str > options.gt;
-  return regex.test(str) && minCheckPassed && maxCheckPassed && ltCheckPassed && gtCheckPassed;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"qa4O":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isPort;
-
-var _isInt = _interopRequireDefault(require("./isInt"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isPort(str) {
-  return (0, _isInt.default)(str, {
-    min: 0,
-    max: 65535
-  });
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./isInt":"Nqtv"}],"N5f1":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isLowercase;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isLowercase(str) {
-  (0, _assertString.default)(str);
-  return str === str.toLowerCase();
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"NAqv":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isUppercase;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isUppercase(str) {
-  (0, _assertString.default)(str);
-  return str === str.toUpperCase();
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"lPo8":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isAscii;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-/* eslint-disable no-control-regex */
-
-
-var ascii = /^[\x00-\x7F]+$/;
-/* eslint-enable no-control-regex */
-
-function isAscii(str) {
-  (0, _assertString.default)(str);
-  return ascii.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"XqZj":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isFullWidth;
-exports.fullWidth = void 0;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var fullWidth = /[^\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]/;
-exports.fullWidth = fullWidth;
-
-function isFullWidth(str) {
-  (0, _assertString.default)(str);
-  return fullWidth.test(str);
-}
-},{"./util/assertString":"d3m2"}],"aml0":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isHalfWidth;
-exports.halfWidth = void 0;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var halfWidth = /[\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]/;
-exports.halfWidth = halfWidth;
-
-function isHalfWidth(str) {
-  (0, _assertString.default)(str);
-  return halfWidth.test(str);
-}
-},{"./util/assertString":"d3m2"}],"Ezi8":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isVariableWidth;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _isFullWidth = require("./isFullWidth");
-
-var _isHalfWidth = require("./isHalfWidth");
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isVariableWidth(str) {
-  (0, _assertString.default)(str);
-  return _isFullWidth.fullWidth.test(str) && _isHalfWidth.halfWidth.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./isFullWidth":"XqZj","./isHalfWidth":"aml0"}],"hMu0":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isMultibyte;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-/* eslint-disable no-control-regex */
-
-
-var multibyte = /[^\x00-\x7F]/;
-/* eslint-enable no-control-regex */
-
-function isMultibyte(str) {
-  (0, _assertString.default)(str);
-  return multibyte.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"DgpS":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isSurrogatePair;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var surrogatePair = /[\uD800-\uDBFF][\uDC00-\uDFFF]/;
-
-function isSurrogatePair(str) {
-  (0, _assertString.default)(str);
-  return surrogatePair.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"tJ8x":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isFloat;
-exports.locales = void 0;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _alpha = require("./alpha");
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isFloat(str, options) {
-  (0, _assertString.default)(str);
-  options = options || {};
-  var float = new RegExp("^(?:[-+])?(?:[0-9]+)?(?:\\".concat(options.locale ? _alpha.decimal[options.locale] : '.', "[0-9]*)?(?:[eE][\\+\\-]?(?:[0-9]+))?$"));
-
-  if (str === '' || str === '.' || str === '-' || str === '+') {
-    return false;
-  }
-
-  var value = parseFloat(str.replace(',', '.'));
-  return float.test(str) && (!options.hasOwnProperty('min') || value >= options.min) && (!options.hasOwnProperty('max') || value <= options.max) && (!options.hasOwnProperty('lt') || value < options.lt) && (!options.hasOwnProperty('gt') || value > options.gt);
-}
-
-var locales = Object.keys(_alpha.decimal);
-exports.locales = locales;
-},{"./util/assertString":"d3m2","./alpha":"qIyI"}],"N8iQ":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var includes = function includes(arr, val) {
-  return arr.some(function (arrVal) {
-    return val === arrVal;
-  });
-};
-
-var _default = includes;
-exports.default = _default;
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{}],"cjZv":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isDecimal;
-
-var _merge = _interopRequireDefault(require("./util/merge"));
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _includes = _interopRequireDefault(require("./util/includes"));
-
-var _alpha = require("./alpha");
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function decimalRegExp(options) {
-  var regExp = new RegExp("^[-+]?([0-9]+)?(\\".concat(_alpha.decimal[options.locale], "[0-9]{").concat(options.decimal_digits, "})").concat(options.force_decimal ? '' : '?', "$"));
-  return regExp;
-}
-
-var default_decimal_options = {
-  force_decimal: false,
-  decimal_digits: '1,',
-  locale: 'en-US'
-};
-var blacklist = ['', '-', '+'];
-
-function isDecimal(str, options) {
-  (0, _assertString.default)(str);
-  options = (0, _merge.default)(options, default_decimal_options);
-
-  if (options.locale in _alpha.decimal) {
-    return !(0, _includes.default)(blacklist, str.replace(/ /g, '')) && decimalRegExp(options).test(str);
-  }
-
-  throw new Error("Invalid locale '".concat(options.locale, "'"));
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/merge":"hxfi","./util/assertString":"d3m2","./util/includes":"N8iQ","./alpha":"qIyI"}],"DCUy":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isHexadecimal;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var hexadecimal = /^[0-9A-F]+$/i;
-
-function isHexadecimal(str) {
-  (0, _assertString.default)(str);
-  return hexadecimal.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"ZzHr":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isDivisibleBy;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _toFloat = _interopRequireDefault(require("./toFloat"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isDivisibleBy(str, num) {
-  (0, _assertString.default)(str);
-  return (0, _toFloat.default)(str) % parseInt(num, 10) === 0;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./toFloat":"b3Og"}],"cJkd":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isHexColor;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var hexcolor = /^#?([0-9A-F]{3}|[0-9A-F]{6})$/i;
-
-function isHexColor(str) {
-  (0, _assertString.default)(str);
-  return hexcolor.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"Jf2s":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isISRC;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-} // see http://isrc.ifpi.org/en/isrc-standard/code-syntax
-
-
-var isrc = /^[A-Z]{2}[0-9A-Z]{3}\d{2}\d{5}$/;
-
-function isISRC(str) {
-  (0, _assertString.default)(str);
-  return isrc.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"idDX":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isMD5;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var md5 = /^[a-f0-9]{32}$/;
-
-function isMD5(str) {
-  (0, _assertString.default)(str);
-  return md5.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"fiG1":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isHash;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var lengths = {
-  md5: 32,
-  md4: 32,
-  sha1: 40,
-  sha256: 64,
-  sha384: 96,
-  sha512: 128,
-  ripemd128: 32,
-  ripemd160: 40,
-  tiger128: 32,
-  tiger160: 40,
-  tiger192: 48,
-  crc32: 8,
-  crc32b: 8
-};
-
-function isHash(str, algorithm) {
-  (0, _assertString.default)(str);
-  var hash = new RegExp("^[a-f0-9]{".concat(lengths[algorithm], "}$"));
-  return hash.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"V0R0":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isJWT;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var jwt = /^([A-Za-z0-9\-_~+\/]+[=]{0,2})\.([A-Za-z0-9\-_~+\/]+[=]{0,2})(?:\.([A-Za-z0-9\-_~+\/]+[=]{0,2}))?$/;
-
-function isJWT(str) {
-  (0, _assertString.default)(str);
-  return jwt.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"Fj5V":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isJSON;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-
-function isJSON(str) {
-  (0, _assertString.default)(str);
-
-  try {
-    var obj = JSON.parse(str);
-    return !!obj && _typeof(obj) === 'object';
-  } catch (e) {
-    /* ignore */
-  }
-
-  return false;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"eubH":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isEmpty;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _merge = _interopRequireDefault(require("./util/merge"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var default_is_empty_options = {
-  ignore_whitespace: false
-};
-
-function isEmpty(str, options) {
-  (0, _assertString.default)(str);
-  options = (0, _merge.default)(options, default_is_empty_options);
-  return (options.ignore_whitespace ? str.trim().length : str.length) === 0;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./util/merge":"hxfi"}],"ZzKw":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isLength;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-/* eslint-disable prefer-rest-params */
-
-
-function isLength(str, options) {
-  (0, _assertString.default)(str);
-  var min;
-  var max;
-
-  if (_typeof(options) === 'object') {
-    min = options.min || 0;
-    max = options.max;
-  } else {
-    // backwards compatibility: isLength(str, min [, max])
-    min = arguments[1];
-    max = arguments[2];
-  }
-
-  var surrogatePairs = str.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g) || [];
-  var len = str.length - surrogatePairs.length;
-  return len >= min && (typeof max === 'undefined' || len <= max);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"ZKlV":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isUUID;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var uuid = {
-  3: /^[0-9A-F]{8}-[0-9A-F]{4}-3[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$/i,
-  4: /^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i,
-  5: /^[0-9A-F]{8}-[0-9A-F]{4}-5[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i,
-  all: /^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/i
-};
-
-function isUUID(str) {
-  var version = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'all';
-  (0, _assertString.default)(str);
-  var pattern = uuid[version];
-  return pattern && pattern.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"Quad":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isMongoId;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _isHexadecimal = _interopRequireDefault(require("./isHexadecimal"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isMongoId(str) {
-  (0, _assertString.default)(str);
-  return (0, _isHexadecimal.default)(str) && str.length === 24;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./isHexadecimal":"DCUy"}],"pscr":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isAfter;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _toDate = _interopRequireDefault(require("./toDate"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isAfter(str) {
-  var date = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : String(new Date());
-  (0, _assertString.default)(str);
-  var comparison = (0, _toDate.default)(date);
-  var original = (0, _toDate.default)(str);
-  return !!(original && comparison && original > comparison);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./toDate":"G1eO"}],"tWM9":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isBefore;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _toDate = _interopRequireDefault(require("./toDate"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isBefore(str) {
-  var date = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : String(new Date());
-  (0, _assertString.default)(str);
-  var comparison = (0, _toDate.default)(date);
-  var original = (0, _toDate.default)(str);
-  return !!(original && comparison && original < comparison);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./toDate":"G1eO"}],"weq6":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isIn;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _toString = _interopRequireDefault(require("./util/toString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-
-function isIn(str, options) {
-  (0, _assertString.default)(str);
-  var i;
-
-  if (Object.prototype.toString.call(options) === '[object Array]') {
-    var array = [];
-
-    for (i in options) {
-      if ({}.hasOwnProperty.call(options, i)) {
-        array[i] = (0, _toString.default)(options[i]);
-      }
-    }
-
-    return array.indexOf(str) >= 0;
-  } else if (_typeof(options) === 'object') {
-    return options.hasOwnProperty(str);
-  } else if (options && typeof options.indexOf === 'function') {
-    return options.indexOf(str) >= 0;
-  }
-
-  return false;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./util/toString":"Gmuz"}],"Ob4A":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isCreditCard;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-/* eslint-disable max-len */
-
-
-var creditCard = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|(222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11}|6[27][0-9]{14})$/;
-/* eslint-enable max-len */
-
-function isCreditCard(str) {
-  (0, _assertString.default)(str);
-  var sanitized = str.replace(/[- ]+/g, '');
-
-  if (!creditCard.test(sanitized)) {
-    return false;
-  }
-
-  var sum = 0;
-  var digit;
-  var tmpNum;
-  var shouldDouble;
-
-  for (var i = sanitized.length - 1; i >= 0; i--) {
-    digit = sanitized.substring(i, i + 1);
-    tmpNum = parseInt(digit, 10);
-
-    if (shouldDouble) {
-      tmpNum *= 2;
-
-      if (tmpNum >= 10) {
-        sum += tmpNum % 10 + 1;
-      } else {
-        sum += tmpNum;
-      }
-    } else {
-      sum += tmpNum;
-    }
-
-    shouldDouble = !shouldDouble;
-  }
-
-  return !!(sum % 10 === 0 ? sanitized : false);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"nylB":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isIdentityCard;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var validators = {
-  ES: function ES(str) {
-    (0, _assertString.default)(str);
-    var DNI = /^[0-9X-Z][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$/;
-    var charsValue = {
-      X: 0,
-      Y: 1,
-      Z: 2
-    };
-    var controlDigits = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E']; // sanitize user input
-
-    var sanitized = str.trim().toUpperCase(); // validate the data structure
-
-    if (!DNI.test(sanitized)) {
-      return false;
-    } // validate the control digit
-
-
-    var number = sanitized.slice(0, -1).replace(/[X,Y,Z]/g, function (char) {
-      return charsValue[char];
-    });
-    return sanitized.endsWith(controlDigits[number % 23]);
-  }
-};
-
-function isIdentityCard(str) {
-  var locale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'any';
-  (0, _assertString.default)(str);
-
-  if (locale in validators) {
-    return validators[locale](str);
-  } else if (locale === 'any') {
-    for (var key in validators) {
-      if (validators.hasOwnProperty(key)) {
-        var validator = validators[key];
-
-        if (validator(str)) {
-          return true;
-        }
-      }
-    }
-
-    return false;
-  }
-
-  throw new Error("Invalid locale '".concat(locale, "'"));
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"b1bE":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isISIN;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var isin = /^[A-Z]{2}[0-9A-Z]{9}[0-9]$/;
-
-function isISIN(str) {
-  (0, _assertString.default)(str);
-
-  if (!isin.test(str)) {
-    return false;
-  }
-
-  var checksumStr = str.replace(/[A-Z]/g, function (character) {
-    return parseInt(character, 36);
-  });
-  var sum = 0;
-  var digit;
-  var tmpNum;
-  var shouldDouble = true;
-
-  for (var i = checksumStr.length - 2; i >= 0; i--) {
-    digit = checksumStr.substring(i, i + 1);
-    tmpNum = parseInt(digit, 10);
-
-    if (shouldDouble) {
-      tmpNum *= 2;
-
-      if (tmpNum >= 10) {
-        sum += tmpNum + 1;
-      } else {
-        sum += tmpNum;
-      }
-    } else {
-      sum += tmpNum;
-    }
-
-    shouldDouble = !shouldDouble;
-  }
-
-  return parseInt(str.substr(str.length - 1), 10) === (10000 - sum) % 10;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"ajl4":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isISBN;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var isbn10Maybe = /^(?:[0-9]{9}X|[0-9]{10})$/;
-var isbn13Maybe = /^(?:[0-9]{13})$/;
-var factor = [1, 3];
-
-function isISBN(str) {
-  var version = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-  (0, _assertString.default)(str);
-  version = String(version);
-
-  if (!version) {
-    return isISBN(str, 10) || isISBN(str, 13);
-  }
-
-  var sanitized = str.replace(/[\s-]+/g, '');
-  var checksum = 0;
-  var i;
-
-  if (version === '10') {
-    if (!isbn10Maybe.test(sanitized)) {
-      return false;
-    }
-
-    for (i = 0; i < 9; i++) {
-      checksum += (i + 1) * sanitized.charAt(i);
-    }
-
-    if (sanitized.charAt(9) === 'X') {
-      checksum += 10 * 10;
-    } else {
-      checksum += 10 * sanitized.charAt(9);
-    }
-
-    if (checksum % 11 === 0) {
-      return !!sanitized;
-    }
-  } else if (version === '13') {
-    if (!isbn13Maybe.test(sanitized)) {
-      return false;
-    }
-
-    for (i = 0; i < 12; i++) {
-      checksum += factor[i % 2] * sanitized.charAt(i);
-    }
-
-    if (sanitized.charAt(12) - (10 - checksum % 10) % 10 === 0) {
-      return !!sanitized;
-    }
-  }
-
-  return false;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"k7Z3":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isISSN;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var issn = '^\\d{4}-?\\d{3}[\\dX]$';
-
-function isISSN(str) {
-  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  (0, _assertString.default)(str);
-  var testIssn = issn;
-  testIssn = options.require_hyphen ? testIssn.replace('?', '') : testIssn;
-  testIssn = options.case_sensitive ? new RegExp(testIssn) : new RegExp(testIssn, 'i');
-
-  if (!testIssn.test(str)) {
-    return false;
-  }
-
-  var digits = str.replace('-', '').toUpperCase();
-  var checksum = 0;
-
-  for (var i = 0; i < digits.length; i++) {
-    var digit = digits[i];
-    checksum += (digit === 'X' ? 10 : +digit) * (8 - i);
-  }
-
-  return checksum % 11 === 0;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"XWOV":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isMobilePhone;
-exports.locales = void 0;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-/* eslint-disable max-len */
-
-
-var phones = {
-  'ar-AE': /^((\+?971)|0)?5[024568]\d{7}$/,
-  'ar-DZ': /^(\+?213|0)(5|6|7)\d{8}$/,
-  'ar-EG': /^((\+?20)|0)?1[012]\d{8}$/,
-  'ar-IQ': /^(\+?964|0)?7[0-9]\d{8}$/,
-  'ar-JO': /^(\+?962|0)?7[789]\d{7}$/,
-  'ar-KW': /^(\+?965)[569]\d{7}$/,
-  'ar-SA': /^(!?(\+?966)|0)?5\d{8}$/,
-  'ar-SY': /^(!?(\+?963)|0)?9\d{8}$/,
-  'ar-TN': /^(\+?216)?[2459]\d{7}$/,
-  'be-BY': /^(\+?375)?(24|25|29|33|44)\d{7}$/,
-  'bg-BG': /^(\+?359|0)?8[789]\d{7}$/,
-  'bn-BD': /\+?(88)?0?1[356789][0-9]{8}\b/,
-  'cs-CZ': /^(\+?420)? ?[1-9][0-9]{2} ?[0-9]{3} ?[0-9]{3}$/,
-  'da-DK': /^(\+?45)?\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2}$/,
-  'de-DE': /^(\+49)?0?1(5[0-25-9]\d|6([23]|0\d?)|7([0-57-9]|6\d))\d{7}$/,
-  'el-GR': /^(\+?30|0)?(69\d{8})$/,
-  'en-AU': /^(\+?61|0)4\d{8}$/,
-  'en-GB': /^(\+?44|0)7\d{9}$/,
-  'en-GH': /^(\+233|0)(20|50|24|54|27|57|26|56|23|28)\d{7}$/,
-  'en-HK': /^(\+?852\-?)?[456789]\d{3}\-?\d{4}$/,
-  'en-IE': /^(\+?353|0)8[356789]\d{7}$/,
-  'en-IN': /^(\+?91|0)?[6789]\d{9}$/,
-  'en-KE': /^(\+?254|0)?[7]\d{8}$/,
-  'en-MU': /^(\+?230|0)?\d{8}$/,
-  'en-NG': /^(\+?234|0)?[789]\d{9}$/,
-  'en-NZ': /^(\+?64|0)[28]\d{7,9}$/,
-  'en-PK': /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/,
-  'en-RW': /^(\+?250|0)?[7]\d{8}$/,
-  'en-SG': /^(\+65)?[89]\d{7}$/,
-  'en-TZ': /^(\+?255|0)?[67]\d{8}$/,
-  'en-UG': /^(\+?256|0)?[7]\d{8}$/,
-  'en-US': /^((\+1|1)?( |-)?)?(\([2-9][0-9]{2}\)|[2-9][0-9]{2})( |-)?([2-9][0-9]{2}( |-)?[0-9]{4})$/,
-  'en-ZA': /^(\+?27|0)\d{9}$/,
-  'en-ZM': /^(\+?26)?09[567]\d{7}$/,
-  'es-ES': /^(\+?34)?(6\d{1}|7[1234])\d{7}$/,
-  'es-MX': /^(\+?52)?(1|01)?\d{10,11}$/,
-  'es-UY': /^(\+598|0)9[1-9][\d]{6}$/,
-  'et-EE': /^(\+?372)?\s?(5|8[1-4])\s?([0-9]\s?){6,7}$/,
-  'fa-IR': /^(\+?98[\-\s]?|0)9[0-39]\d[\-\s]?\d{3}[\-\s]?\d{4}$/,
-  'fi-FI': /^(\+?358|0)\s?(4(0|1|2|4|5|6)?|50)\s?(\d\s?){4,8}\d$/,
-  'fo-FO': /^(\+?298)?\s?\d{2}\s?\d{2}\s?\d{2}$/,
-  'fr-FR': /^(\+?33|0)[67]\d{8}$/,
-  'he-IL': /^(\+972|0)([23489]|5[012345689]|77)[1-9]\d{6}$/,
-  'hu-HU': /^(\+?36)(20|30|70)\d{7}$/,
-  'id-ID': /^(\+?62|0)8(1[123456789]|2[1238]|3[1238]|5[12356789]|7[78]|9[56789]|8[123456789])([\s?|\d]{5,11})$/,
-  'it-IT': /^(\+?39)?\s?3\d{2} ?\d{6,7}$/,
-  'ja-JP': /^(\+?81|0)[789]0[ \-]?[1-9]\d{2}[ \-]?\d{5}$/,
-  'kk-KZ': /^(\+?7|8)?7\d{9}$/,
-  'kl-GL': /^(\+?299)?\s?\d{2}\s?\d{2}\s?\d{2}$/,
-  'ko-KR': /^((\+?82)[ \-]?)?0?1([0|1|6|7|8|9]{1})[ \-]?\d{3,4}[ \-]?\d{4}$/,
-  'lt-LT': /^(\+370|8)\d{8}$/,
-  'ms-MY': /^(\+?6?01){1}(([0145]{1}(\-|\s)?\d{7,8})|([236789]{1}(\s|\-)?\d{7}))$/,
-  'nb-NO': /^(\+?47)?[49]\d{7}$/,
-  'nl-BE': /^(\+?32|0)4?\d{8}$/,
-  'nn-NO': /^(\+?47)?[49]\d{7}$/,
-  'pl-PL': /^(\+?48)? ?[5-8]\d ?\d{3} ?\d{2} ?\d{2}$/,
-  'pt-BR': /(?=^(\+?5{2}\-?|0)[1-9]{2}\-?\d{4}\-?\d{4}$)(^(\+?5{2}\-?|0)[1-9]{2}\-?[6-9]{1}\d{3}\-?\d{4}$)|(^(\+?5{2}\-?|0)[1-9]{2}\-?9[6-9]{1}\d{3}\-?\d{4}$)/,
-  'pt-PT': /^(\+?351)?9[1236]\d{7}$/,
-  'ro-RO': /^(\+?4?0)\s?7\d{2}(\/|\s|\.|\-)?\d{3}(\s|\.|\-)?\d{3}$/,
-  'ru-RU': /^(\+?7|8)?9\d{9}$/,
-  'sl-SI': /^(\+386\s?|0)(\d{1}\s?\d{3}\s?\d{2}\s?\d{2}|\d{2}\s?\d{3}\s?\d{3})$/,
-  'sk-SK': /^(\+?421)? ?[1-9][0-9]{2} ?[0-9]{3} ?[0-9]{3}$/,
-  'sr-RS': /^(\+3816|06)[- \d]{5,9}$/,
-  'sv-SE': /^(\+?46|0)[\s\-]?7[\s\-]?[02369]([\s\-]?\d){7}$/,
-  'th-TH': /^(\+66|66|0)\d{9}$/,
-  'tr-TR': /^(\+?90|0)?5\d{9}$/,
-  'uk-UA': /^(\+?38|8)?0\d{9}$/,
-  'vi-VN': /^(\+?84|0)((3([2-9]))|(5([689]))|(7([0|6-9]))|(8([1-5]))|(9([0-9])))([0-9]{7})$/,
-  'zh-CN': /^((\+|00)86)?1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/,
-  'zh-TW': /^(\+?886\-?|0)?9\d{8}$/
-};
-/* eslint-enable max-len */
-// aliases
-
-phones['en-CA'] = phones['en-US'];
-phones['fr-BE'] = phones['nl-BE'];
-phones['zh-HK'] = phones['en-HK'];
-
-function isMobilePhone(str, locale, options) {
-  (0, _assertString.default)(str);
-
-  if (options && options.strictMode && !str.startsWith('+')) {
-    return false;
-  }
-
-  if (Array.isArray(locale)) {
-    return locale.some(function (key) {
-      if (phones.hasOwnProperty(key)) {
-        var phone = phones[key];
-
-        if (phone.test(str)) {
-          return true;
-        }
-      }
-
-      return false;
-    });
-  } else if (locale in phones) {
-    return phones[locale].test(str); // alias falsey locale as 'any'
-  } else if (!locale || locale === 'any') {
-    for (var key in phones) {
-      if (phones.hasOwnProperty(key)) {
-        var phone = phones[key];
-
-        if (phone.test(str)) {
-          return true;
-        }
-      }
-    }
-
-    return false;
-  }
-
-  throw new Error("Invalid locale '".concat(locale, "'"));
-}
-
-var locales = Object.keys(phones);
-exports.locales = locales;
-},{"./util/assertString":"d3m2"}],"hPSN":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isCurrency;
-
-var _merge = _interopRequireDefault(require("./util/merge"));
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function currencyRegex(options) {
-  var decimal_digits = "\\d{".concat(options.digits_after_decimal[0], "}");
-  options.digits_after_decimal.forEach(function (digit, index) {
-    if (index !== 0) decimal_digits = "".concat(decimal_digits, "|\\d{").concat(digit, "}");
-  });
-  var symbol = "(\\".concat(options.symbol.replace(/\./g, '\\.'), ")").concat(options.require_symbol ? '' : '?'),
-      negative = '-?',
-      whole_dollar_amount_without_sep = '[1-9]\\d*',
-      whole_dollar_amount_with_sep = "[1-9]\\d{0,2}(\\".concat(options.thousands_separator, "\\d{3})*"),
-      valid_whole_dollar_amounts = ['0', whole_dollar_amount_without_sep, whole_dollar_amount_with_sep],
-      whole_dollar_amount = "(".concat(valid_whole_dollar_amounts.join('|'), ")?"),
-      decimal_amount = "(\\".concat(options.decimal_separator, "(").concat(decimal_digits, "))").concat(options.require_decimal ? '' : '?');
-  var pattern = whole_dollar_amount + (options.allow_decimal || options.require_decimal ? decimal_amount : ''); // default is negative sign before symbol, but there are two other options (besides parens)
-
-  if (options.allow_negatives && !options.parens_for_negatives) {
-    if (options.negative_sign_after_digits) {
-      pattern += negative;
-    } else if (options.negative_sign_before_digits) {
-      pattern = negative + pattern;
-    }
-  } // South African Rand, for example, uses R 123 (space) and R-123 (no space)
-
-
-  if (options.allow_negative_sign_placeholder) {
-    pattern = "( (?!\\-))?".concat(pattern);
-  } else if (options.allow_space_after_symbol) {
-    pattern = " ?".concat(pattern);
-  } else if (options.allow_space_after_digits) {
-    pattern += '( (?!$))?';
-  }
-
-  if (options.symbol_after_digits) {
-    pattern += symbol;
-  } else {
-    pattern = symbol + pattern;
-  }
-
-  if (options.allow_negatives) {
-    if (options.parens_for_negatives) {
-      pattern = "(\\(".concat(pattern, "\\)|").concat(pattern, ")");
-    } else if (!(options.negative_sign_before_digits || options.negative_sign_after_digits)) {
-      pattern = negative + pattern;
-    }
-  } // ensure there's a dollar and/or decimal amount, and that
-  // it doesn't start with a space or a negative sign followed by a space
-
-
-  return new RegExp("^(?!-? )(?=.*\\d)".concat(pattern, "$"));
-}
-
-var default_currency_options = {
-  symbol: '$',
-  require_symbol: false,
-  allow_space_after_symbol: false,
-  symbol_after_digits: false,
-  allow_negatives: true,
-  parens_for_negatives: false,
-  negative_sign_before_digits: false,
-  negative_sign_after_digits: false,
-  allow_negative_sign_placeholder: false,
-  thousands_separator: ',',
-  decimal_separator: '.',
-  allow_decimal: true,
-  require_decimal: false,
-  digits_after_decimal: [2],
-  allow_space_after_digits: false
-};
-
-function isCurrency(str, options) {
-  (0, _assertString.default)(str);
-  options = (0, _merge.default)(options, default_currency_options);
-  return currencyRegex(options).test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/merge":"hxfi","./util/assertString":"d3m2"}],"gokW":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isISO8601;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-/* eslint-disable max-len */
-// from http://goo.gl/0ejHHW
-
-
-var iso8601 = /^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-3])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$/;
-/* eslint-enable max-len */
-
-var isValidDate = function isValidDate(str) {
-  // str must have passed the ISO8601 check
-  // this check is meant to catch invalid dates
-  // like 2009-02-31
-  // first check for ordinal dates
-  var ordinalMatch = str.match(/^(\d{4})-?(\d{3})([ T]{1}\.*|$)/);
-
-  if (ordinalMatch) {
-    var oYear = Number(ordinalMatch[1]);
-    var oDay = Number(ordinalMatch[2]); // if is leap year
-
-    if (oYear % 4 === 0 && oYear % 100 !== 0) return oDay <= 366;
-    return oDay <= 365;
-  }
-
-  var match = str.match(/(\d{4})-?(\d{0,2})-?(\d*)/).map(Number);
-  var year = match[1];
-  var month = match[2];
-  var day = match[3];
-  var monthString = month ? "0".concat(month).slice(-2) : month;
-  var dayString = day ? "0".concat(day).slice(-2) : day; // create a date object and compare
-
-  var d = new Date("".concat(year, "-").concat(monthString || '01', "-").concat(dayString || '01'));
-  if (isNaN(d.getUTCFullYear())) return false;
-
-  if (month && day) {
-    return d.getUTCFullYear() === year && d.getUTCMonth() + 1 === month && d.getUTCDate() === day;
-  }
-
-  return true;
-};
-
-function isISO8601(str, options) {
-  (0, _assertString.default)(str);
-  var check = iso8601.test(str);
-  if (!options) return check;
-  if (check && options.strict) return isValidDate(str);
-  return check;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"Nogc":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isRFC3339;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-/* Based on https://tools.ietf.org/html/rfc3339#section-5.6 */
-
-
-var dateFullYear = /[0-9]{4}/;
-var dateMonth = /(0[1-9]|1[0-2])/;
-var dateMDay = /([12]\d|0[1-9]|3[01])/;
-var timeHour = /([01][0-9]|2[0-3])/;
-var timeMinute = /[0-5][0-9]/;
-var timeSecond = /([0-5][0-9]|60)/;
-var timeSecFrac = /(\.[0-9]+)?/;
-var timeNumOffset = new RegExp("[-+]".concat(timeHour.source, ":").concat(timeMinute.source));
-var timeOffset = new RegExp("([zZ]|".concat(timeNumOffset.source, ")"));
-var partialTime = new RegExp("".concat(timeHour.source, ":").concat(timeMinute.source, ":").concat(timeSecond.source).concat(timeSecFrac.source));
-var fullDate = new RegExp("".concat(dateFullYear.source, "-").concat(dateMonth.source, "-").concat(dateMDay.source));
-var fullTime = new RegExp("".concat(partialTime.source).concat(timeOffset.source));
-var rfc3339 = new RegExp("".concat(fullDate.source, "[ tT]").concat(fullTime.source));
-
-function isRFC3339(str) {
-  (0, _assertString.default)(str);
-  return rfc3339.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"ko31":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isISO31661Alpha2;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _includes = _interopRequireDefault(require("./util/includes"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-} // from https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-
-
-var validISO31661Alpha2CountriesCodes = ['AD', 'AE', 'AF', 'AG', 'AI', 'AL', 'AM', 'AO', 'AQ', 'AR', 'AS', 'AT', 'AU', 'AW', 'AX', 'AZ', 'BA', 'BB', 'BD', 'BE', 'BF', 'BG', 'BH', 'BI', 'BJ', 'BL', 'BM', 'BN', 'BO', 'BQ', 'BR', 'BS', 'BT', 'BV', 'BW', 'BY', 'BZ', 'CA', 'CC', 'CD', 'CF', 'CG', 'CH', 'CI', 'CK', 'CL', 'CM', 'CN', 'CO', 'CR', 'CU', 'CV', 'CW', 'CX', 'CY', 'CZ', 'DE', 'DJ', 'DK', 'DM', 'DO', 'DZ', 'EC', 'EE', 'EG', 'EH', 'ER', 'ES', 'ET', 'FI', 'FJ', 'FK', 'FM', 'FO', 'FR', 'GA', 'GB', 'GD', 'GE', 'GF', 'GG', 'GH', 'GI', 'GL', 'GM', 'GN', 'GP', 'GQ', 'GR', 'GS', 'GT', 'GU', 'GW', 'GY', 'HK', 'HM', 'HN', 'HR', 'HT', 'HU', 'ID', 'IE', 'IL', 'IM', 'IN', 'IO', 'IQ', 'IR', 'IS', 'IT', 'JE', 'JM', 'JO', 'JP', 'KE', 'KG', 'KH', 'KI', 'KM', 'KN', 'KP', 'KR', 'KW', 'KY', 'KZ', 'LA', 'LB', 'LC', 'LI', 'LK', 'LR', 'LS', 'LT', 'LU', 'LV', 'LY', 'MA', 'MC', 'MD', 'ME', 'MF', 'MG', 'MH', 'MK', 'ML', 'MM', 'MN', 'MO', 'MP', 'MQ', 'MR', 'MS', 'MT', 'MU', 'MV', 'MW', 'MX', 'MY', 'MZ', 'NA', 'NC', 'NE', 'NF', 'NG', 'NI', 'NL', 'NO', 'NP', 'NR', 'NU', 'NZ', 'OM', 'PA', 'PE', 'PF', 'PG', 'PH', 'PK', 'PL', 'PM', 'PN', 'PR', 'PS', 'PT', 'PW', 'PY', 'QA', 'RE', 'RO', 'RS', 'RU', 'RW', 'SA', 'SB', 'SC', 'SD', 'SE', 'SG', 'SH', 'SI', 'SJ', 'SK', 'SL', 'SM', 'SN', 'SO', 'SR', 'SS', 'ST', 'SV', 'SX', 'SY', 'SZ', 'TC', 'TD', 'TF', 'TG', 'TH', 'TJ', 'TK', 'TL', 'TM', 'TN', 'TO', 'TR', 'TT', 'TV', 'TW', 'TZ', 'UA', 'UG', 'UM', 'US', 'UY', 'UZ', 'VA', 'VC', 'VE', 'VG', 'VI', 'VN', 'VU', 'WF', 'WS', 'YE', 'YT', 'ZA', 'ZM', 'ZW'];
-
-function isISO31661Alpha2(str) {
-  (0, _assertString.default)(str);
-  return (0, _includes.default)(validISO31661Alpha2CountriesCodes, str.toUpperCase());
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./util/includes":"N8iQ"}],"xfuO":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isISO31661Alpha3;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _includes = _interopRequireDefault(require("./util/includes"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-} // from https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
-
-
-var validISO31661Alpha3CountriesCodes = ['AFG', 'ALA', 'ALB', 'DZA', 'ASM', 'AND', 'AGO', 'AIA', 'ATA', 'ATG', 'ARG', 'ARM', 'ABW', 'AUS', 'AUT', 'AZE', 'BHS', 'BHR', 'BGD', 'BRB', 'BLR', 'BEL', 'BLZ', 'BEN', 'BMU', 'BTN', 'BOL', 'BES', 'BIH', 'BWA', 'BVT', 'BRA', 'IOT', 'BRN', 'BGR', 'BFA', 'BDI', 'KHM', 'CMR', 'CAN', 'CPV', 'CYM', 'CAF', 'TCD', 'CHL', 'CHN', 'CXR', 'CCK', 'COL', 'COM', 'COG', 'COD', 'COK', 'CRI', 'CIV', 'HRV', 'CUB', 'CUW', 'CYP', 'CZE', 'DNK', 'DJI', 'DMA', 'DOM', 'ECU', 'EGY', 'SLV', 'GNQ', 'ERI', 'EST', 'ETH', 'FLK', 'FRO', 'FJI', 'FIN', 'FRA', 'GUF', 'PYF', 'ATF', 'GAB', 'GMB', 'GEO', 'DEU', 'GHA', 'GIB', 'GRC', 'GRL', 'GRD', 'GLP', 'GUM', 'GTM', 'GGY', 'GIN', 'GNB', 'GUY', 'HTI', 'HMD', 'VAT', 'HND', 'HKG', 'HUN', 'ISL', 'IND', 'IDN', 'IRN', 'IRQ', 'IRL', 'IMN', 'ISR', 'ITA', 'JAM', 'JPN', 'JEY', 'JOR', 'KAZ', 'KEN', 'KIR', 'PRK', 'KOR', 'KWT', 'KGZ', 'LAO', 'LVA', 'LBN', 'LSO', 'LBR', 'LBY', 'LIE', 'LTU', 'LUX', 'MAC', 'MKD', 'MDG', 'MWI', 'MYS', 'MDV', 'MLI', 'MLT', 'MHL', 'MTQ', 'MRT', 'MUS', 'MYT', 'MEX', 'FSM', 'MDA', 'MCO', 'MNG', 'MNE', 'MSR', 'MAR', 'MOZ', 'MMR', 'NAM', 'NRU', 'NPL', 'NLD', 'NCL', 'NZL', 'NIC', 'NER', 'NGA', 'NIU', 'NFK', 'MNP', 'NOR', 'OMN', 'PAK', 'PLW', 'PSE', 'PAN', 'PNG', 'PRY', 'PER', 'PHL', 'PCN', 'POL', 'PRT', 'PRI', 'QAT', 'REU', 'ROU', 'RUS', 'RWA', 'BLM', 'SHN', 'KNA', 'LCA', 'MAF', 'SPM', 'VCT', 'WSM', 'SMR', 'STP', 'SAU', 'SEN', 'SRB', 'SYC', 'SLE', 'SGP', 'SXM', 'SVK', 'SVN', 'SLB', 'SOM', 'ZAF', 'SGS', 'SSD', 'ESP', 'LKA', 'SDN', 'SUR', 'SJM', 'SWZ', 'SWE', 'CHE', 'SYR', 'TWN', 'TJK', 'TZA', 'THA', 'TLS', 'TGO', 'TKL', 'TON', 'TTO', 'TUN', 'TUR', 'TKM', 'TCA', 'TUV', 'UGA', 'UKR', 'ARE', 'GBR', 'USA', 'UMI', 'URY', 'UZB', 'VUT', 'VEN', 'VNM', 'VGB', 'VIR', 'WLF', 'ESH', 'YEM', 'ZMB', 'ZWE'];
-
-function isISO31661Alpha3(str) {
-  (0, _assertString.default)(str);
-  return (0, _includes.default)(validISO31661Alpha3CountriesCodes, str.toUpperCase());
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./util/includes":"N8iQ"}],"CZZS":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isBase64;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var notBase64 = /[^A-Z0-9+\/=]/i;
-
-function isBase64(str) {
-  (0, _assertString.default)(str);
-  var len = str.length;
-
-  if (!len || len % 4 !== 0 || notBase64.test(str)) {
-    return false;
-  }
-
-  var firstPaddingChar = str.indexOf('=');
-  return firstPaddingChar === -1 || firstPaddingChar === len - 1 || firstPaddingChar === len - 2 && str[len - 1] === '=';
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"seXT":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isDataURI;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var validMediaType = /^[a-z]+\/[a-z0-9\-\+]+$/i;
-var validAttribute = /^[a-z\-]+=[a-z0-9\-]+$/i;
-var validData = /^[a-z0-9!\$&'\(\)\*\+,;=\-\._~:@\/\?%\s]*$/i;
-
-function isDataURI(str) {
-  (0, _assertString.default)(str);
-  var data = str.split(',');
-
-  if (data.length < 2) {
-    return false;
-  }
-
-  var attributes = data.shift().trim().split(';');
-  var schemeAndMediaType = attributes.shift();
-
-  if (schemeAndMediaType.substr(0, 5) !== 'data:') {
-    return false;
-  }
-
-  var mediaType = schemeAndMediaType.substr(5);
-
-  if (mediaType !== '' && !validMediaType.test(mediaType)) {
-    return false;
-  }
-
-  for (var i = 0; i < attributes.length; i++) {
-    if (i === attributes.length - 1 && attributes[i].toLowerCase() === 'base64') {// ok
-    } else if (!validAttribute.test(attributes[i])) {
-      return false;
-    }
-  }
-
-  for (var _i = 0; _i < data.length; _i++) {
-    if (!validData.test(data[_i])) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"k8m8":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isMagnetURI;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var magnetURI = /^magnet:\?xt=urn:[a-z0-9]+:[a-z0-9]{32,40}&dn=.+&tr=.+$/i;
-
-function isMagnetURI(url) {
-  (0, _assertString.default)(url);
-  return magnetURI.test(url.trim());
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"O3mI":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isMimeType;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-/*
-  Checks if the provided string matches to a correct Media type format (MIME type)
-
-  This function only checks is the string format follows the
-  etablished rules by the according RFC specifications.
-  This function supports 'charset' in textual media types
-  (https://tools.ietf.org/html/rfc6657).
-
-  This function does not check against all the media types listed
-  by the IANA (https://www.iana.org/assignments/media-types/media-types.xhtml)
-  because of lightness purposes : it would require to include
-  all these MIME types in this librairy, which would weigh it
-  significantly. This kind of effort maybe is not worth for the use that
-  this function has in this entire librairy.
-
-  More informations in the RFC specifications :
-  - https://tools.ietf.org/html/rfc2045
-  - https://tools.ietf.org/html/rfc2046
-  - https://tools.ietf.org/html/rfc7231#section-3.1.1.1
-  - https://tools.ietf.org/html/rfc7231#section-3.1.1.5
-*/
-// Match simple MIME types
-// NB :
-//   Subtype length must not exceed 100 characters.
-//   This rule does not comply to the RFC specs (what is the max length ?).
-
-
-var mimeTypeSimple = /^(application|audio|font|image|message|model|multipart|text|video)\/[a-zA-Z0-9\.\-\+]{1,100}$/i; // eslint-disable-line max-len
-// Handle "charset" in "text/*"
-
-var mimeTypeText = /^text\/[a-zA-Z0-9\.\-\+]{1,100};\s?charset=("[a-zA-Z0-9\.\-\+\s]{0,70}"|[a-zA-Z0-9\.\-\+]{0,70})(\s?\([a-zA-Z0-9\.\-\+\s]{1,20}\))?$/i; // eslint-disable-line max-len
-// Handle "boundary" in "multipart/*"
-
-var mimeTypeMultipart = /^multipart\/[a-zA-Z0-9\.\-\+]{1,100}(;\s?(boundary|charset)=("[a-zA-Z0-9\.\-\+\s]{0,70}"|[a-zA-Z0-9\.\-\+]{0,70})(\s?\([a-zA-Z0-9\.\-\+\s]{1,20}\))?){0,2}$/i; // eslint-disable-line max-len
-
-function isMimeType(str) {
-  (0, _assertString.default)(str);
-  return mimeTypeSimple.test(str) || mimeTypeText.test(str) || mimeTypeMultipart.test(str);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"WywA":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = _default;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var lat = /^\(?[+-]?(90(\.0+)?|[1-8]?\d(\.\d+)?)$/;
-var long = /^\s?[+-]?(180(\.0+)?|1[0-7]\d(\.\d+)?|\d{1,2}(\.\d+)?)\)?$/;
-
-function _default(str) {
-  (0, _assertString.default)(str);
-  if (!str.includes(',')) return false;
-  var pair = str.split(',');
-  return lat.test(pair[0]) && long.test(pair[1]);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"cS5U":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = _default;
-exports.locales = void 0;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-} // common patterns
-
-
-var threeDigit = /^\d{3}$/;
-var fourDigit = /^\d{4}$/;
-var fiveDigit = /^\d{5}$/;
-var sixDigit = /^\d{6}$/;
-var patterns = {
-  AD: /^AD\d{3}$/,
-  AT: fourDigit,
-  AU: fourDigit,
-  BE: fourDigit,
-  BG: fourDigit,
-  CA: /^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][\s\-]?\d[ABCEGHJ-NPRSTV-Z]\d$/i,
-  CH: fourDigit,
-  CZ: /^\d{3}\s?\d{2}$/,
-  DE: fiveDigit,
-  DK: fourDigit,
-  DZ: fiveDigit,
-  EE: fiveDigit,
-  ES: fiveDigit,
-  FI: fiveDigit,
-  FR: /^\d{2}\s?\d{3}$/,
-  GB: /^(gir\s?0aa|[a-z]{1,2}\d[\da-z]?\s?(\d[a-z]{2})?)$/i,
-  GR: /^\d{3}\s?\d{2}$/,
-  HR: /^([1-5]\d{4}$)/,
-  HU: fourDigit,
-  IL: fiveDigit,
-  IN: sixDigit,
-  IS: threeDigit,
-  IT: fiveDigit,
-  JP: /^\d{3}\-\d{4}$/,
-  KE: fiveDigit,
-  LI: /^(948[5-9]|949[0-7])$/,
-  LT: /^LT\-\d{5}$/,
-  LU: fourDigit,
-  LV: /^LV\-\d{4}$/,
-  MX: fiveDigit,
-  NL: /^\d{4}\s?[a-z]{2}$/i,
-  NO: fourDigit,
-  PL: /^\d{2}\-\d{3}$/,
-  PT: /^\d{4}\-\d{3}?$/,
-  RO: sixDigit,
-  RU: sixDigit,
-  SA: fiveDigit,
-  SE: /^\d{3}\s?\d{2}$/,
-  SI: fourDigit,
-  SK: /^\d{3}\s?\d{2}$/,
-  TN: fourDigit,
-  TW: /^\d{3}(\d{2})?$/,
-  UA: fiveDigit,
-  US: /^\d{5}(-\d{4})?$/,
-  ZA: fourDigit,
-  ZM: fiveDigit
-};
-var locales = Object.keys(patterns);
-exports.locales = locales;
-
-function _default(str, locale) {
-  (0, _assertString.default)(str);
-
-  if (locale in patterns) {
-    return patterns[locale].test(str);
-  } else if (locale === 'any') {
-    for (var key in patterns) {
-      if (patterns.hasOwnProperty(key)) {
-        var pattern = patterns[key];
-
-        if (pattern.test(str)) {
-          return true;
-        }
-      }
-    }
-
-    return false;
-  }
-
-  throw new Error("Invalid locale '".concat(locale, "'"));
-}
-},{"./util/assertString":"d3m2"}],"mQ0y":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = ltrim;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function ltrim(str, chars) {
-  (0, _assertString.default)(str);
-  var pattern = chars ? new RegExp("^[".concat(chars, "]+"), 'g') : /^\s+/g;
-  return str.replace(pattern, '');
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"c0Kf":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = rtrim;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function rtrim(str, chars) {
-  (0, _assertString.default)(str);
-  var pattern = chars ? new RegExp("[".concat(chars, "]")) : /\s/;
-  var idx = str.length - 1;
-
-  for (; idx >= 0 && pattern.test(str[idx]); idx--) {
-    ;
-  }
-
-  return idx < str.length ? str.substr(0, idx + 1) : str;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"e3v3":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = trim;
-
-var _rtrim = _interopRequireDefault(require("./rtrim"));
-
-var _ltrim = _interopRequireDefault(require("./ltrim"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function trim(str, chars) {
-  return (0, _rtrim.default)((0, _ltrim.default)(str, chars), chars);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./rtrim":"c0Kf","./ltrim":"mQ0y"}],"Acns":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = escape;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function escape(str) {
-  (0, _assertString.default)(str);
-  return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\//g, '&#x2F;').replace(/\\/g, '&#x5C;').replace(/`/g, '&#96;');
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"maWm":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = unescape;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function unescape(str) {
-  (0, _assertString.default)(str);
-  return str.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#x2F;/g, '/').replace(/&#x5C;/g, '\\').replace(/&#96;/g, '`');
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"jvcA":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = blacklist;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function blacklist(str, chars) {
-  (0, _assertString.default)(str);
-  return str.replace(new RegExp("[".concat(chars, "]+"), 'g'), '');
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"IO4v":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = stripLow;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-var _blacklist = _interopRequireDefault(require("./blacklist"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function stripLow(str, keep_new_lines) {
-  (0, _assertString.default)(str);
-  var chars = keep_new_lines ? '\\x00-\\x09\\x0B\\x0C\\x0E-\\x1F\\x7F' : '\\x00-\\x1F\\x7F';
-  return (0, _blacklist.default)(str, chars);
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2","./blacklist":"jvcA"}],"rqYK":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = whitelist;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function whitelist(str, chars) {
-  (0, _assertString.default)(str);
-  return str.replace(new RegExp("[^".concat(chars, "]+"), 'g'), '');
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"lcAT":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isWhitelisted;
-
-var _assertString = _interopRequireDefault(require("./util/assertString"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function isWhitelisted(str, chars) {
-  (0, _assertString.default)(str);
-
-  for (var i = str.length - 1; i >= 0; i--) {
-    if (chars.indexOf(str[i]) === -1) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/assertString":"d3m2"}],"Kz6v":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = normalizeEmail;
-
-var _merge = _interopRequireDefault(require("./util/merge"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var default_normalize_email_options = {
-  // The following options apply to all email addresses
-  // Lowercases the local part of the email address.
-  // Please note this may violate RFC 5321 as per http://stackoverflow.com/a/9808332/192024).
-  // The domain is always lowercased, as per RFC 1035
-  all_lowercase: true,
-  // The following conversions are specific to GMail
-  // Lowercases the local part of the GMail address (known to be case-insensitive)
-  gmail_lowercase: true,
-  // Removes dots from the local part of the email address, as that's ignored by GMail
-  gmail_remove_dots: true,
-  // Removes the subaddress (e.g. "+foo") from the email address
-  gmail_remove_subaddress: true,
-  // Conversts the googlemail.com domain to gmail.com
-  gmail_convert_googlemaildotcom: true,
-  // The following conversions are specific to Outlook.com / Windows Live / Hotmail
-  // Lowercases the local part of the Outlook.com address (known to be case-insensitive)
-  outlookdotcom_lowercase: true,
-  // Removes the subaddress (e.g. "+foo") from the email address
-  outlookdotcom_remove_subaddress: true,
-  // The following conversions are specific to Yahoo
-  // Lowercases the local part of the Yahoo address (known to be case-insensitive)
-  yahoo_lowercase: true,
-  // Removes the subaddress (e.g. "-foo") from the email address
-  yahoo_remove_subaddress: true,
-  // The following conversions are specific to Yandex
-  // Lowercases the local part of the Yandex address (known to be case-insensitive)
-  yandex_lowercase: true,
-  // The following conversions are specific to iCloud
-  // Lowercases the local part of the iCloud address (known to be case-insensitive)
-  icloud_lowercase: true,
-  // Removes the subaddress (e.g. "+foo") from the email address
-  icloud_remove_subaddress: true
-}; // List of domains used by iCloud
-
-var icloud_domains = ['icloud.com', 'me.com']; // List of domains used by Outlook.com and its predecessors
-// This list is likely incomplete.
-// Partial reference:
-// https://blogs.office.com/2013/04/17/outlook-com-gets-two-step-verification-sign-in-by-alias-and-new-international-domains/
-
-var outlookdotcom_domains = ['hotmail.at', 'hotmail.be', 'hotmail.ca', 'hotmail.cl', 'hotmail.co.il', 'hotmail.co.nz', 'hotmail.co.th', 'hotmail.co.uk', 'hotmail.com', 'hotmail.com.ar', 'hotmail.com.au', 'hotmail.com.br', 'hotmail.com.gr', 'hotmail.com.mx', 'hotmail.com.pe', 'hotmail.com.tr', 'hotmail.com.vn', 'hotmail.cz', 'hotmail.de', 'hotmail.dk', 'hotmail.es', 'hotmail.fr', 'hotmail.hu', 'hotmail.id', 'hotmail.ie', 'hotmail.in', 'hotmail.it', 'hotmail.jp', 'hotmail.kr', 'hotmail.lv', 'hotmail.my', 'hotmail.ph', 'hotmail.pt', 'hotmail.sa', 'hotmail.sg', 'hotmail.sk', 'live.be', 'live.co.uk', 'live.com', 'live.com.ar', 'live.com.mx', 'live.de', 'live.es', 'live.eu', 'live.fr', 'live.it', 'live.nl', 'msn.com', 'outlook.at', 'outlook.be', 'outlook.cl', 'outlook.co.il', 'outlook.co.nz', 'outlook.co.th', 'outlook.com', 'outlook.com.ar', 'outlook.com.au', 'outlook.com.br', 'outlook.com.gr', 'outlook.com.pe', 'outlook.com.tr', 'outlook.com.vn', 'outlook.cz', 'outlook.de', 'outlook.dk', 'outlook.es', 'outlook.fr', 'outlook.hu', 'outlook.id', 'outlook.ie', 'outlook.in', 'outlook.it', 'outlook.jp', 'outlook.kr', 'outlook.lv', 'outlook.my', 'outlook.ph', 'outlook.pt', 'outlook.sa', 'outlook.sg', 'outlook.sk', 'passport.com']; // List of domains used by Yahoo Mail
-// This list is likely incomplete
-
-var yahoo_domains = ['rocketmail.com', 'yahoo.ca', 'yahoo.co.uk', 'yahoo.com', 'yahoo.de', 'yahoo.fr', 'yahoo.in', 'yahoo.it', 'ymail.com']; // List of domains used by yandex.ru
-
-var yandex_domains = ['yandex.ru', 'yandex.ua', 'yandex.kz', 'yandex.com', 'yandex.by', 'ya.ru']; // replace single dots, but not multiple consecutive dots
-
-function dotsReplacer(match) {
-  if (match.length > 1) {
-    return match;
-  }
-
-  return '';
-}
-
-function normalizeEmail(email, options) {
-  options = (0, _merge.default)(options, default_normalize_email_options);
-  var raw_parts = email.split('@');
-  var domain = raw_parts.pop();
-  var user = raw_parts.join('@');
-  var parts = [user, domain]; // The domain is always lowercased, as it's case-insensitive per RFC 1035
-
-  parts[1] = parts[1].toLowerCase();
-
-  if (parts[1] === 'gmail.com' || parts[1] === 'googlemail.com') {
-    // Address is GMail
-    if (options.gmail_remove_subaddress) {
-      parts[0] = parts[0].split('+')[0];
-    }
-
-    if (options.gmail_remove_dots) {
-      // this does not replace consecutive dots like example..email@gmail.com
-      parts[0] = parts[0].replace(/\.+/g, dotsReplacer);
-    }
-
-    if (!parts[0].length) {
-      return false;
-    }
-
-    if (options.all_lowercase || options.gmail_lowercase) {
-      parts[0] = parts[0].toLowerCase();
-    }
-
-    parts[1] = options.gmail_convert_googlemaildotcom ? 'gmail.com' : parts[1];
-  } else if (icloud_domains.indexOf(parts[1]) >= 0) {
-    // Address is iCloud
-    if (options.icloud_remove_subaddress) {
-      parts[0] = parts[0].split('+')[0];
-    }
-
-    if (!parts[0].length) {
-      return false;
-    }
-
-    if (options.all_lowercase || options.icloud_lowercase) {
-      parts[0] = parts[0].toLowerCase();
-    }
-  } else if (outlookdotcom_domains.indexOf(parts[1]) >= 0) {
-    // Address is Outlook.com
-    if (options.outlookdotcom_remove_subaddress) {
-      parts[0] = parts[0].split('+')[0];
-    }
-
-    if (!parts[0].length) {
-      return false;
-    }
-
-    if (options.all_lowercase || options.outlookdotcom_lowercase) {
-      parts[0] = parts[0].toLowerCase();
-    }
-  } else if (yahoo_domains.indexOf(parts[1]) >= 0) {
-    // Address is Yahoo
-    if (options.yahoo_remove_subaddress) {
-      var components = parts[0].split('-');
-      parts[0] = components.length > 1 ? components.slice(0, -1).join('-') : components[0];
-    }
-
-    if (!parts[0].length) {
-      return false;
-    }
-
-    if (options.all_lowercase || options.yahoo_lowercase) {
-      parts[0] = parts[0].toLowerCase();
-    }
-  } else if (yandex_domains.indexOf(parts[1]) >= 0) {
-    if (options.all_lowercase || options.yandex_lowercase) {
-      parts[0] = parts[0].toLowerCase();
-    }
-
-    parts[1] = 'yandex.ru'; // all yandex domains are equal, 1st preffered
-  } else if (options.all_lowercase) {
-    // Any other address
-    parts[0] = parts[0].toLowerCase();
-  }
-
-  return parts.join('@');
-}
-
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./util/merge":"hxfi"}],"D064":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _toDate = _interopRequireDefault(require("./lib/toDate"));
-
-var _toFloat = _interopRequireDefault(require("./lib/toFloat"));
-
-var _toInt = _interopRequireDefault(require("./lib/toInt"));
-
-var _toBoolean = _interopRequireDefault(require("./lib/toBoolean"));
-
-var _equals = _interopRequireDefault(require("./lib/equals"));
-
-var _contains = _interopRequireDefault(require("./lib/contains"));
-
-var _matches = _interopRequireDefault(require("./lib/matches"));
-
-var _isEmail = _interopRequireDefault(require("./lib/isEmail"));
-
-var _isURL = _interopRequireDefault(require("./lib/isURL"));
-
-var _isMACAddress = _interopRequireDefault(require("./lib/isMACAddress"));
-
-var _isIP = _interopRequireDefault(require("./lib/isIP"));
-
-var _isIPRange = _interopRequireDefault(require("./lib/isIPRange"));
-
-var _isFQDN = _interopRequireDefault(require("./lib/isFQDN"));
-
-var _isBoolean = _interopRequireDefault(require("./lib/isBoolean"));
-
-var _isAlpha = _interopRequireWildcard(require("./lib/isAlpha"));
-
-var _isAlphanumeric = _interopRequireWildcard(require("./lib/isAlphanumeric"));
-
-var _isNumeric = _interopRequireDefault(require("./lib/isNumeric"));
-
-var _isPort = _interopRequireDefault(require("./lib/isPort"));
-
-var _isLowercase = _interopRequireDefault(require("./lib/isLowercase"));
-
-var _isUppercase = _interopRequireDefault(require("./lib/isUppercase"));
-
-var _isAscii = _interopRequireDefault(require("./lib/isAscii"));
-
-var _isFullWidth = _interopRequireDefault(require("./lib/isFullWidth"));
-
-var _isHalfWidth = _interopRequireDefault(require("./lib/isHalfWidth"));
-
-var _isVariableWidth = _interopRequireDefault(require("./lib/isVariableWidth"));
-
-var _isMultibyte = _interopRequireDefault(require("./lib/isMultibyte"));
-
-var _isSurrogatePair = _interopRequireDefault(require("./lib/isSurrogatePair"));
-
-var _isInt = _interopRequireDefault(require("./lib/isInt"));
-
-var _isFloat = _interopRequireWildcard(require("./lib/isFloat"));
-
-var _isDecimal = _interopRequireDefault(require("./lib/isDecimal"));
-
-var _isHexadecimal = _interopRequireDefault(require("./lib/isHexadecimal"));
-
-var _isDivisibleBy = _interopRequireDefault(require("./lib/isDivisibleBy"));
-
-var _isHexColor = _interopRequireDefault(require("./lib/isHexColor"));
-
-var _isISRC = _interopRequireDefault(require("./lib/isISRC"));
-
-var _isMD = _interopRequireDefault(require("./lib/isMD5"));
-
-var _isHash = _interopRequireDefault(require("./lib/isHash"));
-
-var _isJWT = _interopRequireDefault(require("./lib/isJWT"));
-
-var _isJSON = _interopRequireDefault(require("./lib/isJSON"));
-
-var _isEmpty = _interopRequireDefault(require("./lib/isEmpty"));
-
-var _isLength = _interopRequireDefault(require("./lib/isLength"));
-
-var _isByteLength = _interopRequireDefault(require("./lib/isByteLength"));
-
-var _isUUID = _interopRequireDefault(require("./lib/isUUID"));
-
-var _isMongoId = _interopRequireDefault(require("./lib/isMongoId"));
-
-var _isAfter = _interopRequireDefault(require("./lib/isAfter"));
-
-var _isBefore = _interopRequireDefault(require("./lib/isBefore"));
-
-var _isIn = _interopRequireDefault(require("./lib/isIn"));
-
-var _isCreditCard = _interopRequireDefault(require("./lib/isCreditCard"));
-
-var _isIdentityCard = _interopRequireDefault(require("./lib/isIdentityCard"));
-
-var _isISIN = _interopRequireDefault(require("./lib/isISIN"));
-
-var _isISBN = _interopRequireDefault(require("./lib/isISBN"));
-
-var _isISSN = _interopRequireDefault(require("./lib/isISSN"));
-
-var _isMobilePhone = _interopRequireWildcard(require("./lib/isMobilePhone"));
-
-var _isCurrency = _interopRequireDefault(require("./lib/isCurrency"));
-
-var _isISO = _interopRequireDefault(require("./lib/isISO8601"));
-
-var _isRFC = _interopRequireDefault(require("./lib/isRFC3339"));
-
-var _isISO31661Alpha = _interopRequireDefault(require("./lib/isISO31661Alpha2"));
-
-var _isISO31661Alpha2 = _interopRequireDefault(require("./lib/isISO31661Alpha3"));
-
-var _isBase = _interopRequireDefault(require("./lib/isBase64"));
-
-var _isDataURI = _interopRequireDefault(require("./lib/isDataURI"));
-
-var _isMagnetURI = _interopRequireDefault(require("./lib/isMagnetURI"));
-
-var _isMimeType = _interopRequireDefault(require("./lib/isMimeType"));
-
-var _isLatLong = _interopRequireDefault(require("./lib/isLatLong"));
-
-var _isPostalCode = _interopRequireWildcard(require("./lib/isPostalCode"));
-
-var _ltrim = _interopRequireDefault(require("./lib/ltrim"));
-
-var _rtrim = _interopRequireDefault(require("./lib/rtrim"));
-
-var _trim = _interopRequireDefault(require("./lib/trim"));
-
-var _escape = _interopRequireDefault(require("./lib/escape"));
-
-var _unescape = _interopRequireDefault(require("./lib/unescape"));
-
-var _stripLow = _interopRequireDefault(require("./lib/stripLow"));
-
-var _whitelist = _interopRequireDefault(require("./lib/whitelist"));
-
-var _blacklist = _interopRequireDefault(require("./lib/blacklist"));
-
-var _isWhitelisted = _interopRequireDefault(require("./lib/isWhitelisted"));
-
-var _normalizeEmail = _interopRequireDefault(require("./lib/normalizeEmail"));
-
-var _toString = _interopRequireDefault(require("./lib/util/toString"));
-
-function _interopRequireWildcard(obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  } else {
-    var newObj = {};
-
-    if (obj != null) {
-      for (var key in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) {
-          var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};
-
-          if (desc.get || desc.set) {
-            Object.defineProperty(newObj, key, desc);
-          } else {
-            newObj[key] = obj[key];
-          }
-        }
-      }
-    }
-
-    newObj.default = obj;
-    return newObj;
-  }
-}
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var version = '10.11.0';
-var validator = {
-  version: version,
-  toDate: _toDate.default,
-  toFloat: _toFloat.default,
-  toInt: _toInt.default,
-  toBoolean: _toBoolean.default,
-  equals: _equals.default,
-  contains: _contains.default,
-  matches: _matches.default,
-  isEmail: _isEmail.default,
-  isURL: _isURL.default,
-  isMACAddress: _isMACAddress.default,
-  isIP: _isIP.default,
-  isIPRange: _isIPRange.default,
-  isFQDN: _isFQDN.default,
-  isBoolean: _isBoolean.default,
-  isAlpha: _isAlpha.default,
-  isAlphaLocales: _isAlpha.locales,
-  isAlphanumeric: _isAlphanumeric.default,
-  isAlphanumericLocales: _isAlphanumeric.locales,
-  isNumeric: _isNumeric.default,
-  isPort: _isPort.default,
-  isLowercase: _isLowercase.default,
-  isUppercase: _isUppercase.default,
-  isAscii: _isAscii.default,
-  isFullWidth: _isFullWidth.default,
-  isHalfWidth: _isHalfWidth.default,
-  isVariableWidth: _isVariableWidth.default,
-  isMultibyte: _isMultibyte.default,
-  isSurrogatePair: _isSurrogatePair.default,
-  isInt: _isInt.default,
-  isFloat: _isFloat.default,
-  isFloatLocales: _isFloat.locales,
-  isDecimal: _isDecimal.default,
-  isHexadecimal: _isHexadecimal.default,
-  isDivisibleBy: _isDivisibleBy.default,
-  isHexColor: _isHexColor.default,
-  isISRC: _isISRC.default,
-  isMD5: _isMD.default,
-  isHash: _isHash.default,
-  isJWT: _isJWT.default,
-  isJSON: _isJSON.default,
-  isEmpty: _isEmpty.default,
-  isLength: _isLength.default,
-  isByteLength: _isByteLength.default,
-  isUUID: _isUUID.default,
-  isMongoId: _isMongoId.default,
-  isAfter: _isAfter.default,
-  isBefore: _isBefore.default,
-  isIn: _isIn.default,
-  isCreditCard: _isCreditCard.default,
-  isIdentityCard: _isIdentityCard.default,
-  isISIN: _isISIN.default,
-  isISBN: _isISBN.default,
-  isISSN: _isISSN.default,
-  isMobilePhone: _isMobilePhone.default,
-  isMobilePhoneLocales: _isMobilePhone.locales,
-  isPostalCode: _isPostalCode.default,
-  isPostalCodeLocales: _isPostalCode.locales,
-  isCurrency: _isCurrency.default,
-  isISO8601: _isISO.default,
-  isRFC3339: _isRFC.default,
-  isISO31661Alpha2: _isISO31661Alpha.default,
-  isISO31661Alpha3: _isISO31661Alpha2.default,
-  isBase64: _isBase.default,
-  isDataURI: _isDataURI.default,
-  isMagnetURI: _isMagnetURI.default,
-  isMimeType: _isMimeType.default,
-  isLatLong: _isLatLong.default,
-  ltrim: _ltrim.default,
-  rtrim: _rtrim.default,
-  trim: _trim.default,
-  escape: _escape.default,
-  unescape: _unescape.default,
-  stripLow: _stripLow.default,
-  whitelist: _whitelist.default,
-  blacklist: _blacklist.default,
-  isWhitelisted: _isWhitelisted.default,
-  normalizeEmail: _normalizeEmail.default,
-  toString: _toString.default
-};
-var _default = validator;
-exports.default = _default;
-module.exports = exports.default;
-module.exports.default = exports.default;
-},{"./lib/toDate":"G1eO","./lib/toFloat":"b3Og","./lib/toInt":"jURK","./lib/toBoolean":"rSZP","./lib/equals":"JWD8","./lib/contains":"EKzH","./lib/matches":"J5fp","./lib/isEmail":"khkS","./lib/isURL":"XMVV","./lib/isMACAddress":"Rpi3","./lib/isIP":"NHAn","./lib/isIPRange":"fBjy","./lib/isFQDN":"KGu6","./lib/isBoolean":"nMXH","./lib/isAlpha":"I8yr","./lib/isAlphanumeric":"AlV0","./lib/isNumeric":"VmGc","./lib/isPort":"qa4O","./lib/isLowercase":"N5f1","./lib/isUppercase":"NAqv","./lib/isAscii":"lPo8","./lib/isFullWidth":"XqZj","./lib/isHalfWidth":"aml0","./lib/isVariableWidth":"Ezi8","./lib/isMultibyte":"hMu0","./lib/isSurrogatePair":"DgpS","./lib/isInt":"Nqtv","./lib/isFloat":"tJ8x","./lib/isDecimal":"cjZv","./lib/isHexadecimal":"DCUy","./lib/isDivisibleBy":"ZzHr","./lib/isHexColor":"cJkd","./lib/isISRC":"Jf2s","./lib/isMD5":"idDX","./lib/isHash":"fiG1","./lib/isJWT":"V0R0","./lib/isJSON":"Fj5V","./lib/isEmpty":"eubH","./lib/isLength":"ZzKw","./lib/isByteLength":"jY1m","./lib/isUUID":"ZKlV","./lib/isMongoId":"Quad","./lib/isAfter":"pscr","./lib/isBefore":"tWM9","./lib/isIn":"weq6","./lib/isCreditCard":"Ob4A","./lib/isIdentityCard":"nylB","./lib/isISIN":"b1bE","./lib/isISBN":"ajl4","./lib/isISSN":"k7Z3","./lib/isMobilePhone":"XWOV","./lib/isCurrency":"hPSN","./lib/isISO8601":"gokW","./lib/isRFC3339":"Nogc","./lib/isISO31661Alpha2":"ko31","./lib/isISO31661Alpha3":"xfuO","./lib/isBase64":"CZZS","./lib/isDataURI":"seXT","./lib/isMagnetURI":"k8m8","./lib/isMimeType":"O3mI","./lib/isLatLong":"WywA","./lib/isPostalCode":"cS5U","./lib/ltrim":"mQ0y","./lib/rtrim":"c0Kf","./lib/trim":"e3v3","./lib/escape":"Acns","./lib/unescape":"maWm","./lib/stripLow":"IO4v","./lib/whitelist":"rqYK","./lib/blacklist":"jvcA","./lib/isWhitelisted":"lcAT","./lib/normalizeEmail":"Kz6v","./lib/util/toString":"Gmuz"}],"Hhf9":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-/*
- * This code is taken from https://github.com/Brightspace/node-ecdsa-sig-formatter
- * which is licensed under the Apache 2.0 license.
- *
- * It got copied over here to make some adjustments for being compatible with browserify.
- * Going forward would be either simplifying this code (as we only need 256 bit signatures),
- * or moving back to the direct dependency; both is future work(TM) for some other day.
- */
-
+Object.defineProperty(exports, "__esModule", { value: true });
+const key_encoder_1 = __importDefault(require("./key-encoder"));
+exports.default = key_encoder_1.default;
+
+},{"./key-encoder":"sYCp"}],"JZSy":[function(require,module,exports) {
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.derToJose = derToJose;
-exports.joseToDer = joseToDer;
-var asn1 = require('asn1.js');
-
-function base64UrlEscape(str) {
-    return str.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
-}
-
-var ECDSASigValue = asn1.define('ECDSASigValue', function () {
-    this.seq().obj(this.key('r').int(), this.key('s').int());
-});
-
-var seq = 0x10,
-    int = 0x02;
-
 function getParamSize(keySize) {
-    var result = (keySize / 8 | 0) + (keySize % 8 === 0 ? 0 : 1);
-    return result;
+	var result = ((keySize / 8) | 0) + (keySize % 8 === 0 ? 0 : 1);
+	return result;
 }
 
 var paramBytesForAlg = {
-    ES256: getParamSize(256),
-    ES384: getParamSize(384),
-    ES512: getParamSize(512)
+	ES256: getParamSize(256),
+	ES384: getParamSize(384),
+	ES512: getParamSize(521)
 };
 
 function getParamBytesForAlg(alg) {
-    var paramBytes = paramBytesForAlg[alg];
-    if (paramBytes) {
-        return paramBytes;
-    }
+	var paramBytes = paramBytesForAlg[alg];
+	if (paramBytes) {
+		return paramBytes;
+	}
 
-    throw new Error('Unknown algorithm "' + alg + '"');
+	throw new Error('Unknown algorithm "' + alg + '"');
 }
 
-function bignumToBuf(bn, numBytes) {
-    var buf = Buffer.from(bn.toString('hex', numBytes), 'hex');
-    return buf;
+module.exports = getParamBytesForAlg;
+
+},{}],"qrjx":[function(require,module,exports) {
+
+'use strict';
+
+var Buffer = require('safe-buffer').Buffer;
+
+var getParamBytesForAlg = require('./param-bytes-for-alg');
+
+var MAX_OCTET = 0x80,
+	CLASS_UNIVERSAL = 0,
+	PRIMITIVE_BIT = 0x20,
+	TAG_SEQ = 0x10,
+	TAG_INT = 0x02,
+	ENCODED_TAG_SEQ = (TAG_SEQ | PRIMITIVE_BIT) | (CLASS_UNIVERSAL << 6),
+	ENCODED_TAG_INT = TAG_INT | (CLASS_UNIVERSAL << 6);
+
+function base64Url(base64) {
+	return base64
+		.replace(/=/g, '')
+		.replace(/\+/g, '-')
+		.replace(/\//g, '_');
 }
 
 function signatureAsBuffer(signature) {
-    if (Buffer.isBuffer(signature)) {
-        return Buffer.from(signature);
-    } else if ('string' === typeof signature) {
-        return Buffer.from(signature, 'base64');
-    }
+	if (Buffer.isBuffer(signature)) {
+		return signature;
+	} else if ('string' === typeof signature) {
+		return Buffer.from(signature, 'base64');
+	}
 
-    throw new TypeError('ECDSA signature must be a Base64 string or a Buffer');
-}
-
-function reduceBuffer(buf) {
-    var padding = 0;
-    for (var n = buf.length; padding < n && buf[padding] === 0;) {
-        ++padding;
-    }
-
-    var needsSign = buf[padding] >= 0x80;
-    if (needsSign) {
-        --padding;
-
-        if (padding < 0) {
-            var old = buf;
-            buf = Buffer.alloc(1 + buf.length);
-            buf[0] = 0;
-            old.copy(buf, 1);
-
-            return buf;
-        }
-    }
-
-    if (padding === 0) {
-        return buf;
-    }
-
-    buf = buf.slice(padding);
-    return buf;
+	throw new TypeError('ECDSA signature must be a Base64 string or a Buffer');
 }
 
 function derToJose(signature, alg) {
-    signature = signatureAsBuffer(signature);
-    var paramBytes = getParamBytesForAlg(alg);
+	signature = signatureAsBuffer(signature);
+	var paramBytes = getParamBytesForAlg(alg);
 
-    signature = ECDSASigValue.decode(signature, 'der');
+	// the DER encoded param should at most be the param size, plus a padding
+	// zero, since due to being a signed integer
+	var maxEncodedParamLength = paramBytes + 1;
 
-    var r = bignumToBuf(signature.r, paramBytes);
-    var s = bignumToBuf(signature.s, paramBytes);
+	var inputLength = signature.length;
 
-    signature = Buffer.concat([r, s], r.length + s.length);
-    signature = signature.toString('base64');
-    signature = base64UrlEscape(signature);
+	var offset = 0;
+	if (signature[offset++] !== ENCODED_TAG_SEQ) {
+		throw new Error('Could not find expected "seq"');
+	}
 
-    return signature;
+	var seqLength = signature[offset++];
+	if (seqLength === (MAX_OCTET | 1)) {
+		seqLength = signature[offset++];
+	}
+
+	if (inputLength - offset < seqLength) {
+		throw new Error('"seq" specified length of "' + seqLength + '", only "' + (inputLength - offset) + '" remaining');
+	}
+
+	if (signature[offset++] !== ENCODED_TAG_INT) {
+		throw new Error('Could not find expected "int" for "r"');
+	}
+
+	var rLength = signature[offset++];
+
+	if (inputLength - offset - 2 < rLength) {
+		throw new Error('"r" specified length of "' + rLength + '", only "' + (inputLength - offset - 2) + '" available');
+	}
+
+	if (maxEncodedParamLength < rLength) {
+		throw new Error('"r" specified length of "' + rLength + '", max of "' + maxEncodedParamLength + '" is acceptable');
+	}
+
+	var rOffset = offset;
+	offset += rLength;
+
+	if (signature[offset++] !== ENCODED_TAG_INT) {
+		throw new Error('Could not find expected "int" for "s"');
+	}
+
+	var sLength = signature[offset++];
+
+	if (inputLength - offset !== sLength) {
+		throw new Error('"s" specified length of "' + sLength + '", expected "' + (inputLength - offset) + '"');
+	}
+
+	if (maxEncodedParamLength < sLength) {
+		throw new Error('"s" specified length of "' + sLength + '", max of "' + maxEncodedParamLength + '" is acceptable');
+	}
+
+	var sOffset = offset;
+	offset += sLength;
+
+	if (offset !== inputLength) {
+		throw new Error('Expected to consume entire buffer, but "' + (inputLength - offset) + '" bytes remain');
+	}
+
+	var rPadding = paramBytes - rLength,
+		sPadding = paramBytes - sLength;
+
+	var dst = Buffer.allocUnsafe(rPadding + rLength + sPadding + sLength);
+
+	for (offset = 0; offset < rPadding; ++offset) {
+		dst[offset] = 0;
+	}
+	signature.copy(dst, offset, rOffset + Math.max(-rPadding, 0), rOffset + rLength);
+
+	offset = paramBytes;
+
+	for (var o = offset; offset < o + sPadding; ++offset) {
+		dst[offset] = 0;
+	}
+	signature.copy(dst, offset, sOffset + Math.max(-sPadding, 0), sOffset + sLength);
+
+	dst = dst.toString('base64');
+	dst = base64Url(dst);
+
+	return dst;
+}
+
+function countPadding(buf, start, stop) {
+	var padding = 0;
+	while (start + padding < stop && buf[start + padding] === 0) {
+		++padding;
+	}
+
+	var needsSign = buf[start + padding] >= MAX_OCTET;
+	if (needsSign) {
+		--padding;
+	}
+
+	return padding;
 }
 
 function joseToDer(signature, alg) {
-    signature = signatureAsBuffer(signature);
-    var paramBytes = getParamBytesForAlg(alg);
+	signature = signatureAsBuffer(signature);
+	var paramBytes = getParamBytesForAlg(alg);
 
-    var signatureBytes = signature.length;
-    if (signatureBytes !== paramBytes * 2) {
-        throw new TypeError('"' + alg + '" signatures must be "' + paramBytes * 2 + '" bytes, saw "' + signatureBytes + '"');
-    }
+	var signatureBytes = signature.length;
+	if (signatureBytes !== paramBytes * 2) {
+		throw new TypeError('"' + alg + '" signatures must be "' + paramBytes * 2 + '" bytes, saw "' + signatureBytes + '"');
+	}
 
-    var r = reduceBuffer(signature.slice(0, paramBytes));
-    var s = reduceBuffer(signature.slice(paramBytes));
+	var rPadding = countPadding(signature, 0, paramBytes);
+	var sPadding = countPadding(signature, paramBytes, signature.length);
+	var rLength = paramBytes - rPadding;
+	var sLength = paramBytes - sPadding;
 
-    var rsBytes = 1 + 1 + r.length + 1 + 1 + s.length;
+	var rsBytes = 1 + 1 + rLength + 1 + 1 + sLength;
 
-    var oneByteLength = rsBytes < 0x80;
+	var shortLength = rsBytes < MAX_OCTET;
 
-    signature = Buffer.alloc((oneByteLength ? 2 : 3) + rsBytes);
+	var dst = Buffer.allocUnsafe((shortLength ? 2 : 3) + rsBytes);
 
-    var offset = 0;
-    signature[offset++] = seq | 0x20 | 0 << 6;
-    if (oneByteLength) {
-        signature[offset++] = rsBytes;
-    } else {
-        signature[offset++] = 0x80 | 1;
-        signature[offset++] = rsBytes & 0xff;
-    }
-    signature[offset++] = int | 0 << 6;
-    signature[offset++] = r.length;
-    r.copy(signature, offset);
-    offset += r.length;
-    signature[offset++] = int | 0 << 6;
-    signature[offset++] = s.length;
-    s.copy(signature, offset);
+	var offset = 0;
+	dst[offset++] = ENCODED_TAG_SEQ;
+	if (shortLength) {
+		// Bit 8 has value "0"
+		// bits 7-1 give the length.
+		dst[offset++] = rsBytes;
+	} else {
+		// Bit 8 of first octet has value "1"
+		// bits 7-1 give the number of additional length octets.
+		dst[offset++] = MAX_OCTET	| 1;
+		// length, base 256
+		dst[offset++] = rsBytes & 0xff;
+	}
+	dst[offset++] = ENCODED_TAG_INT;
+	dst[offset++] = rLength;
+	if (rPadding < 0) {
+		dst[offset++] = 0;
+		offset += signature.copy(dst, offset, 0, paramBytes);
+	} else {
+		offset += signature.copy(dst, offset, rPadding, paramBytes);
+	}
+	dst[offset++] = ENCODED_TAG_INT;
+	dst[offset++] = sLength;
+	if (sPadding < 0) {
+		dst[offset++] = 0;
+		signature.copy(dst, offset, paramBytes);
+	} else {
+		signature.copy(dst, offset, paramBytes + sPadding);
+	}
 
-    return signature;
+	return dst;
 }
-},{"asn1.js":"NNmB","buffer":"dskh"}],"qPXI":[function(require,module,exports) {
-'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MissingParametersError = exports.MissingParametersError = function (_Error) {
-  _inherits(MissingParametersError, _Error);
-
-  function MissingParametersError(message) {
-    _classCallCheck(this, MissingParametersError);
-
-    var _this = _possibleConstructorReturn(this, (MissingParametersError.__proto__ || Object.getPrototypeOf(MissingParametersError)).call(this));
-
-    _this.name = 'MissingParametersError';
-    _this.message = message || '';
-    return _this;
-  }
-
-  return MissingParametersError;
-}(Error);
-
-var InvalidTokenError = exports.InvalidTokenError = function (_Error2) {
-  _inherits(InvalidTokenError, _Error2);
-
-  function InvalidTokenError(message) {
-    _classCallCheck(this, InvalidTokenError);
-
-    var _this2 = _possibleConstructorReturn(this, (InvalidTokenError.__proto__ || Object.getPrototypeOf(InvalidTokenError)).call(this));
-
-    _this2.name = 'InvalidTokenError';
-    _this2.message = message || '';
-    return _this2;
-  }
-
-  return InvalidTokenError;
-}(Error);
-},{}],"k6ui":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.SECP256K1Client = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _elliptic = require('elliptic');
-
-var _crypto = require('crypto');
-
-var _keyEncoder = require('key-encoder');
-
-var _keyEncoder2 = _interopRequireDefault(_keyEncoder);
-
-var _validator = require('validator');
-
-var _ecdsaSigFormatter = require('./ecdsaSigFormatter');
-
-var _errors = require('../errors');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var SECP256K1Client = exports.SECP256K1Client = function () {
-  function SECP256K1Client() {
-    _classCallCheck(this, SECP256K1Client);
-  }
-
-  _createClass(SECP256K1Client, null, [{
-    key: 'createHash',
-    value: function createHash(signingInput) {
-      return (0, _crypto.createHash)('sha256').update(signingInput).digest();
-    }
-  }, {
-    key: 'loadPrivateKey',
-    value: function loadPrivateKey(rawPrivateKey) {
-      if (rawPrivateKey.length === 66) {
-        rawPrivateKey = rawPrivateKey.slice(0, 64);
-      }
-      return SECP256K1Client.ec.keyFromPrivate(rawPrivateKey);
-    }
-  }, {
-    key: 'loadPublicKey',
-    value: function loadPublicKey(rawPublicKey) {
-      return SECP256K1Client.ec.keyFromPublic(rawPublicKey, 'hex');
-    }
-  }, {
-    key: 'encodePublicKey',
-    value: function encodePublicKey(publicKey, originalFormat, destinationFormat) {
-      return SECP256K1Client.keyEncoder.encodePublic(publicKey, originalFormat, destinationFormat);
-    }
-  }, {
-    key: 'derivePublicKey',
-    value: function derivePublicKey(privateKey, compressed) {
-      if (typeof privateKey !== 'string') {
-        throw Error('private key must be a string');
-      }
-      if (!(0, _validator.isHexadecimal)(privateKey)) {
-        throw Error('private key must be a hex string');
-      }
-      if (privateKey.length == 66) {
-        privateKey = privateKey.slice(0, 64);
-      } else if (privateKey.length <= 64) {
-        // do nothing
-      } else {
-        throw Error('private key must be 66 characters or less');
-      }
-      if (compressed === undefined) {
-        compressed = true;
-      }
-      var keypair = SECP256K1Client.ec.keyFromPrivate(privateKey);
-      return keypair.getPublic(compressed, 'hex');
-    }
-  }, {
-    key: 'signHash',
-    value: function signHash(signingInputHash, rawPrivateKey) {
-      var format = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'jose';
-
-      // make sure the required parameters are provided
-      if (!(signingInputHash && rawPrivateKey)) {
-        throw new _errors.MissingParametersError('a signing input hash and private key are all required');
-      }
-      // prepare the private key
-      var privateKeyObject = SECP256K1Client.loadPrivateKey(rawPrivateKey);
-      // calculate the signature
-      var signatureObject = privateKeyObject.sign(signingInputHash);
-      var derSignature = Buffer.from(signatureObject.toDER());
-
-      if (format === 'der') {
-        return derSignature.toString('hex');
-      } else if (format === 'jose') {
-        // return the JOSE-formatted signature
-        return (0, _ecdsaSigFormatter.derToJose)(derSignature, 'ES256');
-      } else {
-        throw Error('Invalid signature format');
-      }
-    }
-  }, {
-    key: 'loadSignature',
-    value: function loadSignature(joseSignature) {
-      // create and return the DER-formatted signature buffer
-      return (0, _ecdsaSigFormatter.joseToDer)(joseSignature, 'ES256');
-    }
-  }, {
-    key: 'verifyHash',
-    value: function verifyHash(signingInputHash, derSignatureBuffer, rawPublicKey) {
-      // make sure the required parameters are provided
-      if (!(signingInputHash && derSignatureBuffer && rawPublicKey)) {
-        throw new _errors.MissingParametersError('a signing input hash, der signature, and public key are all required');
-      }
-      // prepare the public key
-      var publicKeyObject = SECP256K1Client.loadPublicKey(rawPublicKey);
-      // verify the token
-      return publicKeyObject.verify(signingInputHash, derSignatureBuffer);
-    }
-  }]);
-
-  return SECP256K1Client;
-}();
-
-SECP256K1Client.algorithmName = 'ES256K';
-SECP256K1Client.ec = new _elliptic.ec('secp256k1');
-SECP256K1Client.keyEncoder = new _keyEncoder2.default({
-  curveParameters: [1, 3, 132, 0, 10],
-  privatePEMOptions: { label: 'EC PRIVATE KEY' },
-  publicPEMOptions: { label: 'PUBLIC KEY' },
-  curve: SECP256K1Client.ec
-});
-},{"elliptic":"xha3","crypto":"mRF4","key-encoder":"tVya","validator":"D064","./ecdsaSigFormatter":"Hhf9","../errors":"qPXI","buffer":"dskh"}],"tUD2":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.cryptoClients = exports.SECP256K1Client = undefined;
-
-var _secp256k = require('./secp256k1');
-
-var cryptoClients = {
-  ES256K: _secp256k.SECP256K1Client
+module.exports = {
+	derToJose: derToJose,
+	joseToDer: joseToDer
 };
 
-exports.SECP256K1Client = _secp256k.SECP256K1Client;
-exports.cryptoClients = cryptoClients;
-},{"./secp256k1":"k6ui"}],"dUFA":[function(require,module,exports) {
-'use strict';
+},{"safe-buffer":"Wugr","./param-bytes-for-alg":"JZSy"}],"rdic":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class MissingParametersError extends Error {
+    constructor(message) {
+        super();
+        this.name = 'MissingParametersError';
+        this.message = (message || '');
+    }
+}
+exports.MissingParametersError = MissingParametersError;
+class InvalidTokenError extends Error {
+    constructor(message) {
+        super();
+        this.name = 'InvalidTokenError';
+        this.message = (message || '');
+    }
+}
+exports.InvalidTokenError = InvalidTokenError;
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
+},{}],"BoDh":[function(require,module,exports) {
+var Buffer = require("buffer").Buffer;
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const elliptic_1 = require("elliptic");
+const crypto_1 = require("crypto");
+const key_encoder_1 = __importDefault(require("key-encoder"));
+const ecdsa_sig_formatter_1 = require("ecdsa-sig-formatter");
+const errors_1 = require("../errors");
+class SECP256K1Client {
+    constructor() {
+    }
+    static createHash(signingInput) {
+        return crypto_1.createHash('sha256').update(signingInput).digest();
+    }
+    static loadPrivateKey(rawPrivateKey) {
+        if (rawPrivateKey.length === 66) {
+            rawPrivateKey = rawPrivateKey.slice(0, 64);
+        }
+        return SECP256K1Client.ec.keyFromPrivate(rawPrivateKey);
+    }
+    static loadPublicKey(rawPublicKey) {
+        return SECP256K1Client.ec.keyFromPublic(rawPublicKey, 'hex');
+    }
+    static encodePublicKey(publicKey, originalFormat, destinationFormat) {
+        return SECP256K1Client.keyEncoder.encodePublic(publicKey, originalFormat, destinationFormat);
+    }
+    static derivePublicKey(privateKey, compressed = true) {
+        if (typeof privateKey !== 'string') {
+            throw Error('private key must be a string');
+        }
+        if (!(/^[0-9A-F]+$/i.test(privateKey))) {
+            throw Error('private key must be a hex string');
+        }
+        if (privateKey.length == 66) {
+            privateKey = privateKey.slice(0, 64);
+        }
+        else if (privateKey.length <= 64) {
+            // do nothing
+        }
+        else {
+            throw Error('private key must be 66 characters or less');
+        }
+        const keypair = SECP256K1Client.ec.keyFromPrivate(privateKey);
+        return keypair.getPublic(compressed, 'hex');
+    }
+    static signHash(signingInputHash, rawPrivateKey, format = 'jose') {
+        // make sure the required parameters are provided
+        if (!(signingInputHash && rawPrivateKey)) {
+            throw new errors_1.MissingParametersError('a signing input hash and private key are all required');
+        }
+        // prepare the private key
+        const privateKeyObject = SECP256K1Client.loadPrivateKey(rawPrivateKey);
+        // calculate the signature
+        const signatureObject = privateKeyObject.sign(signingInputHash);
+        const derSignature = Buffer.from(signatureObject.toDER());
+        if (format === 'der') {
+            return derSignature.toString('hex');
+        }
+        else if (format === 'jose') {
+            // return the JOSE-formatted signature
+            return ecdsa_sig_formatter_1.derToJose(derSignature, 'ES256');
+        }
+        else {
+            throw Error('Invalid signature format');
+        }
+    }
+    static loadSignature(joseSignature) {
+        // create and return the DER-formatted signature buffer
+        return ecdsa_sig_formatter_1.joseToDer(joseSignature, 'ES256');
+    }
+    static verifyHash(signingInputHash, derSignatureBuffer, rawPublicKey) {
+        // make sure the required parameters are provided
+        if (!(signingInputHash && derSignatureBuffer && rawPublicKey)) {
+            throw new errors_1.MissingParametersError('a signing input hash, der signature, and public key are all required');
+        }
+        // prepare the public key
+        const publicKeyObject = SECP256K1Client.loadPublicKey(rawPublicKey);
+        // verify the token
+        return publicKeyObject.verify(signingInputHash, derSignatureBuffer);
+    }
+}
+SECP256K1Client.ec = new elliptic_1.ec('secp256k1');
+SECP256K1Client.algorithmName = 'ES256K';
+SECP256K1Client.keyEncoder = new key_encoder_1.default({
+    curveParameters: [1, 3, 132, 0, 10],
+    privatePEMOptions: { label: 'EC PRIVATE KEY' },
+    publicPEMOptions: { label: 'PUBLIC KEY' },
+    curve: SECP256K1Client.ec
 });
-exports.TokenSigner = undefined;
+exports.SECP256K1Client = SECP256K1Client;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+},{"elliptic":"xha3","crypto":"mRF4","key-encoder":"le8S","ecdsa-sig-formatter":"qrjx","../errors":"rdic","buffer":"dskh"}],"GcyT":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const secp256k1_1 = require("./secp256k1");
+exports.SECP256K1Client = secp256k1_1.SECP256K1Client;
+const cryptoClients = {
+    ES256K: secp256k1_1.SECP256K1Client
+};
+exports.cryptoClients = cryptoClients;
 
-exports.createUnsecuredToken = createUnsecuredToken;
-
-var _base64url = require('base64url');
-
-var _base64url2 = _interopRequireDefault(_base64url);
-
-var _cryptoClients = require('./cryptoClients');
-
-var _errors = require('./errors');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+},{"./secp256k1":"BoDh"}],"vlzQ":[function(require,module,exports) {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const base64url_1 = __importDefault(require("base64url"));
+const cryptoClients_1 = require("./cryptoClients");
+const errors_1 = require("./errors");
 function createSigningInput(payload, header) {
-    var tokenParts = [];
-
+    const tokenParts = [];
     // add in the header
-    var encodedHeader = _base64url2.default.encode(JSON.stringify(header));
+    const encodedHeader = base64url_1.default.encode(JSON.stringify(header));
     tokenParts.push(encodedHeader);
-
     // add in the payload
-    var encodedPayload = _base64url2.default.encode(JSON.stringify(payload));
+    const encodedPayload = base64url_1.default.encode(JSON.stringify(payload));
     tokenParts.push(encodedPayload);
-
     // prepare the message
-    var signingInput = tokenParts.join('.');
-
+    const signingInput = tokenParts.join('.');
     // return the signing input
     return signingInput;
 }
-
 function createUnsecuredToken(payload) {
-    var header = { typ: 'JWT', alg: 'none' };
+    const header = { typ: 'JWT', alg: 'none' };
     return createSigningInput(payload, header) + '.';
 }
-
-var TokenSigner = function () {
-    function TokenSigner(signingAlgorithm, rawPrivateKey) {
-        _classCallCheck(this, TokenSigner);
-
+exports.createUnsecuredToken = createUnsecuredToken;
+class TokenSigner {
+    constructor(signingAlgorithm, rawPrivateKey) {
         if (!(signingAlgorithm && rawPrivateKey)) {
-            throw new _errors.MissingParametersError('a signing algorithm and private key are required');
+            throw new errors_1.MissingParametersError('a signing algorithm and private key are required');
         }
         if (typeof signingAlgorithm !== 'string') {
-            throw 'signing algorithm parameter must be a string';
+            throw new Error('signing algorithm parameter must be a string');
         }
         signingAlgorithm = signingAlgorithm.toUpperCase();
-        if (!_cryptoClients.cryptoClients.hasOwnProperty(signingAlgorithm)) {
-            throw 'invalid signing algorithm';
+        if (!cryptoClients_1.cryptoClients.hasOwnProperty(signingAlgorithm)) {
+            throw new Error('invalid signing algorithm');
         }
         this.tokenType = 'JWT';
-        this.cryptoClient = _cryptoClients.cryptoClients[signingAlgorithm];
+        this.cryptoClient = cryptoClients_1.cryptoClients[signingAlgorithm];
         this.rawPrivateKey = rawPrivateKey;
     }
-
-    _createClass(TokenSigner, [{
-        key: 'header',
-        value: function header() {
-            var _header = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-            var defaultHeader = { typ: this.tokenType,
-                alg: this.cryptoClient.algorithmName };
-            return Object.assign({}, defaultHeader, _header);
+    header(header = {}) {
+        const defaultHeader = { typ: this.tokenType,
+            alg: this.cryptoClient.algorithmName };
+        return Object.assign({}, defaultHeader, header);
+    }
+    sign(payload, expanded = false, customHeader = {}) {
+        // generate the token header
+        const header = this.header(customHeader);
+        // prepare the message to be signed
+        const signingInput = createSigningInput(payload, header);
+        const signingInputHash = this.cryptoClient.createHash(signingInput);
+        // sign the message and add in the signature
+        const signature = this.cryptoClient.signHash(signingInputHash, this.rawPrivateKey);
+        if (expanded) {
+            return {
+                'header': [
+                    base64url_1.default.encode(JSON.stringify(header))
+                ],
+                'payload': JSON.stringify(payload),
+                'signature': [
+                    signature
+                ]
+            };
         }
-    }, {
-        key: 'sign',
-        value: function sign(payload) {
-            var expanded = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-            var customHeader = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-
-            // generate the token header
-            var header = this.header(customHeader);
-
-            // prepare the message to be signed
-            var signingInput = createSigningInput(payload, header);
-            var signingInputHash = this.cryptoClient.createHash(signingInput);
-
-            // sign the message and add in the signature
-            var signature = this.cryptoClient.signHash(signingInputHash, this.rawPrivateKey);
-
-            if (expanded) {
-                return {
-                    'header': [_base64url2.default.encode(JSON.stringify(header))],
-                    'payload': JSON.stringify(payload),
-                    'signature': [signature]
-                };
-            } else {
-                return [signingInput, signature].join('.');
-            }
+        else {
+            return [signingInput, signature].join('.');
         }
-    }]);
-
-    return TokenSigner;
-}();
-
+    }
+}
 exports.TokenSigner = TokenSigner;
-},{"base64url":"XVTP","./cryptoClients":"tUD2","./errors":"qPXI"}],"sBaF":[function(require,module,exports) {
-'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.TokenVerifier = undefined;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _base64url = require('base64url');
-
-var _base64url2 = _interopRequireDefault(_base64url);
-
-var _cryptoClients = require('./cryptoClients');
-
-var _errors = require('./errors');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var TokenVerifier = exports.TokenVerifier = function () {
-    function TokenVerifier(signingAlgorithm, rawPublicKey) {
-        _classCallCheck(this, TokenVerifier);
-
+},{"base64url":"XVTP","./cryptoClients":"GcyT","./errors":"rdic"}],"ucpS":[function(require,module,exports) {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const base64url_1 = __importDefault(require("base64url"));
+const cryptoClients_1 = require("./cryptoClients");
+const errors_1 = require("./errors");
+class TokenVerifier {
+    constructor(signingAlgorithm, rawPublicKey) {
         if (!(signingAlgorithm && rawPublicKey)) {
-            throw new _errors.MissingParametersError('a signing algorithm and public key are required');
+            throw new errors_1.MissingParametersError('a signing algorithm and public key are required');
         }
         if (typeof signingAlgorithm !== 'string') {
             throw 'signing algorithm parameter must be a string';
         }
         signingAlgorithm = signingAlgorithm.toUpperCase();
-        if (!_cryptoClients.cryptoClients.hasOwnProperty(signingAlgorithm)) {
+        if (!cryptoClients_1.cryptoClients.hasOwnProperty(signingAlgorithm)) {
             throw 'invalid signing algorithm';
         }
         this.tokenType = 'JWT';
-        this.cryptoClient = _cryptoClients.cryptoClients[signingAlgorithm];
+        this.cryptoClient = cryptoClients_1.cryptoClients[signingAlgorithm];
         this.rawPublicKey = rawPublicKey;
     }
-
-    _createClass(TokenVerifier, [{
-        key: 'verify',
-        value: function verify(token) {
-            if (typeof token === 'string') {
-                return this.verifyCompact(token);
-            } else if ((typeof token === 'undefined' ? 'undefined' : _typeof(token)) === 'object') {
-                return this.verifyExpanded(token);
-            } else {
-                return false;
+    verify(token) {
+        if (typeof token === 'string') {
+            return this.verifyCompact(token);
+        }
+        else if (typeof token === 'object') {
+            return this.verifyExpanded(token);
+        }
+        else {
+            return false;
+        }
+    }
+    verifyCompact(token) {
+        // decompose the token into parts
+        const tokenParts = token.split('.');
+        // calculate the signing input hash
+        const signingInput = tokenParts[0] + '.' + tokenParts[1];
+        const signingInputHash = this.cryptoClient.createHash(signingInput);
+        // extract the signature as a DER array
+        const derSignatureBuffer = this.cryptoClient.loadSignature(tokenParts[2]);
+        // verify the signed hash
+        return this.cryptoClient.verifyHash(signingInputHash, derSignatureBuffer, this.rawPublicKey);
+    }
+    verifyExpanded(token) {
+        const signingInput = [
+            token['header'].join('.'),
+            base64url_1.default.encode(token['payload'])
+        ].join('.');
+        const signingInputHash = this.cryptoClient.createHash(signingInput);
+        let verified = true;
+        token['signature'].map((signature) => {
+            const derSignatureBuffer = this.cryptoClient.loadSignature(signature);
+            const signatureVerified = this.cryptoClient.verifyHash(signingInputHash, derSignatureBuffer, this.rawPublicKey);
+            if (!signatureVerified) {
+                verified = false;
             }
-        }
-    }, {
-        key: 'verifyCompact',
-        value: function verifyCompact(token) {
-            // decompose the token into parts
-            var tokenParts = token.split('.');
+        });
+        return verified;
+    }
+}
+exports.TokenVerifier = TokenVerifier;
 
-            // calculate the signing input hash
-            var signingInput = tokenParts[0] + '.' + tokenParts[1];
-            var signingInputHash = this.cryptoClient.createHash(signingInput);
-
-            // extract the signature as a DER array
-            var derSignatureBuffer = this.cryptoClient.loadSignature(tokenParts[2]);
-
-            // verify the signed hash
-            return this.cryptoClient.verifyHash(signingInputHash, derSignatureBuffer, this.rawPublicKey);
-        }
-    }, {
-        key: 'verifyExpanded',
-        value: function verifyExpanded(token) {
-            var _this = this;
-
-            var signingInput = [token['header'].join('.'), _base64url2.default.encode(token['payload'])].join('.');
-            var signingInputHash = this.cryptoClient.createHash(signingInput);
-
-            var verified = true;
-
-            token['signature'].map(function (signature) {
-                var derSignatureBuffer = _this.cryptoClient.loadSignature(signature);
-                var signatureVerified = _this.cryptoClient.verifyHash(signingInputHash, derSignatureBuffer, _this.rawPublicKey);
-                if (!signatureVerified) {
-                    verified = false;
-                }
-            });
-
-            return verified;
-        }
-    }]);
-
-    return TokenVerifier;
-}();
-},{"base64url":"XVTP","./cryptoClients":"tUD2","./errors":"qPXI"}],"KH2R":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-exports.decodeToken = decodeToken;
-
-var _base64url = require('base64url');
-
-var _base64url2 = _interopRequireDefault(_base64url);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+},{"base64url":"XVTP","./cryptoClients":"GcyT","./errors":"rdic"}],"ZM9j":[function(require,module,exports) {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const base64url_1 = __importDefault(require("base64url"));
 function decodeToken(token) {
     if (typeof token === 'string') {
         // decompose the token into parts
-        var tokenParts = token.split('.');
-        var header = JSON.parse(_base64url2.default.decode(tokenParts[0]));
-        var payload = JSON.parse(_base64url2.default.decode(tokenParts[1]));
-        var signature = tokenParts[2];
-
+        const tokenParts = token.split('.');
+        const header = JSON.parse(base64url_1.default.decode(tokenParts[0]));
+        const payload = JSON.parse(base64url_1.default.decode(tokenParts[1]));
+        const signature = tokenParts[2];
         // return the token object
         return {
             header: header,
             payload: payload,
             signature: signature
         };
-    } else if ((typeof token === 'undefined' ? 'undefined' : _typeof(token)) === 'object') {
-        var _payload = token.payload;
-        if (token.payload[0] !== '{') {
-            _payload = _base64url2.default.decode(_payload);
+    }
+    else if (typeof token === 'object') {
+        if (typeof token.payload !== 'string') {
+            throw new Error('Expected token payload to be a base64 or json string');
         }
-
-        var allHeaders = [];
-        token.header.map(function (headerValue) {
-            var header = JSON.parse(_base64url2.default.decode(headerValue));
+        let payload = token.payload;
+        if (token.payload[0] !== '{') {
+            payload = base64url_1.default.decode(payload);
+        }
+        const allHeaders = [];
+        token.header.map((headerValue) => {
+            const header = JSON.parse(base64url_1.default.decode(headerValue));
             allHeaders.push(header);
         });
-
         return {
             header: allHeaders,
-            payload: JSON.parse(_payload),
+            payload: JSON.parse(payload),
             signature: token.signature
         };
     }
 }
-},{"base64url":"XVTP"}],"bYjQ":[function(require,module,exports) {
-'use strict';
+exports.decodeToken = decodeToken;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+},{"base64url":"XVTP"}],"ap7v":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var signer_1 = require("./signer");
+exports.TokenSigner = signer_1.TokenSigner;
+exports.createUnsecuredToken = signer_1.createUnsecuredToken;
+var verifier_1 = require("./verifier");
+exports.TokenVerifier = verifier_1.TokenVerifier;
+var decode_1 = require("./decode");
+exports.decodeToken = decode_1.decodeToken;
+var errors_1 = require("./errors");
+exports.MissingParametersError = errors_1.MissingParametersError;
+exports.InvalidTokenError = errors_1.InvalidTokenError;
+var cryptoClients_1 = require("./cryptoClients");
+exports.SECP256K1Client = cryptoClients_1.SECP256K1Client;
+exports.cryptoClients = cryptoClients_1.cryptoClients;
 
-var _signer = require('./signer');
-
-Object.defineProperty(exports, 'TokenSigner', {
-  enumerable: true,
-  get: function get() {
-    return _signer.TokenSigner;
-  }
-});
-Object.defineProperty(exports, 'createUnsecuredToken', {
-  enumerable: true,
-  get: function get() {
-    return _signer.createUnsecuredToken;
-  }
-});
-
-var _verifier = require('./verifier');
-
-Object.defineProperty(exports, 'TokenVerifier', {
-  enumerable: true,
-  get: function get() {
-    return _verifier.TokenVerifier;
-  }
-});
-
-var _decode = require('./decode');
-
-Object.defineProperty(exports, 'decodeToken', {
-  enumerable: true,
-  get: function get() {
-    return _decode.decodeToken;
-  }
-});
-
-var _errors = require('./errors');
-
-Object.defineProperty(exports, 'MissingParametersError', {
-  enumerable: true,
-  get: function get() {
-    return _errors.MissingParametersError;
-  }
-});
-Object.defineProperty(exports, 'InvalidTokenError', {
-  enumerable: true,
-  get: function get() {
-    return _errors.InvalidTokenError;
-  }
-});
-
-var _cryptoClients = require('./cryptoClients');
-
-Object.defineProperty(exports, 'SECP256K1Client', {
-  enumerable: true,
-  get: function get() {
-    return _cryptoClients.SECP256K1Client;
-  }
-});
-Object.defineProperty(exports, 'cryptoClients', {
-  enumerable: true,
-  get: function get() {
-    return _cryptoClients.cryptoClients;
-  }
-});
-},{"./signer":"dUFA","./verifier":"sBaF","./decode":"KH2R","./errors":"qPXI","./cryptoClients":"tUD2"}],"qabb":[function(require,module,exports) {
+},{"./signer":"vlzQ","./verifier":"ucpS","./decode":"ZM9j","./errors":"rdic","./cryptoClients":"GcyT"}],"qabb":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 "use strict";
 
@@ -45416,7 +41701,7 @@ function getPublicKeyFromPrivate(privateKey) {
 }
 
 exports.getPublicKeyFromPrivate = getPublicKeyFromPrivate;
-},{"crypto":"mRF4","bitcoinjs-lib":"Bcue","buffer":"dskh"}],"oZHr":[function(require,module,exports) {
+},{"crypto":"mRF4","bitcoinjs-lib":"bZOe","buffer":"dskh"}],"oZHr":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45502,19 +41787,13 @@ export function getPublicKeyOrAddressFromDID(decentralizedID) {
 var Buffer = require("buffer").Buffer;
 "use strict";
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var elliptic_1 = require("elliptic");
 
-var crypto_1 = __importDefault(require("crypto"));
+var crypto = require("crypto");
 
 var keys_1 = require("../keys");
 
@@ -45524,7 +41803,7 @@ var ecurve = new elliptic_1.ec('secp256k1');
 */
 
 function aes256CbcEncrypt(iv, key, plaintext) {
-  var cipher = crypto_1.default.createCipheriv('aes-256-cbc', key, iv);
+  var cipher = crypto.createCipheriv('aes-256-cbc', key, iv);
   return Buffer.concat([cipher.update(plaintext), cipher.final()]);
 }
 /**
@@ -45533,7 +41812,7 @@ function aes256CbcEncrypt(iv, key, plaintext) {
 
 
 function aes256CbcDecrypt(iv, key, ciphertext) {
-  var cipher = crypto_1.default.createDecipheriv('aes-256-cbc', key, iv);
+  var cipher = crypto.createDecipheriv('aes-256-cbc', key, iv);
   return Buffer.concat([cipher.update(ciphertext), cipher.final()]);
 }
 /**
@@ -45542,7 +41821,7 @@ function aes256CbcDecrypt(iv, key, ciphertext) {
 
 
 function hmacSha256(key, content) {
-  return crypto_1.default.createHmac('sha256', key).update(content).digest();
+  return crypto.createHmac('sha256', key).update(content).digest();
 }
 /**
 * @ignore
@@ -45569,7 +41848,7 @@ function equalConstTime(b1, b2) {
 
 function sharedSecretToKeys(sharedSecret) {
   // generate mac and encryption key from shared secret
-  var hashedSecret = crypto_1.default.createHash('sha512').update(sharedSecret).digest();
+  var hashedSecret = crypto.createHash('sha512').update(sharedSecret).digest();
   return {
     encryptionKey: hashedSecret.slice(0, 32),
     hmacKey: hashedSecret.slice(32)
@@ -45619,13 +41898,13 @@ function encryptECIES(publicKey, content) {
   var sharedSecret = ephemeralSK.derive(ecPK);
   var sharedSecretHex = getHexFromBN(sharedSecret);
   var sharedKeys = sharedSecretToKeys(Buffer.from(sharedSecretHex, 'hex'));
-  var initializationVector = crypto_1.default.randomBytes(16);
+  var initializationVector = crypto.randomBytes(16);
   var cipherText = aes256CbcEncrypt(initializationVector, sharedKeys.encryptionKey, plainText);
-  var macData = Buffer.concat([initializationVector, Buffer.from(ephemeralPK.encodeCompressed()), cipherText]);
+  var macData = Buffer.concat([initializationVector, Buffer.from(ephemeralPK.encode('array', true)), cipherText]);
   var mac = hmacSha256(sharedKeys.hmacKey, macData);
   return {
     iv: initializationVector.toString('hex'),
-    ephemeralPK: ephemeralPK.encodeCompressed('hex'),
+    ephemeralPK: ephemeralPK.encode('hex', true),
     cipherText: cipherText.toString('hex'),
     mac: mac.toString('hex'),
     wasString: isString
@@ -45654,7 +41933,7 @@ function decryptECIES(privateKey, cipherObject) {
   var sharedKeys = sharedSecretToKeys(sharedSecretBuffer);
   var ivBuffer = Buffer.from(cipherObject.iv, 'hex');
   var cipherTextBuffer = Buffer.from(cipherObject.cipherText, 'hex');
-  var macData = Buffer.concat([ivBuffer, Buffer.from(ephemeralPK.encodeCompressed()), cipherTextBuffer]);
+  var macData = Buffer.concat([ivBuffer, Buffer.from(ephemeralPK.encode('array', true)), cipherTextBuffer]);
   var actualMac = hmacSha256(sharedKeys.hmacKey, macData);
   var expectedMac = Buffer.from(cipherObject.mac, 'hex');
 
@@ -45688,7 +41967,7 @@ function signECDSA(privateKey, content) {
   var contentBuffer = content instanceof Buffer ? content : Buffer.from(content);
   var ecPrivate = ecurve.keyFromPrivate(privateKey, 'hex');
   var publicKey = keys_1.getPublicKeyFromPrivate(privateKey);
-  var contentHash = crypto_1.default.createHash('sha256').update(contentBuffer).digest();
+  var contentHash = crypto.createHash('sha256').update(contentBuffer).digest();
   var signature = ecPrivate.sign(contentHash);
   var signatureString = signature.toDER('hex');
   return {
@@ -45719,7 +41998,7 @@ function getBuffer(content) {
 function verifyECDSA(content, publicKey, signature) {
   var contentBuffer = getBuffer(content);
   var ecPublic = ecurve.keyFromPublic(publicKey, 'hex');
-  var contentHash = crypto_1.default.createHash('sha256').update(contentBuffer).digest();
+  var contentHash = crypto.createHash('sha256').update(contentBuffer).digest();
   return ecPublic.verify(contentHash, signature);
 }
 
@@ -46298,6 +42577,16 @@ function extract(input) {
   return input.slice(queryStart + 1);
 }
 
+function parseValue(value, options) {
+  if (options.parseNumbers && !Number.isNaN(Number(value)) && typeof value === 'string' && value.trim() !== '') {
+    value = Number(value);
+  } else if (options.parseBooleans && value !== null && (value.toLowerCase() === 'true' || value.toLowerCase() === 'false')) {
+    value = value.toLowerCase() === 'true';
+  }
+
+  return value;
+}
+
 function parse(input, options) {
   options = Object.assign({
     decode: true,
@@ -46325,14 +42614,19 @@ function parse(input, options) {
     // http://w3.org/TR/2012/WD-url-20120524/#collect-url-parameters
 
     value = value === undefined ? null : decode(value, options);
-
-    if (options.parseNumbers && !Number.isNaN(Number(value)) && typeof value === 'string' && value.trim() !== '') {
-      value = Number(value);
-    } else if (options.parseBooleans && value !== null && (value.toLowerCase() === 'true' || value.toLowerCase() === 'false')) {
-      value = value.toLowerCase() === 'true';
-    }
-
     formatter(decode(key, options), value, ret);
+  }
+
+  for (var _key of Object.keys(ret)) {
+    var _value = ret[_key];
+
+    if (_typeof(_value) === 'object' && _value !== null) {
+      for (var k of Object.keys(_value)) {
+        _value[k] = parseValue(_value[k], options);
+      }
+    } else {
+      ret[_key] = parseValue(_value, options);
+    }
   }
 
   if (options.sort === false) {
@@ -46403,17 +42697,11 @@ exports.parseUrl = function (input, options) {
 },{"strict-uri-encode":"A2is","decode-uri-component":"pWxZ","split-on-first":"t7Jq"}],"ZtGn":[function(require,module,exports) {
 "use strict";
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var query_string_1 = __importDefault(require("query-string")); // @ts-ignore: Could not find a declaration file for module
+var queryString = require("query-string"); // @ts-ignore: Could not find a declaration file for module
 
 
 var jsontokens_1 = require("jsontokens");
@@ -46437,7 +42725,7 @@ function getAuthRequestFromURL() {
     throwIfUnavailable: true,
     usageDesc: 'getAuthRequestFromURL'
   });
-  var queryDict = query_string_1.default.parse(location.search);
+  var queryDict = queryString.parse(location.search);
 
   if (queryDict.authRequest) {
     return queryDict.authRequest.split("".concat(utils_1.BLOCKSTACK_HANDLER, ":")).join('');
@@ -46464,6 +42752,11 @@ function fetchAppManifest(authRequest) {
       reject('Invalid auth request');
     } else {
       var payload = jsontokens_1.decodeToken(authRequest).payload;
+
+      if (typeof payload === 'string') {
+        throw new Error('Unexpected token payload type of string');
+      }
+
       var manifestURI = payload.manifest_uri;
 
       try {
@@ -46504,6 +42797,11 @@ exports.fetchAppManifest = fetchAppManifest;
 
 function redirectUserToApp(authRequest, authResponse) {
   var payload = jsontokens_1.decodeToken(authRequest).payload;
+
+  if (typeof payload === 'string') {
+    throw new Error('Unexpected token payload type of string');
+  }
+
   var redirectURI = payload.redirect_uri;
   logger_1.Logger.debug(redirectURI);
 
@@ -46521,7 +42819,7 @@ function redirectUserToApp(authRequest, authResponse) {
 }
 
 exports.redirectUserToApp = redirectUserToApp;
-},{"query-string":"FvpG","jsontokens":"bYjQ","../utils":"dEjD","../fetchUtil":"bSeT","../logger":"qjRs"}],"wlOj":[function(require,module,exports) {
+},{"query-string":"FvpG","jsontokens":"ap7v","../utils":"dEjD","../fetchUtil":"bSeT","../logger":"qjRs"}],"wlOj":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46553,6 +42851,11 @@ var authProvider_1 = require("./authProvider");
 
 function doSignaturesMatchPublicKeys(token) {
   var payload = jsontokens_1.decodeToken(token).payload;
+
+  if (typeof payload === 'string') {
+    throw new Error('Unexpected token payload type of string');
+  }
+
   var publicKeys = payload.public_keys;
 
   if (publicKeys.length === 1) {
@@ -46590,6 +42893,11 @@ exports.doSignaturesMatchPublicKeys = doSignaturesMatchPublicKeys;
 
 function doPublicKeysMatchIssuer(token) {
   var payload = jsontokens_1.decodeToken(token).payload;
+
+  if (typeof payload === 'string') {
+    throw new Error('Unexpected token payload type of string');
+  }
+
   var publicKeys = payload.public_keys;
   var addressFromIssuer = dids_1.getAddressFromDID(payload.iss);
 
@@ -46625,6 +42933,10 @@ exports.doPublicKeysMatchIssuer = doPublicKeysMatchIssuer;
 function doPublicKeysMatchUsername(token, nameLookupURL) {
   return Promise.resolve().then(function () {
     var payload = jsontokens_1.decodeToken(token).payload;
+
+    if (typeof payload === 'string') {
+      throw new Error('Unexpected token payload type of string');
+    }
 
     if (!payload.username) {
       return true;
@@ -46678,6 +42990,10 @@ exports.doPublicKeysMatchUsername = doPublicKeysMatchUsername;
 function isIssuanceDateValid(token) {
   var payload = jsontokens_1.decodeToken(token).payload;
 
+  if (typeof payload === 'string') {
+    throw new Error('Unexpected token payload type of string');
+  }
+
   if (payload.iat) {
     if (typeof payload.iat !== 'number') {
       return false;
@@ -46709,6 +43025,10 @@ exports.isIssuanceDateValid = isIssuanceDateValid;
 function isExpirationDateValid(token) {
   var payload = jsontokens_1.decodeToken(token).payload;
 
+  if (typeof payload === 'string') {
+    throw new Error('Unexpected token payload type of string');
+  }
+
   if (payload.exp) {
     if (typeof payload.exp !== 'number') {
       return false;
@@ -46737,6 +43057,11 @@ exports.isExpirationDateValid = isExpirationDateValid;
 
 function isManifestUriValid(token) {
   var payload = jsontokens_1.decodeToken(token).payload;
+
+  if (typeof payload === 'string') {
+    throw new Error('Unexpected token payload type of string');
+  }
+
   return utils_1.isSameOriginAbsoluteUrl(payload.domain_name, payload.manifest_uri);
 }
 
@@ -46751,6 +43076,11 @@ exports.isManifestUriValid = isManifestUriValid;
 
 function isRedirectUriValid(token) {
   var payload = jsontokens_1.decodeToken(token).payload;
+
+  if (typeof payload === 'string') {
+    throw new Error('Unexpected token payload type of string');
+  }
+
   return utils_1.isSameOriginAbsoluteUrl(payload.domain_name, payload.redirect_uri);
 }
 
@@ -46832,7 +43162,7 @@ function verifyAuthResponse(token, nameLookupURL) {
 }
 
 exports.verifyAuthResponse = verifyAuthResponse;
-},{"jsontokens":"bYjQ","../dids":"oZHr","../keys":"qabb","../utils":"dEjD","../fetchUtil":"bSeT","./authProvider":"ZtGn"}],"bYSw":[function(require,module,exports) {
+},{"jsontokens":"ap7v","../dids":"oZHr","../keys":"qabb","../utils":"dEjD","../fetchUtil":"bSeT","./authProvider":"ZtGn"}],"bYSw":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 "use strict";
 
@@ -46921,7 +43251,12 @@ exports.wrapProfileToken = wrapProfileToken;
 
 function verifyProfileToken(token, publicKeyOrAddress) {
   var decodedToken = jsontokens_1.decodeToken(token);
-  var payload = decodedToken.payload; // Inspect and verify the subject
+  var payload = decodedToken.payload;
+
+  if (typeof payload === 'string') {
+    throw new Error('Unexpected token payload type of string');
+  } // Inspect and verify the subject
+
 
   if (payload.hasOwnProperty('subject')) {
     if (!payload.subject.hasOwnProperty('publicKey')) {
@@ -47004,8 +43339,12 @@ function extractProfile(token) {
   if (decodedToken.hasOwnProperty('payload')) {
     var payload = decodedToken.payload;
 
+    if (typeof payload === 'string') {
+      throw new Error('Unexpected token payload type of string');
+    }
+
     if (payload.hasOwnProperty('claim')) {
-      profile = decodedToken.payload.claim;
+      profile = payload.claim;
     }
   }
 
@@ -47013,7 +43352,7 @@ function extractProfile(token) {
 }
 
 exports.extractProfile = extractProfile;
-},{"bitcoinjs-lib":"Bcue","jsontokens":"bYjQ","../utils":"dEjD","buffer":"dskh"}],"OJUd":[function(require,module,exports) {
+},{"bitcoinjs-lib":"bZOe","jsontokens":"ap7v","../utils":"dEjD","buffer":"dskh"}],"OJUd":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47254,17 +43593,11 @@ var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, gene
   });
 };
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var query_string_1 = __importDefault(require("query-string")); // @ts-ignore: Could not find a declaration file for module
+var queryString = require("query-string"); // @ts-ignore: Could not find a declaration file for module
 
 
 var jsontokens_1 = require("jsontokens");
@@ -47390,7 +43723,7 @@ function getAuthResponseToken() {
     throwIfUnavailable: true,
     usageDesc: 'getAuthResponseToken'
   }).search;
-  var queryDict = query_string_1.default.parse(search);
+  var queryDict = queryString.parse(search);
   return queryDict.authResponse ? queryDict.authResponse : '';
 }
 
@@ -47505,7 +43838,7 @@ function handlePendingSignIn() {
   return __awaiter(this, void 0, void 0,
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var isProtocolEcho, msg, _tokenPayload, isValid, tokenPayload, appPrivateKey, coreSessionToken, hubUrl, gaiaAssociationToken, userData, profileURL, response, responseText, wrappedProfile, profile, sessionData;
+    var isProtocolEcho, msg, sessionData, _tokenPayload, isValid, tokenPayload, appPrivateKey, coreSessionToken, hubUrl, gaiaAssociationToken, userData, profileURL, response, responseText, wrappedProfile, profile;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -47542,76 +43875,107 @@ function handlePendingSignIn() {
               caller = new userSession_1.UserSession();
             }
 
+            sessionData = caller.store.getSessionData();
+
+            if (!sessionData.userData) {
+              _context.next = 15;
+              break;
+            }
+
+            throw new errors_1.LoginFailedError('Existing user session found.');
+
+          case 15:
             if (!transitKey) {
               transitKey = caller.store.getSessionData().transitKey;
             }
 
-            if (!nameLookupURL) {
-              _tokenPayload = jsontokens_1.decodeToken(authResponseToken).payload;
-
-              if (utils_1.isLaterVersion(_tokenPayload.version, '1.3.0') && _tokenPayload.blockstackAPIUrl !== null && _tokenPayload.blockstackAPIUrl !== undefined) {
-                // override globally
-                logger_1.Logger.info("Overriding ".concat(config_1.config.network.blockstackAPIUrl, " ") + "with ".concat(_tokenPayload.blockstackAPIUrl));
-                config_1.config.network.blockstackAPIUrl = _tokenPayload.blockstackAPIUrl;
-              }
-
-              nameLookupURL = "".concat(config_1.config.network.blockstackAPIUrl).concat(authConstants_1.NAME_LOOKUP_PATH);
+            if (nameLookupURL) {
+              _context.next = 22;
+              break;
             }
 
-            _context.next = 16;
+            _tokenPayload = jsontokens_1.decodeToken(authResponseToken).payload;
+
+            if (!(typeof _tokenPayload === 'string')) {
+              _context.next = 20;
+              break;
+            }
+
+            throw new Error('Unexpected token payload type of string');
+
+          case 20:
+            if (utils_1.isLaterVersion(_tokenPayload.version, '1.3.0') && _tokenPayload.blockstackAPIUrl !== null && _tokenPayload.blockstackAPIUrl !== undefined) {
+              // override globally
+              logger_1.Logger.info("Overriding ".concat(config_1.config.network.blockstackAPIUrl, " ") + "with ".concat(_tokenPayload.blockstackAPIUrl));
+              config_1.config.network.blockstackAPIUrl = _tokenPayload.blockstackAPIUrl;
+            }
+
+            nameLookupURL = "".concat(config_1.config.network.blockstackAPIUrl).concat(authConstants_1.NAME_LOOKUP_PATH);
+
+          case 22:
+            _context.next = 24;
             return authVerification_1.verifyAuthResponse(authResponseToken, nameLookupURL);
 
-          case 16:
+          case 24:
             isValid = _context.sent;
 
             if (isValid) {
-              _context.next = 19;
+              _context.next = 27;
               break;
             }
 
             throw new errors_1.LoginFailedError('Invalid authentication response.');
 
-          case 19:
-            tokenPayload = jsontokens_1.decodeToken(authResponseToken).payload; // TODO: real version handling
+          case 27:
+            tokenPayload = jsontokens_1.decodeToken(authResponseToken).payload;
 
+            if (!(typeof tokenPayload === 'string')) {
+              _context.next = 30;
+              break;
+            }
+
+            throw new Error('Unexpected token payload type of string');
+
+          case 30:
+            // TODO: real version handling
             appPrivateKey = tokenPayload.private_key;
             coreSessionToken = tokenPayload.core_token;
 
             if (!utils_1.isLaterVersion(tokenPayload.version, '1.1.0')) {
-              _context.next = 43;
+              _context.next = 53;
               break;
             }
 
             if (!(transitKey !== undefined && transitKey != null)) {
-              _context.next = 42;
+              _context.next = 52;
               break;
             }
 
             if (!(tokenPayload.private_key !== undefined && tokenPayload.private_key !== null)) {
-              _context.next = 39;
+              _context.next = 49;
               break;
             }
 
-            _context.prev = 25;
+            _context.prev = 35;
             appPrivateKey = authMessages_1.decryptPrivateKey(transitKey, tokenPayload.private_key);
-            _context.next = 39;
+            _context.next = 49;
             break;
-
-          case 29:
-            _context.prev = 29;
-            _context.t1 = _context["catch"](25);
-            logger_1.Logger.warn('Failed decryption of appPrivateKey, will try to use as given');
-            _context.prev = 32;
-            utils_1.hexStringToECPair(tokenPayload.private_key);
-            _context.next = 39;
-            break;
-
-          case 36:
-            _context.prev = 36;
-            _context.t2 = _context["catch"](32);
-            throw new errors_1.LoginFailedError('Failed decrypting appPrivateKey. Usually means' + ' that the transit key has changed during login.');
 
           case 39:
+            _context.prev = 39;
+            _context.t1 = _context["catch"](35);
+            logger_1.Logger.warn('Failed decryption of appPrivateKey, will try to use as given');
+            _context.prev = 42;
+            utils_1.hexStringToECPair(tokenPayload.private_key);
+            _context.next = 49;
+            break;
+
+          case 46:
+            _context.prev = 46;
+            _context.t2 = _context["catch"](42);
+            throw new errors_1.LoginFailedError('Failed decrypting appPrivateKey. Usually means' + ' that the transit key has changed during login.');
+
+          case 49:
             if (coreSessionToken !== undefined && coreSessionToken !== null) {
               try {
                 coreSessionToken = authMessages_1.decryptPrivateKey(transitKey, coreSessionToken);
@@ -47620,13 +43984,13 @@ function handlePendingSignIn() {
               }
             }
 
-            _context.next = 43;
+            _context.next = 53;
             break;
 
-          case 42:
+          case 52:
             throw new errors_1.LoginFailedError('Authenticating with protocol > 1.1.0 requires transit' + ' key, and none found.');
 
-          case 43:
+          case 53:
             hubUrl = authConstants_1.BLOCKSTACK_DEFAULT_GAIA_HUB_URL;
 
             if (utils_1.isLaterVersion(tokenPayload.version, '1.2.0') && tokenPayload.hubUrl !== null && tokenPayload.hubUrl !== undefined) {
@@ -47652,60 +44016,59 @@ function handlePendingSignIn() {
             profileURL = tokenPayload.profile_url;
 
             if (!(!userData.profile && profileURL)) {
-              _context.next = 64;
+              _context.next = 74;
               break;
             }
 
-            _context.next = 51;
+            _context.next = 61;
             return fetchUtil_1.fetchPrivate(profileURL);
 
-          case 51:
+          case 61:
             response = _context.sent;
 
             if (response.ok) {
-              _context.next = 56;
+              _context.next = 66;
               break;
             }
 
             // return blank profile if we fail to fetch
             userData.profile = Object.assign({}, DEFAULT_PROFILE);
-            _context.next = 62;
+            _context.next = 72;
             break;
 
-          case 56:
-            _context.next = 58;
+          case 66:
+            _context.next = 68;
             return response.text();
 
-          case 58:
+          case 68:
             responseText = _context.sent;
             wrappedProfile = JSON.parse(responseText);
             profile = profileTokens_1.extractProfile(wrappedProfile[0].token);
             userData.profile = profile;
 
-          case 62:
-            _context.next = 65;
+          case 72:
+            _context.next = 75;
             break;
 
-          case 64:
+          case 74:
             userData.profile = tokenPayload.profile;
 
-          case 65:
-            sessionData = caller.store.getSessionData();
+          case 75:
             sessionData.userData = userData;
             caller.store.setSessionData(sessionData);
             return _context.abrupt("return", userData);
 
-          case 69:
+          case 78:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 8], [25, 29], [32, 36]]);
+    }, _callee, null, [[0, 8], [35, 39], [42, 46]]);
   }));
 }
 
 exports.handlePendingSignIn = handlePendingSignIn;
-},{"query-string":"FvpG","jsontokens":"bYjQ","./authVerification":"wlOj","../utils":"dEjD","../fetchUtil":"bSeT","../dids":"oZHr","../errors":"V7fS","./authMessages":"u2eb","./authConstants":"UTxZ","../profiles/profileTokens":"bYSw","./userSession":"rsLE","../config":"GmrD","../logger":"qjRs","./protocolEchoDetection":"ou4A","./protocolLaunch":"OJUd"}],"hGa9":[function(require,module,exports) {
+},{"query-string":"FvpG","jsontokens":"ap7v","./authVerification":"wlOj","../utils":"dEjD","../fetchUtil":"bSeT","../dids":"oZHr","../errors":"V7fS","./authMessages":"u2eb","./authConstants":"UTxZ","../profiles/profileTokens":"bYSw","./userSession":"rsLE","../config":"GmrD","../logger":"qjRs","./protocolEchoDetection":"ou4A","./protocolLaunch":"OJUd"}],"hGa9":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 "use strict";
 
@@ -47737,19 +44100,11 @@ var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, gene
   });
 };
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var bitcoinjs_lib_1 = require("bitcoinjs-lib");
-
-var crypto_1 = __importDefault(require("crypto")); // @ts-ignore: Could not find a declaration file for module
+var bitcoinjs_lib_1 = require("bitcoinjs-lib"); // @ts-ignore: Could not find a declaration file for module
 
 
 var jsontokens_1 = require("jsontokens");
@@ -47964,7 +44319,16 @@ function makeV1GaiaAuthToken(hubInfo, signerKeyHex, hubUrl, associationToken) {
     return makeLegacyAuthToken(challengeText, signerKeyHex);
   }
 
-  var salt = crypto_1.default.randomBytes(16).toString('hex');
+  var getRandomValuesPolyfill = function getRandomValuesPolyfill(array) {
+    for (var i = 0, l = array.length; i < l; i++) {
+      array[i] = Math.floor(Math.random() * 256);
+    }
+
+    return array;
+  }; // const salt = crypto.randomBytes(16).toString('hex')
+
+
+  var salt = getRandomValuesPolyfill(new Uint8Array(16)).toString('hex');
   var payload = {
     gaiaChallenge: challengeText,
     hubUrl: hubUrl,
@@ -48065,7 +44429,7 @@ function getBucketUrl(gaiaHubUrl, appPrivateKey) {
 }
 
 exports.getBucketUrl = getBucketUrl;
-},{"bitcoinjs-lib":"Bcue","crypto":"mRF4","jsontokens":"bYjQ","../utils":"dEjD","../fetchUtil":"bSeT","../keys":"qabb","../logger":"qjRs","../errors":"V7fS","buffer":"dskh"}],"iZFk":[function(require,module,exports) {
+},{"bitcoinjs-lib":"bZOe","jsontokens":"ap7v","../utils":"dEjD","../fetchUtil":"bSeT","../keys":"qabb","../logger":"qjRs","../errors":"V7fS","buffer":"dskh"}],"iZFk":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -75953,17 +72317,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var cheerio_1 = __importDefault(require("cheerio"));
+var cheerio = require("cheerio");
 
 var service_1 = require("./service");
 
@@ -76010,7 +72368,7 @@ function (_service_1$Service) {
   }, {
     key: "getProofStatement",
     value: function getProofStatement(searchText) {
-      var $ = cheerio_1.default.load(searchText);
+      var $ = cheerio.load(searchText);
       var statement = $('meta[name="description"]').attr('content');
       return statement !== undefined ? statement.trim() : '';
     }
@@ -76118,17 +72476,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var cheerio_1 = __importDefault(require("cheerio"));
+var cheerio = require("cheerio");
 
 var service_1 = require("./service");
 
@@ -76157,7 +72509,7 @@ function (_service_1$Service) {
   }, {
     key: "getProofStatement",
     value: function getProofStatement(searchText) {
-      var $ = cheerio_1.default.load(searchText);
+      var $ = cheerio.load(searchText);
       var statement = $('meta[property="og:description"]').attr('content');
 
       if (statement !== undefined) {
@@ -76197,17 +72549,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var cheerio_1 = __importDefault(require("cheerio"));
+var cheerio = require("cheerio");
 
 var service_1 = require("./service");
 
@@ -76263,7 +72609,7 @@ function (_service_1$Service) {
   }, {
     key: "getProofIdentity",
     value: function getProofIdentity(searchText) {
-      var $ = cheerio_1.default.load(searchText);
+      var $ = cheerio.load(searchText);
       var username = $('meta[property="og:description"]').attr('content');
 
       if (username !== undefined && username.split(':').length > 1) {
@@ -76275,7 +72621,7 @@ function (_service_1$Service) {
   }, {
     key: "getProofStatement",
     value: function getProofStatement(searchText) {
-      var $ = cheerio_1.default.load(searchText);
+      var $ = cheerio.load(searchText);
       var statement = $('meta[property="og:description"]').attr('content');
 
       if (statement !== undefined && statement.split(':').length > 1) {
@@ -76315,17 +72661,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var cheerio_1 = __importDefault(require("cheerio"));
+var cheerio = require("cheerio");
 
 var service_1 = require("./service");
 
@@ -76369,7 +72709,7 @@ function (_service_1$Service) {
   }, {
     key: "getProofStatement",
     value: function getProofStatement(searchText) {
-      var $ = cheerio_1.default.load(searchText);
+      var $ = cheerio.load(searchText);
       var tables = $('#hnmain').children().find('table');
       var statement = '';
 
@@ -76422,17 +72762,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var cheerio_1 = __importDefault(require("cheerio"));
+var cheerio = require("cheerio");
 
 var service_1 = require("./service");
 
@@ -76481,7 +72815,7 @@ function (_service_1$Service) {
   }, {
     key: "getProofIdentity",
     value: function getProofIdentity(searchText) {
-      var $ = cheerio_1.default.load(searchText);
+      var $ = cheerio.load(searchText);
       var profileLink = $('body > main header a');
 
       if (profileLink !== undefined) {
@@ -76500,7 +72834,7 @@ function (_service_1$Service) {
   }, {
     key: "getProofStatement",
     value: function getProofStatement(searchText) {
-      var $ = cheerio_1.default.load(searchText);
+      var $ = cheerio.load(searchText);
       var postContent = $('head > meta[property="og:title"]');
       var statement = '';
 
@@ -76611,17 +72945,11 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 }); // @ts-ignore: Could not find a declaration file for module
 
-var schema_inspector_1 = __importDefault(require("schema-inspector"));
+var inspector = require("schema-inspector");
 
 var profileTokens_1 = require("./profileTokens");
 
@@ -76674,7 +73002,7 @@ function () {
     value: function validateSchema(profile) {
       var strict = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       schemaDefinition.strict = strict;
-      return schema_inspector_1.default.validate(schemaDefinition, profile);
+      return inspector.validate(schemaDefinition, profile);
     }
   }, {
     key: "fromToken",
@@ -77131,17 +73459,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 }); // @ts-ignore: Could not find a declaration file for module
 
-var schema_inspector_1 = __importDefault(require("schema-inspector"));
+var inspector = require("schema-inspector");
 
 var profile_1 = require("../profile");
 
@@ -77421,7 +73743,7 @@ function (_profile_1$Profile) {
     value: function validateSchema(profile) {
       var strict = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       schemaDefinition.strict = strict;
-      return schema_inspector_1.default.validate(schemaDefinition, profile);
+      return inspector.validate(schemaDefinition, profile);
     }
   }, {
     key: "fromToken",
@@ -78646,16 +74968,6 @@ var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, gene
   });
 };
 
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-  }
-  result["default"] = mod;
-  return result;
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -78664,11 +74976,11 @@ var appConfig_1 = require("./appConfig");
 
 var sessionStore_1 = require("./sessionStore");
 
-var authApp = __importStar(require("./authApp"));
+var authApp = require("./authApp");
 
-var authMessages = __importStar(require("./authMessages"));
+var authMessages = require("./authMessages");
 
-var storage = __importStar(require("../storage"));
+var storage = require("../storage");
 
 var utils_1 = require("../utils");
 
@@ -79359,7 +75671,7 @@ function makeAuthResponse(privateKey) {
 }
 
 exports.makeAuthResponse = makeAuthResponse;
-},{"cross-fetch/polyfill":"CQH0","jsontokens":"bYjQ","../keys":"qabb","../utils":"dEjD","../dids":"oZHr","../encryption/ec":"pXJD","../logger":"qjRs","./authConstants":"UTxZ","./userSession":"rsLE","buffer":"dskh"}],"DwF2":[function(require,module,exports) {
+},{"cross-fetch/polyfill":"CQH0","jsontokens":"ap7v","../keys":"qabb","../utils":"dEjD","../dids":"oZHr","../encryption/ec":"pXJD","../logger":"qjRs","./authConstants":"UTxZ","./userSession":"rsLE","buffer":"dskh"}],"DwF2":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -79497,11 +75809,8 @@ function getCoreSession(coreHost, corePort, apiPassword, appPrivateKey) {
     return Promise.reject('No authRequest provided');
   }
 
-  var payload = null;
-  var authRequestObject = null;
-
   try {
-    authRequestObject = jsontokens_1.decodeToken(authRequest);
+    var authRequestObject = jsontokens_1.decodeToken(authRequest);
 
     if (!authRequestObject) {
       return Promise.reject('Invalid authRequest in URL query string');
@@ -79511,25 +75820,29 @@ function getCoreSession(coreHost, corePort, apiPassword, appPrivateKey) {
       return Promise.reject('Invalid authRequest in URL query string');
     }
 
-    payload = authRequestObject.payload;
+    var payload = authRequestObject.payload;
+
+    if (typeof payload === 'string') {
+      throw new Error('Unexpected token payload type of string');
+    }
+
+    var appDomain = payload.domain_name;
+
+    if (!appDomain) {
+      return Promise.reject('No domain_name in authRequest');
+    }
+
+    var appMethods = payload.scopes;
+    var coreAuthRequest = makeCoreSessionRequest(appDomain, appMethods, appPrivateKey, blockchainId, deviceId);
+    return sendCoreSessionRequest(coreHost, corePort, coreAuthRequest, apiPassword);
   } catch (e) {
     console.error(e.stack);
     return Promise.reject('Failed to parse authRequest in URL');
   }
-
-  var appDomain = payload.domain_name;
-
-  if (!appDomain) {
-    return Promise.reject('No domain_name in authRequest');
-  }
-
-  var appMethods = payload.scopes;
-  var coreAuthRequest = makeCoreSessionRequest(appDomain, appMethods, appPrivateKey, blockchainId, deviceId);
-  return sendCoreSessionRequest(coreHost, corePort, coreAuthRequest, apiPassword);
 }
 
 exports.getCoreSession = getCoreSession;
-},{"jsontokens":"bYjQ","cross-fetch/polyfill":"CQH0","../fetchUtil":"bSeT"}],"bupz":[function(require,module,exports) {
+},{"jsontokens":"ap7v","cross-fetch/polyfill":"CQH0","../fetchUtil":"bSeT"}],"bupz":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -79603,18 +75916,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 }); // TODO: replace with 'ajv' - its already a dependency and it is maintained
 // @ts-ignore: Could not find a declaration file for module
 
-var schema_inspector_1 = __importDefault(require("schema-inspector"));
+var schema_inspector_1 = require("schema-inspector");
 
 var profileTokens_1 = require("../profileTokens");
 
@@ -79700,17 +76007,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 }); // @ts-ignore: Could not find a declaration file for module
 
-var schema_inspector_1 = __importDefault(require("schema-inspector"));
+var schema_inspector_1 = require("schema-inspector");
 
 var profileTokens_1 = require("../profileTokens");
 
@@ -79936,21 +76237,16 @@ exports.lookupProfile = profileLookup_1.lookupProfile;
 var Buffer = require("buffer").Buffer;
 "use strict";
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var bitcoinjs_lib_1 = require("bitcoinjs-lib");
 
-var ripemd160_1 = __importDefault(require("ripemd160"));
+var RIPEMD160 = require("ripemd160"); // @ts-ignore
 
-var bn_js_1 = __importDefault(require("bn.js"));
+
+var BN = require("bn.js");
 
 var errors_1 = require("../errors");
 /**
@@ -79967,7 +76263,7 @@ exports.DUST_MINIMUM = 5500;
 
 function hash160(buff) {
   var sha256 = bitcoinjs_lib_1.crypto.sha256(buff);
-  return new ripemd160_1.default().update(sha256).digest();
+  return new RIPEMD160().update(sha256).digest();
 }
 
 exports.hash160 = hash160;
@@ -80081,14 +76377,14 @@ function decodeB40(input) {
   // hence, we reverse the characters first, and use the index
   //  to compute the value of each digit, then sum
   var characters = '0123456789abcdefghijklmnopqrstuvwxyz-_.+';
-  var base = new bn_js_1.default(40);
+  var base = new BN(40);
   var inputDigits = input.split('').reverse();
   var digitValues = inputDigits.map(function (character, exponent) {
-    return new bn_js_1.default(characters.indexOf(character)).mul(base.pow(new bn_js_1.default(exponent)));
+    return new BN(characters.indexOf(character)).mul(base.pow(new BN(exponent)));
   });
   var sum = digitValues.reduce(function (agg, cur) {
     return agg.add(cur);
-  }, new bn_js_1.default(0));
+  }, new BN(0));
   return sum.toString(16, 2);
 }
 
@@ -80197,7 +76493,7 @@ function signInputs(txB, defaultSigner, otherSigners) {
 }
 
 exports.signInputs = signInputs;
-},{"bitcoinjs-lib":"Bcue","ripemd160":"quyi","bn.js":"BOxy","../errors":"V7fS","buffer":"dskh"}],"je2e":[function(require,module,exports) {
+},{"bitcoinjs-lib":"bZOe","ripemd160":"quyi","bn.js":"BOxy","../errors":"V7fS","buffer":"dskh"}],"je2e":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 "use strict";
 
@@ -80207,19 +76503,14 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var bitcoinjs_lib_1 = require("bitcoinjs-lib");
+var bitcoinjs_lib_1 = require("bitcoinjs-lib"); // @ts-ignore
 
-var bn_js_1 = __importDefault(require("bn.js"));
+
+var BN = require("bn.js");
 
 var utils_1 = require("./utils");
 
@@ -80371,7 +76662,7 @@ function asAmountV2(amount) {
   if (typeof amount === 'number') {
     return {
       units: 'BTC',
-      amount: new bn_js_1.default(String(amount))
+      amount: new BN(String(amount))
     };
   } else {
     return {
@@ -80947,7 +77238,7 @@ function makeTokenTransferSkeleton(recipientAddress, consensusHash, tokenType, t
 }
 
 exports.makeTokenTransferSkeleton = makeTokenTransferSkeleton;
-},{"bitcoinjs-lib":"Bcue","bn.js":"BOxy","./utils":"mZDG","../config":"GmrD","buffer":"dskh"}],"iGRy":[function(require,module,exports) {
+},{"bitcoinjs-lib":"bZOe","bn.js":"BOxy","./utils":"mZDG","../config":"GmrD","buffer":"dskh"}],"iGRy":[function(require,module,exports) {
 "use strict";
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -82195,7 +78486,7 @@ exports.transactions = {
   estimateAnnounce: estimateAnnounce,
   estimateTokenTransfer: estimateTokenTransfer
 };
-},{"bitcoinjs-lib":"Bcue","./utils":"mZDG","./skeletons":"je2e","../config":"GmrD","../errors":"V7fS","./signers":"iGRy","buffer":"dskh"}],"HUxo":[function(require,module,exports) {
+},{"bitcoinjs-lib":"bZOe","./utils":"mZDG","./skeletons":"je2e","../config":"GmrD","../errors":"V7fS","./signers":"iGRy","buffer":"dskh"}],"HUxo":[function(require,module,exports) {
 "use strict";
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
@@ -99334,7 +95625,7 @@ var process = require("process");
 }).call(this);
 
 },{"./const":"LOhM","process":"pBGv"}],"CHZL":[function(require,module,exports) {
-// Generated by IcedCoffeeScript 108.0.8
+// Generated by IcedCoffeeScript 108.0.13
 (function() {
   var C, Pipeliner, iced, __iced_k, __iced_k_noop, _iand, _ior, _timeout,
     __slice = [].slice;
@@ -99346,7 +95637,7 @@ var process = require("process");
   exports.iced = iced = require('./runtime');
 
   _timeout = function(cb, t, res, tmp) {
-    var arr, rv, which, ___iced_passed_deferral, __iced_deferrals, __iced_k;
+    var arr, rv, timeout_obj, which, ___iced_passed_deferral, __iced_deferrals, __iced_k;
     __iced_k = __iced_k_noop;
     ___iced_passed_deferral = iced.findDeferral(arguments);
     rv = new iced.Rendezvous;
@@ -99361,7 +95652,7 @@ var process = require("process");
       lineno: 20,
       context: __iced_deferrals
     });
-    setTimeout(rv.id(false).defer({
+    timeout_obj = setTimeout(rv.id(false).defer({
       lineno: 21,
       context: __iced_deferrals
     }), t);
@@ -99369,7 +95660,7 @@ var process = require("process");
       return (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
-          filename: "/Users/max/src/iced/iced-runtime/src/library.iced"
+          filename: "/Users/max/src/iced/iced-coffee-script/iced-runtime/src/library.iced"
         });
         rv.wait(__iced_deferrals.defer({
           assign_fn: (function() {
@@ -99385,6 +95676,9 @@ var process = require("process");
       return function() {
         if (res) {
           res[0] = which;
+        }
+        if (which) {
+          clearTimeout(timeout_obj);
         }
         return cb.apply(null, arr);
       };
@@ -99406,7 +95700,7 @@ var process = require("process");
       return (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
-          filename: "/Users/max/src/iced/iced-runtime/src/library.iced"
+          filename: "/Users/max/src/iced/iced-coffee-script/iced-runtime/src/library.iced"
         });
         tmp[0] = __iced_deferrals.defer({
           assign_fn: (function() {
@@ -99414,7 +95708,7 @@ var process = require("process");
               return ok = arguments[0];
             };
           })(),
-          lineno: 39
+          lineno: 40
         });
         __iced_deferrals._fulfill();
       });
@@ -99443,7 +95737,7 @@ var process = require("process");
       return (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
-          filename: "/Users/max/src/iced/iced-runtime/src/library.iced"
+          filename: "/Users/max/src/iced/iced-coffee-script/iced-runtime/src/library.iced"
         });
         tmp[0] = __iced_deferrals.defer({
           assign_fn: (function() {
@@ -99451,7 +95745,7 @@ var process = require("process");
               return ok = arguments[0];
             };
           })(),
-          lineno: 58
+          lineno: 59
         });
         __iced_deferrals._fulfill();
       });
@@ -99505,11 +95799,11 @@ var process = require("process");
               (function(__iced_k) {
                 __iced_deferrals = new iced.Deferrals(__iced_k, {
                   parent: ___iced_passed_deferral,
-                  filename: "/Users/max/src/iced/iced-runtime/src/library.iced",
+                  filename: "/Users/max/src/iced/iced-coffee-script/iced-runtime/src/library.iced",
                   funcname: "Pipeliner.waitInQueue"
                 });
                 _this.cb = __iced_deferrals.defer({
-                  lineno: 100
+                  lineno: 101
                 });
                 __iced_deferrals._fulfill();
               })(_next);
@@ -99525,11 +95819,11 @@ var process = require("process");
               (function(__iced_k) {
                 __iced_deferrals = new iced.Deferrals(__iced_k, {
                   parent: ___iced_passed_deferral,
-                  filename: "/Users/max/src/iced/iced-runtime/src/library.iced",
+                  filename: "/Users/max/src/iced/iced-coffee-script/iced-runtime/src/library.iced",
                   funcname: "Pipeliner.waitInQueue"
                 });
                 setTimeout(__iced_deferrals.defer({
-                  lineno: 108
+                  lineno: 109
                 }), _this.delay);
                 __iced_deferrals._fulfill();
               })(__iced_k);
@@ -99551,11 +95845,11 @@ var process = require("process");
         return (function(__iced_k) {
           __iced_deferrals = new iced.Deferrals(__iced_k, {
             parent: ___iced_passed_deferral,
-            filename: "/Users/max/src/iced/iced-runtime/src/library.iced",
+            filename: "/Users/max/src/iced/iced-coffee-script/iced-runtime/src/library.iced",
             funcname: "Pipeliner.__defer"
           });
           voidCb = __iced_deferrals.defer({
-            lineno: 122
+            lineno: 123
           });
           out[0] = function() {
             var args, _ref;
@@ -99607,11 +95901,11 @@ var process = require("process");
             (function(__iced_k) {
               __iced_deferrals = new iced.Deferrals(__iced_k, {
                 parent: ___iced_passed_deferral,
-                filename: "/Users/max/src/iced/iced-runtime/src/library.iced",
+                filename: "/Users/max/src/iced/iced-coffee-script/iced-runtime/src/library.iced",
                 funcname: "Pipeliner.flush"
               });
               _this.cb = __iced_deferrals.defer({
-                lineno: 151
+                lineno: 152
               });
               __iced_deferrals._fulfill();
             })(_next);
@@ -106905,31 +103199,15 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-  }
-  result["default"] = mod;
-  return result;
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var crypto_1 = __importDefault(require("crypto"));
+var crypto = require("crypto");
 
-var bip39 = __importStar(require("bip39"));
+var bip39 = require("bip39");
 
-var triplesec_1 = __importDefault(require("triplesec"));
+var triplesec = require("triplesec");
 /**
  * Encrypt a raw mnemonic phrase to be password protected
  * @param {string} phrase - Raw mnemonic phrase
@@ -106950,16 +103228,16 @@ function encryptMnemonic(phrase, password) {
 
     var plaintextNormalized = Buffer.from(bip39.mnemonicToEntropy(phrase), 'hex'); // AES-128-CBC with SHA256 HMAC
 
-    var salt = crypto_1.default.randomBytes(16);
-    var keysAndIV = crypto_1.default.pbkdf2Sync(password, salt, 100000, 48, 'sha512');
+    var salt = crypto.randomBytes(16);
+    var keysAndIV = crypto.pbkdf2Sync(password, salt, 100000, 48, 'sha512');
     var encKey = keysAndIV.slice(0, 16);
     var macKey = keysAndIV.slice(16, 32);
     var iv = keysAndIV.slice(32, 48);
-    var cipher = crypto_1.default.createCipheriv('aes-128-cbc', encKey, iv);
+    var cipher = crypto.createCipheriv('aes-128-cbc', encKey, iv);
     var cipherText = cipher.update(plaintextNormalized).toString('hex');
     cipherText += cipher.final().toString('hex');
     var hmacPayload = Buffer.concat([salt, Buffer.from(cipherText, 'hex')]);
-    var hmac = crypto_1.default.createHmac('sha256', macKey);
+    var hmac = crypto.createHmac('sha256', macKey);
     hmac.write(hmacPayload);
     var hmacDigest = hmac.digest();
     var payload = Buffer.concat([salt, hmacDigest, Buffer.from(cipherText, 'hex')]);
@@ -106994,20 +103272,20 @@ function decryptMnemonicBuffer(dataBuffer, password) {
 
     var cipherText = dataBuffer.slice(48);
     var hmacPayload = Buffer.concat([salt, cipherText]);
-    var keysAndIV = crypto_1.default.pbkdf2Sync(password, salt, 100000, 48, 'sha512');
+    var keysAndIV = crypto.pbkdf2Sync(password, salt, 100000, 48, 'sha512');
     var encKey = keysAndIV.slice(0, 16);
     var macKey = keysAndIV.slice(16, 32);
     var iv = keysAndIV.slice(32, 48);
-    var decipher = crypto_1.default.createDecipheriv('aes-128-cbc', encKey, iv);
+    var decipher = crypto.createDecipheriv('aes-128-cbc', encKey, iv);
     var plaintext = decipher.update(cipherText).toString('hex');
     plaintext += decipher.final().toString('hex');
-    var hmac = crypto_1.default.createHmac('sha256', macKey);
+    var hmac = crypto.createHmac('sha256', macKey);
     hmac.write(hmacPayload);
     var hmacDigest = hmac.digest(); // hash both hmacSig and hmacDigest so string comparison time
     // is uncorrelated to the ciphertext
 
-    var hmacSigHash = crypto_1.default.createHash('sha256').update(hmacSig).digest().toString('hex');
-    var hmacDigestHash = crypto_1.default.createHash('sha256').update(hmacDigest).digest().toString('hex');
+    var hmacSigHash = crypto.createHash('sha256').update(hmacSig).digest().toString('hex');
+    var hmacDigestHash = crypto.createHash('sha256').update(hmacDigest).digest().toString('hex');
 
     if (hmacSigHash !== hmacDigestHash) {
       // not authentic
@@ -107035,7 +103313,7 @@ function decryptMnemonicBuffer(dataBuffer, password) {
 
 function decryptLegacy(dataBuffer, password) {
   return new Promise(function (resolve, reject) {
-    triplesec_1.default.decrypt({
+    triplesec.decrypt({
       key: Buffer.from(password),
       data: dataBuffer
     }, function (err, plaintextBuffer) {
@@ -107109,25 +103387,15 @@ var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, gene
   });
 };
 
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-  }
-  result["default"] = mod;
-  return result;
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var crypto_1 = __importStar(require("crypto"));
+var crypto = require("crypto");
 
 var bitcoinjs_lib_1 = require("bitcoinjs-lib");
 
-var bip39 = __importStar(require("bip39"));
+var bip39 = require("bip39");
 
 var utils_1 = require("./utils");
 
@@ -107239,7 +103507,7 @@ function () {
     value: function getIdentitySalt() {
       var identityPrivateKeychain = this.getIdentityPrivateKeychain();
       var publicKeyHex = getNodePublicKey(identityPrivateKeychain);
-      return crypto_1.default.createHash('sha256').update(publicKeyHex).digest('hex');
+      return crypto.createHash('sha256').update(publicKeyHex).digest('hex');
     }
     /**
      * Get a bitcoin receive address at a given index
@@ -107405,7 +103673,7 @@ function () {
   }, {
     key: "generateMnemonic",
     value: function generateMnemonic() {
-      return bip39.generateMnemonic(128, crypto_1.randomBytes);
+      return bip39.generateMnemonic(128, crypto.randomBytes);
     }
     /**
      * Encrypt a mnemonic phrase with a password
@@ -107494,7 +103762,7 @@ function () {
   }, {
     key: "getLegacyAppPrivateKey",
     value: function getLegacyAppPrivateKey(appsNodeKey, salt, appDomain) {
-      var hash = crypto_1.default.createHash('sha256').update("".concat(appDomain).concat(salt)).digest('hex');
+      var hash = crypto.createHash('sha256').update("".concat(appDomain).concat(salt)).digest('hex');
       var appIndex = hashCode(hash);
       var appNode = bitcoinjs_lib_1.bip32.fromBase58(appsNodeKey).deriveHardened(appIndex);
       return getNodePrivateKey(appNode).slice(0, 64);
@@ -107521,7 +103789,7 @@ function () {
   }, {
     key: "getAppPrivateKey",
     value: function getAppPrivateKey(appsNodeKey, salt, appDomain) {
-      var hash = crypto_1.default.createHash('sha256').update("".concat(appDomain).concat(salt)).digest('hex');
+      var hash = crypto.createHash('sha256').update("".concat(appDomain).concat(salt)).digest('hex');
       var appIndexHexes = []; // note: there's hardcoded numbers here, precisely because I want this
       //   code to be very specific to the derivation paths we expect.
 
@@ -107552,7 +103820,7 @@ function () {
 }();
 
 exports.BlockstackWallet = BlockstackWallet;
-},{"crypto":"mRF4","bitcoinjs-lib":"Bcue","bip39":"tCYT","./utils":"dEjD","./encryption/wallet":"ersY"}],"j4KC":[function(require,module,exports) {
+},{"crypto":"mRF4","bitcoinjs-lib":"bZOe","bip39":"tCYT","./utils":"dEjD","./encryption/wallet":"ersY"}],"j4KC":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -107665,7 +103933,7 @@ exports.decryptMnemonic = encryption_1.decryptMnemonic;
 var userSession_1 = require("./auth/userSession");
 
 exports.UserSession = userSession_1.UserSession;
-},{"./auth/protocolEchoDetection":"ou4A","./auth":"bupz","./profiles":"vUlb","./storage":"Oaf1","./dids":"oZHr","./keys":"qabb","./utils":"dEjD","./operations":"F8KK","./wallet":"zLhi","./network":"Si1t","jsontokens":"bYjQ","./config":"GmrD","./encryption":"j4KC","./auth/userSession":"rsLE"}],"OVDV":[function(require,module,exports) {
+},{"./auth/protocolEchoDetection":"ou4A","./auth":"bupz","./profiles":"vUlb","./storage":"Oaf1","./dids":"oZHr","./keys":"qabb","./utils":"dEjD","./operations":"F8KK","./wallet":"zLhi","./network":"Si1t","jsontokens":"ap7v","./config":"GmrD","./encryption":"j4KC","./auth/userSession":"rsLE"}],"OVDV":[function(require,module,exports) {
 "use strict";
 
 function __export(m) {
@@ -107674,21 +103942,11 @@ function __export(m) {
   }
 }
 
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-  }
-  result["default"] = mod;
-  return result;
-};
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var publicExports = __importStar(require("./public"));
+var publicExports = require("./public");
 
 exports.default = publicExports;
 
@@ -110538,5604 +106796,7 @@ var fail = Decoder.fail;
 exports.fail = fail;
 var lazy = Decoder.lazy;
 exports.lazy = lazy;
-},{"lodash.isequal":"a1XM"}],"d9co":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var types = require('./types');
-
-var bip66 = require('bip66');
-
-var typeforce = require('typeforce');
-
-var ZERO = Buffer.alloc(1, 0);
-
-function toDER(x) {
-  var i = 0;
-
-  while (x[i] === 0) {
-    ++i;
-  }
-
-  if (i === x.length) return ZERO;
-  x = x.slice(i);
-  if (x[0] & 0x80) return Buffer.concat([ZERO, x], 1 + x.length);
-  return x;
-}
-
-function fromDER(x) {
-  if (x[0] === 0x00) x = x.slice(1);
-  var buffer = Buffer.alloc(32, 0);
-  var bstart = Math.max(0, 32 - x.length);
-  x.copy(buffer, bstart);
-  return buffer;
-} // BIP62: 1 byte hashType flag (only 0x01, 0x02, 0x03, 0x81, 0x82 and 0x83 are allowed)
-
-
-function decode(buffer) {
-  var hashType = buffer.readUInt8(buffer.length - 1);
-  var hashTypeMod = hashType & ~0x80;
-  if (hashTypeMod <= 0 || hashTypeMod >= 4) throw new Error('Invalid hashType ' + hashType);
-  var decoded = bip66.decode(buffer.slice(0, -1));
-  var r = fromDER(decoded.r);
-  var s = fromDER(decoded.s);
-  var signature = Buffer.concat([r, s], 64);
-  return {
-    signature: signature,
-    hashType: hashType
-  };
-}
-
-exports.decode = decode;
-
-function encode(signature, hashType) {
-  typeforce({
-    signature: types.BufferN(64),
-    hashType: types.UInt8
-  }, {
-    signature: signature,
-    hashType: hashType
-  });
-  var hashTypeMod = hashType & ~0x80;
-  if (hashTypeMod <= 0 || hashTypeMod >= 4) throw new Error('Invalid hashType ' + hashType);
-  var hashTypeBuffer = Buffer.allocUnsafe(1);
-  hashTypeBuffer.writeUInt8(hashType, 0);
-  var r = toDER(signature.slice(0, 32));
-  var s = toDER(signature.slice(32, 64));
-  return Buffer.concat([bip66.encode(r, s), hashTypeBuffer]);
-}
-
-exports.encode = encode;
-},{"./types":"mf8L","bip66":"qbEO","typeforce":"PKU7","buffer":"dskh"}],"Fa8t":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var scriptNumber = require('./script_number');
-
-var scriptSignature = require('./script_signature');
-
-var types = require('./types');
-
-var bip66 = require('bip66');
-
-var ecc = require('tiny-secp256k1');
-
-var pushdata = require('pushdata-bitcoin');
-
-var typeforce = require('typeforce');
-
-exports.OPS = require('bitcoin-ops');
-
-var REVERSE_OPS = require('bitcoin-ops/map');
-
-var OP_INT_BASE = exports.OPS.OP_RESERVED; // OP_1 - 1
-
-function isOPInt(value) {
-  return types.Number(value) && (value === exports.OPS.OP_0 || value >= exports.OPS.OP_1 && value <= exports.OPS.OP_16 || value === exports.OPS.OP_1NEGATE);
-}
-
-function isPushOnlyChunk(value) {
-  return types.Buffer(value) || isOPInt(value);
-}
-
-function isPushOnly(value) {
-  return types.Array(value) && value.every(isPushOnlyChunk);
-}
-
-exports.isPushOnly = isPushOnly;
-
-function asMinimalOP(buffer) {
-  if (buffer.length === 0) return exports.OPS.OP_0;
-  if (buffer.length !== 1) return;
-  if (buffer[0] >= 1 && buffer[0] <= 16) return OP_INT_BASE + buffer[0];
-  if (buffer[0] === 0x81) return exports.OPS.OP_1NEGATE;
-}
-
-function chunksIsBuffer(buf) {
-  return Buffer.isBuffer(buf);
-}
-
-function chunksIsArray(buf) {
-  return types.Array(buf);
-}
-
-function singleChunkIsBuffer(buf) {
-  return Buffer.isBuffer(buf);
-}
-
-function compile(chunks) {
-  // TODO: remove me
-  if (chunksIsBuffer(chunks)) return chunks;
-  typeforce(types.Array, chunks);
-  var bufferSize = chunks.reduce(function (accum, chunk) {
-    // data chunk
-    if (singleChunkIsBuffer(chunk)) {
-      // adhere to BIP62.3, minimal push policy
-      if (chunk.length === 1 && asMinimalOP(chunk) !== undefined) {
-        return accum + 1;
-      }
-
-      return accum + pushdata.encodingLength(chunk.length) + chunk.length;
-    } // opcode
-
-
-    return accum + 1;
-  }, 0.0);
-  var buffer = Buffer.allocUnsafe(bufferSize);
-  var offset = 0;
-  chunks.forEach(function (chunk) {
-    // data chunk
-    if (singleChunkIsBuffer(chunk)) {
-      // adhere to BIP62.3, minimal push policy
-      var opcode = asMinimalOP(chunk);
-
-      if (opcode !== undefined) {
-        buffer.writeUInt8(opcode, offset);
-        offset += 1;
-        return;
-      }
-
-      offset += pushdata.encode(buffer, chunk.length, offset);
-      chunk.copy(buffer, offset);
-      offset += chunk.length; // opcode
-    } else {
-      buffer.writeUInt8(chunk, offset);
-      offset += 1;
-    }
-  });
-  if (offset !== buffer.length) throw new Error('Could not decode chunks');
-  return buffer;
-}
-
-exports.compile = compile;
-
-function decompile(buffer) {
-  // TODO: remove me
-  if (chunksIsArray(buffer)) return buffer;
-  typeforce(types.Buffer, buffer);
-  var chunks = [];
-  var i = 0;
-
-  while (i < buffer.length) {
-    var opcode = buffer[i]; // data chunk
-
-    if (opcode > exports.OPS.OP_0 && opcode <= exports.OPS.OP_PUSHDATA4) {
-      var d = pushdata.decode(buffer, i); // did reading a pushDataInt fail?
-
-      if (d === null) return null;
-      i += d.size; // attempt to read too much data?
-
-      if (i + d.number > buffer.length) return null;
-      var data = buffer.slice(i, i + d.number);
-      i += d.number; // decompile minimally
-
-      var op = asMinimalOP(data);
-
-      if (op !== undefined) {
-        chunks.push(op);
-      } else {
-        chunks.push(data);
-      } // opcode
-
-    } else {
-      chunks.push(opcode);
-      i += 1;
-    }
-  }
-
-  return chunks;
-}
-
-exports.decompile = decompile;
-
-function toASM(chunks) {
-  if (chunksIsBuffer(chunks)) {
-    chunks = decompile(chunks);
-  }
-
-  return chunks.map(function (chunk) {
-    // data?
-    if (singleChunkIsBuffer(chunk)) {
-      var op = asMinimalOP(chunk);
-      if (op === undefined) return chunk.toString('hex');
-      chunk = op;
-    } // opcode!
-
-
-    return REVERSE_OPS[chunk];
-  }).join(' ');
-}
-
-exports.toASM = toASM;
-
-function fromASM(asm) {
-  typeforce(types.String, asm);
-  return compile(asm.split(' ').map(function (chunkStr) {
-    // opcode?
-    if (exports.OPS[chunkStr] !== undefined) return exports.OPS[chunkStr];
-    typeforce(types.Hex, chunkStr); // data!
-
-    return Buffer.from(chunkStr, 'hex');
-  }));
-}
-
-exports.fromASM = fromASM;
-
-function toStack(chunks) {
-  chunks = decompile(chunks);
-  typeforce(isPushOnly, chunks);
-  return chunks.map(function (op) {
-    if (singleChunkIsBuffer(op)) return op;
-    if (op === exports.OPS.OP_0) return Buffer.allocUnsafe(0);
-    return scriptNumber.encode(op - OP_INT_BASE);
-  });
-}
-
-exports.toStack = toStack;
-
-function isCanonicalPubKey(buffer) {
-  return ecc.isPoint(buffer);
-}
-
-exports.isCanonicalPubKey = isCanonicalPubKey;
-
-function isDefinedHashType(hashType) {
-  var hashTypeMod = hashType & ~0x80; // return hashTypeMod > SIGHASH_ALL && hashTypeMod < SIGHASH_SINGLE
-
-  return hashTypeMod > 0x00 && hashTypeMod < 0x04;
-}
-
-exports.isDefinedHashType = isDefinedHashType;
-
-function isCanonicalScriptSignature(buffer) {
-  if (!Buffer.isBuffer(buffer)) return false;
-  if (!isDefinedHashType(buffer[buffer.length - 1])) return false;
-  return bip66.check(buffer.slice(0, -1));
-}
-
-exports.isCanonicalScriptSignature = isCanonicalScriptSignature; // tslint:disable-next-line variable-name
-
-exports.number = scriptNumber;
-exports.signature = scriptSignature;
-},{"./script_number":"wihG","./script_signature":"d9co","./types":"mf8L","bip66":"qbEO","tiny-secp256k1":"fCMY","pushdata-bitcoin":"HZCS","typeforce":"PKU7","bitcoin-ops":"T5UE","bitcoin-ops/map":"XAxl","buffer":"dskh"}],"q7Hj":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var networks_1 = require('../networks');
-
-var bscript = require('../script');
-
-var lazy = require('./lazy');
-
-var typef = require('typeforce');
-
-var OPS = bscript.OPS;
-
-function stacksEqual(a, b) {
-  if (a.length !== b.length) return false;
-  return a.every(function (x, i) {
-    return x.equals(b[i]);
-  });
-} // output: OP_RETURN ...
-
-
-function p2data(a, opts) {
-  if (!a.data && !a.output) throw new TypeError('Not enough data');
-  opts = Object.assign({
-    validate: true
-  }, opts || {});
-  typef({
-    network: typef.maybe(typef.Object),
-    output: typef.maybe(typef.Buffer),
-    data: typef.maybe(typef.arrayOf(typef.Buffer))
-  }, a);
-  var network = a.network || networks_1.bitcoin;
-  var o = {
-    name: 'embed',
-    network: network
-  };
-  lazy.prop(o, 'output', function () {
-    if (!a.data) return;
-    return bscript.compile([OPS.OP_RETURN].concat(a.data));
-  });
-  lazy.prop(o, 'data', function () {
-    if (!a.output) return;
-    return bscript.decompile(a.output).slice(1);
-  }); // extended validation
-
-  if (opts.validate) {
-    if (a.output) {
-      var chunks = bscript.decompile(a.output);
-      if (chunks[0] !== OPS.OP_RETURN) throw new TypeError('Output is invalid');
-      if (!chunks.slice(1).every(typef.Buffer)) throw new TypeError('Output is invalid');
-      if (a.data && !stacksEqual(a.data, o.data)) throw new TypeError('Data mismatch');
-    }
-  }
-
-  return Object.assign(o, a);
-}
-
-exports.p2data = p2data;
-},{"../networks":"LuAr","../script":"Fa8t","./lazy":"SsCk","typeforce":"PKU7"}],"SY7q":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var networks_1 = require('../networks');
-
-var bscript = require('../script');
-
-var lazy = require('./lazy');
-
-var OPS = bscript.OPS;
-
-var typef = require('typeforce');
-
-var ecc = require('tiny-secp256k1');
-
-var OP_INT_BASE = OPS.OP_RESERVED; // OP_1 - 1
-
-function stacksEqual(a, b) {
-  if (a.length !== b.length) return false;
-  return a.every(function (x, i) {
-    return x.equals(b[i]);
-  });
-} // input: OP_0 [signatures ...]
-// output: m [pubKeys ...] n OP_CHECKMULTISIG
-
-
-function p2ms(a, opts) {
-  if (!a.input && !a.output && !(a.pubkeys && a.m !== undefined) && !a.signatures) throw new TypeError('Not enough data');
-  opts = Object.assign({
-    validate: true
-  }, opts || {});
-
-  function isAcceptableSignature(x) {
-    return bscript.isCanonicalScriptSignature(x) || (opts.allowIncomplete && x === OPS.OP_0) !== undefined;
-  }
-
-  typef({
-    network: typef.maybe(typef.Object),
-    m: typef.maybe(typef.Number),
-    n: typef.maybe(typef.Number),
-    output: typef.maybe(typef.Buffer),
-    pubkeys: typef.maybe(typef.arrayOf(ecc.isPoint)),
-    signatures: typef.maybe(typef.arrayOf(isAcceptableSignature)),
-    input: typef.maybe(typef.Buffer)
-  }, a);
-  var network = a.network || networks_1.bitcoin;
-  var o = {
-    network: network
-  };
-  var chunks = [];
-  var decoded = false;
-
-  function decode(output) {
-    if (decoded) return;
-    decoded = true;
-    chunks = bscript.decompile(output);
-    o.m = chunks[0] - OP_INT_BASE;
-    o.n = chunks[chunks.length - 2] - OP_INT_BASE;
-    o.pubkeys = chunks.slice(1, -2);
-  }
-
-  lazy.prop(o, 'output', function () {
-    if (!a.m) return;
-    if (!o.n) return;
-    if (!a.pubkeys) return;
-    return bscript.compile([].concat(OP_INT_BASE + a.m, a.pubkeys, OP_INT_BASE + o.n, OPS.OP_CHECKMULTISIG));
-  });
-  lazy.prop(o, 'm', function () {
-    if (!o.output) return;
-    decode(o.output);
-    return o.m;
-  });
-  lazy.prop(o, 'n', function () {
-    if (!o.pubkeys) return;
-    return o.pubkeys.length;
-  });
-  lazy.prop(o, 'pubkeys', function () {
-    if (!a.output) return;
-    decode(a.output);
-    return o.pubkeys;
-  });
-  lazy.prop(o, 'signatures', function () {
-    if (!a.input) return;
-    return bscript.decompile(a.input).slice(1);
-  });
-  lazy.prop(o, 'input', function () {
-    if (!a.signatures) return;
-    return bscript.compile([OPS.OP_0].concat(a.signatures));
-  });
-  lazy.prop(o, 'witness', function () {
-    if (!o.input) return;
-    return [];
-  });
-  lazy.prop(o, 'name', function () {
-    if (!o.m || !o.n) return;
-    return "p2ms(".concat(o.m, " of ").concat(o.n, ")");
-  }); // extended validation
-
-  if (opts.validate) {
-    if (a.output) {
-      decode(a.output);
-      if (!typef.Number(chunks[0])) throw new TypeError('Output is invalid');
-      if (!typef.Number(chunks[chunks.length - 2])) throw new TypeError('Output is invalid');
-      if (chunks[chunks.length - 1] !== OPS.OP_CHECKMULTISIG) throw new TypeError('Output is invalid');
-      if (o.m <= 0 || o.n > 16 || o.m > o.n || o.n !== chunks.length - 3) throw new TypeError('Output is invalid');
-      if (!o.pubkeys.every(function (x) {
-        return ecc.isPoint(x);
-      })) throw new TypeError('Output is invalid');
-      if (a.m !== undefined && a.m !== o.m) throw new TypeError('m mismatch');
-      if (a.n !== undefined && a.n !== o.n) throw new TypeError('n mismatch');
-      if (a.pubkeys && !stacksEqual(a.pubkeys, o.pubkeys)) throw new TypeError('Pubkeys mismatch');
-    }
-
-    if (a.pubkeys) {
-      if (a.n !== undefined && a.n !== a.pubkeys.length) throw new TypeError('Pubkey count mismatch');
-      o.n = a.pubkeys.length;
-      if (o.n < o.m) throw new TypeError('Pubkey count cannot be less than m');
-    }
-
-    if (a.signatures) {
-      if (a.signatures.length < o.m) throw new TypeError('Not enough signatures provided');
-      if (a.signatures.length > o.m) throw new TypeError('Too many signatures provided');
-    }
-
-    if (a.input) {
-      if (a.input[0] !== OPS.OP_0) throw new TypeError('Input is invalid');
-      if (o.signatures.length === 0 || !o.signatures.every(isAcceptableSignature)) throw new TypeError('Input has invalid signature(s)');
-      if (a.signatures && !stacksEqual(a.signatures, o.signatures)) throw new TypeError('Signature mismatch');
-      if (a.m !== undefined && a.m !== a.signatures.length) throw new TypeError('Signature count mismatch');
-    }
-  }
-
-  return Object.assign(o, a);
-}
-
-exports.p2ms = p2ms;
-},{"../networks":"LuAr","../script":"Fa8t","./lazy":"SsCk","typeforce":"PKU7","tiny-secp256k1":"fCMY"}],"jLkq":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var networks_1 = require('../networks');
-
-var bscript = require('../script');
-
-var lazy = require('./lazy');
-
-var typef = require('typeforce');
-
-var OPS = bscript.OPS;
-
-var ecc = require('tiny-secp256k1'); // input: {signature}
-// output: {pubKey} OP_CHECKSIG
-
-
-function p2pk(a, opts) {
-  if (!a.input && !a.output && !a.pubkey && !a.input && !a.signature) throw new TypeError('Not enough data');
-  opts = Object.assign({
-    validate: true
-  }, opts || {});
-  typef({
-    network: typef.maybe(typef.Object),
-    output: typef.maybe(typef.Buffer),
-    pubkey: typef.maybe(ecc.isPoint),
-    signature: typef.maybe(bscript.isCanonicalScriptSignature),
-    input: typef.maybe(typef.Buffer)
-  }, a);
-
-  var _chunks = lazy.value(function () {
-    return bscript.decompile(a.input);
-  });
-
-  var network = a.network || networks_1.bitcoin;
-  var o = {
-    name: 'p2pk',
-    network: network
-  };
-  lazy.prop(o, 'output', function () {
-    if (!a.pubkey) return;
-    return bscript.compile([a.pubkey, OPS.OP_CHECKSIG]);
-  });
-  lazy.prop(o, 'pubkey', function () {
-    if (!a.output) return;
-    return a.output.slice(1, -1);
-  });
-  lazy.prop(o, 'signature', function () {
-    if (!a.input) return;
-    return _chunks()[0];
-  });
-  lazy.prop(o, 'input', function () {
-    if (!a.signature) return;
-    return bscript.compile([a.signature]);
-  });
-  lazy.prop(o, 'witness', function () {
-    if (!o.input) return;
-    return [];
-  }); // extended validation
-
-  if (opts.validate) {
-    if (a.output) {
-      if (a.output[a.output.length - 1] !== OPS.OP_CHECKSIG) throw new TypeError('Output is invalid');
-      if (!ecc.isPoint(o.pubkey)) throw new TypeError('Output pubkey is invalid');
-      if (a.pubkey && !a.pubkey.equals(o.pubkey)) throw new TypeError('Pubkey mismatch');
-    }
-
-    if (a.signature) {
-      if (a.input && !a.input.equals(o.input)) throw new TypeError('Signature mismatch');
-    }
-
-    if (a.input) {
-      if (_chunks().length !== 1) throw new TypeError('Input is invalid');
-      if (!bscript.isCanonicalScriptSignature(o.signature)) throw new TypeError('Input has invalid signature');
-    }
-  }
-
-  return Object.assign(o, a);
-}
-
-exports.p2pk = p2pk;
-},{"../networks":"LuAr","../script":"Fa8t","./lazy":"SsCk","typeforce":"PKU7","tiny-secp256k1":"fCMY"}],"lzf5":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bcrypto = require('../crypto');
-
-var networks_1 = require('../networks');
-
-var bscript = require('../script');
-
-var lazy = require('./lazy');
-
-var typef = require('typeforce');
-
-var OPS = bscript.OPS;
-
-var ecc = require('tiny-secp256k1');
-
-var bs58check = require('bs58check'); // input: {signature} {pubkey}
-// output: OP_DUP OP_HASH160 {hash160(pubkey)} OP_EQUALVERIFY OP_CHECKSIG
-
-
-function p2pkh(a, opts) {
-  if (!a.address && !a.hash && !a.output && !a.pubkey && !a.input) throw new TypeError('Not enough data');
-  opts = Object.assign({
-    validate: true
-  }, opts || {});
-  typef({
-    network: typef.maybe(typef.Object),
-    address: typef.maybe(typef.String),
-    hash: typef.maybe(typef.BufferN(20)),
-    output: typef.maybe(typef.BufferN(25)),
-    pubkey: typef.maybe(ecc.isPoint),
-    signature: typef.maybe(bscript.isCanonicalScriptSignature),
-    input: typef.maybe(typef.Buffer)
-  }, a);
-
-  var _address = lazy.value(function () {
-    var payload = bs58check.decode(a.address);
-    var version = payload.readUInt8(0);
-    var hash = payload.slice(1);
-    return {
-      version: version,
-      hash: hash
-    };
-  });
-
-  var _chunks = lazy.value(function () {
-    return bscript.decompile(a.input);
-  });
-
-  var network = a.network || networks_1.bitcoin;
-  var o = {
-    name: 'p2pkh',
-    network: network
-  };
-  lazy.prop(o, 'address', function () {
-    if (!o.hash) return;
-    var payload = Buffer.allocUnsafe(21);
-    payload.writeUInt8(network.pubKeyHash, 0);
-    o.hash.copy(payload, 1);
-    return bs58check.encode(payload);
-  });
-  lazy.prop(o, 'hash', function () {
-    if (a.output) return a.output.slice(3, 23);
-    if (a.address) return _address().hash;
-    if (a.pubkey || o.pubkey) return bcrypto.hash160(a.pubkey || o.pubkey);
-  });
-  lazy.prop(o, 'output', function () {
-    if (!o.hash) return;
-    return bscript.compile([OPS.OP_DUP, OPS.OP_HASH160, o.hash, OPS.OP_EQUALVERIFY, OPS.OP_CHECKSIG]);
-  });
-  lazy.prop(o, 'pubkey', function () {
-    if (!a.input) return;
-    return _chunks()[1];
-  });
-  lazy.prop(o, 'signature', function () {
-    if (!a.input) return;
-    return _chunks()[0];
-  });
-  lazy.prop(o, 'input', function () {
-    if (!a.pubkey) return;
-    if (!a.signature) return;
-    return bscript.compile([a.signature, a.pubkey]);
-  });
-  lazy.prop(o, 'witness', function () {
-    if (!o.input) return;
-    return [];
-  }); // extended validation
-
-  if (opts.validate) {
-    var hash = Buffer.from([]);
-
-    if (a.address) {
-      if (_address().version !== network.pubKeyHash) throw new TypeError('Invalid version or Network mismatch');
-      if (_address().hash.length !== 20) throw new TypeError('Invalid address');
-      hash = _address().hash;
-    }
-
-    if (a.hash) {
-      if (hash.length > 0 && !hash.equals(a.hash)) throw new TypeError('Hash mismatch');else hash = a.hash;
-    }
-
-    if (a.output) {
-      if (a.output.length !== 25 || a.output[0] !== OPS.OP_DUP || a.output[1] !== OPS.OP_HASH160 || a.output[2] !== 0x14 || a.output[23] !== OPS.OP_EQUALVERIFY || a.output[24] !== OPS.OP_CHECKSIG) throw new TypeError('Output is invalid');
-      var hash2 = a.output.slice(3, 23);
-      if (hash.length > 0 && !hash.equals(hash2)) throw new TypeError('Hash mismatch');else hash = hash2;
-    }
-
-    if (a.pubkey) {
-      var pkh = bcrypto.hash160(a.pubkey);
-      if (hash.length > 0 && !hash.equals(pkh)) throw new TypeError('Hash mismatch');else hash = pkh;
-    }
-
-    if (a.input) {
-      var chunks = _chunks();
-
-      if (chunks.length !== 2) throw new TypeError('Input is invalid');
-      if (!bscript.isCanonicalScriptSignature(chunks[0])) throw new TypeError('Input has invalid signature');
-      if (!ecc.isPoint(chunks[1])) throw new TypeError('Input has invalid pubkey');
-      if (a.signature && !a.signature.equals(chunks[0])) throw new TypeError('Signature mismatch');
-      if (a.pubkey && !a.pubkey.equals(chunks[1])) throw new TypeError('Pubkey mismatch');
-
-      var _pkh = bcrypto.hash160(chunks[1]);
-
-      if (hash.length > 0 && !hash.equals(_pkh)) throw new TypeError('Hash mismatch');
-    }
-  }
-
-  return Object.assign(o, a);
-}
-
-exports.p2pkh = p2pkh;
-},{"../crypto":"wHwg","../networks":"LuAr","../script":"Fa8t","./lazy":"SsCk","typeforce":"PKU7","tiny-secp256k1":"fCMY","bs58check":"lJVR","buffer":"dskh"}],"pamC":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bcrypto = require('../crypto');
-
-var networks_1 = require('../networks');
-
-var bscript = require('../script');
-
-var lazy = require('./lazy');
-
-var typef = require('typeforce');
-
-var OPS = bscript.OPS;
-
-var bs58check = require('bs58check');
-
-function stacksEqual(a, b) {
-  if (a.length !== b.length) return false;
-  return a.every(function (x, i) {
-    return x.equals(b[i]);
-  });
-} // input: [redeemScriptSig ...] {redeemScript}
-// witness: <?>
-// output: OP_HASH160 {hash160(redeemScript)} OP_EQUAL
-
-
-function p2sh(a, opts) {
-  if (!a.address && !a.hash && !a.output && !a.redeem && !a.input) throw new TypeError('Not enough data');
-  opts = Object.assign({
-    validate: true
-  }, opts || {});
-  typef({
-    network: typef.maybe(typef.Object),
-    address: typef.maybe(typef.String),
-    hash: typef.maybe(typef.BufferN(20)),
-    output: typef.maybe(typef.BufferN(23)),
-    redeem: typef.maybe({
-      network: typef.maybe(typef.Object),
-      output: typef.maybe(typef.Buffer),
-      input: typef.maybe(typef.Buffer),
-      witness: typef.maybe(typef.arrayOf(typef.Buffer))
-    }),
-    input: typef.maybe(typef.Buffer),
-    witness: typef.maybe(typef.arrayOf(typef.Buffer))
-  }, a);
-  var network = a.network;
-
-  if (!network) {
-    network = a.redeem && a.redeem.network || networks_1.bitcoin;
-  }
-
-  var o = {
-    network: network
-  };
-
-  var _address = lazy.value(function () {
-    var payload = bs58check.decode(a.address);
-    var version = payload.readUInt8(0);
-    var hash = payload.slice(1);
-    return {
-      version: version,
-      hash: hash
-    };
-  });
-
-  var _chunks = lazy.value(function () {
-    return bscript.decompile(a.input);
-  });
-
-  var _redeem = lazy.value(function () {
-    var chunks = _chunks();
-
-    return {
-      network: network,
-      output: chunks[chunks.length - 1],
-      input: bscript.compile(chunks.slice(0, -1)),
-      witness: a.witness || []
-    };
-  }); // output dependents
-
-
-  lazy.prop(o, 'address', function () {
-    if (!o.hash) return;
-    var payload = Buffer.allocUnsafe(21);
-    payload.writeUInt8(o.network.scriptHash, 0);
-    o.hash.copy(payload, 1);
-    return bs58check.encode(payload);
-  });
-  lazy.prop(o, 'hash', function () {
-    // in order of least effort
-    if (a.output) return a.output.slice(2, 22);
-    if (a.address) return _address().hash;
-    if (o.redeem && o.redeem.output) return bcrypto.hash160(o.redeem.output);
-  });
-  lazy.prop(o, 'output', function () {
-    if (!o.hash) return;
-    return bscript.compile([OPS.OP_HASH160, o.hash, OPS.OP_EQUAL]);
-  }); // input dependents
-
-  lazy.prop(o, 'redeem', function () {
-    if (!a.input) return;
-    return _redeem();
-  });
-  lazy.prop(o, 'input', function () {
-    if (!a.redeem || !a.redeem.input || !a.redeem.output) return;
-    return bscript.compile([].concat(bscript.decompile(a.redeem.input), a.redeem.output));
-  });
-  lazy.prop(o, 'witness', function () {
-    if (o.redeem && o.redeem.witness) return o.redeem.witness;
-    if (o.input) return [];
-  });
-  lazy.prop(o, 'name', function () {
-    var nameParts = ['p2sh'];
-    if (o.redeem !== undefined) nameParts.push(o.redeem.name);
-    return nameParts.join('-');
-  });
-
-  if (opts.validate) {
-    var hash = Buffer.from([]);
-
-    if (a.address) {
-      if (_address().version !== network.scriptHash) throw new TypeError('Invalid version or Network mismatch');
-      if (_address().hash.length !== 20) throw new TypeError('Invalid address');
-      hash = _address().hash;
-    }
-
-    if (a.hash) {
-      if (hash.length > 0 && !hash.equals(a.hash)) throw new TypeError('Hash mismatch');else hash = a.hash;
-    }
-
-    if (a.output) {
-      if (a.output.length !== 23 || a.output[0] !== OPS.OP_HASH160 || a.output[1] !== 0x14 || a.output[22] !== OPS.OP_EQUAL) throw new TypeError('Output is invalid');
-      var hash2 = a.output.slice(2, 22);
-      if (hash.length > 0 && !hash.equals(hash2)) throw new TypeError('Hash mismatch');else hash = hash2;
-    } // inlined to prevent 'no-inner-declarations' failing
-
-
-    var checkRedeem = function checkRedeem(redeem) {
-      // is the redeem output empty/invalid?
-      if (redeem.output) {
-        var decompile = bscript.decompile(redeem.output);
-        if (!decompile || decompile.length < 1) throw new TypeError('Redeem.output too short'); // match hash against other sources
-
-        var _hash = bcrypto.hash160(redeem.output);
-
-        if (hash.length > 0 && !hash.equals(_hash)) throw new TypeError('Hash mismatch');else hash = _hash;
-      }
-
-      if (redeem.input) {
-        var hasInput = redeem.input.length > 0;
-        var hasWitness = redeem.witness && redeem.witness.length > 0;
-        if (!hasInput && !hasWitness) throw new TypeError('Empty input');
-        if (hasInput && hasWitness) throw new TypeError('Input and witness provided');
-
-        if (hasInput) {
-          var richunks = bscript.decompile(redeem.input);
-          if (!bscript.isPushOnly(richunks)) throw new TypeError('Non push-only scriptSig');
-        }
-      }
-    };
-
-    if (a.input) {
-      var chunks = _chunks();
-
-      if (!chunks || chunks.length < 1) throw new TypeError('Input too short');
-      if (!Buffer.isBuffer(_redeem().output)) throw new TypeError('Input is invalid');
-      checkRedeem(_redeem());
-    }
-
-    if (a.redeem) {
-      if (a.redeem.network && a.redeem.network !== network) throw new TypeError('Network mismatch');
-
-      if (a.input) {
-        var redeem = _redeem();
-
-        if (a.redeem.output && !a.redeem.output.equals(redeem.output)) throw new TypeError('Redeem.output mismatch');
-        if (a.redeem.input && !a.redeem.input.equals(redeem.input)) throw new TypeError('Redeem.input mismatch');
-      }
-
-      checkRedeem(a.redeem);
-    }
-
-    if (a.witness) {
-      if (a.redeem && a.redeem.witness && !stacksEqual(a.redeem.witness, a.witness)) throw new TypeError('Witness and redeem.witness mismatch');
-    }
-  }
-
-  return Object.assign(o, a);
-}
-
-exports.p2sh = p2sh;
-},{"../crypto":"wHwg","../networks":"LuAr","../script":"Fa8t","./lazy":"SsCk","typeforce":"PKU7","bs58check":"lJVR","buffer":"dskh"}],"ThHa":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bcrypto = require('../crypto');
-
-var networks_1 = require('../networks');
-
-var bscript = require('../script');
-
-var lazy = require('./lazy');
-
-var typef = require('typeforce');
-
-var OPS = bscript.OPS;
-
-var ecc = require('tiny-secp256k1');
-
-var bech32 = require('bech32');
-
-var EMPTY_BUFFER = Buffer.alloc(0); // witness: {signature} {pubKey}
-// input: <>
-// output: OP_0 {pubKeyHash}
-
-function p2wpkh(a, opts) {
-  if (!a.address && !a.hash && !a.output && !a.pubkey && !a.witness) throw new TypeError('Not enough data');
-  opts = Object.assign({
-    validate: true
-  }, opts || {});
-  typef({
-    address: typef.maybe(typef.String),
-    hash: typef.maybe(typef.BufferN(20)),
-    input: typef.maybe(typef.BufferN(0)),
-    network: typef.maybe(typef.Object),
-    output: typef.maybe(typef.BufferN(22)),
-    pubkey: typef.maybe(ecc.isPoint),
-    signature: typef.maybe(bscript.isCanonicalScriptSignature),
-    witness: typef.maybe(typef.arrayOf(typef.Buffer))
-  }, a);
-
-  var _address = lazy.value(function () {
-    var result = bech32.decode(a.address);
-    var version = result.words.shift();
-    var data = bech32.fromWords(result.words);
-    return {
-      version: version,
-      prefix: result.prefix,
-      data: Buffer.from(data)
-    };
-  });
-
-  var network = a.network || networks_1.bitcoin;
-  var o = {
-    name: 'p2wpkh',
-    network: network
-  };
-  lazy.prop(o, 'address', function () {
-    if (!o.hash) return;
-    var words = bech32.toWords(o.hash);
-    words.unshift(0x00);
-    return bech32.encode(network.bech32, words);
-  });
-  lazy.prop(o, 'hash', function () {
-    if (a.output) return a.output.slice(2, 22);
-    if (a.address) return _address().data;
-    if (a.pubkey || o.pubkey) return bcrypto.hash160(a.pubkey || o.pubkey);
-  });
-  lazy.prop(o, 'output', function () {
-    if (!o.hash) return;
-    return bscript.compile([OPS.OP_0, o.hash]);
-  });
-  lazy.prop(o, 'pubkey', function () {
-    if (a.pubkey) return a.pubkey;
-    if (!a.witness) return;
-    return a.witness[1];
-  });
-  lazy.prop(o, 'signature', function () {
-    if (!a.witness) return;
-    return a.witness[0];
-  });
-  lazy.prop(o, 'input', function () {
-    if (!o.witness) return;
-    return EMPTY_BUFFER;
-  });
-  lazy.prop(o, 'witness', function () {
-    if (!a.pubkey) return;
-    if (!a.signature) return;
-    return [a.signature, a.pubkey];
-  }); // extended validation
-
-  if (opts.validate) {
-    var hash = Buffer.from([]);
-
-    if (a.address) {
-      if (network && network.bech32 !== _address().prefix) throw new TypeError('Invalid prefix or Network mismatch');
-      if (_address().version !== 0x00) throw new TypeError('Invalid address version');
-      if (_address().data.length !== 20) throw new TypeError('Invalid address data');
-      hash = _address().data;
-    }
-
-    if (a.hash) {
-      if (hash.length > 0 && !hash.equals(a.hash)) throw new TypeError('Hash mismatch');else hash = a.hash;
-    }
-
-    if (a.output) {
-      if (a.output.length !== 22 || a.output[0] !== OPS.OP_0 || a.output[1] !== 0x14) throw new TypeError('Output is invalid');
-      if (hash.length > 0 && !hash.equals(a.output.slice(2))) throw new TypeError('Hash mismatch');else hash = a.output.slice(2);
-    }
-
-    if (a.pubkey) {
-      var pkh = bcrypto.hash160(a.pubkey);
-      if (hash.length > 0 && !hash.equals(pkh)) throw new TypeError('Hash mismatch');else hash = pkh;
-    }
-
-    if (a.witness) {
-      if (a.witness.length !== 2) throw new TypeError('Witness is invalid');
-      if (!bscript.isCanonicalScriptSignature(a.witness[0])) throw new TypeError('Witness has invalid signature');
-      if (!ecc.isPoint(a.witness[1])) throw new TypeError('Witness has invalid pubkey');
-      if (a.signature && !a.signature.equals(a.witness[0])) throw new TypeError('Signature mismatch');
-      if (a.pubkey && !a.pubkey.equals(a.witness[1])) throw new TypeError('Pubkey mismatch');
-
-      var _pkh = bcrypto.hash160(a.witness[1]);
-
-      if (hash.length > 0 && !hash.equals(_pkh)) throw new TypeError('Hash mismatch');
-    }
-  }
-
-  return Object.assign(o, a);
-}
-
-exports.p2wpkh = p2wpkh;
-},{"../crypto":"wHwg","../networks":"LuAr","../script":"Fa8t","./lazy":"SsCk","typeforce":"PKU7","tiny-secp256k1":"fCMY","bech32":"gbth","buffer":"dskh"}],"dY19":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bcrypto = require('../crypto');
-
-var networks_1 = require('../networks');
-
-var bscript = require('../script');
-
-var lazy = require('./lazy');
-
-var typef = require('typeforce');
-
-var OPS = bscript.OPS;
-
-var bech32 = require('bech32');
-
-var EMPTY_BUFFER = Buffer.alloc(0);
-
-function stacksEqual(a, b) {
-  if (a.length !== b.length) return false;
-  return a.every(function (x, i) {
-    return x.equals(b[i]);
-  });
-} // input: <>
-// witness: [redeemScriptSig ...] {redeemScript}
-// output: OP_0 {sha256(redeemScript)}
-
-
-function p2wsh(a, opts) {
-  if (!a.address && !a.hash && !a.output && !a.redeem && !a.witness) throw new TypeError('Not enough data');
-  opts = Object.assign({
-    validate: true
-  }, opts || {});
-  typef({
-    network: typef.maybe(typef.Object),
-    address: typef.maybe(typef.String),
-    hash: typef.maybe(typef.BufferN(32)),
-    output: typef.maybe(typef.BufferN(34)),
-    redeem: typef.maybe({
-      input: typef.maybe(typef.Buffer),
-      network: typef.maybe(typef.Object),
-      output: typef.maybe(typef.Buffer),
-      witness: typef.maybe(typef.arrayOf(typef.Buffer))
-    }),
-    input: typef.maybe(typef.BufferN(0)),
-    witness: typef.maybe(typef.arrayOf(typef.Buffer))
-  }, a);
-
-  var _address = lazy.value(function () {
-    var result = bech32.decode(a.address);
-    var version = result.words.shift();
-    var data = bech32.fromWords(result.words);
-    return {
-      version: version,
-      prefix: result.prefix,
-      data: Buffer.from(data)
-    };
-  });
-
-  var _rchunks = lazy.value(function () {
-    return bscript.decompile(a.redeem.input);
-  });
-
-  var network = a.network;
-
-  if (!network) {
-    network = a.redeem && a.redeem.network || networks_1.bitcoin;
-  }
-
-  var o = {
-    network: network
-  };
-  lazy.prop(o, 'address', function () {
-    if (!o.hash) return;
-    var words = bech32.toWords(o.hash);
-    words.unshift(0x00);
-    return bech32.encode(network.bech32, words);
-  });
-  lazy.prop(o, 'hash', function () {
-    if (a.output) return a.output.slice(2);
-    if (a.address) return _address().data;
-    if (o.redeem && o.redeem.output) return bcrypto.sha256(o.redeem.output);
-  });
-  lazy.prop(o, 'output', function () {
-    if (!o.hash) return;
-    return bscript.compile([OPS.OP_0, o.hash]);
-  });
-  lazy.prop(o, 'redeem', function () {
-    if (!a.witness) return;
-    return {
-      output: a.witness[a.witness.length - 1],
-      input: EMPTY_BUFFER,
-      witness: a.witness.slice(0, -1)
-    };
-  });
-  lazy.prop(o, 'input', function () {
-    if (!o.witness) return;
-    return EMPTY_BUFFER;
-  });
-  lazy.prop(o, 'witness', function () {
-    // transform redeem input to witness stack?
-    if (a.redeem && a.redeem.input && a.redeem.input.length > 0 && a.redeem.output && a.redeem.output.length > 0) {
-      var stack = bscript.toStack(_rchunks()); // assign, and blank the existing input
-
-      o.redeem = Object.assign({
-        witness: stack
-      }, a.redeem);
-      o.redeem.input = EMPTY_BUFFER;
-      return [].concat(stack, a.redeem.output);
-    }
-
-    if (!a.redeem) return;
-    if (!a.redeem.output) return;
-    if (!a.redeem.witness) return;
-    return [].concat(a.redeem.witness, a.redeem.output);
-  });
-  lazy.prop(o, 'name', function () {
-    var nameParts = ['p2wsh'];
-    if (o.redeem !== undefined) nameParts.push(o.redeem.name);
-    return nameParts.join('-');
-  }); // extended validation
-
-  if (opts.validate) {
-    var hash = Buffer.from([]);
-
-    if (a.address) {
-      if (_address().prefix !== network.bech32) throw new TypeError('Invalid prefix or Network mismatch');
-      if (_address().version !== 0x00) throw new TypeError('Invalid address version');
-      if (_address().data.length !== 32) throw new TypeError('Invalid address data');
-      hash = _address().data;
-    }
-
-    if (a.hash) {
-      if (hash.length > 0 && !hash.equals(a.hash)) throw new TypeError('Hash mismatch');else hash = a.hash;
-    }
-
-    if (a.output) {
-      if (a.output.length !== 34 || a.output[0] !== OPS.OP_0 || a.output[1] !== 0x20) throw new TypeError('Output is invalid');
-      var hash2 = a.output.slice(2);
-      if (hash.length > 0 && !hash.equals(hash2)) throw new TypeError('Hash mismatch');else hash = hash2;
-    }
-
-    if (a.redeem) {
-      if (a.redeem.network && a.redeem.network !== network) throw new TypeError('Network mismatch'); // is there two redeem sources?
-
-      if (a.redeem.input && a.redeem.input.length > 0 && a.redeem.witness && a.redeem.witness.length > 0) throw new TypeError('Ambiguous witness source'); // is the redeem output non-empty?
-
-      if (a.redeem.output) {
-        if (bscript.decompile(a.redeem.output).length === 0) throw new TypeError('Redeem.output is invalid'); // match hash against other sources
-
-        var _hash = bcrypto.sha256(a.redeem.output);
-
-        if (hash.length > 0 && !hash.equals(_hash)) throw new TypeError('Hash mismatch');else hash = _hash;
-      }
-
-      if (a.redeem.input && !bscript.isPushOnly(_rchunks())) throw new TypeError('Non push-only scriptSig');
-      if (a.witness && a.redeem.witness && !stacksEqual(a.witness, a.redeem.witness)) throw new TypeError('Witness and redeem.witness mismatch');
-    }
-
-    if (a.witness) {
-      if (a.redeem && a.redeem.output && !a.redeem.output.equals(a.witness[a.witness.length - 1])) throw new TypeError('Witness and redeem.output mismatch');
-    }
-  }
-
-  return Object.assign(o, a);
-}
-
-exports.p2wsh = p2wsh;
-},{"../crypto":"wHwg","../networks":"LuAr","../script":"Fa8t","./lazy":"SsCk","typeforce":"PKU7","bech32":"gbth","buffer":"dskh"}],"kEsd":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var embed_1 = require('./embed');
-
-exports.embed = embed_1.p2data;
-
-var p2ms_1 = require('./p2ms');
-
-exports.p2ms = p2ms_1.p2ms;
-
-var p2pk_1 = require('./p2pk');
-
-exports.p2pk = p2pk_1.p2pk;
-
-var p2pkh_1 = require('./p2pkh');
-
-exports.p2pkh = p2pkh_1.p2pkh;
-
-var p2sh_1 = require('./p2sh');
-
-exports.p2sh = p2sh_1.p2sh;
-
-var p2wpkh_1 = require('./p2wpkh');
-
-exports.p2wpkh = p2wpkh_1.p2wpkh;
-
-var p2wsh_1 = require('./p2wsh');
-
-exports.p2wsh = p2wsh_1.p2wsh; // TODO
-// witness commitment
-},{"./embed":"q7Hj","./p2ms":"SY7q","./p2pk":"jLkq","./p2pkh":"lzf5","./p2sh":"pamC","./p2wpkh":"ThHa","./p2wsh":"dY19"}],"wUUe":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var networks = require('./networks');
-
-var payments = require('./payments');
-
-var bscript = require('./script');
-
-var types = require('./types');
-
-var bech32 = require('bech32');
-
-var bs58check = require('bs58check');
-
-var typeforce = require('typeforce');
-
-function fromBase58Check(address) {
-  var payload = bs58check.decode(address); // TODO: 4.0.0, move to "toOutputScript"
-
-  if (payload.length < 21) throw new TypeError(address + ' is too short');
-  if (payload.length > 21) throw new TypeError(address + ' is too long');
-  var version = payload.readUInt8(0);
-  var hash = payload.slice(1);
-  return {
-    version: version,
-    hash: hash
-  };
-}
-
-exports.fromBase58Check = fromBase58Check;
-
-function fromBech32(address) {
-  var result = bech32.decode(address);
-  var data = bech32.fromWords(result.words.slice(1));
-  return {
-    version: result.words[0],
-    prefix: result.prefix,
-    data: Buffer.from(data)
-  };
-}
-
-exports.fromBech32 = fromBech32;
-
-function toBase58Check(hash, version) {
-  typeforce(types.tuple(types.Hash160bit, types.UInt8), arguments);
-  var payload = Buffer.allocUnsafe(21);
-  payload.writeUInt8(version, 0);
-  hash.copy(payload, 1);
-  return bs58check.encode(payload);
-}
-
-exports.toBase58Check = toBase58Check;
-
-function toBech32(data, version, prefix) {
-  var words = bech32.toWords(data);
-  words.unshift(version);
-  return bech32.encode(prefix, words);
-}
-
-exports.toBech32 = toBech32;
-
-function fromOutputScript(output, network) {
-  // TODO: Network
-  network = network || networks.bitcoin;
-
-  try {
-    return payments.p2pkh({
-      output: output,
-      network: network
-    }).address;
-  } catch (e) {}
-
-  try {
-    return payments.p2sh({
-      output: output,
-      network: network
-    }).address;
-  } catch (e) {}
-
-  try {
-    return payments.p2wpkh({
-      output: output,
-      network: network
-    }).address;
-  } catch (e) {}
-
-  try {
-    return payments.p2wsh({
-      output: output,
-      network: network
-    }).address;
-  } catch (e) {}
-
-  throw new Error(bscript.toASM(output) + ' has no matching Address');
-}
-
-exports.fromOutputScript = fromOutputScript;
-
-function toOutputScript(address, network) {
-  network = network || networks.bitcoin;
-  var decodeBase58;
-  var decodeBech32;
-
-  try {
-    decodeBase58 = fromBase58Check(address);
-  } catch (e) {}
-
-  if (decodeBase58) {
-    if (decodeBase58.version === network.pubKeyHash) return payments.p2pkh({
-      hash: decodeBase58.hash
-    }).output;
-    if (decodeBase58.version === network.scriptHash) return payments.p2sh({
-      hash: decodeBase58.hash
-    }).output;
-  } else {
-    try {
-      decodeBech32 = fromBech32(address);
-    } catch (e) {}
-
-    if (decodeBech32) {
-      if (decodeBech32.prefix !== network.bech32) throw new Error(address + ' has an invalid prefix');
-
-      if (decodeBech32.version === 0) {
-        if (decodeBech32.data.length === 20) return payments.p2wpkh({
-          hash: decodeBech32.data
-        }).output;
-        if (decodeBech32.data.length === 32) return payments.p2wsh({
-          hash: decodeBech32.data
-        }).output;
-      }
-    }
-  }
-
-  throw new Error(address + ' has no matching Script');
-}
-
-exports.toOutputScript = toOutputScript;
-},{"./networks":"LuAr","./payments":"kEsd","./script":"Fa8t","./types":"mf8L","bech32":"gbth","bs58check":"lJVR","typeforce":"PKU7","buffer":"dskh"}],"ZFsm":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var NETWORKS = require('./networks');
-
-var types = require('./types');
-
-var ecc = require('tiny-secp256k1');
-
-var randomBytes = require('randombytes');
-
-var typeforce = require('typeforce');
-
-var wif = require('wif');
-
-var isOptions = typeforce.maybe(typeforce.compile({
-  compressed: types.maybe(types.Boolean),
-  network: types.maybe(types.Network)
-}));
-
-var ECPair =
-/*#__PURE__*/
-function () {
-  function ECPair(__D, __Q, options) {
-    _classCallCheck(this, ECPair);
-
-    this.__D = __D;
-    this.__Q = __Q;
-    this.lowR = false;
-    if (options === undefined) options = {};
-    this.compressed = options.compressed === undefined ? true : options.compressed;
-    this.network = options.network || NETWORKS.bitcoin;
-    if (__Q !== undefined) this.__Q = ecc.pointCompress(__Q, this.compressed);
-  }
-
-  _createClass(ECPair, [{
-    key: "toWIF",
-    value: function toWIF() {
-      if (!this.__D) throw new Error('Missing private key');
-      return wif.encode(this.network.wif, this.__D, this.compressed);
-    }
-  }, {
-    key: "sign",
-    value: function sign(hash, lowR) {
-      if (!this.__D) throw new Error('Missing private key');
-      if (lowR === undefined) lowR = this.lowR;
-
-      if (lowR === false) {
-        return ecc.sign(hash, this.__D);
-      } else {
-        var sig = ecc.sign(hash, this.__D);
-        var extraData = Buffer.alloc(32, 0);
-        var counter = 0; // if first try is lowR, skip the loop
-        // for second try and on, add extra entropy counting up
-
-        while (sig[0] > 0x7f) {
-          counter++;
-          extraData.writeUIntLE(counter, 0, 6);
-          sig = ecc.signWithEntropy(hash, this.__D, extraData);
-        }
-
-        return sig;
-      }
-    }
-  }, {
-    key: "verify",
-    value: function verify(hash, signature) {
-      return ecc.verify(hash, this.publicKey, signature);
-    }
-  }, {
-    key: "privateKey",
-    get: function get() {
-      return this.__D;
-    }
-  }, {
-    key: "publicKey",
-    get: function get() {
-      if (!this.__Q) this.__Q = ecc.pointFromScalar(this.__D, this.compressed);
-      return this.__Q;
-    }
-  }]);
-
-  return ECPair;
-}();
-
-function fromPrivateKey(buffer, options) {
-  typeforce(types.Buffer256bit, buffer);
-  if (!ecc.isPrivate(buffer)) throw new TypeError('Private key not in range [1, n)');
-  typeforce(isOptions, options);
-  return new ECPair(buffer, undefined, options);
-}
-
-exports.fromPrivateKey = fromPrivateKey;
-
-function fromPublicKey(buffer, options) {
-  typeforce(ecc.isPoint, buffer);
-  typeforce(isOptions, options);
-  return new ECPair(undefined, buffer, options);
-}
-
-exports.fromPublicKey = fromPublicKey;
-
-function fromWIF(wifString, network) {
-  var decoded = wif.decode(wifString);
-  var version = decoded.version; // list of networks?
-
-  if (types.Array(network)) {
-    network = network.filter(function (x) {
-      return version === x.wif;
-    }).pop();
-    if (!network) throw new Error('Unknown network version'); // otherwise, assume a network object (or default to bitcoin)
-  } else {
-    network = network || NETWORKS.bitcoin;
-    if (version !== network.wif) throw new Error('Invalid network version');
-  }
-
-  return fromPrivateKey(decoded.privateKey, {
-    compressed: decoded.compressed,
-    network: network
-  });
-}
-
-exports.fromWIF = fromWIF;
-
-function makeRandom(options) {
-  typeforce(isOptions, options);
-  if (options === undefined) options = {};
-  var rng = options.rng || randomBytes;
-  var d;
-
-  do {
-    d = rng(32);
-    typeforce(types.Buffer256bit, d);
-  } while (!ecc.isPrivate(d));
-
-  return fromPrivateKey(d, options);
-}
-
-exports.makeRandom = makeRandom;
-},{"./networks":"LuAr","./types":"mf8L","tiny-secp256k1":"fCMY","randombytes":"XJNj","typeforce":"PKU7","wif":"zCNS","buffer":"dskh"}],"Y9UO":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bufferutils = require('./bufferutils');
-
-var bufferutils_1 = require('./bufferutils');
-
-var bcrypto = require('./crypto');
-
-var bscript = require('./script');
-
-var script_1 = require('./script');
-
-var types = require('./types');
-
-var typeforce = require('typeforce');
-
-var varuint = require('varuint-bitcoin');
-
-function varSliceSize(someScript) {
-  var length = someScript.length;
-  return varuint.encodingLength(length) + length;
-}
-
-function vectorSize(someVector) {
-  var length = someVector.length;
-  return varuint.encodingLength(length) + someVector.reduce(function (sum, witness) {
-    return sum + varSliceSize(witness);
-  }, 0);
-}
-
-var EMPTY_SCRIPT = Buffer.allocUnsafe(0);
-var EMPTY_WITNESS = [];
-var ZERO = Buffer.from('0000000000000000000000000000000000000000000000000000000000000000', 'hex');
-var ONE = Buffer.from('0000000000000000000000000000000000000000000000000000000000000001', 'hex');
-var VALUE_UINT64_MAX = Buffer.from('ffffffffffffffff', 'hex');
-var BLANK_OUTPUT = {
-  script: EMPTY_SCRIPT,
-  valueBuffer: VALUE_UINT64_MAX
-};
-
-function isOutput(out) {
-  return out.value !== undefined;
-}
-
-var Transaction =
-/*#__PURE__*/
-function () {
-  function Transaction() {
-    _classCallCheck(this, Transaction);
-
-    this.version = 1;
-    this.locktime = 0;
-    this.ins = [];
-    this.outs = [];
-  }
-
-  _createClass(Transaction, [{
-    key: "isCoinbase",
-    value: function isCoinbase() {
-      return this.ins.length === 1 && Transaction.isCoinbaseHash(this.ins[0].hash);
-    }
-  }, {
-    key: "addInput",
-    value: function addInput(hash, index, sequence, scriptSig) {
-      typeforce(types.tuple(types.Hash256bit, types.UInt32, types.maybe(types.UInt32), types.maybe(types.Buffer)), arguments);
-
-      if (types.Null(sequence)) {
-        sequence = Transaction.DEFAULT_SEQUENCE;
-      } // Add the input and return the input's index
-
-
-      return this.ins.push({
-        hash: hash,
-        index: index,
-        script: scriptSig || EMPTY_SCRIPT,
-        sequence: sequence,
-        witness: EMPTY_WITNESS
-      }) - 1;
-    }
-  }, {
-    key: "addOutput",
-    value: function addOutput(scriptPubKey, value) {
-      typeforce(types.tuple(types.Buffer, types.Satoshi), arguments); // Add the output and return the output's index
-
-      return this.outs.push({
-        script: scriptPubKey,
-        value: value
-      }) - 1;
-    }
-  }, {
-    key: "hasWitnesses",
-    value: function hasWitnesses() {
-      return this.ins.some(function (x) {
-        return x.witness.length !== 0;
-      });
-    }
-  }, {
-    key: "weight",
-    value: function weight() {
-      var base = this.__byteLength(false);
-
-      var total = this.__byteLength(true);
-
-      return base * 3 + total;
-    }
-  }, {
-    key: "virtualSize",
-    value: function virtualSize() {
-      return Math.ceil(this.weight() / 4);
-    }
-  }, {
-    key: "byteLength",
-    value: function byteLength() {
-      return this.__byteLength(true);
-    }
-  }, {
-    key: "clone",
-    value: function clone() {
-      var newTx = new Transaction();
-      newTx.version = this.version;
-      newTx.locktime = this.locktime;
-      newTx.ins = this.ins.map(function (txIn) {
-        return {
-          hash: txIn.hash,
-          index: txIn.index,
-          script: txIn.script,
-          sequence: txIn.sequence,
-          witness: txIn.witness
-        };
-      });
-      newTx.outs = this.outs.map(function (txOut) {
-        return {
-          script: txOut.script,
-          value: txOut.value
-        };
-      });
-      return newTx;
-    }
-    /**
-     * Hash transaction for signing a specific input.
-     *
-     * Bitcoin uses a different hash for each signed transaction input.
-     * This method copies the transaction, makes the necessary changes based on the
-     * hashType, and then hashes the result.
-     * This hash can then be used to sign the provided transaction input.
-     */
-
-  }, {
-    key: "hashForSignature",
-    value: function hashForSignature(inIndex, prevOutScript, hashType) {
-      typeforce(types.tuple(types.UInt32, types.Buffer,
-      /* types.UInt8 */
-      types.Number), arguments); // https://github.com/bitcoin/bitcoin/blob/master/src/test/sighash_tests.cpp#L29
-
-      if (inIndex >= this.ins.length) return ONE; // ignore OP_CODESEPARATOR
-
-      var ourScript = bscript.compile(bscript.decompile(prevOutScript).filter(function (x) {
-        return x !== script_1.OPS.OP_CODESEPARATOR;
-      }));
-      var txTmp = this.clone(); // SIGHASH_NONE: ignore all outputs? (wildcard payee)
-
-      if ((hashType & 0x1f) === Transaction.SIGHASH_NONE) {
-        txTmp.outs = []; // ignore sequence numbers (except at inIndex)
-
-        txTmp.ins.forEach(function (input, i) {
-          if (i === inIndex) return;
-          input.sequence = 0;
-        }); // SIGHASH_SINGLE: ignore all outputs, except at the same index?
-      } else if ((hashType & 0x1f) === Transaction.SIGHASH_SINGLE) {
-        // https://github.com/bitcoin/bitcoin/blob/master/src/test/sighash_tests.cpp#L60
-        if (inIndex >= this.outs.length) return ONE; // truncate outputs after
-
-        txTmp.outs.length = inIndex + 1; // "blank" outputs before
-
-        for (var i = 0; i < inIndex; i++) {
-          txTmp.outs[i] = BLANK_OUTPUT;
-        } // ignore sequence numbers (except at inIndex)
-
-
-        txTmp.ins.forEach(function (input, y) {
-          if (y === inIndex) return;
-          input.sequence = 0;
-        });
-      } // SIGHASH_ANYONECANPAY: ignore inputs entirely?
-
-
-      if (hashType & Transaction.SIGHASH_ANYONECANPAY) {
-        txTmp.ins = [txTmp.ins[inIndex]];
-        txTmp.ins[0].script = ourScript; // SIGHASH_ALL: only ignore input scripts
-      } else {
-        // "blank" others input scripts
-        txTmp.ins.forEach(function (input) {
-          input.script = EMPTY_SCRIPT;
-        });
-        txTmp.ins[inIndex].script = ourScript;
-      } // serialize and hash
-
-
-      var buffer = Buffer.allocUnsafe(txTmp.__byteLength(false) + 4);
-      buffer.writeInt32LE(hashType, buffer.length - 4);
-
-      txTmp.__toBuffer(buffer, 0, false);
-
-      return bcrypto.hash256(buffer);
-    }
-  }, {
-    key: "hashForWitnessV0",
-    value: function hashForWitnessV0(inIndex, prevOutScript, value, hashType) {
-      typeforce(types.tuple(types.UInt32, types.Buffer, types.Satoshi, types.UInt32), arguments);
-      var tbuffer = Buffer.from([]);
-      var toffset = 0;
-
-      function writeSlice(slice) {
-        toffset += slice.copy(tbuffer, toffset);
-      }
-
-      function writeUInt32(i) {
-        toffset = tbuffer.writeUInt32LE(i, toffset);
-      }
-
-      function writeUInt64(i) {
-        toffset = bufferutils.writeUInt64LE(tbuffer, i, toffset);
-      }
-
-      function writeVarInt(i) {
-        varuint.encode(i, tbuffer, toffset);
-        toffset += varuint.encode.bytes;
-      }
-
-      function writeVarSlice(slice) {
-        writeVarInt(slice.length);
-        writeSlice(slice);
-      }
-
-      var hashOutputs = ZERO;
-      var hashPrevouts = ZERO;
-      var hashSequence = ZERO;
-
-      if (!(hashType & Transaction.SIGHASH_ANYONECANPAY)) {
-        tbuffer = Buffer.allocUnsafe(36 * this.ins.length);
-        toffset = 0;
-        this.ins.forEach(function (txIn) {
-          writeSlice(txIn.hash);
-          writeUInt32(txIn.index);
-        });
-        hashPrevouts = bcrypto.hash256(tbuffer);
-      }
-
-      if (!(hashType & Transaction.SIGHASH_ANYONECANPAY) && (hashType & 0x1f) !== Transaction.SIGHASH_SINGLE && (hashType & 0x1f) !== Transaction.SIGHASH_NONE) {
-        tbuffer = Buffer.allocUnsafe(4 * this.ins.length);
-        toffset = 0;
-        this.ins.forEach(function (txIn) {
-          writeUInt32(txIn.sequence);
-        });
-        hashSequence = bcrypto.hash256(tbuffer);
-      }
-
-      if ((hashType & 0x1f) !== Transaction.SIGHASH_SINGLE && (hashType & 0x1f) !== Transaction.SIGHASH_NONE) {
-        var txOutsSize = this.outs.reduce(function (sum, output) {
-          return sum + 8 + varSliceSize(output.script);
-        }, 0);
-        tbuffer = Buffer.allocUnsafe(txOutsSize);
-        toffset = 0;
-        this.outs.forEach(function (out) {
-          writeUInt64(out.value);
-          writeVarSlice(out.script);
-        });
-        hashOutputs = bcrypto.hash256(tbuffer);
-      } else if ((hashType & 0x1f) === Transaction.SIGHASH_SINGLE && inIndex < this.outs.length) {
-        var output = this.outs[inIndex];
-        tbuffer = Buffer.allocUnsafe(8 + varSliceSize(output.script));
-        toffset = 0;
-        writeUInt64(output.value);
-        writeVarSlice(output.script);
-        hashOutputs = bcrypto.hash256(tbuffer);
-      }
-
-      tbuffer = Buffer.allocUnsafe(156 + varSliceSize(prevOutScript));
-      toffset = 0;
-      var input = this.ins[inIndex];
-      writeUInt32(this.version);
-      writeSlice(hashPrevouts);
-      writeSlice(hashSequence);
-      writeSlice(input.hash);
-      writeUInt32(input.index);
-      writeVarSlice(prevOutScript);
-      writeUInt64(value);
-      writeUInt32(input.sequence);
-      writeSlice(hashOutputs);
-      writeUInt32(this.locktime);
-      writeUInt32(hashType);
-      return bcrypto.hash256(tbuffer);
-    }
-  }, {
-    key: "getHash",
-    value: function getHash(forWitness) {
-      // wtxid for coinbase is always 32 bytes of 0x00
-      if (forWitness && this.isCoinbase()) return Buffer.alloc(32, 0);
-      return bcrypto.hash256(this.__toBuffer(undefined, undefined, forWitness));
-    }
-  }, {
-    key: "getId",
-    value: function getId() {
-      // transaction hash's are displayed in reverse order
-      return bufferutils_1.reverseBuffer(this.getHash(false)).toString('hex');
-    }
-  }, {
-    key: "toBuffer",
-    value: function toBuffer(buffer, initialOffset) {
-      return this.__toBuffer(buffer, initialOffset, true);
-    }
-  }, {
-    key: "toHex",
-    value: function toHex() {
-      return this.toBuffer(undefined, undefined).toString('hex');
-    }
-  }, {
-    key: "setInputScript",
-    value: function setInputScript(index, scriptSig) {
-      typeforce(types.tuple(types.Number, types.Buffer), arguments);
-      this.ins[index].script = scriptSig;
-    }
-  }, {
-    key: "setWitness",
-    value: function setWitness(index, witness) {
-      typeforce(types.tuple(types.Number, [types.Buffer]), arguments);
-      this.ins[index].witness = witness;
-    }
-  }, {
-    key: "__byteLength",
-    value: function __byteLength(_ALLOW_WITNESS) {
-      var hasWitnesses = _ALLOW_WITNESS && this.hasWitnesses();
-
-      return (hasWitnesses ? 10 : 8) + varuint.encodingLength(this.ins.length) + varuint.encodingLength(this.outs.length) + this.ins.reduce(function (sum, input) {
-        return sum + 40 + varSliceSize(input.script);
-      }, 0) + this.outs.reduce(function (sum, output) {
-        return sum + 8 + varSliceSize(output.script);
-      }, 0) + (hasWitnesses ? this.ins.reduce(function (sum, input) {
-        return sum + vectorSize(input.witness);
-      }, 0) : 0);
-    }
-  }, {
-    key: "__toBuffer",
-    value: function __toBuffer(buffer, initialOffset, _ALLOW_WITNESS) {
-      if (!buffer) buffer = Buffer.allocUnsafe(this.__byteLength(_ALLOW_WITNESS));
-      var offset = initialOffset || 0;
-
-      function writeSlice(slice) {
-        offset += slice.copy(buffer, offset);
-      }
-
-      function writeUInt8(i) {
-        offset = buffer.writeUInt8(i, offset);
-      }
-
-      function writeUInt32(i) {
-        offset = buffer.writeUInt32LE(i, offset);
-      }
-
-      function writeInt32(i) {
-        offset = buffer.writeInt32LE(i, offset);
-      }
-
-      function writeUInt64(i) {
-        offset = bufferutils.writeUInt64LE(buffer, i, offset);
-      }
-
-      function writeVarInt(i) {
-        varuint.encode(i, buffer, offset);
-        offset += varuint.encode.bytes;
-      }
-
-      function writeVarSlice(slice) {
-        writeVarInt(slice.length);
-        writeSlice(slice);
-      }
-
-      function writeVector(vector) {
-        writeVarInt(vector.length);
-        vector.forEach(writeVarSlice);
-      }
-
-      writeInt32(this.version);
-
-      var hasWitnesses = _ALLOW_WITNESS && this.hasWitnesses();
-
-      if (hasWitnesses) {
-        writeUInt8(Transaction.ADVANCED_TRANSACTION_MARKER);
-        writeUInt8(Transaction.ADVANCED_TRANSACTION_FLAG);
-      }
-
-      writeVarInt(this.ins.length);
-      this.ins.forEach(function (txIn) {
-        writeSlice(txIn.hash);
-        writeUInt32(txIn.index);
-        writeVarSlice(txIn.script);
-        writeUInt32(txIn.sequence);
-      });
-      writeVarInt(this.outs.length);
-      this.outs.forEach(function (txOut) {
-        if (isOutput(txOut)) {
-          writeUInt64(txOut.value);
-        } else {
-          writeSlice(txOut.valueBuffer);
-        }
-
-        writeVarSlice(txOut.script);
-      });
-
-      if (hasWitnesses) {
-        this.ins.forEach(function (input) {
-          writeVector(input.witness);
-        });
-      }
-
-      writeUInt32(this.locktime); // avoid slicing unless necessary
-
-      if (initialOffset !== undefined) return buffer.slice(initialOffset, offset);
-      return buffer;
-    }
-  }], [{
-    key: "fromBuffer",
-    value: function fromBuffer(buffer, _NO_STRICT) {
-      var offset = 0;
-
-      function readSlice(n) {
-        offset += n;
-        return buffer.slice(offset - n, offset);
-      }
-
-      function readUInt32() {
-        var i = buffer.readUInt32LE(offset);
-        offset += 4;
-        return i;
-      }
-
-      function readInt32() {
-        var i = buffer.readInt32LE(offset);
-        offset += 4;
-        return i;
-      }
-
-      function readUInt64() {
-        var i = bufferutils.readUInt64LE(buffer, offset);
-        offset += 8;
-        return i;
-      }
-
-      function readVarInt() {
-        var vi = varuint.decode(buffer, offset);
-        offset += varuint.decode.bytes;
-        return vi;
-      }
-
-      function readVarSlice() {
-        return readSlice(readVarInt());
-      }
-
-      function readVector() {
-        var count = readVarInt();
-        var vector = [];
-
-        for (var i = 0; i < count; i++) {
-          vector.push(readVarSlice());
-        }
-
-        return vector;
-      }
-
-      var tx = new Transaction();
-      tx.version = readInt32();
-      var marker = buffer.readUInt8(offset);
-      var flag = buffer.readUInt8(offset + 1);
-      var hasWitnesses = false;
-
-      if (marker === Transaction.ADVANCED_TRANSACTION_MARKER && flag === Transaction.ADVANCED_TRANSACTION_FLAG) {
-        offset += 2;
-        hasWitnesses = true;
-      }
-
-      var vinLen = readVarInt();
-
-      for (var i = 0; i < vinLen; ++i) {
-        tx.ins.push({
-          hash: readSlice(32),
-          index: readUInt32(),
-          script: readVarSlice(),
-          sequence: readUInt32(),
-          witness: EMPTY_WITNESS
-        });
-      }
-
-      var voutLen = readVarInt();
-
-      for (var _i = 0; _i < voutLen; ++_i) {
-        tx.outs.push({
-          value: readUInt64(),
-          script: readVarSlice()
-        });
-      }
-
-      if (hasWitnesses) {
-        for (var _i2 = 0; _i2 < vinLen; ++_i2) {
-          tx.ins[_i2].witness = readVector();
-        } // was this pointless?
-
-
-        if (!tx.hasWitnesses()) throw new Error('Transaction has superfluous witness data');
-      }
-
-      tx.locktime = readUInt32();
-      if (_NO_STRICT) return tx;
-      if (offset !== buffer.length) throw new Error('Transaction has unexpected data');
-      return tx;
-    }
-  }, {
-    key: "fromHex",
-    value: function fromHex(hex) {
-      return Transaction.fromBuffer(Buffer.from(hex, 'hex'), false);
-    }
-  }, {
-    key: "isCoinbaseHash",
-    value: function isCoinbaseHash(buffer) {
-      typeforce(types.Hash256bit, buffer);
-
-      for (var i = 0; i < 32; ++i) {
-        if (buffer[i] !== 0) return false;
-      }
-
-      return true;
-    }
-  }]);
-
-  return Transaction;
-}();
-
-Transaction.DEFAULT_SEQUENCE = 0xffffffff;
-Transaction.SIGHASH_ALL = 0x01;
-Transaction.SIGHASH_NONE = 0x02;
-Transaction.SIGHASH_SINGLE = 0x03;
-Transaction.SIGHASH_ANYONECANPAY = 0x80;
-Transaction.ADVANCED_TRANSACTION_MARKER = 0x00;
-Transaction.ADVANCED_TRANSACTION_FLAG = 0x01;
-exports.Transaction = Transaction;
-},{"./bufferutils":"kTjr","./crypto":"wHwg","./script":"Fa8t","./types":"mf8L","typeforce":"PKU7","varuint-bitcoin":"xFE2","buffer":"dskh"}],"lHho":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bufferutils_1 = require('./bufferutils');
-
-var bcrypto = require('./crypto');
-
-var transaction_1 = require('./transaction');
-
-var types = require('./types');
-
-var fastMerkleRoot = require('merkle-lib/fastRoot');
-
-var typeforce = require('typeforce');
-
-var varuint = require('varuint-bitcoin');
-
-var errorMerkleNoTxes = new TypeError('Cannot compute merkle root for zero transactions');
-var errorWitnessNotSegwit = new TypeError('Cannot compute witness commit for non-segwit block');
-
-var Block =
-/*#__PURE__*/
-function () {
-  function Block() {
-    _classCallCheck(this, Block);
-
-    this.version = 1;
-    this.prevHash = undefined;
-    this.merkleRoot = undefined;
-    this.timestamp = 0;
-    this.witnessCommit = undefined;
-    this.bits = 0;
-    this.nonce = 0;
-    this.transactions = undefined;
-  }
-
-  _createClass(Block, [{
-    key: "getWitnessCommit",
-    value: function getWitnessCommit() {
-      if (!txesHaveWitnessCommit(this.transactions)) return null; // The merkle root for the witness data is in an OP_RETURN output.
-      // There is no rule for the index of the output, so use filter to find it.
-      // The root is prepended with 0xaa21a9ed so check for 0x6a24aa21a9ed
-      // If multiple commits are found, the output with highest index is assumed.
-
-      var witnessCommits = this.transactions[0].outs.filter(function (out) {
-        return out.script.slice(0, 6).equals(Buffer.from('6a24aa21a9ed', 'hex'));
-      }).map(function (out) {
-        return out.script.slice(6, 38);
-      });
-      if (witnessCommits.length === 0) return null; // Use the commit with the highest output (should only be one though)
-
-      var result = witnessCommits[witnessCommits.length - 1];
-      if (!(result instanceof Buffer && result.length === 32)) return null;
-      return result;
-    }
-  }, {
-    key: "hasWitnessCommit",
-    value: function hasWitnessCommit() {
-      if (this.witnessCommit instanceof Buffer && this.witnessCommit.length === 32) return true;
-      if (this.getWitnessCommit() !== null) return true;
-      return false;
-    }
-  }, {
-    key: "hasWitness",
-    value: function hasWitness() {
-      return anyTxHasWitness(this.transactions);
-    }
-  }, {
-    key: "byteLength",
-    value: function byteLength(headersOnly) {
-      if (headersOnly || !this.transactions) return 80;
-      return 80 + varuint.encodingLength(this.transactions.length) + this.transactions.reduce(function (a, x) {
-        return a + x.byteLength();
-      }, 0);
-    }
-  }, {
-    key: "getHash",
-    value: function getHash() {
-      return bcrypto.hash256(this.toBuffer(true));
-    }
-  }, {
-    key: "getId",
-    value: function getId() {
-      return bufferutils_1.reverseBuffer(this.getHash()).toString('hex');
-    }
-  }, {
-    key: "getUTCDate",
-    value: function getUTCDate() {
-      var date = new Date(0); // epoch
-
-      date.setUTCSeconds(this.timestamp);
-      return date;
-    } // TODO: buffer, offset compatibility
-
-  }, {
-    key: "toBuffer",
-    value: function toBuffer(headersOnly) {
-      var buffer = Buffer.allocUnsafe(this.byteLength(headersOnly));
-      var offset = 0;
-
-      var writeSlice = function writeSlice(slice) {
-        slice.copy(buffer, offset);
-        offset += slice.length;
-      };
-
-      var writeInt32 = function writeInt32(i) {
-        buffer.writeInt32LE(i, offset);
-        offset += 4;
-      };
-
-      var writeUInt32 = function writeUInt32(i) {
-        buffer.writeUInt32LE(i, offset);
-        offset += 4;
-      };
-
-      writeInt32(this.version);
-      writeSlice(this.prevHash);
-      writeSlice(this.merkleRoot);
-      writeUInt32(this.timestamp);
-      writeUInt32(this.bits);
-      writeUInt32(this.nonce);
-      if (headersOnly || !this.transactions) return buffer;
-      varuint.encode(this.transactions.length, buffer, offset);
-      offset += varuint.encode.bytes;
-      this.transactions.forEach(function (tx) {
-        var txSize = tx.byteLength(); // TODO: extract from toBuffer?
-
-        tx.toBuffer(buffer, offset);
-        offset += txSize;
-      });
-      return buffer;
-    }
-  }, {
-    key: "toHex",
-    value: function toHex(headersOnly) {
-      return this.toBuffer(headersOnly).toString('hex');
-    }
-  }, {
-    key: "checkTxRoots",
-    value: function checkTxRoots() {
-      // If the Block has segwit transactions but no witness commit,
-      // there's no way it can be valid, so fail the check.
-      var hasWitnessCommit = this.hasWitnessCommit();
-      if (!hasWitnessCommit && this.hasWitness()) return false;
-      return this.__checkMerkleRoot() && (hasWitnessCommit ? this.__checkWitnessCommit() : true);
-    }
-  }, {
-    key: "checkProofOfWork",
-    value: function checkProofOfWork() {
-      var hash = bufferutils_1.reverseBuffer(this.getHash());
-      var target = Block.calculateTarget(this.bits);
-      return hash.compare(target) <= 0;
-    }
-  }, {
-    key: "__checkMerkleRoot",
-    value: function __checkMerkleRoot() {
-      if (!this.transactions) throw errorMerkleNoTxes;
-      var actualMerkleRoot = Block.calculateMerkleRoot(this.transactions);
-      return this.merkleRoot.compare(actualMerkleRoot) === 0;
-    }
-  }, {
-    key: "__checkWitnessCommit",
-    value: function __checkWitnessCommit() {
-      if (!this.transactions) throw errorMerkleNoTxes;
-      if (!this.hasWitnessCommit()) throw errorWitnessNotSegwit;
-      var actualWitnessCommit = Block.calculateMerkleRoot(this.transactions, true);
-      return this.witnessCommit.compare(actualWitnessCommit) === 0;
-    }
-  }], [{
-    key: "fromBuffer",
-    value: function fromBuffer(buffer) {
-      if (buffer.length < 80) throw new Error('Buffer too small (< 80 bytes)');
-      var offset = 0;
-
-      var readSlice = function readSlice(n) {
-        offset += n;
-        return buffer.slice(offset - n, offset);
-      };
-
-      var readUInt32 = function readUInt32() {
-        var i = buffer.readUInt32LE(offset);
-        offset += 4;
-        return i;
-      };
-
-      var readInt32 = function readInt32() {
-        var i = buffer.readInt32LE(offset);
-        offset += 4;
-        return i;
-      };
-
-      var block = new Block();
-      block.version = readInt32();
-      block.prevHash = readSlice(32);
-      block.merkleRoot = readSlice(32);
-      block.timestamp = readUInt32();
-      block.bits = readUInt32();
-      block.nonce = readUInt32();
-      if (buffer.length === 80) return block;
-
-      var readVarInt = function readVarInt() {
-        var vi = varuint.decode(buffer, offset);
-        offset += varuint.decode.bytes;
-        return vi;
-      };
-
-      var readTransaction = function readTransaction() {
-        var tx = transaction_1.Transaction.fromBuffer(buffer.slice(offset), true);
-        offset += tx.byteLength();
-        return tx;
-      };
-
-      var nTransactions = readVarInt();
-      block.transactions = [];
-
-      for (var i = 0; i < nTransactions; ++i) {
-        var tx = readTransaction();
-        block.transactions.push(tx);
-      }
-
-      var witnessCommit = block.getWitnessCommit(); // This Block contains a witness commit
-
-      if (witnessCommit) block.witnessCommit = witnessCommit;
-      return block;
-    }
-  }, {
-    key: "fromHex",
-    value: function fromHex(hex) {
-      return Block.fromBuffer(Buffer.from(hex, 'hex'));
-    }
-  }, {
-    key: "calculateTarget",
-    value: function calculateTarget(bits) {
-      var exponent = ((bits & 0xff000000) >> 24) - 3;
-      var mantissa = bits & 0x007fffff;
-      var target = Buffer.alloc(32, 0);
-      target.writeUIntBE(mantissa, 29 - exponent, 3);
-      return target;
-    }
-  }, {
-    key: "calculateMerkleRoot",
-    value: function calculateMerkleRoot(transactions, forWitness) {
-      typeforce([{
-        getHash: types.Function
-      }], transactions);
-      if (transactions.length === 0) throw errorMerkleNoTxes;
-      if (forWitness && !txesHaveWitnessCommit(transactions)) throw errorWitnessNotSegwit;
-      var hashes = transactions.map(function (transaction) {
-        return transaction.getHash(forWitness);
-      });
-      var rootHash = fastMerkleRoot(hashes, bcrypto.hash256);
-      return forWitness ? bcrypto.hash256(Buffer.concat([rootHash, transactions[0].ins[0].witness[0]])) : rootHash;
-    }
-  }]);
-
-  return Block;
-}();
-
-exports.Block = Block;
-
-function txesHaveWitnessCommit(transactions) {
-  return transactions instanceof Array && transactions[0] && transactions[0].ins && transactions[0].ins instanceof Array && transactions[0].ins[0] && transactions[0].ins[0].witness && transactions[0].ins[0].witness instanceof Array && transactions[0].ins[0].witness.length > 0;
-}
-
-function anyTxHasWitness(transactions) {
-  return transactions instanceof Array && transactions.some(function (tx) {
-    return _typeof(tx) === 'object' && tx.ins instanceof Array && tx.ins.some(function (input) {
-      return _typeof(input) === 'object' && input.witness instanceof Array && input.witness.length > 0;
-    });
-  });
-}
-},{"./bufferutils":"kTjr","./crypto":"wHwg","./transaction":"Y9UO","./types":"mf8L","merkle-lib/fastRoot":"DNBG","typeforce":"PKU7","varuint-bitcoin":"xFE2","buffer":"dskh"}],"CbJH":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bip174_1 = require('bip174');
-
-var varuint = require('bip174/src/lib/converter/varint');
-
-var utils_1 = require('bip174/src/lib/utils');
-
-var address_1 = require('./address');
-
-var bufferutils_1 = require('./bufferutils');
-
-var crypto_1 = require('./crypto');
-
-var ecpair_1 = require('./ecpair');
-
-var networks_1 = require('./networks');
-
-var payments = require('./payments');
-
-var bscript = require('./script');
-
-var transaction_1 = require('./transaction');
-/**
- * These are the default arguments for a Psbt instance.
- */
-
-
-var DEFAULT_OPTS = {
-  /**
-   * A bitcoinjs Network object. This is only used if you pass an `address`
-   * parameter to addOutput. Otherwise it is not needed and can be left default.
-   */
-  network: networks_1.bitcoin,
-
-  /**
-   * When extractTransaction is called, the fee rate is checked.
-   * THIS IS NOT TO BE RELIED ON.
-   * It is only here as a last ditch effort to prevent sending a 500 BTC fee etc.
-   */
-  maximumFeeRate: 5000
-};
-/**
- * Psbt class can parse and generate a PSBT binary based off of the BIP174.
- * There are 6 roles that this class fulfills. (Explained in BIP174)
- *
- * Creator: This can be done with `new Psbt()`
- * Updater: This can be done with `psbt.addInput(input)`, `psbt.addInputs(inputs)`,
- *   `psbt.addOutput(output)`, `psbt.addOutputs(outputs)` when you are looking to
- *   add new inputs and outputs to the PSBT, and `psbt.updateGlobal(itemObject)`,
- *   `psbt.updateInput(itemObject)`, `psbt.updateOutput(itemObject)`
- *   addInput requires hash: Buffer | string; and index: number; as attributes
- *   and can also include any attributes that are used in updateInput method.
- *   addOutput requires script: Buffer; and value: number; and likewise can include
- *   data for updateOutput.
- *   For a list of what attributes should be what types. Check the bip174 library.
- *   Also, check the integration tests for some examples of usage.
- * Signer: There are a few methods. signAllInputs and signAllInputsAsync, which will search all input
- *   information for your pubkey or pubkeyhash, and only sign inputs where it finds
- *   your info. Or you can explicitly sign a specific input with signInput and
- *   signInputAsync. For the async methods you can create a SignerAsync object
- *   and use something like a hardware wallet to sign with. (You must implement this)
- * Combiner: psbts can be combined easily with `psbt.combine(psbt2, psbt3, psbt4 ...)`
- *   the psbt calling combine will always have precedence when a conflict occurs.
- *   Combine checks if the internal bitcoin transaction is the same, so be sure that
- *   all sequences, version, locktime, etc. are the same before combining.
- * Input Finalizer: This role is fairly important. Not only does it need to construct
- *   the input scriptSigs and witnesses, but it SHOULD verify the signatures etc.
- *   Before running `psbt.finalizeAllInputs()` please run `psbt.validateSignaturesOfAllInputs()`
- *   Running any finalize method will delete any data in the input(s) that are no longer
- *   needed due to the finalized scripts containing the information.
- * Transaction Extractor: This role will perform some checks before returning a
- *   Transaction object. Such as fee rate not being larger than maximumFeeRate etc.
- */
-
-var Psbt =
-/*#__PURE__*/
-function () {
-  function Psbt() {
-    var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new bip174_1.Psbt(new PsbtTransaction());
-
-    _classCallCheck(this, Psbt);
-
-    this.data = data; // set defaults
-
-    this.opts = Object.assign({}, DEFAULT_OPTS, opts);
-    this.__CACHE = {
-      __NON_WITNESS_UTXO_TX_CACHE: [],
-      __NON_WITNESS_UTXO_BUF_CACHE: [],
-      __TX_IN_CACHE: {},
-      __TX: this.data.globalMap.unsignedTx.tx
-    };
-    if (this.data.inputs.length === 0) this.setVersion(2); // Make data hidden when enumerating
-
-    var dpew = function dpew(obj, attr, enumerable, writable) {
-      return Object.defineProperty(obj, attr, {
-        enumerable: enumerable,
-        writable: writable
-      });
-    };
-
-    dpew(this, '__CACHE', false, true);
-    dpew(this, 'opts', false, true);
-  }
-
-  _createClass(Psbt, [{
-    key: "combine",
-    value: function combine() {
-      var _this$data;
-
-      for (var _len = arguments.length, those = new Array(_len), _key = 0; _key < _len; _key++) {
-        those[_key] = arguments[_key];
-      }
-
-      (_this$data = this.data).combine.apply(_this$data, _toConsumableArray(those.map(function (o) {
-        return o.data;
-      })));
-
-      return this;
-    }
-  }, {
-    key: "clone",
-    value: function clone() {
-      // TODO: more efficient cloning
-      var res = Psbt.fromBuffer(this.data.toBuffer());
-      res.opts = JSON.parse(JSON.stringify(this.opts));
-      return res;
-    }
-  }, {
-    key: "setMaximumFeeRate",
-    value: function setMaximumFeeRate(satoshiPerByte) {
-      check32Bit(satoshiPerByte); // 42.9 BTC per byte IS excessive... so throw
-
-      this.opts.maximumFeeRate = satoshiPerByte;
-    }
-  }, {
-    key: "setVersion",
-    value: function setVersion(version) {
-      check32Bit(version);
-      checkInputsForPartialSig(this.data.inputs, 'setVersion');
-      var c = this.__CACHE;
-      c.__TX.version = version;
-      c.__EXTRACTED_TX = undefined;
-      return this;
-    }
-  }, {
-    key: "setLocktime",
-    value: function setLocktime(locktime) {
-      check32Bit(locktime);
-      checkInputsForPartialSig(this.data.inputs, 'setLocktime');
-      var c = this.__CACHE;
-      c.__TX.locktime = locktime;
-      c.__EXTRACTED_TX = undefined;
-      return this;
-    }
-  }, {
-    key: "setInputSequence",
-    value: function setInputSequence(inputIndex, sequence) {
-      check32Bit(sequence);
-      checkInputsForPartialSig(this.data.inputs, 'setInputSequence');
-      var c = this.__CACHE;
-
-      if (c.__TX.ins.length <= inputIndex) {
-        throw new Error('Input index too high');
-      }
-
-      c.__TX.ins[inputIndex].sequence = sequence;
-      c.__EXTRACTED_TX = undefined;
-      return this;
-    }
-  }, {
-    key: "addInputs",
-    value: function addInputs(inputDatas) {
-      var _this = this;
-
-      inputDatas.forEach(function (inputData) {
-        return _this.addInput(inputData);
-      });
-      return this;
-    }
-  }, {
-    key: "addInput",
-    value: function addInput(inputData) {
-      checkInputsForPartialSig(this.data.inputs, 'addInput');
-      var c = this.__CACHE;
-      this.data.addInput(inputData);
-      var txIn = c.__TX.ins[c.__TX.ins.length - 1];
-      checkTxInputCache(c, txIn);
-      var inputIndex = this.data.inputs.length - 1;
-      var input = this.data.inputs[inputIndex];
-
-      if (input.nonWitnessUtxo) {
-        addNonWitnessTxCache(this.__CACHE, input, inputIndex);
-      }
-
-      c.__FEE = undefined;
-      c.__FEE_RATE = undefined;
-      c.__EXTRACTED_TX = undefined;
-      return this;
-    }
-  }, {
-    key: "addOutputs",
-    value: function addOutputs(outputDatas) {
-      var _this2 = this;
-
-      outputDatas.forEach(function (outputData) {
-        return _this2.addOutput(outputData);
-      });
-      return this;
-    }
-  }, {
-    key: "addOutput",
-    value: function addOutput(outputData) {
-      checkInputsForPartialSig(this.data.inputs, 'addOutput');
-      var _outputData = outputData,
-          address = _outputData.address;
-
-      if (typeof address === 'string') {
-        var network = this.opts.network;
-        var script = address_1.toOutputScript(address, network);
-        outputData = Object.assign(outputData, {
-          script: script
-        });
-      }
-
-      var c = this.__CACHE;
-      this.data.addOutput(outputData);
-      c.__FEE = undefined;
-      c.__FEE_RATE = undefined;
-      c.__EXTRACTED_TX = undefined;
-      return this;
-    }
-  }, {
-    key: "extractTransaction",
-    value: function extractTransaction(disableFeeCheck) {
-      if (!this.data.inputs.every(isFinalized)) throw new Error('Not finalized');
-      var c = this.__CACHE;
-
-      if (!disableFeeCheck) {
-        checkFees(this, c, this.opts);
-      }
-
-      if (c.__EXTRACTED_TX) return c.__EXTRACTED_TX;
-
-      var tx = c.__TX.clone();
-
-      inputFinalizeGetAmts(this.data.inputs, tx, c, true);
-      return tx;
-    }
-  }, {
-    key: "getFeeRate",
-    value: function getFeeRate() {
-      return getTxCacheValue('__FEE_RATE', 'fee rate', this.data.inputs, this.__CACHE);
-    }
-  }, {
-    key: "getFee",
-    value: function getFee() {
-      return getTxCacheValue('__FEE', 'fee', this.data.inputs, this.__CACHE);
-    }
-  }, {
-    key: "finalizeAllInputs",
-    value: function finalizeAllInputs() {
-      var _this3 = this;
-
-      utils_1.checkForInput(this.data.inputs, 0); // making sure we have at least one
-
-      range(this.data.inputs.length).forEach(function (idx) {
-        return _this3.finalizeInput(idx);
-      });
-      return this;
-    }
-  }, {
-    key: "finalizeInput",
-    value: function finalizeInput(inputIndex) {
-      var input = utils_1.checkForInput(this.data.inputs, inputIndex);
-
-      var _getScriptFromInput = getScriptFromInput(inputIndex, input, this.__CACHE),
-          script = _getScriptFromInput.script,
-          isP2SH = _getScriptFromInput.isP2SH,
-          isP2WSH = _getScriptFromInput.isP2WSH,
-          isSegwit = _getScriptFromInput.isSegwit;
-
-      if (!script) throw new Error("No script found for input #".concat(inputIndex));
-      var scriptType = classifyScript(script);
-      if (!canFinalize(input, script, scriptType)) throw new Error("Can not finalize input #".concat(inputIndex));
-      checkPartialSigSighashes(input);
-
-      var _getFinalScripts = getFinalScripts(script, scriptType, input.partialSig, isSegwit, isP2SH, isP2WSH),
-          finalScriptSig = _getFinalScripts.finalScriptSig,
-          finalScriptWitness = _getFinalScripts.finalScriptWitness;
-
-      if (finalScriptSig) this.data.updateInput(inputIndex, {
-        finalScriptSig: finalScriptSig
-      });
-      if (finalScriptWitness) this.data.updateInput(inputIndex, {
-        finalScriptWitness: finalScriptWitness
-      });
-      if (!finalScriptSig && !finalScriptWitness) throw new Error("Unknown error finalizing input #".concat(inputIndex));
-      this.data.clearFinalizedInput(inputIndex);
-      return this;
-    }
-  }, {
-    key: "validateSignaturesOfAllInputs",
-    value: function validateSignaturesOfAllInputs() {
-      var _this4 = this;
-
-      utils_1.checkForInput(this.data.inputs, 0); // making sure we have at least one
-
-      var results = range(this.data.inputs.length).map(function (idx) {
-        return _this4.validateSignaturesOfInput(idx);
-      });
-      return results.reduce(function (final, res) {
-        return res === true && final;
-      }, true);
-    }
-  }, {
-    key: "validateSignaturesOfInput",
-    value: function validateSignaturesOfInput(inputIndex, pubkey) {
-      var input = this.data.inputs[inputIndex];
-      var partialSig = (input || {}).partialSig;
-      if (!input || !partialSig || partialSig.length < 1) throw new Error('No signatures to validate');
-      var mySigs = pubkey ? partialSig.filter(function (sig) {
-        return sig.pubkey.equals(pubkey);
-      }) : partialSig;
-      if (mySigs.length < 1) throw new Error('No signatures for this pubkey');
-      var results = [];
-      var hashCache;
-      var scriptCache;
-      var sighashCache;
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = mySigs[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var pSig = _step.value;
-          var sig = bscript.signature.decode(pSig.signature);
-
-          var _ref = sighashCache !== sig.hashType ? getHashForSig(inputIndex, Object.assign({}, input, {
-            sighashType: sig.hashType
-          }), this.__CACHE) : {
-            hash: hashCache,
-            script: scriptCache
-          },
-              hash = _ref.hash,
-              script = _ref.script;
-
-          sighashCache = sig.hashType;
-          hashCache = hash;
-          scriptCache = script;
-          checkScriptForPubkey(pSig.pubkey, script, 'verify');
-          var keypair = ecpair_1.fromPublicKey(pSig.pubkey);
-          results.push(keypair.verify(hash, sig.signature));
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return != null) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
-      }
-
-      return results.every(function (res) {
-        return res === true;
-      });
-    }
-  }, {
-    key: "signAllInputsHD",
-    value: function signAllInputsHD(hdKeyPair) {
-      var sighashTypes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [transaction_1.Transaction.SIGHASH_ALL];
-
-      if (!hdKeyPair || !hdKeyPair.publicKey || !hdKeyPair.fingerprint) {
-        throw new Error('Need HDSigner to sign input');
-      }
-
-      var results = [];
-      var _iteratorNormalCompletion2 = true;
-      var _didIteratorError2 = false;
-      var _iteratorError2 = undefined;
-
-      try {
-        for (var _iterator2 = range(this.data.inputs.length)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var i = _step2.value;
-
-          try {
-            this.signInputHD(i, hdKeyPair, sighashTypes);
-            results.push(true);
-          } catch (err) {
-            results.push(false);
-          }
-        }
-      } catch (err) {
-        _didIteratorError2 = true;
-        _iteratorError2 = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
-            _iterator2.return();
-          }
-        } finally {
-          if (_didIteratorError2) {
-            throw _iteratorError2;
-          }
-        }
-      }
-
-      if (results.every(function (v) {
-        return v === false;
-      })) {
-        throw new Error('No inputs were signed');
-      }
-
-      return this;
-    }
-  }, {
-    key: "signAllInputsHDAsync",
-    value: function signAllInputsHDAsync(hdKeyPair) {
-      var _this5 = this;
-
-      var sighashTypes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [transaction_1.Transaction.SIGHASH_ALL];
-      return new Promise(function (resolve, reject) {
-        if (!hdKeyPair || !hdKeyPair.publicKey || !hdKeyPair.fingerprint) {
-          return reject(new Error('Need HDSigner to sign input'));
-        }
-
-        var results = [];
-        var promises = [];
-        var _iteratorNormalCompletion3 = true;
-        var _didIteratorError3 = false;
-        var _iteratorError3 = undefined;
-
-        try {
-          for (var _iterator3 = range(_this5.data.inputs.length)[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-            var i = _step3.value;
-            promises.push(_this5.signInputHDAsync(i, hdKeyPair, sighashTypes).then(function () {
-              results.push(true);
-            }, function () {
-              results.push(false);
-            }));
-          }
-        } catch (err) {
-          _didIteratorError3 = true;
-          _iteratorError3 = err;
-        } finally {
-          try {
-            if (!_iteratorNormalCompletion3 && _iterator3.return != null) {
-              _iterator3.return();
-            }
-          } finally {
-            if (_didIteratorError3) {
-              throw _iteratorError3;
-            }
-          }
-        }
-
-        return Promise.all(promises).then(function () {
-          if (results.every(function (v) {
-            return v === false;
-          })) {
-            return reject(new Error('No inputs were signed'));
-          }
-
-          resolve();
-        });
-      });
-    }
-  }, {
-    key: "signInputHD",
-    value: function signInputHD(inputIndex, hdKeyPair) {
-      var _this6 = this;
-
-      var sighashTypes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [transaction_1.Transaction.SIGHASH_ALL];
-
-      if (!hdKeyPair || !hdKeyPair.publicKey || !hdKeyPair.fingerprint) {
-        throw new Error('Need HDSigner to sign input');
-      }
-
-      var signers = getSignersFromHD(inputIndex, this.data.inputs, hdKeyPair);
-      signers.forEach(function (signer) {
-        return _this6.signInput(inputIndex, signer, sighashTypes);
-      });
-      return this;
-    }
-  }, {
-    key: "signInputHDAsync",
-    value: function signInputHDAsync(inputIndex, hdKeyPair) {
-      var _this7 = this;
-
-      var sighashTypes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [transaction_1.Transaction.SIGHASH_ALL];
-      return new Promise(function (resolve, reject) {
-        if (!hdKeyPair || !hdKeyPair.publicKey || !hdKeyPair.fingerprint) {
-          return reject(new Error('Need HDSigner to sign input'));
-        }
-
-        var signers = getSignersFromHD(inputIndex, _this7.data.inputs, hdKeyPair);
-        var promises = signers.map(function (signer) {
-          return _this7.signInputAsync(inputIndex, signer, sighashTypes);
-        });
-        return Promise.all(promises).then(function () {
-          resolve();
-        }).catch(reject);
-      });
-    }
-  }, {
-    key: "signAllInputs",
-    value: function signAllInputs(keyPair) {
-      var sighashTypes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [transaction_1.Transaction.SIGHASH_ALL];
-      if (!keyPair || !keyPair.publicKey) throw new Error('Need Signer to sign input'); // TODO: Add a pubkey/pubkeyhash cache to each input
-      // as input information is added, then eventually
-      // optimize this method.
-
-      var results = [];
-      var _iteratorNormalCompletion4 = true;
-      var _didIteratorError4 = false;
-      var _iteratorError4 = undefined;
-
-      try {
-        for (var _iterator4 = range(this.data.inputs.length)[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-          var i = _step4.value;
-
-          try {
-            this.signInput(i, keyPair, sighashTypes);
-            results.push(true);
-          } catch (err) {
-            results.push(false);
-          }
-        }
-      } catch (err) {
-        _didIteratorError4 = true;
-        _iteratorError4 = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
-            _iterator4.return();
-          }
-        } finally {
-          if (_didIteratorError4) {
-            throw _iteratorError4;
-          }
-        }
-      }
-
-      if (results.every(function (v) {
-        return v === false;
-      })) {
-        throw new Error('No inputs were signed');
-      }
-
-      return this;
-    }
-  }, {
-    key: "signAllInputsAsync",
-    value: function signAllInputsAsync(keyPair) {
-      var _this8 = this;
-
-      var sighashTypes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [transaction_1.Transaction.SIGHASH_ALL];
-      return new Promise(function (resolve, reject) {
-        if (!keyPair || !keyPair.publicKey) return reject(new Error('Need Signer to sign input')); // TODO: Add a pubkey/pubkeyhash cache to each input
-        // as input information is added, then eventually
-        // optimize this method.
-
-        var results = [];
-        var promises = [];
-        var _iteratorNormalCompletion5 = true;
-        var _didIteratorError5 = false;
-        var _iteratorError5 = undefined;
-
-        try {
-          for (var _iterator5 = _this8.data.inputs.entries()[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-            var _step5$value = _slicedToArray(_step5.value, 1),
-                i = _step5$value[0];
-
-            promises.push(_this8.signInputAsync(i, keyPair, sighashTypes).then(function () {
-              results.push(true);
-            }, function () {
-              results.push(false);
-            }));
-          }
-        } catch (err) {
-          _didIteratorError5 = true;
-          _iteratorError5 = err;
-        } finally {
-          try {
-            if (!_iteratorNormalCompletion5 && _iterator5.return != null) {
-              _iterator5.return();
-            }
-          } finally {
-            if (_didIteratorError5) {
-              throw _iteratorError5;
-            }
-          }
-        }
-
-        return Promise.all(promises).then(function () {
-          if (results.every(function (v) {
-            return v === false;
-          })) {
-            return reject(new Error('No inputs were signed'));
-          }
-
-          resolve();
-        });
-      });
-    }
-  }, {
-    key: "signInput",
-    value: function signInput(inputIndex, keyPair) {
-      var sighashTypes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [transaction_1.Transaction.SIGHASH_ALL];
-      if (!keyPair || !keyPair.publicKey) throw new Error('Need Signer to sign input');
-
-      var _getHashAndSighashTyp = getHashAndSighashType(this.data.inputs, inputIndex, keyPair.publicKey, this.__CACHE, sighashTypes),
-          hash = _getHashAndSighashTyp.hash,
-          sighashType = _getHashAndSighashTyp.sighashType;
-
-      var partialSig = [{
-        pubkey: keyPair.publicKey,
-        signature: bscript.signature.encode(keyPair.sign(hash), sighashType)
-      }];
-      this.data.updateInput(inputIndex, {
-        partialSig: partialSig
-      });
-      return this;
-    }
-  }, {
-    key: "signInputAsync",
-    value: function signInputAsync(inputIndex, keyPair) {
-      var _this9 = this;
-
-      var sighashTypes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [transaction_1.Transaction.SIGHASH_ALL];
-      return new Promise(function (resolve, reject) {
-        if (!keyPair || !keyPair.publicKey) return reject(new Error('Need Signer to sign input'));
-
-        var _getHashAndSighashTyp2 = getHashAndSighashType(_this9.data.inputs, inputIndex, keyPair.publicKey, _this9.__CACHE, sighashTypes),
-            hash = _getHashAndSighashTyp2.hash,
-            sighashType = _getHashAndSighashTyp2.sighashType;
-
-        Promise.resolve(keyPair.sign(hash)).then(function (signature) {
-          var partialSig = [{
-            pubkey: keyPair.publicKey,
-            signature: bscript.signature.encode(signature, sighashType)
-          }];
-
-          _this9.data.updateInput(inputIndex, {
-            partialSig: partialSig
-          });
-
-          resolve();
-        });
-      });
-    }
-  }, {
-    key: "toBuffer",
-    value: function toBuffer() {
-      return this.data.toBuffer();
-    }
-  }, {
-    key: "toHex",
-    value: function toHex() {
-      return this.data.toHex();
-    }
-  }, {
-    key: "toBase64",
-    value: function toBase64() {
-      return this.data.toBase64();
-    }
-  }, {
-    key: "updateGlobal",
-    value: function updateGlobal(updateData) {
-      this.data.updateGlobal(updateData);
-      return this;
-    }
-  }, {
-    key: "updateInput",
-    value: function updateInput(inputIndex, updateData) {
-      this.data.updateInput(inputIndex, updateData);
-
-      if (updateData.nonWitnessUtxo) {
-        addNonWitnessTxCache(this.__CACHE, this.data.inputs[inputIndex], inputIndex);
-      }
-
-      return this;
-    }
-  }, {
-    key: "updateOutput",
-    value: function updateOutput(outputIndex, updateData) {
-      this.data.updateOutput(outputIndex, updateData);
-      return this;
-    }
-  }, {
-    key: "addUnknownKeyValToGlobal",
-    value: function addUnknownKeyValToGlobal(keyVal) {
-      this.data.addUnknownKeyValToGlobal(keyVal);
-      return this;
-    }
-  }, {
-    key: "addUnknownKeyValToInput",
-    value: function addUnknownKeyValToInput(inputIndex, keyVal) {
-      this.data.addUnknownKeyValToInput(inputIndex, keyVal);
-      return this;
-    }
-  }, {
-    key: "addUnknownKeyValToOutput",
-    value: function addUnknownKeyValToOutput(outputIndex, keyVal) {
-      this.data.addUnknownKeyValToOutput(outputIndex, keyVal);
-      return this;
-    }
-  }, {
-    key: "clearFinalizedInput",
-    value: function clearFinalizedInput(inputIndex) {
-      this.data.clearFinalizedInput(inputIndex);
-      return this;
-    }
-  }, {
-    key: "inputCount",
-    get: function get() {
-      return this.data.inputs.length;
-    }
-  }], [{
-    key: "fromBase64",
-    value: function fromBase64(data) {
-      var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      var buffer = Buffer.from(data, 'base64');
-      return this.fromBuffer(buffer, opts);
-    }
-  }, {
-    key: "fromHex",
-    value: function fromHex(data) {
-      var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      var buffer = Buffer.from(data, 'hex');
-      return this.fromBuffer(buffer, opts);
-    }
-  }, {
-    key: "fromBuffer",
-    value: function fromBuffer(buffer) {
-      var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      var psbtBase = bip174_1.Psbt.fromBuffer(buffer, transactionFromBuffer);
-      var psbt = new Psbt(opts, psbtBase);
-      checkTxForDupeIns(psbt.__CACHE.__TX, psbt.__CACHE);
-      return psbt;
-    }
-  }]);
-
-  return Psbt;
-}();
-
-exports.Psbt = Psbt;
-/**
- * This function is needed to pass to the bip174 base class's fromBuffer.
- * It takes the "transaction buffer" portion of the psbt buffer and returns a
- * Transaction (From the bip174 library) interface.
- */
-
-var transactionFromBuffer = function transactionFromBuffer(buffer) {
-  return new PsbtTransaction(buffer);
-};
-/**
- * This class implements the Transaction interface from bip174 library.
- * It contains a bitcoinjs-lib Transaction object.
- */
-
-
-var PsbtTransaction =
-/*#__PURE__*/
-function () {
-  function PsbtTransaction() {
-    var buffer = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Buffer.from([2, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-
-    _classCallCheck(this, PsbtTransaction);
-
-    this.tx = transaction_1.Transaction.fromBuffer(buffer);
-    checkTxEmpty(this.tx);
-    Object.defineProperty(this, 'tx', {
-      enumerable: false,
-      writable: true
-    });
-  }
-
-  _createClass(PsbtTransaction, [{
-    key: "getInputOutputCounts",
-    value: function getInputOutputCounts() {
-      return {
-        inputCount: this.tx.ins.length,
-        outputCount: this.tx.outs.length
-      };
-    }
-  }, {
-    key: "addInput",
-    value: function addInput(input) {
-      if (input.hash === undefined || input.index === undefined || !Buffer.isBuffer(input.hash) && typeof input.hash !== 'string' || typeof input.index !== 'number') {
-        throw new Error('Error adding input.');
-      }
-
-      var hash = typeof input.hash === 'string' ? bufferutils_1.reverseBuffer(Buffer.from(input.hash, 'hex')) : input.hash;
-      this.tx.addInput(hash, input.index, input.sequence);
-    }
-  }, {
-    key: "addOutput",
-    value: function addOutput(output) {
-      if (output.script === undefined || output.value === undefined || !Buffer.isBuffer(output.script) || typeof output.value !== 'number') {
-        throw new Error('Error adding output.');
-      }
-
-      this.tx.addOutput(output.script, output.value);
-    }
-  }, {
-    key: "toBuffer",
-    value: function toBuffer() {
-      return this.tx.toBuffer();
-    }
-  }]);
-
-  return PsbtTransaction;
-}();
-
-function canFinalize(input, script, scriptType) {
-  switch (scriptType) {
-    case 'pubkey':
-    case 'pubkeyhash':
-    case 'witnesspubkeyhash':
-      return hasSigs(1, input.partialSig);
-
-    case 'multisig':
-      var p2ms = payments.p2ms({
-        output: script
-      });
-      return hasSigs(p2ms.m, input.partialSig);
-
-    default:
-      return false;
-  }
-}
-
-function hasSigs(neededSigs, partialSig) {
-  if (!partialSig) return false;
-  if (partialSig.length > neededSigs) throw new Error('Too many signatures');
-  return partialSig.length === neededSigs;
-}
-
-function isFinalized(input) {
-  return !!input.finalScriptSig || !!input.finalScriptWitness;
-}
-
-function isPaymentFactory(payment) {
-  return function (script) {
-    try {
-      payment({
-        output: script
-      });
-      return true;
-    } catch (err) {
-      return false;
-    }
-  };
-}
-
-var isP2MS = isPaymentFactory(payments.p2ms);
-var isP2PK = isPaymentFactory(payments.p2pk);
-var isP2PKH = isPaymentFactory(payments.p2pkh);
-var isP2WPKH = isPaymentFactory(payments.p2wpkh);
-var isP2WSHScript = isPaymentFactory(payments.p2wsh);
-
-function check32Bit(num) {
-  if (typeof num !== 'number' || num !== Math.floor(num) || num > 0xffffffff || num < 0) {
-    throw new Error('Invalid 32 bit integer');
-  }
-}
-
-function checkFees(psbt, cache, opts) {
-  var feeRate = cache.__FEE_RATE || psbt.getFeeRate();
-
-  var vsize = cache.__EXTRACTED_TX.virtualSize();
-
-  var satoshis = feeRate * vsize;
-
-  if (feeRate >= opts.maximumFeeRate) {
-    throw new Error("Warning: You are paying around ".concat((satoshis / 1e8).toFixed(8), " in ") + "fees, which is ".concat(feeRate, " satoshi per byte for a transaction ") + "with a VSize of ".concat(vsize, " bytes (segwit counted as 0.25 byte per ") + "byte). Use setMaximumFeeRate method to raise your threshold, or " + "pass true to the first arg of extractTransaction.");
-  }
-}
-
-function checkInputsForPartialSig(inputs, action) {
-  inputs.forEach(function (input) {
-    var throws = false;
-    var pSigs = [];
-
-    if ((input.partialSig || []).length === 0) {
-      if (!input.finalScriptSig && !input.finalScriptWitness) return;
-      pSigs = getPsigsFromInputFinalScripts(input);
-    } else {
-      pSigs = input.partialSig;
-    }
-
-    pSigs.forEach(function (pSig) {
-      var _bscript$signature$de = bscript.signature.decode(pSig.signature),
-          hashType = _bscript$signature$de.hashType;
-
-      var whitelist = [];
-      var isAnyoneCanPay = hashType & transaction_1.Transaction.SIGHASH_ANYONECANPAY;
-      if (isAnyoneCanPay) whitelist.push('addInput');
-      var hashMod = hashType & 0x1f;
-
-      switch (hashMod) {
-        case transaction_1.Transaction.SIGHASH_ALL:
-          break;
-
-        case transaction_1.Transaction.SIGHASH_SINGLE:
-        case transaction_1.Transaction.SIGHASH_NONE:
-          whitelist.push('addOutput');
-          whitelist.push('setInputSequence');
-          break;
-      }
-
-      if (whitelist.indexOf(action) === -1) {
-        throws = true;
-      }
-    });
-
-    if (throws) {
-      throw new Error('Can not modify transaction, signatures exist.');
-    }
-  });
-}
-
-function checkPartialSigSighashes(input) {
-  if (!input.sighashType || !input.partialSig) return;
-  var partialSig = input.partialSig,
-      sighashType = input.sighashType;
-  partialSig.forEach(function (pSig) {
-    var _bscript$signature$de2 = bscript.signature.decode(pSig.signature),
-        hashType = _bscript$signature$de2.hashType;
-
-    if (sighashType !== hashType) {
-      throw new Error('Signature sighash does not match input sighash type');
-    }
-  });
-}
-
-function checkScriptForPubkey(pubkey, script, action) {
-  var pubkeyHash = crypto_1.hash160(pubkey);
-  var decompiled = bscript.decompile(script);
-  if (decompiled === null) throw new Error('Unknown script error');
-  var hasKey = decompiled.some(function (element) {
-    if (typeof element === 'number') return false;
-    return element.equals(pubkey) || element.equals(pubkeyHash);
-  });
-
-  if (!hasKey) {
-    throw new Error("Can not ".concat(action, " for this input with the key ").concat(pubkey.toString('hex')));
-  }
-}
-
-function checkTxEmpty(tx) {
-  var isEmpty = tx.ins.every(function (input) {
-    return input.script && input.script.length === 0 && input.witness && input.witness.length === 0;
-  });
-
-  if (!isEmpty) {
-    throw new Error('Format Error: Transaction ScriptSigs are not empty');
-  }
-}
-
-function checkTxForDupeIns(tx, cache) {
-  tx.ins.forEach(function (input) {
-    checkTxInputCache(cache, input);
-  });
-}
-
-function checkTxInputCache(cache, input) {
-  var key = bufferutils_1.reverseBuffer(Buffer.from(input.hash)).toString('hex') + ':' + input.index;
-  if (cache.__TX_IN_CACHE[key]) throw new Error('Duplicate input detected.');
-  cache.__TX_IN_CACHE[key] = 1;
-}
-
-function scriptCheckerFactory(payment, paymentScriptName) {
-  return function (inputIndex, scriptPubKey, redeemScript) {
-    var redeemScriptOutput = payment({
-      redeem: {
-        output: redeemScript
-      }
-    }).output;
-
-    if (!scriptPubKey.equals(redeemScriptOutput)) {
-      throw new Error("".concat(paymentScriptName, " for input #").concat(inputIndex, " doesn't match the scriptPubKey in the prevout"));
-    }
-  };
-}
-
-var checkRedeemScript = scriptCheckerFactory(payments.p2sh, 'Redeem script');
-var checkWitnessScript = scriptCheckerFactory(payments.p2wsh, 'Witness script');
-
-function getTxCacheValue(key, name, inputs, c) {
-  if (!inputs.every(isFinalized)) throw new Error("PSBT must be finalized to calculate ".concat(name));
-  if (key === '__FEE_RATE' && c.__FEE_RATE) return c.__FEE_RATE;
-  if (key === '__FEE' && c.__FEE) return c.__FEE;
-  var tx;
-  var mustFinalize = true;
-
-  if (c.__EXTRACTED_TX) {
-    tx = c.__EXTRACTED_TX;
-    mustFinalize = false;
-  } else {
-    tx = c.__TX.clone();
-  }
-
-  inputFinalizeGetAmts(inputs, tx, c, mustFinalize);
-  if (key === '__FEE_RATE') return c.__FEE_RATE;else if (key === '__FEE') return c.__FEE;
-}
-
-function getFinalScripts(script, scriptType, partialSig, isSegwit, isP2SH, isP2WSH) {
-  var finalScriptSig;
-  var finalScriptWitness; // Wow, the payments API is very handy
-
-  var payment = getPayment(script, scriptType, partialSig);
-  var p2wsh = !isP2WSH ? null : payments.p2wsh({
-    redeem: payment
-  });
-  var p2sh = !isP2SH ? null : payments.p2sh({
-    redeem: p2wsh || payment
-  });
-
-  if (isSegwit) {
-    if (p2wsh) {
-      finalScriptWitness = witnessStackToScriptWitness(p2wsh.witness);
-    } else {
-      finalScriptWitness = witnessStackToScriptWitness(payment.witness);
-    }
-
-    if (p2sh) {
-      finalScriptSig = p2sh.input;
-    }
-  } else {
-    if (p2sh) {
-      finalScriptSig = p2sh.input;
-    } else {
-      finalScriptSig = payment.input;
-    }
-  }
-
-  return {
-    finalScriptSig: finalScriptSig,
-    finalScriptWitness: finalScriptWitness
-  };
-}
-
-function getHashAndSighashType(inputs, inputIndex, pubkey, cache, sighashTypes) {
-  var input = utils_1.checkForInput(inputs, inputIndex);
-
-  var _getHashForSig = getHashForSig(inputIndex, input, cache, sighashTypes),
-      hash = _getHashForSig.hash,
-      sighashType = _getHashForSig.sighashType,
-      script = _getHashForSig.script;
-
-  checkScriptForPubkey(pubkey, script, 'sign');
-  return {
-    hash: hash,
-    sighashType: sighashType
-  };
-}
-
-function getHashForSig(inputIndex, input, cache, sighashTypes) {
-  var unsignedTx = cache.__TX;
-  var sighashType = input.sighashType || transaction_1.Transaction.SIGHASH_ALL;
-
-  if (sighashTypes && sighashTypes.indexOf(sighashType) < 0) {
-    var str = sighashTypeToString(sighashType);
-    throw new Error("Sighash type is not allowed. Retry the sign method passing the " + "sighashTypes array of whitelisted types. Sighash type: ".concat(str));
-  }
-
-  var hash;
-  var script;
-
-  if (input.nonWitnessUtxo) {
-    var nonWitnessUtxoTx = nonWitnessUtxoTxFromCache(cache, input, inputIndex);
-    var prevoutHash = unsignedTx.ins[inputIndex].hash;
-    var utxoHash = nonWitnessUtxoTx.getHash(); // If a non-witness UTXO is provided, its hash must match the hash specified in the prevout
-
-    if (!prevoutHash.equals(utxoHash)) {
-      throw new Error("Non-witness UTXO hash for input #".concat(inputIndex, " doesn't match the hash specified in the prevout"));
-    }
-
-    var prevoutIndex = unsignedTx.ins[inputIndex].index;
-    var prevout = nonWitnessUtxoTx.outs[prevoutIndex];
-
-    if (input.redeemScript) {
-      // If a redeemScript is provided, the scriptPubKey must be for that redeemScript
-      checkRedeemScript(inputIndex, prevout.script, input.redeemScript);
-      script = input.redeemScript;
-    } else {
-      script = prevout.script;
-    }
-
-    if (isP2WSHScript(script)) {
-      if (!input.witnessScript) throw new Error('Segwit input needs witnessScript if not P2WPKH');
-      checkWitnessScript(inputIndex, script, input.witnessScript);
-      hash = unsignedTx.hashForWitnessV0(inputIndex, input.witnessScript, prevout.value, sighashType);
-      script = input.witnessScript;
-    } else if (isP2WPKH(script)) {
-      // P2WPKH uses the P2PKH template for prevoutScript when signing
-      var signingScript = payments.p2pkh({
-        hash: script.slice(2)
-      }).output;
-      hash = unsignedTx.hashForWitnessV0(inputIndex, signingScript, prevout.value, sighashType);
-    } else {
-      hash = unsignedTx.hashForSignature(inputIndex, script, sighashType);
-    }
-  } else if (input.witnessUtxo) {
-    var _script; // so we don't shadow the `let script` above
-
-
-    if (input.redeemScript) {
-      // If a redeemScript is provided, the scriptPubKey must be for that redeemScript
-      checkRedeemScript(inputIndex, input.witnessUtxo.script, input.redeemScript);
-      _script = input.redeemScript;
-    } else {
-      _script = input.witnessUtxo.script;
-    }
-
-    if (isP2WPKH(_script)) {
-      // P2WPKH uses the P2PKH template for prevoutScript when signing
-      var _signingScript = payments.p2pkh({
-        hash: _script.slice(2)
-      }).output;
-      hash = unsignedTx.hashForWitnessV0(inputIndex, _signingScript, input.witnessUtxo.value, sighashType);
-      script = _script;
-    } else if (isP2WSHScript(_script)) {
-      if (!input.witnessScript) throw new Error('Segwit input needs witnessScript if not P2WPKH');
-      checkWitnessScript(inputIndex, _script, input.witnessScript);
-      hash = unsignedTx.hashForWitnessV0(inputIndex, input.witnessScript, input.witnessUtxo.value, sighashType); // want to make sure the script we return is the actual meaningful script
-
-      script = input.witnessScript;
-    } else {
-      throw new Error("Input #".concat(inputIndex, " has witnessUtxo but non-segwit script: ") + "".concat(_script.toString('hex')));
-    }
-  } else {
-    throw new Error('Need a Utxo input item for signing');
-  }
-
-  return {
-    script: script,
-    sighashType: sighashType,
-    hash: hash
-  };
-}
-
-function getPayment(script, scriptType, partialSig) {
-  var payment;
-
-  switch (scriptType) {
-    case 'multisig':
-      var sigs = getSortedSigs(script, partialSig);
-      payment = payments.p2ms({
-        output: script,
-        signatures: sigs
-      });
-      break;
-
-    case 'pubkey':
-      payment = payments.p2pk({
-        output: script,
-        signature: partialSig[0].signature
-      });
-      break;
-
-    case 'pubkeyhash':
-      payment = payments.p2pkh({
-        output: script,
-        pubkey: partialSig[0].pubkey,
-        signature: partialSig[0].signature
-      });
-      break;
-
-    case 'witnesspubkeyhash':
-      payment = payments.p2wpkh({
-        output: script,
-        pubkey: partialSig[0].pubkey,
-        signature: partialSig[0].signature
-      });
-      break;
-  }
-
-  return payment;
-}
-
-function getPsigsFromInputFinalScripts(input) {
-  var scriptItems = !input.finalScriptSig ? [] : bscript.decompile(input.finalScriptSig) || [];
-  var witnessItems = !input.finalScriptWitness ? [] : bscript.decompile(input.finalScriptWitness) || [];
-  return scriptItems.concat(witnessItems).filter(function (item) {
-    return Buffer.isBuffer(item) && bscript.isCanonicalScriptSignature(item);
-  }).map(function (sig) {
-    return {
-      signature: sig
-    };
-  });
-}
-
-function getScriptFromInput(inputIndex, input, cache) {
-  var unsignedTx = cache.__TX;
-  var res = {
-    script: null,
-    isSegwit: false,
-    isP2SH: false,
-    isP2WSH: false
-  };
-  res.isP2SH = !!input.redeemScript;
-  res.isP2WSH = !!input.witnessScript;
-
-  if (input.witnessScript) {
-    res.script = input.witnessScript;
-  } else if (input.redeemScript) {
-    res.script = input.redeemScript;
-  } else {
-    if (input.nonWitnessUtxo) {
-      var nonWitnessUtxoTx = nonWitnessUtxoTxFromCache(cache, input, inputIndex);
-      var prevoutIndex = unsignedTx.ins[inputIndex].index;
-      res.script = nonWitnessUtxoTx.outs[prevoutIndex].script;
-    } else if (input.witnessUtxo) {
-      res.script = input.witnessUtxo.script;
-    }
-  }
-
-  if (input.witnessScript || isP2WPKH(res.script)) {
-    res.isSegwit = true;
-  }
-
-  return res;
-}
-
-function getSignersFromHD(inputIndex, inputs, hdKeyPair) {
-  var input = utils_1.checkForInput(inputs, inputIndex);
-
-  if (!input.bip32Derivation || input.bip32Derivation.length === 0) {
-    throw new Error('Need bip32Derivation to sign with HD');
-  }
-
-  var myDerivations = input.bip32Derivation.map(function (bipDv) {
-    if (bipDv.masterFingerprint.equals(hdKeyPair.fingerprint)) {
-      return bipDv;
-    } else {
-      return;
-    }
-  }).filter(function (v) {
-    return !!v;
-  });
-
-  if (myDerivations.length === 0) {
-    throw new Error('Need one bip32Derivation masterFingerprint to match the HDSigner fingerprint');
-  }
-
-  var signers = myDerivations.map(function (bipDv) {
-    var node = hdKeyPair.derivePath(bipDv.path);
-
-    if (!bipDv.pubkey.equals(node.publicKey)) {
-      throw new Error('pubkey did not match bip32Derivation');
-    }
-
-    return node;
-  });
-  return signers;
-}
-
-function getSortedSigs(script, partialSig) {
-  var p2ms = payments.p2ms({
-    output: script
-  }); // for each pubkey in order of p2ms script
-
-  return p2ms.pubkeys.map(function (pk) {
-    // filter partialSig array by pubkey being equal
-    return (partialSig.filter(function (ps) {
-      return ps.pubkey.equals(pk);
-    })[0] || {}).signature; // Any pubkey without a match will return undefined
-    // this last filter removes all the undefined items in the array.
-  }).filter(function (v) {
-    return !!v;
-  });
-}
-
-function scriptWitnessToWitnessStack(buffer) {
-  var offset = 0;
-
-  function readSlice(n) {
-    offset += n;
-    return buffer.slice(offset - n, offset);
-  }
-
-  function readVarInt() {
-    var vi = varuint.decode(buffer, offset);
-    offset += varuint.decode.bytes;
-    return vi;
-  }
-
-  function readVarSlice() {
-    return readSlice(readVarInt());
-  }
-
-  function readVector() {
-    var count = readVarInt();
-    var vector = [];
-
-    for (var i = 0; i < count; i++) {
-      vector.push(readVarSlice());
-    }
-
-    return vector;
-  }
-
-  return readVector();
-}
-
-function sighashTypeToString(sighashType) {
-  var text = sighashType & transaction_1.Transaction.SIGHASH_ANYONECANPAY ? 'SIGHASH_ANYONECANPAY | ' : '';
-  var sigMod = sighashType & 0x1f;
-
-  switch (sigMod) {
-    case transaction_1.Transaction.SIGHASH_ALL:
-      text += 'SIGHASH_ALL';
-      break;
-
-    case transaction_1.Transaction.SIGHASH_SINGLE:
-      text += 'SIGHASH_SINGLE';
-      break;
-
-    case transaction_1.Transaction.SIGHASH_NONE:
-      text += 'SIGHASH_NONE';
-      break;
-  }
-
-  return text;
-}
-
-function witnessStackToScriptWitness(witness) {
-  var buffer = Buffer.allocUnsafe(0);
-
-  function writeSlice(slice) {
-    buffer = Buffer.concat([buffer, Buffer.from(slice)]);
-  }
-
-  function writeVarInt(i) {
-    var currentLen = buffer.length;
-    var varintLen = varuint.encodingLength(i);
-    buffer = Buffer.concat([buffer, Buffer.allocUnsafe(varintLen)]);
-    varuint.encode(i, buffer, currentLen);
-  }
-
-  function writeVarSlice(slice) {
-    writeVarInt(slice.length);
-    writeSlice(slice);
-  }
-
-  function writeVector(vector) {
-    writeVarInt(vector.length);
-    vector.forEach(writeVarSlice);
-  }
-
-  writeVector(witness);
-  return buffer;
-}
-
-function addNonWitnessTxCache(cache, input, inputIndex) {
-  cache.__NON_WITNESS_UTXO_BUF_CACHE[inputIndex] = input.nonWitnessUtxo;
-  var tx = transaction_1.Transaction.fromBuffer(input.nonWitnessUtxo);
-  cache.__NON_WITNESS_UTXO_TX_CACHE[inputIndex] = tx;
-  var self = cache;
-  var selfIndex = inputIndex;
-  delete input.nonWitnessUtxo;
-  Object.defineProperty(input, 'nonWitnessUtxo', {
-    enumerable: true,
-    get: function get() {
-      var buf = self.__NON_WITNESS_UTXO_BUF_CACHE[selfIndex];
-      var txCache = self.__NON_WITNESS_UTXO_TX_CACHE[selfIndex];
-
-      if (buf !== undefined) {
-        return buf;
-      } else {
-        var newBuf = txCache.toBuffer();
-        self.__NON_WITNESS_UTXO_BUF_CACHE[selfIndex] = newBuf;
-        return newBuf;
-      }
-    },
-    set: function set(data) {
-      self.__NON_WITNESS_UTXO_BUF_CACHE[selfIndex] = data;
-    }
-  });
-}
-
-function inputFinalizeGetAmts(inputs, tx, cache, mustFinalize) {
-  var inputAmount = 0;
-  inputs.forEach(function (input, idx) {
-    if (mustFinalize && input.finalScriptSig) tx.ins[idx].script = input.finalScriptSig;
-
-    if (mustFinalize && input.finalScriptWitness) {
-      tx.ins[idx].witness = scriptWitnessToWitnessStack(input.finalScriptWitness);
-    }
-
-    if (input.witnessUtxo) {
-      inputAmount += input.witnessUtxo.value;
-    } else if (input.nonWitnessUtxo) {
-      var nwTx = nonWitnessUtxoTxFromCache(cache, input, idx);
-      var vout = tx.ins[idx].index;
-      var out = nwTx.outs[vout];
-      inputAmount += out.value;
-    }
-  });
-  var outputAmount = tx.outs.reduce(function (total, o) {
-    return total + o.value;
-  }, 0);
-  var fee = inputAmount - outputAmount;
-
-  if (fee < 0) {
-    throw new Error('Outputs are spending more than Inputs');
-  }
-
-  var bytes = tx.virtualSize();
-  cache.__FEE = fee;
-  cache.__EXTRACTED_TX = tx;
-  cache.__FEE_RATE = Math.floor(fee / bytes);
-}
-
-function nonWitnessUtxoTxFromCache(cache, input, inputIndex) {
-  var c = cache.__NON_WITNESS_UTXO_TX_CACHE;
-
-  if (!c[inputIndex]) {
-    addNonWitnessTxCache(cache, input, inputIndex);
-  }
-
-  return c[inputIndex];
-}
-
-function classifyScript(script) {
-  if (isP2WPKH(script)) return 'witnesspubkeyhash';
-  if (isP2PKH(script)) return 'pubkeyhash';
-  if (isP2MS(script)) return 'multisig';
-  if (isP2PK(script)) return 'pubkey';
-  return 'nonstandard';
-}
-
-function range(n) {
-  return _toConsumableArray(Array(n).keys());
-}
-},{"bip174":"Kgzo","bip174/src/lib/converter/varint":"ViXA","bip174/src/lib/utils":"GfFi","./address":"wUUe","./bufferutils":"kTjr","./crypto":"wHwg","./ecpair":"ZFsm","./networks":"LuAr","./payments":"kEsd","./script":"Fa8t","./transaction":"Y9UO","buffer":"dskh"}],"rcO3":[function(require,module,exports) {
-'use strict'; // OP_0 [signatures ...]
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var script_1 = require('../../script');
-
-function partialSignature(value) {
-  return value === script_1.OPS.OP_0 || bscript.isCanonicalScriptSignature(value);
-}
-
-function check(script, allowIncomplete) {
-  var chunks = bscript.decompile(script);
-  if (chunks.length < 2) return false;
-  if (chunks[0] !== script_1.OPS.OP_0) return false;
-
-  if (allowIncomplete) {
-    return chunks.slice(1).every(partialSignature);
-  }
-
-  return chunks.slice(1).every(bscript.isCanonicalScriptSignature);
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'multisig input';
-};
-},{"../../script":"Fa8t"}],"p6tM":[function(require,module,exports) {
-'use strict'; // m [pubKeys ...] n OP_CHECKMULTISIG
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var script_1 = require('../../script');
-
-var types = require('../../types');
-
-var OP_INT_BASE = script_1.OPS.OP_RESERVED; // OP_1 - 1
-
-function check(script, allowIncomplete) {
-  var chunks = bscript.decompile(script);
-  if (chunks.length < 4) return false;
-  if (chunks[chunks.length - 1] !== script_1.OPS.OP_CHECKMULTISIG) return false;
-  if (!types.Number(chunks[0])) return false;
-  if (!types.Number(chunks[chunks.length - 2])) return false;
-  var m = chunks[0] - OP_INT_BASE;
-  var n = chunks[chunks.length - 2] - OP_INT_BASE;
-  if (m <= 0) return false;
-  if (n > 16) return false;
-  if (m > n) return false;
-  if (n !== chunks.length - 3) return false;
-  if (allowIncomplete) return true;
-  var keys = chunks.slice(1, -2);
-  return keys.every(bscript.isCanonicalPubKey);
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'multi-sig output';
-};
-},{"../../script":"Fa8t","../../types":"mf8L"}],"tAvT":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var input = require('./input');
-
-exports.input = input;
-
-var output = require('./output');
-
-exports.output = output;
-},{"./input":"rcO3","./output":"p6tM"}],"fKxi":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-}); // OP_RETURN {data}
-
-var bscript = require('../script');
-
-var OPS = bscript.OPS;
-
-function check(script) {
-  var buffer = bscript.compile(script);
-  return buffer.length > 1 && buffer[0] === OPS.OP_RETURN;
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'null data output';
-};
-
-var output = {
-  check: check
-};
-exports.output = output;
-},{"../script":"Fa8t"}],"X9Co":[function(require,module,exports) {
-'use strict'; // {signature}
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-function check(script) {
-  var chunks = bscript.decompile(script);
-  return chunks.length === 1 && bscript.isCanonicalScriptSignature(chunks[0]);
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'pubKey input';
-};
-},{"../../script":"Fa8t"}],"ugmf":[function(require,module,exports) {
-'use strict'; // {pubKey} OP_CHECKSIG
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var script_1 = require('../../script');
-
-function check(script) {
-  var chunks = bscript.decompile(script);
-  return chunks.length === 2 && bscript.isCanonicalPubKey(chunks[0]) && chunks[1] === script_1.OPS.OP_CHECKSIG;
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'pubKey output';
-};
-},{"../../script":"Fa8t"}],"l7Lh":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var input = require('./input');
-
-exports.input = input;
-
-var output = require('./output');
-
-exports.output = output;
-},{"./input":"X9Co","./output":"ugmf"}],"dYUv":[function(require,module,exports) {
-'use strict'; // {signature} {pubKey}
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-function check(script) {
-  var chunks = bscript.decompile(script);
-  return chunks.length === 2 && bscript.isCanonicalScriptSignature(chunks[0]) && bscript.isCanonicalPubKey(chunks[1]);
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'pubKeyHash input';
-};
-},{"../../script":"Fa8t"}],"omA2":[function(require,module,exports) {
-'use strict'; // OP_DUP OP_HASH160 {pubKeyHash} OP_EQUALVERIFY OP_CHECKSIG
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var script_1 = require('../../script');
-
-function check(script) {
-  var buffer = bscript.compile(script);
-  return buffer.length === 25 && buffer[0] === script_1.OPS.OP_DUP && buffer[1] === script_1.OPS.OP_HASH160 && buffer[2] === 0x14 && buffer[23] === script_1.OPS.OP_EQUALVERIFY && buffer[24] === script_1.OPS.OP_CHECKSIG;
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'pubKeyHash output';
-};
-},{"../../script":"Fa8t"}],"Sk1x":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var input = require('./input');
-
-exports.input = input;
-
-var output = require('./output');
-
-exports.output = output;
-},{"./input":"dYUv","./output":"omA2"}],"eaHZ":[function(require,module,exports) {
-'use strict'; // OP_0 {pubKeyHash}
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var script_1 = require('../../script');
-
-function check(script) {
-  var buffer = bscript.compile(script);
-  return buffer.length === 22 && buffer[0] === script_1.OPS.OP_0 && buffer[1] === 0x14;
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'Witness pubKeyHash output';
-};
-},{"../../script":"Fa8t"}],"n1wb":[function(require,module,exports) {
-'use strict'; // OP_0 {scriptHash}
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var script_1 = require('../../script');
-
-function check(script) {
-  var buffer = bscript.compile(script);
-  return buffer.length === 34 && buffer[0] === script_1.OPS.OP_0 && buffer[1] === 0x20;
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'Witness scriptHash output';
-};
-},{"../../script":"Fa8t"}],"yF64":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict'; // <scriptSig> {serialized scriptPubKey script}
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var p2ms = require('../multisig');
-
-var p2pk = require('../pubkey');
-
-var p2pkh = require('../pubkeyhash');
-
-var p2wpkho = require('../witnesspubkeyhash/output');
-
-var p2wsho = require('../witnessscripthash/output');
-
-function check(script, allowIncomplete) {
-  var chunks = bscript.decompile(script);
-  if (chunks.length < 1) return false;
-  var lastChunk = chunks[chunks.length - 1];
-  if (!Buffer.isBuffer(lastChunk)) return false;
-  var scriptSigChunks = bscript.decompile(bscript.compile(chunks.slice(0, -1)));
-  var redeemScriptChunks = bscript.decompile(lastChunk); // is redeemScript a valid script?
-
-  if (!redeemScriptChunks) return false; // is redeemScriptSig push only?
-
-  if (!bscript.isPushOnly(scriptSigChunks)) return false; // is witness?
-
-  if (chunks.length === 1) {
-    return p2wsho.check(redeemScriptChunks) || p2wpkho.check(redeemScriptChunks);
-  } // match types
-
-
-  if (p2pkh.input.check(scriptSigChunks) && p2pkh.output.check(redeemScriptChunks)) return true;
-  if (p2ms.input.check(scriptSigChunks, allowIncomplete) && p2ms.output.check(redeemScriptChunks)) return true;
-  if (p2pk.input.check(scriptSigChunks) && p2pk.output.check(redeemScriptChunks)) return true;
-  return false;
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'scriptHash input';
-};
-},{"../../script":"Fa8t","../multisig":"tAvT","../pubkey":"l7Lh","../pubkeyhash":"Sk1x","../witnesspubkeyhash/output":"eaHZ","../witnessscripthash/output":"n1wb","buffer":"dskh"}],"cCec":[function(require,module,exports) {
-'use strict'; // OP_HASH160 {scriptHash} OP_EQUAL
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var script_1 = require('../../script');
-
-function check(script) {
-  var buffer = bscript.compile(script);
-  return buffer.length === 23 && buffer[0] === script_1.OPS.OP_HASH160 && buffer[1] === 0x14 && buffer[22] === script_1.OPS.OP_EQUAL;
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'scriptHash output';
-};
-},{"../../script":"Fa8t"}],"g7LS":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var input = require('./input');
-
-exports.input = input;
-
-var output = require('./output');
-
-exports.output = output;
-},{"./input":"yF64","./output":"cCec"}],"hYj9":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict'; // OP_RETURN {aa21a9ed} {commitment}
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var script_1 = require('../../script');
-
-var types = require('../../types');
-
-var typeforce = require('typeforce');
-
-var HEADER = Buffer.from('aa21a9ed', 'hex');
-
-function check(script) {
-  var buffer = bscript.compile(script);
-  return buffer.length > 37 && buffer[0] === script_1.OPS.OP_RETURN && buffer[1] === 0x24 && buffer.slice(2, 6).equals(HEADER);
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'Witness commitment output';
-};
-
-function encode(commitment) {
-  typeforce(types.Hash256bit, commitment);
-  var buffer = Buffer.allocUnsafe(36);
-  HEADER.copy(buffer, 0);
-  commitment.copy(buffer, 4);
-  return bscript.compile([script_1.OPS.OP_RETURN, buffer]);
-}
-
-exports.encode = encode;
-
-function decode(buffer) {
-  typeforce(check, buffer);
-  return bscript.decompile(buffer)[1].slice(4, 36);
-}
-
-exports.decode = decode;
-},{"../../script":"Fa8t","../../types":"mf8L","typeforce":"PKU7","buffer":"dskh"}],"ieyO":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var output = require('./output');
-
-exports.output = output;
-},{"./output":"hYj9"}],"SH0d":[function(require,module,exports) {
-'use strict'; // {signature} {pubKey}
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-function isCompressedCanonicalPubKey(pubKey) {
-  return bscript.isCanonicalPubKey(pubKey) && pubKey.length === 33;
-}
-
-function check(script) {
-  var chunks = bscript.decompile(script);
-  return chunks.length === 2 && bscript.isCanonicalScriptSignature(chunks[0]) && isCompressedCanonicalPubKey(chunks[1]);
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'witnessPubKeyHash input';
-};
-},{"../../script":"Fa8t"}],"ytFA":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var input = require('./input');
-
-exports.input = input;
-
-var output = require('./output');
-
-exports.output = output;
-},{"./input":"SH0d","./output":"eaHZ"}],"sLl4":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict'; // <scriptSig> {serialized scriptPubKey script}
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bscript = require('../../script');
-
-var typeforce = require('typeforce');
-
-var p2ms = require('../multisig');
-
-var p2pk = require('../pubkey');
-
-var p2pkh = require('../pubkeyhash');
-
-function check(chunks, allowIncomplete) {
-  typeforce(typeforce.Array, chunks);
-  if (chunks.length < 1) return false;
-  var witnessScript = chunks[chunks.length - 1];
-  if (!Buffer.isBuffer(witnessScript)) return false;
-  var witnessScriptChunks = bscript.decompile(witnessScript); // is witnessScript a valid script?
-
-  if (!witnessScriptChunks || witnessScriptChunks.length === 0) return false;
-  var witnessRawScriptSig = bscript.compile(chunks.slice(0, -1)); // match types
-
-  if (p2pkh.input.check(witnessRawScriptSig) && p2pkh.output.check(witnessScriptChunks)) return true;
-  if (p2ms.input.check(witnessRawScriptSig, allowIncomplete) && p2ms.output.check(witnessScriptChunks)) return true;
-  if (p2pk.input.check(witnessRawScriptSig) && p2pk.output.check(witnessScriptChunks)) return true;
-  return false;
-}
-
-exports.check = check;
-
-check.toJSON = function () {
-  return 'witnessScriptHash input';
-};
-},{"../../script":"Fa8t","typeforce":"PKU7","../multisig":"tAvT","../pubkey":"l7Lh","../pubkeyhash":"Sk1x","buffer":"dskh"}],"kzpC":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var input = require('./input');
-
-exports.input = input;
-
-var output = require('./output');
-
-exports.output = output;
-},{"./input":"sLl4","./output":"n1wb"}],"I041":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var script_1 = require('./script');
-
-var multisig = require('./templates/multisig');
-
-var nullData = require('./templates/nulldata');
-
-var pubKey = require('./templates/pubkey');
-
-var pubKeyHash = require('./templates/pubkeyhash');
-
-var scriptHash = require('./templates/scripthash');
-
-var witnessCommitment = require('./templates/witnesscommitment');
-
-var witnessPubKeyHash = require('./templates/witnesspubkeyhash');
-
-var witnessScriptHash = require('./templates/witnessscripthash');
-
-var types = {
-  P2MS: 'multisig',
-  NONSTANDARD: 'nonstandard',
-  NULLDATA: 'nulldata',
-  P2PK: 'pubkey',
-  P2PKH: 'pubkeyhash',
-  P2SH: 'scripthash',
-  P2WPKH: 'witnesspubkeyhash',
-  P2WSH: 'witnessscripthash',
-  WITNESS_COMMITMENT: 'witnesscommitment'
-};
-exports.types = types;
-
-function classifyOutput(script) {
-  if (witnessPubKeyHash.output.check(script)) return types.P2WPKH;
-  if (witnessScriptHash.output.check(script)) return types.P2WSH;
-  if (pubKeyHash.output.check(script)) return types.P2PKH;
-  if (scriptHash.output.check(script)) return types.P2SH; // XXX: optimization, below functions .decompile before use
-
-  var chunks = script_1.decompile(script);
-  if (!chunks) throw new TypeError('Invalid script');
-  if (multisig.output.check(chunks)) return types.P2MS;
-  if (pubKey.output.check(chunks)) return types.P2PK;
-  if (witnessCommitment.output.check(chunks)) return types.WITNESS_COMMITMENT;
-  if (nullData.output.check(chunks)) return types.NULLDATA;
-  return types.NONSTANDARD;
-}
-
-exports.output = classifyOutput;
-
-function classifyInput(script, allowIncomplete) {
-  // XXX: optimization, below functions .decompile before use
-  var chunks = script_1.decompile(script);
-  if (!chunks) throw new TypeError('Invalid script');
-  if (pubKeyHash.input.check(chunks)) return types.P2PKH;
-  if (scriptHash.input.check(chunks, allowIncomplete)) return types.P2SH;
-  if (multisig.input.check(chunks, allowIncomplete)) return types.P2MS;
-  if (pubKey.input.check(chunks)) return types.P2PK;
-  return types.NONSTANDARD;
-}
-
-exports.input = classifyInput;
-
-function classifyWitness(script, allowIncomplete) {
-  // XXX: optimization, below functions .decompile before use
-  var chunks = script_1.decompile(script);
-  if (!chunks) throw new TypeError('Invalid script');
-  if (witnessPubKeyHash.input.check(chunks)) return types.P2WPKH;
-  if (witnessScriptHash.input.check(chunks, allowIncomplete)) return types.P2WSH;
-  return types.NONSTANDARD;
-}
-
-exports.witness = classifyWitness;
-},{"./script":"Fa8t","./templates/multisig":"tAvT","./templates/nulldata":"fKxi","./templates/pubkey":"l7Lh","./templates/pubkeyhash":"Sk1x","./templates/scripthash":"g7LS","./templates/witnesscommitment":"ieyO","./templates/witnesspubkeyhash":"ytFA","./templates/witnessscripthash":"kzpC"}],"k6oC":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-'use strict';
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var baddress = require('./address');
-
-var bufferutils_1 = require('./bufferutils');
-
-var classify = require('./classify');
-
-var bcrypto = require('./crypto');
-
-var ECPair = require('./ecpair');
-
-var networks = require('./networks');
-
-var payments = require('./payments');
-
-var bscript = require('./script');
-
-var script_1 = require('./script');
-
-var transaction_1 = require('./transaction');
-
-var types = require('./types');
-
-var typeforce = require('typeforce');
-
-var SCRIPT_TYPES = classify.types;
-var PREVOUT_TYPES = new Set([// Raw
-'p2pkh', 'p2pk', 'p2wpkh', 'p2ms', // P2SH wrapped
-'p2sh-p2pkh', 'p2sh-p2pk', 'p2sh-p2wpkh', 'p2sh-p2ms', // P2WSH wrapped
-'p2wsh-p2pkh', 'p2wsh-p2pk', 'p2wsh-p2ms', // P2SH-P2WSH wrapper
-'p2sh-p2wsh-p2pkh', 'p2sh-p2wsh-p2pk', 'p2sh-p2wsh-p2ms']);
-
-function tfMessage(type, value, message) {
-  try {
-    typeforce(type, value);
-  } catch (err) {
-    throw new Error(message);
-  }
-}
-
-function txIsString(tx) {
-  return typeof tx === 'string' || tx instanceof String;
-}
-
-function txIsTransaction(tx) {
-  return tx instanceof transaction_1.Transaction;
-}
-
-var TransactionBuilder =
-/*#__PURE__*/
-function () {
-  // WARNING: maximumFeeRate is __NOT__ to be relied on,
-  //          it's just another potential safety mechanism (safety in-depth)
-  function TransactionBuilder() {
-    var network = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : networks.bitcoin;
-    var maximumFeeRate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2500;
-
-    _classCallCheck(this, TransactionBuilder);
-
-    this.network = network;
-    this.maximumFeeRate = maximumFeeRate;
-    this.__PREV_TX_SET = {};
-    this.__INPUTS = [];
-    this.__TX = new transaction_1.Transaction();
-    this.__TX.version = 2;
-    this.__USE_LOW_R = false;
-    console.warn('Deprecation Warning: TransactionBuilder will be removed in the future. ' + '(v6.x.x or later) Please use the Psbt class instead. Examples of usage ' + 'are available in the transactions-psbt.js integration test file on our ' + 'Github. A high level explanation is available in the psbt.ts and psbt.js ' + 'files as well.');
-  }
-
-  _createClass(TransactionBuilder, [{
-    key: "setLowR",
-    value: function setLowR(setting) {
-      typeforce(typeforce.maybe(typeforce.Boolean), setting);
-
-      if (setting === undefined) {
-        setting = true;
-      }
-
-      this.__USE_LOW_R = setting;
-      return setting;
-    }
-  }, {
-    key: "setLockTime",
-    value: function setLockTime(locktime) {
-      typeforce(types.UInt32, locktime); // if any signatures exist, throw
-
-      if (this.__INPUTS.some(function (input) {
-        if (!input.signatures) return false;
-        return input.signatures.some(function (s) {
-          return s !== undefined;
-        });
-      })) {
-        throw new Error('No, this would invalidate signatures');
-      }
-
-      this.__TX.locktime = locktime;
-    }
-  }, {
-    key: "setVersion",
-    value: function setVersion(version) {
-      typeforce(types.UInt32, version); // XXX: this might eventually become more complex depending on what the versions represent
-
-      this.__TX.version = version;
-    }
-  }, {
-    key: "addInput",
-    value: function addInput(txHash, vout, sequence, prevOutScript) {
-      if (!this.__canModifyInputs()) {
-        throw new Error('No, this would invalidate signatures');
-      }
-
-      var value; // is it a hex string?
-
-      if (txIsString(txHash)) {
-        // transaction hashs's are displayed in reverse order, un-reverse it
-        txHash = bufferutils_1.reverseBuffer(Buffer.from(txHash, 'hex')); // is it a Transaction object?
-      } else if (txIsTransaction(txHash)) {
-        var txOut = txHash.outs[vout];
-        prevOutScript = txOut.script;
-        value = txOut.value;
-        txHash = txHash.getHash(false);
-      }
-
-      return this.__addInputUnsafe(txHash, vout, {
-        sequence: sequence,
-        prevOutScript: prevOutScript,
-        value: value
-      });
-    }
-  }, {
-    key: "addOutput",
-    value: function addOutput(scriptPubKey, value) {
-      if (!this.__canModifyOutputs()) {
-        throw new Error('No, this would invalidate signatures');
-      } // Attempt to get a script if it's a base58 or bech32 address string
-
-
-      if (typeof scriptPubKey === 'string') {
-        scriptPubKey = baddress.toOutputScript(scriptPubKey, this.network);
-      }
-
-      return this.__TX.addOutput(scriptPubKey, value);
-    }
-  }, {
-    key: "build",
-    value: function build() {
-      return this.__build(false);
-    }
-  }, {
-    key: "buildIncomplete",
-    value: function buildIncomplete() {
-      return this.__build(true);
-    }
-  }, {
-    key: "sign",
-    value: function sign(signParams, keyPair, redeemScript, hashType, witnessValue, witnessScript) {
-      trySign(getSigningData(this.network, this.__INPUTS, this.__needsOutputs.bind(this), this.__TX, signParams, keyPair, redeemScript, hashType, witnessValue, witnessScript, this.__USE_LOW_R));
-    }
-  }, {
-    key: "__addInputUnsafe",
-    value: function __addInputUnsafe(txHash, vout, options) {
-      if (transaction_1.Transaction.isCoinbaseHash(txHash)) {
-        throw new Error('coinbase inputs not supported');
-      }
-
-      var prevTxOut = txHash.toString('hex') + ':' + vout;
-      if (this.__PREV_TX_SET[prevTxOut] !== undefined) throw new Error('Duplicate TxOut: ' + prevTxOut);
-      var input = {}; // derive what we can from the scriptSig
-
-      if (options.script !== undefined) {
-        input = expandInput(options.script, options.witness || []);
-      } // if an input value was given, retain it
-
-
-      if (options.value !== undefined) {
-        input.value = options.value;
-      } // derive what we can from the previous transactions output script
-
-
-      if (!input.prevOutScript && options.prevOutScript) {
-        var prevOutType;
-
-        if (!input.pubkeys && !input.signatures) {
-          var expanded = expandOutput(options.prevOutScript);
-
-          if (expanded.pubkeys) {
-            input.pubkeys = expanded.pubkeys;
-            input.signatures = expanded.signatures;
-          }
-
-          prevOutType = expanded.type;
-        }
-
-        input.prevOutScript = options.prevOutScript;
-        input.prevOutType = prevOutType || classify.output(options.prevOutScript);
-      }
-
-      var vin = this.__TX.addInput(txHash, vout, options.sequence, options.scriptSig);
-
-      this.__INPUTS[vin] = input;
-      this.__PREV_TX_SET[prevTxOut] = true;
-      return vin;
-    }
-  }, {
-    key: "__build",
-    value: function __build(allowIncomplete) {
-      if (!allowIncomplete) {
-        if (!this.__TX.ins.length) throw new Error('Transaction has no inputs');
-        if (!this.__TX.outs.length) throw new Error('Transaction has no outputs');
-      }
-
-      var tx = this.__TX.clone(); // create script signatures from inputs
-
-
-      this.__INPUTS.forEach(function (input, i) {
-        if (!input.prevOutType && !allowIncomplete) throw new Error('Transaction is not complete');
-        var result = build(input.prevOutType, input, allowIncomplete);
-
-        if (!result) {
-          if (!allowIncomplete && input.prevOutType === SCRIPT_TYPES.NONSTANDARD) throw new Error('Unknown input type');
-          if (!allowIncomplete) throw new Error('Not enough information');
-          return;
-        }
-
-        tx.setInputScript(i, result.input);
-        tx.setWitness(i, result.witness);
-      });
-
-      if (!allowIncomplete) {
-        // do not rely on this, its merely a last resort
-        if (this.__overMaximumFees(tx.virtualSize())) {
-          throw new Error('Transaction has absurd fees');
-        }
-      }
-
-      return tx;
-    }
-  }, {
-    key: "__canModifyInputs",
-    value: function __canModifyInputs() {
-      return this.__INPUTS.every(function (input) {
-        if (!input.signatures) return true;
-        return input.signatures.every(function (signature) {
-          if (!signature) return true;
-          var hashType = signatureHashType(signature); // if SIGHASH_ANYONECANPAY is set, signatures would not
-          // be invalidated by more inputs
-
-          return (hashType & transaction_1.Transaction.SIGHASH_ANYONECANPAY) !== 0;
-        });
-      });
-    }
-  }, {
-    key: "__needsOutputs",
-    value: function __needsOutputs(signingHashType) {
-      if (signingHashType === transaction_1.Transaction.SIGHASH_ALL) {
-        return this.__TX.outs.length === 0;
-      } // if inputs are being signed with SIGHASH_NONE, we don't strictly need outputs
-      // .build() will fail, but .buildIncomplete() is OK
-
-
-      return this.__TX.outs.length === 0 && this.__INPUTS.some(function (input) {
-        if (!input.signatures) return false;
-        return input.signatures.some(function (signature) {
-          if (!signature) return false; // no signature, no issue
-
-          var hashType = signatureHashType(signature);
-          if (hashType & transaction_1.Transaction.SIGHASH_NONE) return false; // SIGHASH_NONE doesn't care about outputs
-
-          return true; // SIGHASH_* does care
-        });
-      });
-    }
-  }, {
-    key: "__canModifyOutputs",
-    value: function __canModifyOutputs() {
-      var nInputs = this.__TX.ins.length;
-      var nOutputs = this.__TX.outs.length;
-      return this.__INPUTS.every(function (input) {
-        if (input.signatures === undefined) return true;
-        return input.signatures.every(function (signature) {
-          if (!signature) return true;
-          var hashType = signatureHashType(signature);
-          var hashTypeMod = hashType & 0x1f;
-          if (hashTypeMod === transaction_1.Transaction.SIGHASH_NONE) return true;
-
-          if (hashTypeMod === transaction_1.Transaction.SIGHASH_SINGLE) {
-            // if SIGHASH_SINGLE is set, and nInputs > nOutputs
-            // some signatures would be invalidated by the addition
-            // of more outputs
-            return nInputs <= nOutputs;
-          }
-
-          return false;
-        });
-      });
-    }
-  }, {
-    key: "__overMaximumFees",
-    value: function __overMaximumFees(bytes) {
-      // not all inputs will have .value defined
-      var incoming = this.__INPUTS.reduce(function (a, x) {
-        return a + (x.value >>> 0);
-      }, 0); // but all outputs do, and if we have any input value
-      // we can immediately determine if the outputs are too small
-
-
-      var outgoing = this.__TX.outs.reduce(function (a, x) {
-        return a + x.value;
-      }, 0);
-
-      var fee = incoming - outgoing;
-      var feeRate = fee / bytes;
-      return feeRate > this.maximumFeeRate;
-    }
-  }], [{
-    key: "fromTransaction",
-    value: function fromTransaction(transaction, network) {
-      var txb = new TransactionBuilder(network); // Copy transaction fields
-
-      txb.setVersion(transaction.version);
-      txb.setLockTime(transaction.locktime); // Copy outputs (done first to avoid signature invalidation)
-
-      transaction.outs.forEach(function (txOut) {
-        txb.addOutput(txOut.script, txOut.value);
-      }); // Copy inputs
-
-      transaction.ins.forEach(function (txIn) {
-        txb.__addInputUnsafe(txIn.hash, txIn.index, {
-          sequence: txIn.sequence,
-          script: txIn.script,
-          witness: txIn.witness
-        });
-      }); // fix some things not possible through the public API
-
-      txb.__INPUTS.forEach(function (input, i) {
-        fixMultisigOrder(input, transaction, i);
-      });
-
-      return txb;
-    }
-  }]);
-
-  return TransactionBuilder;
-}();
-
-exports.TransactionBuilder = TransactionBuilder;
-
-function expandInput(scriptSig, witnessStack, type, scriptPubKey) {
-  if (scriptSig.length === 0 && witnessStack.length === 0) return {};
-
-  if (!type) {
-    var ssType = classify.input(scriptSig, true);
-    var wsType = classify.witness(witnessStack, true);
-    if (ssType === SCRIPT_TYPES.NONSTANDARD) ssType = undefined;
-    if (wsType === SCRIPT_TYPES.NONSTANDARD) wsType = undefined;
-    type = ssType || wsType;
-  }
-
-  switch (type) {
-    case SCRIPT_TYPES.P2WPKH:
-      {
-        var _payments$p2wpkh = payments.p2wpkh({
-          witness: witnessStack
-        }),
-            output = _payments$p2wpkh.output,
-            pubkey = _payments$p2wpkh.pubkey,
-            signature = _payments$p2wpkh.signature;
-
-        return {
-          prevOutScript: output,
-          prevOutType: SCRIPT_TYPES.P2WPKH,
-          pubkeys: [pubkey],
-          signatures: [signature]
-        };
-      }
-
-    case SCRIPT_TYPES.P2PKH:
-      {
-        var _payments$p2pkh = payments.p2pkh({
-          input: scriptSig
-        }),
-            _output = _payments$p2pkh.output,
-            _pubkey = _payments$p2pkh.pubkey,
-            _signature = _payments$p2pkh.signature;
-
-        return {
-          prevOutScript: _output,
-          prevOutType: SCRIPT_TYPES.P2PKH,
-          pubkeys: [_pubkey],
-          signatures: [_signature]
-        };
-      }
-
-    case SCRIPT_TYPES.P2PK:
-      {
-        var _payments$p2pk = payments.p2pk({
-          input: scriptSig
-        }),
-            _signature2 = _payments$p2pk.signature;
-
-        return {
-          prevOutType: SCRIPT_TYPES.P2PK,
-          pubkeys: [undefined],
-          signatures: [_signature2]
-        };
-      }
-
-    case SCRIPT_TYPES.P2MS:
-      {
-        var _payments$p2ms = payments.p2ms({
-          input: scriptSig,
-          output: scriptPubKey
-        }, {
-          allowIncomplete: true
-        }),
-            m = _payments$p2ms.m,
-            pubkeys = _payments$p2ms.pubkeys,
-            signatures = _payments$p2ms.signatures;
-
-        return {
-          prevOutType: SCRIPT_TYPES.P2MS,
-          pubkeys: pubkeys,
-          signatures: signatures,
-          maxSignatures: m
-        };
-      }
-  }
-
-  if (type === SCRIPT_TYPES.P2SH) {
-    var _payments$p2sh = payments.p2sh({
-      input: scriptSig,
-      witness: witnessStack
-    }),
-        _output2 = _payments$p2sh.output,
-        redeem = _payments$p2sh.redeem;
-
-    var outputType = classify.output(redeem.output);
-    var expanded = expandInput(redeem.input, redeem.witness, outputType, redeem.output);
-    if (!expanded.prevOutType) return {};
-    return {
-      prevOutScript: _output2,
-      prevOutType: SCRIPT_TYPES.P2SH,
-      redeemScript: redeem.output,
-      redeemScriptType: expanded.prevOutType,
-      witnessScript: expanded.witnessScript,
-      witnessScriptType: expanded.witnessScriptType,
-      pubkeys: expanded.pubkeys,
-      signatures: expanded.signatures
-    };
-  }
-
-  if (type === SCRIPT_TYPES.P2WSH) {
-    var _payments$p2wsh = payments.p2wsh({
-      input: scriptSig,
-      witness: witnessStack
-    }),
-        _output3 = _payments$p2wsh.output,
-        _redeem = _payments$p2wsh.redeem;
-
-    var _outputType = classify.output(_redeem.output);
-
-    var _expanded;
-
-    if (_outputType === SCRIPT_TYPES.P2WPKH) {
-      _expanded = expandInput(_redeem.input, _redeem.witness, _outputType);
-    } else {
-      _expanded = expandInput(bscript.compile(_redeem.witness), [], _outputType, _redeem.output);
-    }
-
-    if (!_expanded.prevOutType) return {};
-    return {
-      prevOutScript: _output3,
-      prevOutType: SCRIPT_TYPES.P2WSH,
-      witnessScript: _redeem.output,
-      witnessScriptType: _expanded.prevOutType,
-      pubkeys: _expanded.pubkeys,
-      signatures: _expanded.signatures
-    };
-  }
-
-  return {
-    prevOutType: SCRIPT_TYPES.NONSTANDARD,
-    prevOutScript: scriptSig
-  };
-} // could be done in expandInput, but requires the original Transaction for hashForSignature
-
-
-function fixMultisigOrder(input, transaction, vin) {
-  if (input.redeemScriptType !== SCRIPT_TYPES.P2MS || !input.redeemScript) return;
-  if (input.pubkeys.length === input.signatures.length) return;
-  var unmatched = input.signatures.concat();
-  input.signatures = input.pubkeys.map(function (pubKey) {
-    var keyPair = ECPair.fromPublicKey(pubKey);
-    var match; // check for a signature
-
-    unmatched.some(function (signature, i) {
-      // skip if undefined || OP_0
-      if (!signature) return false; // TODO: avoid O(n) hashForSignature
-
-      var parsed = bscript.signature.decode(signature);
-      var hash = transaction.hashForSignature(vin, input.redeemScript, parsed.hashType); // skip if signature does not match pubKey
-
-      if (!keyPair.verify(hash, parsed.signature)) return false; // remove matched signature from unmatched
-
-      unmatched[i] = undefined;
-      match = signature;
-      return true;
-    });
-    return match;
-  });
-}
-
-function expandOutput(script, ourPubKey) {
-  typeforce(types.Buffer, script);
-  var type = classify.output(script);
-
-  switch (type) {
-    case SCRIPT_TYPES.P2PKH:
-      {
-        if (!ourPubKey) return {
-          type: type
-        }; // does our hash160(pubKey) match the output scripts?
-
-        var pkh1 = payments.p2pkh({
-          output: script
-        }).hash;
-        var pkh2 = bcrypto.hash160(ourPubKey);
-        if (!pkh1.equals(pkh2)) return {
-          type: type
-        };
-        return {
-          type: type,
-          pubkeys: [ourPubKey],
-          signatures: [undefined]
-        };
-      }
-
-    case SCRIPT_TYPES.P2WPKH:
-      {
-        if (!ourPubKey) return {
-          type: type
-        }; // does our hash160(pubKey) match the output scripts?
-
-        var wpkh1 = payments.p2wpkh({
-          output: script
-        }).hash;
-        var wpkh2 = bcrypto.hash160(ourPubKey);
-        if (!wpkh1.equals(wpkh2)) return {
-          type: type
-        };
-        return {
-          type: type,
-          pubkeys: [ourPubKey],
-          signatures: [undefined]
-        };
-      }
-
-    case SCRIPT_TYPES.P2PK:
-      {
-        var p2pk = payments.p2pk({
-          output: script
-        });
-        return {
-          type: type,
-          pubkeys: [p2pk.pubkey],
-          signatures: [undefined]
-        };
-      }
-
-    case SCRIPT_TYPES.P2MS:
-      {
-        var p2ms = payments.p2ms({
-          output: script
-        });
-        return {
-          type: type,
-          pubkeys: p2ms.pubkeys,
-          signatures: p2ms.pubkeys.map(function () {
-            return undefined;
-          }),
-          maxSignatures: p2ms.m
-        };
-      }
-  }
-
-  return {
-    type: type
-  };
-}
-
-function prepareInput(input, ourPubKey, redeemScript, witnessScript) {
-  if (redeemScript && witnessScript) {
-    var p2wsh = payments.p2wsh({
-      redeem: {
-        output: witnessScript
-      }
-    });
-    var p2wshAlt = payments.p2wsh({
-      output: redeemScript
-    });
-    var p2sh = payments.p2sh({
-      redeem: {
-        output: redeemScript
-      }
-    });
-    var p2shAlt = payments.p2sh({
-      redeem: p2wsh
-    }); // enforces P2SH(P2WSH(...))
-
-    if (!p2wsh.hash.equals(p2wshAlt.hash)) throw new Error('Witness script inconsistent with prevOutScript');
-    if (!p2sh.hash.equals(p2shAlt.hash)) throw new Error('Redeem script inconsistent with prevOutScript');
-    var expanded = expandOutput(p2wsh.redeem.output, ourPubKey);
-    if (!expanded.pubkeys) throw new Error(expanded.type + ' not supported as witnessScript (' + bscript.toASM(witnessScript) + ')');
-
-    if (input.signatures && input.signatures.some(function (x) {
-      return x !== undefined;
-    })) {
-      expanded.signatures = input.signatures;
-    }
-
-    var signScript = witnessScript;
-    if (expanded.type === SCRIPT_TYPES.P2WPKH) throw new Error('P2SH(P2WSH(P2WPKH)) is a consensus failure');
-    return {
-      redeemScript: redeemScript,
-      redeemScriptType: SCRIPT_TYPES.P2WSH,
-      witnessScript: witnessScript,
-      witnessScriptType: expanded.type,
-      prevOutType: SCRIPT_TYPES.P2SH,
-      prevOutScript: p2sh.output,
-      hasWitness: true,
-      signScript: signScript,
-      signType: expanded.type,
-      pubkeys: expanded.pubkeys,
-      signatures: expanded.signatures,
-      maxSignatures: expanded.maxSignatures
-    };
-  }
-
-  if (redeemScript) {
-    var _p2sh = payments.p2sh({
-      redeem: {
-        output: redeemScript
-      }
-    });
-
-    if (input.prevOutScript) {
-      var _p2shAlt;
-
-      try {
-        _p2shAlt = payments.p2sh({
-          output: input.prevOutScript
-        });
-      } catch (e) {
-        throw new Error('PrevOutScript must be P2SH');
-      }
-
-      if (!_p2sh.hash.equals(_p2shAlt.hash)) throw new Error('Redeem script inconsistent with prevOutScript');
-    }
-
-    var _expanded2 = expandOutput(_p2sh.redeem.output, ourPubKey);
-
-    if (!_expanded2.pubkeys) throw new Error(_expanded2.type + ' not supported as redeemScript (' + bscript.toASM(redeemScript) + ')');
-
-    if (input.signatures && input.signatures.some(function (x) {
-      return x !== undefined;
-    })) {
-      _expanded2.signatures = input.signatures;
-    }
-
-    var _signScript = redeemScript;
-
-    if (_expanded2.type === SCRIPT_TYPES.P2WPKH) {
-      _signScript = payments.p2pkh({
-        pubkey: _expanded2.pubkeys[0]
-      }).output;
-    }
-
-    return {
-      redeemScript: redeemScript,
-      redeemScriptType: _expanded2.type,
-      prevOutType: SCRIPT_TYPES.P2SH,
-      prevOutScript: _p2sh.output,
-      hasWitness: _expanded2.type === SCRIPT_TYPES.P2WPKH,
-      signScript: _signScript,
-      signType: _expanded2.type,
-      pubkeys: _expanded2.pubkeys,
-      signatures: _expanded2.signatures,
-      maxSignatures: _expanded2.maxSignatures
-    };
-  }
-
-  if (witnessScript) {
-    var _p2wsh = payments.p2wsh({
-      redeem: {
-        output: witnessScript
-      }
-    });
-
-    if (input.prevOutScript) {
-      var _p2wshAlt = payments.p2wsh({
-        output: input.prevOutScript
-      });
-
-      if (!_p2wsh.hash.equals(_p2wshAlt.hash)) throw new Error('Witness script inconsistent with prevOutScript');
-    }
-
-    var _expanded3 = expandOutput(_p2wsh.redeem.output, ourPubKey);
-
-    if (!_expanded3.pubkeys) throw new Error(_expanded3.type + ' not supported as witnessScript (' + bscript.toASM(witnessScript) + ')');
-
-    if (input.signatures && input.signatures.some(function (x) {
-      return x !== undefined;
-    })) {
-      _expanded3.signatures = input.signatures;
-    }
-
-    var _signScript2 = witnessScript;
-    if (_expanded3.type === SCRIPT_TYPES.P2WPKH) throw new Error('P2WSH(P2WPKH) is a consensus failure');
-    return {
-      witnessScript: witnessScript,
-      witnessScriptType: _expanded3.type,
-      prevOutType: SCRIPT_TYPES.P2WSH,
-      prevOutScript: _p2wsh.output,
-      hasWitness: true,
-      signScript: _signScript2,
-      signType: _expanded3.type,
-      pubkeys: _expanded3.pubkeys,
-      signatures: _expanded3.signatures,
-      maxSignatures: _expanded3.maxSignatures
-    };
-  }
-
-  if (input.prevOutType && input.prevOutScript) {
-    // embedded scripts are not possible without extra information
-    if (input.prevOutType === SCRIPT_TYPES.P2SH) throw new Error('PrevOutScript is ' + input.prevOutType + ', requires redeemScript');
-    if (input.prevOutType === SCRIPT_TYPES.P2WSH) throw new Error('PrevOutScript is ' + input.prevOutType + ', requires witnessScript');
-    if (!input.prevOutScript) throw new Error('PrevOutScript is missing');
-
-    var _expanded4 = expandOutput(input.prevOutScript, ourPubKey);
-
-    if (!_expanded4.pubkeys) throw new Error(_expanded4.type + ' not supported (' + bscript.toASM(input.prevOutScript) + ')');
-
-    if (input.signatures && input.signatures.some(function (x) {
-      return x !== undefined;
-    })) {
-      _expanded4.signatures = input.signatures;
-    }
-
-    var _signScript3 = input.prevOutScript;
-
-    if (_expanded4.type === SCRIPT_TYPES.P2WPKH) {
-      _signScript3 = payments.p2pkh({
-        pubkey: _expanded4.pubkeys[0]
-      }).output;
-    }
-
-    return {
-      prevOutType: _expanded4.type,
-      prevOutScript: input.prevOutScript,
-      hasWitness: _expanded4.type === SCRIPT_TYPES.P2WPKH,
-      signScript: _signScript3,
-      signType: _expanded4.type,
-      pubkeys: _expanded4.pubkeys,
-      signatures: _expanded4.signatures,
-      maxSignatures: _expanded4.maxSignatures
-    };
-  }
-
-  var prevOutScript = payments.p2pkh({
-    pubkey: ourPubKey
-  }).output;
-  return {
-    prevOutType: SCRIPT_TYPES.P2PKH,
-    prevOutScript: prevOutScript,
-    hasWitness: false,
-    signScript: prevOutScript,
-    signType: SCRIPT_TYPES.P2PKH,
-    pubkeys: [ourPubKey],
-    signatures: [undefined]
-  };
-}
-
-function build(type, input, allowIncomplete) {
-  var pubkeys = input.pubkeys || [];
-  var signatures = input.signatures || [];
-
-  switch (type) {
-    case SCRIPT_TYPES.P2PKH:
-      {
-        if (pubkeys.length === 0) break;
-        if (signatures.length === 0) break;
-        return payments.p2pkh({
-          pubkey: pubkeys[0],
-          signature: signatures[0]
-        });
-      }
-
-    case SCRIPT_TYPES.P2WPKH:
-      {
-        if (pubkeys.length === 0) break;
-        if (signatures.length === 0) break;
-        return payments.p2wpkh({
-          pubkey: pubkeys[0],
-          signature: signatures[0]
-        });
-      }
-
-    case SCRIPT_TYPES.P2PK:
-      {
-        if (pubkeys.length === 0) break;
-        if (signatures.length === 0) break;
-        return payments.p2pk({
-          signature: signatures[0]
-        });
-      }
-
-    case SCRIPT_TYPES.P2MS:
-      {
-        var m = input.maxSignatures;
-
-        if (allowIncomplete) {
-          signatures = signatures.map(function (x) {
-            return x || script_1.OPS.OP_0;
-          });
-        } else {
-          signatures = signatures.filter(function (x) {
-            return x;
-          });
-        } // if the transaction is not not complete (complete), or if signatures.length === m, validate
-        // otherwise, the number of OP_0's may be >= m, so don't validate (boo)
-
-
-        var validate = !allowIncomplete || m === signatures.length;
-        return payments.p2ms({
-          m: m,
-          pubkeys: pubkeys,
-          signatures: signatures
-        }, {
-          allowIncomplete: allowIncomplete,
-          validate: validate
-        });
-      }
-
-    case SCRIPT_TYPES.P2SH:
-      {
-        var redeem = build(input.redeemScriptType, input, allowIncomplete);
-        if (!redeem) return;
-        return payments.p2sh({
-          redeem: {
-            output: redeem.output || input.redeemScript,
-            input: redeem.input,
-            witness: redeem.witness
-          }
-        });
-      }
-
-    case SCRIPT_TYPES.P2WSH:
-      {
-        var _redeem2 = build(input.witnessScriptType, input, allowIncomplete);
-
-        if (!_redeem2) return;
-        return payments.p2wsh({
-          redeem: {
-            output: input.witnessScript,
-            input: _redeem2.input,
-            witness: _redeem2.witness
-          }
-        });
-      }
-  }
-}
-
-function canSign(input) {
-  return input.signScript !== undefined && input.signType !== undefined && input.pubkeys !== undefined && input.signatures !== undefined && input.signatures.length === input.pubkeys.length && input.pubkeys.length > 0 && (input.hasWitness === false || input.value !== undefined);
-}
-
-function signatureHashType(buffer) {
-  return buffer.readUInt8(buffer.length - 1);
-}
-
-function checkSignArgs(inputs, signParams) {
-  if (!PREVOUT_TYPES.has(signParams.prevOutScriptType)) {
-    throw new TypeError("Unknown prevOutScriptType \"".concat(signParams.prevOutScriptType, "\""));
-  }
-
-  tfMessage(typeforce.Number, signParams.vin, "sign must include vin parameter as Number (input index)");
-  tfMessage(types.Signer, signParams.keyPair, "sign must include keyPair parameter as Signer interface");
-  tfMessage(typeforce.maybe(typeforce.Number), signParams.hashType, "sign hashType parameter must be a number");
-  var prevOutType = (inputs[signParams.vin] || []).prevOutType;
-  var posType = signParams.prevOutScriptType;
-
-  switch (posType) {
-    case 'p2pkh':
-      if (prevOutType && prevOutType !== 'pubkeyhash') {
-        throw new TypeError("input #".concat(signParams.vin, " is not of type p2pkh: ").concat(prevOutType));
-      }
-
-      tfMessage(typeforce.value(undefined), signParams.witnessScript, "".concat(posType, " requires NO witnessScript"));
-      tfMessage(typeforce.value(undefined), signParams.redeemScript, "".concat(posType, " requires NO redeemScript"));
-      tfMessage(typeforce.value(undefined), signParams.witnessValue, "".concat(posType, " requires NO witnessValue"));
-      break;
-
-    case 'p2pk':
-      if (prevOutType && prevOutType !== 'pubkey') {
-        throw new TypeError("input #".concat(signParams.vin, " is not of type p2pk: ").concat(prevOutType));
-      }
-
-      tfMessage(typeforce.value(undefined), signParams.witnessScript, "".concat(posType, " requires NO witnessScript"));
-      tfMessage(typeforce.value(undefined), signParams.redeemScript, "".concat(posType, " requires NO redeemScript"));
-      tfMessage(typeforce.value(undefined), signParams.witnessValue, "".concat(posType, " requires NO witnessValue"));
-      break;
-
-    case 'p2wpkh':
-      if (prevOutType && prevOutType !== 'witnesspubkeyhash') {
-        throw new TypeError("input #".concat(signParams.vin, " is not of type p2wpkh: ").concat(prevOutType));
-      }
-
-      tfMessage(typeforce.value(undefined), signParams.witnessScript, "".concat(posType, " requires NO witnessScript"));
-      tfMessage(typeforce.value(undefined), signParams.redeemScript, "".concat(posType, " requires NO redeemScript"));
-      tfMessage(types.Satoshi, signParams.witnessValue, "".concat(posType, " requires witnessValue"));
-      break;
-
-    case 'p2ms':
-      if (prevOutType && prevOutType !== 'multisig') {
-        throw new TypeError("input #".concat(signParams.vin, " is not of type p2ms: ").concat(prevOutType));
-      }
-
-      tfMessage(typeforce.value(undefined), signParams.witnessScript, "".concat(posType, " requires NO witnessScript"));
-      tfMessage(typeforce.value(undefined), signParams.redeemScript, "".concat(posType, " requires NO redeemScript"));
-      tfMessage(typeforce.value(undefined), signParams.witnessValue, "".concat(posType, " requires NO witnessValue"));
-      break;
-
-    case 'p2sh-p2wpkh':
-      if (prevOutType && prevOutType !== 'scripthash') {
-        throw new TypeError("input #".concat(signParams.vin, " is not of type p2sh-p2wpkh: ").concat(prevOutType));
-      }
-
-      tfMessage(typeforce.value(undefined), signParams.witnessScript, "".concat(posType, " requires NO witnessScript"));
-      tfMessage(typeforce.Buffer, signParams.redeemScript, "".concat(posType, " requires redeemScript"));
-      tfMessage(types.Satoshi, signParams.witnessValue, "".concat(posType, " requires witnessValue"));
-      break;
-
-    case 'p2sh-p2ms':
-    case 'p2sh-p2pk':
-    case 'p2sh-p2pkh':
-      if (prevOutType && prevOutType !== 'scripthash') {
-        throw new TypeError("input #".concat(signParams.vin, " is not of type ").concat(posType, ": ").concat(prevOutType));
-      }
-
-      tfMessage(typeforce.value(undefined), signParams.witnessScript, "".concat(posType, " requires NO witnessScript"));
-      tfMessage(typeforce.Buffer, signParams.redeemScript, "".concat(posType, " requires redeemScript"));
-      tfMessage(typeforce.value(undefined), signParams.witnessValue, "".concat(posType, " requires NO witnessValue"));
-      break;
-
-    case 'p2wsh-p2ms':
-    case 'p2wsh-p2pk':
-    case 'p2wsh-p2pkh':
-      if (prevOutType && prevOutType !== 'witnessscripthash') {
-        throw new TypeError("input #".concat(signParams.vin, " is not of type ").concat(posType, ": ").concat(prevOutType));
-      }
-
-      tfMessage(typeforce.Buffer, signParams.witnessScript, "".concat(posType, " requires witnessScript"));
-      tfMessage(typeforce.value(undefined), signParams.redeemScript, "".concat(posType, " requires NO redeemScript"));
-      tfMessage(types.Satoshi, signParams.witnessValue, "".concat(posType, " requires witnessValue"));
-      break;
-
-    case 'p2sh-p2wsh-p2ms':
-    case 'p2sh-p2wsh-p2pk':
-    case 'p2sh-p2wsh-p2pkh':
-      if (prevOutType && prevOutType !== 'scripthash') {
-        throw new TypeError("input #".concat(signParams.vin, " is not of type ").concat(posType, ": ").concat(prevOutType));
-      }
-
-      tfMessage(typeforce.Buffer, signParams.witnessScript, "".concat(posType, " requires witnessScript"));
-      tfMessage(typeforce.Buffer, signParams.redeemScript, "".concat(posType, " requires witnessScript"));
-      tfMessage(types.Satoshi, signParams.witnessValue, "".concat(posType, " requires witnessScript"));
-      break;
-  }
-}
-
-function trySign(_ref) {
-  var input = _ref.input,
-      ourPubKey = _ref.ourPubKey,
-      keyPair = _ref.keyPair,
-      signatureHash = _ref.signatureHash,
-      hashType = _ref.hashType,
-      useLowR = _ref.useLowR;
-  // enforce in order signing of public keys
-  var signed = false;
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = input.pubkeys.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var _step$value = _slicedToArray(_step.value, 2),
-          i = _step$value[0],
-          pubKey = _step$value[1];
-
-      if (!ourPubKey.equals(pubKey)) continue;
-      if (input.signatures[i]) throw new Error('Signature already exists'); // TODO: add tests
-
-      if (ourPubKey.length !== 33 && input.hasWitness) {
-        throw new Error('BIP143 rejects uncompressed public keys in P2WPKH or P2WSH');
-      }
-
-      var signature = keyPair.sign(signatureHash, useLowR);
-      input.signatures[i] = bscript.signature.encode(signature, hashType);
-      signed = true;
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return != null) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
-
-  if (!signed) throw new Error('Key pair cannot sign for this input');
-}
-
-function getSigningData(network, inputs, needsOutputs, tx, signParams, keyPair, redeemScript, hashType, witnessValue, witnessScript, useLowR) {
-  var vin;
-
-  if (typeof signParams === 'number') {
-    console.warn('DEPRECATED: TransactionBuilder sign method arguments ' + 'will change in v6, please use the TxbSignArg interface');
-    vin = signParams;
-  } else if (_typeof(signParams) === 'object') {
-    checkSignArgs(inputs, signParams);
-    vin = signParams.vin;
-    keyPair = signParams.keyPair;
-    redeemScript = signParams.redeemScript;
-    hashType = signParams.hashType;
-    witnessValue = signParams.witnessValue;
-    witnessScript = signParams.witnessScript;
-  } else {
-    throw new TypeError('TransactionBuilder sign first arg must be TxbSignArg or number');
-  }
-
-  if (keyPair === undefined) {
-    throw new Error('sign requires keypair');
-  } // TODO: remove keyPair.network matching in 4.0.0
-
-
-  if (keyPair.network && keyPair.network !== network) throw new TypeError('Inconsistent network');
-  if (!inputs[vin]) throw new Error('No input at index: ' + vin);
-  hashType = hashType || transaction_1.Transaction.SIGHASH_ALL;
-  if (needsOutputs(hashType)) throw new Error('Transaction needs outputs');
-  var input = inputs[vin]; // if redeemScript was previously provided, enforce consistency
-
-  if (input.redeemScript !== undefined && redeemScript && !input.redeemScript.equals(redeemScript)) {
-    throw new Error('Inconsistent redeemScript');
-  }
-
-  var ourPubKey = keyPair.publicKey || keyPair.getPublicKey && keyPair.getPublicKey();
-
-  if (!canSign(input)) {
-    if (witnessValue !== undefined) {
-      if (input.value !== undefined && input.value !== witnessValue) throw new Error('Input did not match witnessValue');
-      typeforce(types.Satoshi, witnessValue);
-      input.value = witnessValue;
-    }
-
-    if (!canSign(input)) {
-      var prepared = prepareInput(input, ourPubKey, redeemScript, witnessScript); // updates inline
-
-      Object.assign(input, prepared);
-    }
-
-    if (!canSign(input)) throw Error(input.prevOutType + ' not supported');
-  } // ready to sign
-
-
-  var signatureHash;
-
-  if (input.hasWitness) {
-    signatureHash = tx.hashForWitnessV0(vin, input.signScript, input.value, hashType);
-  } else {
-    signatureHash = tx.hashForSignature(vin, input.signScript, hashType);
-  }
-
-  return {
-    input: input,
-    ourPubKey: ourPubKey,
-    keyPair: keyPair,
-    signatureHash: signatureHash,
-    hashType: hashType,
-    useLowR: !!useLowR
-  };
-}
-},{"./address":"wUUe","./bufferutils":"kTjr","./classify":"I041","./crypto":"wHwg","./ecpair":"ZFsm","./networks":"LuAr","./payments":"kEsd","./script":"Fa8t","./transaction":"Y9UO","./types":"mf8L","typeforce":"PKU7","buffer":"dskh"}],"bZOe":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var bip32 = require('bip32');
-
-exports.bip32 = bip32;
-
-var address = require('./address');
-
-exports.address = address;
-
-var crypto = require('./crypto');
-
-exports.crypto = crypto;
-
-var ECPair = require('./ecpair');
-
-exports.ECPair = ECPair;
-
-var networks = require('./networks');
-
-exports.networks = networks;
-
-var payments = require('./payments');
-
-exports.payments = payments;
-
-var script = require('./script');
-
-exports.script = script;
-
-var block_1 = require('./block');
-
-exports.Block = block_1.Block;
-
-var psbt_1 = require('./psbt');
-
-exports.Psbt = psbt_1.Psbt;
-
-var script_1 = require('./script');
-
-exports.opcodes = script_1.OPS;
-
-var transaction_1 = require('./transaction');
-
-exports.Transaction = transaction_1.Transaction;
-
-var transaction_builder_1 = require('./transaction_builder');
-
-exports.TransactionBuilder = transaction_builder_1.TransactionBuilder;
-},{"bip32":"pelw","./address":"wUUe","./crypto":"wHwg","./ecpair":"ZFsm","./networks":"LuAr","./payments":"kEsd","./script":"Fa8t","./block":"lHho","./psbt":"CbJH","./transaction":"Y9UO","./transaction_builder":"k6oC"}],"m5br":[function(require,module,exports) {
+},{"lodash.isequal":"a1XM"}],"m5br":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 "use strict";
 
@@ -116433,717 +107094,7 @@ function () {
 }();
 
 exports.Encryption = Encryption;
-},{"crypto":"mRF4","./error":"yXIU","buffer":"dskh"}],"sYCp":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const bn_js_1 = __importDefault(require("bn.js"));
-const elliptic_1 = require("elliptic");
-// @ts-ignore
-const asn1_js_1 = __importDefault(require("asn1.js"));
-const ECPrivateKeyASN = asn1_js_1.default.define('ECPrivateKey', function () {
-    // @ts-ignore
-    const self = this;
-    self.seq().obj(self.key('version').int(), self.key('privateKey').octstr(), self.key('parameters').explicit(0).objid().optional(), self.key('publicKey').explicit(1).bitstr().optional());
-});
-const SubjectPublicKeyInfoASN = asn1_js_1.default.define('SubjectPublicKeyInfo', function () {
-    // @ts-ignore
-    const self = this;
-    self.seq().obj(self.key('algorithm').seq().obj(self.key("id").objid(), self.key("curve").objid()), self.key('pub').bitstr());
-});
-const curves = {
-    secp256k1: {
-        curveParameters: [1, 3, 132, 0, 10],
-        privatePEMOptions: { label: 'EC PRIVATE KEY' },
-        publicPEMOptions: { label: 'PUBLIC KEY' },
-        curve: new elliptic_1.ec('secp256k1')
-    }
-};
-class KeyEncoder {
-    constructor(options) {
-        if (typeof options === 'string') {
-            if (options !== 'secp256k1') {
-                throw new Error('Unknown curve ' + options);
-            }
-            options = curves[options];
-        }
-        this.options = options;
-        this.algorithmID = [1, 2, 840, 10045, 2, 1];
-    }
-    privateKeyObject(rawPrivateKey, rawPublicKey) {
-        const privateKeyObject = {
-            version: new bn_js_1.default(1),
-            privateKey: Buffer.from(rawPrivateKey, 'hex'),
-            parameters: this.options.curveParameters
-        };
-        if (rawPublicKey) {
-            privateKeyObject.publicKey = {
-                unused: 0,
-                data: Buffer.from(rawPublicKey, 'hex')
-            };
-        }
-        return privateKeyObject;
-    }
-    publicKeyObject(rawPublicKey) {
-        return {
-            algorithm: {
-                id: this.algorithmID,
-                curve: this.options.curveParameters
-            },
-            pub: {
-                unused: 0,
-                data: Buffer.from(rawPublicKey, 'hex')
-            }
-        };
-    }
-    encodePrivate(privateKey, originalFormat, destinationFormat) {
-        let privateKeyObject;
-        /* Parse the incoming private key and convert it to a private key object */
-        if (originalFormat === 'raw') {
-            if (typeof privateKey !== 'string') {
-                throw 'private key must be a string';
-            }
-            let keyPair = this.options.curve.keyFromPrivate(privateKey, 'hex');
-            let rawPublicKey = keyPair.getPublic('hex');
-            privateKeyObject = this.privateKeyObject(privateKey, rawPublicKey);
-        }
-        else if (originalFormat === 'der') {
-            if (typeof privateKey !== 'string') {
-                // do nothing
-            }
-            else if (typeof privateKey === 'string') {
-                privateKey = Buffer.from(privateKey, 'hex');
-            }
-            else {
-                throw 'private key must be a buffer or a string';
-            }
-            privateKeyObject = ECPrivateKeyASN.decode(privateKey, 'der');
-        }
-        else if (originalFormat === 'pem') {
-            if (typeof privateKey !== 'string') {
-                throw 'private key must be a string';
-            }
-            privateKeyObject = ECPrivateKeyASN.decode(privateKey, 'pem', this.options.privatePEMOptions);
-        }
-        else {
-            throw 'invalid private key format';
-        }
-        /* Export the private key object to the desired format */
-        if (destinationFormat === 'raw') {
-            return privateKeyObject.privateKey.toString('hex');
-        }
-        else if (destinationFormat === 'der') {
-            return ECPrivateKeyASN.encode(privateKeyObject, 'der').toString('hex');
-        }
-        else if (destinationFormat === 'pem') {
-            return ECPrivateKeyASN.encode(privateKeyObject, 'pem', this.options.privatePEMOptions);
-        }
-        else {
-            throw 'invalid destination format for private key';
-        }
-    }
-    encodePublic(publicKey, originalFormat, destinationFormat) {
-        let publicKeyObject;
-        /* Parse the incoming public key and convert it to a public key object */
-        if (originalFormat === 'raw') {
-            if (typeof publicKey !== 'string') {
-                throw 'public key must be a string';
-            }
-            publicKeyObject = this.publicKeyObject(publicKey);
-        }
-        else if (originalFormat === 'der') {
-            if (typeof publicKey !== 'string') {
-                // do nothing
-            }
-            else if (typeof publicKey === 'string') {
-                publicKey = Buffer.from(publicKey, 'hex');
-            }
-            else {
-                throw 'public key must be a buffer or a string';
-            }
-            publicKeyObject = SubjectPublicKeyInfoASN.decode(publicKey, 'der');
-        }
-        else if (originalFormat === 'pem') {
-            if (typeof publicKey !== 'string') {
-                throw 'public key must be a string';
-            }
-            publicKeyObject = SubjectPublicKeyInfoASN.decode(publicKey, 'pem', this.options.publicPEMOptions);
-        }
-        else {
-            throw 'invalid public key format';
-        }
-        /* Export the private key object to the desired format */
-        if (destinationFormat === 'raw') {
-            return publicKeyObject.pub.data.toString('hex');
-        }
-        else if (destinationFormat === 'der') {
-            return SubjectPublicKeyInfoASN.encode(publicKeyObject, 'der').toString('hex');
-        }
-        else if (destinationFormat === 'pem') {
-            return SubjectPublicKeyInfoASN.encode(publicKeyObject, 'pem', this.options.publicPEMOptions);
-        }
-        else {
-            throw 'invalid destination format for public key';
-        }
-    }
-}
-KeyEncoder.ECPrivateKeyASN = ECPrivateKeyASN;
-KeyEncoder.SubjectPublicKeyInfoASN = SubjectPublicKeyInfoASN;
-exports.default = KeyEncoder;
-
-},{"bn.js":"BOxy","elliptic":"xha3","asn1.js":"NNmB","buffer":"dskh"}],"le8S":[function(require,module,exports) {
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const key_encoder_1 = __importDefault(require("./key-encoder"));
-exports.default = key_encoder_1.default;
-
-},{"./key-encoder":"sYCp"}],"JZSy":[function(require,module,exports) {
-'use strict';
-
-function getParamSize(keySize) {
-	var result = ((keySize / 8) | 0) + (keySize % 8 === 0 ? 0 : 1);
-	return result;
-}
-
-var paramBytesForAlg = {
-	ES256: getParamSize(256),
-	ES384: getParamSize(384),
-	ES512: getParamSize(521)
-};
-
-function getParamBytesForAlg(alg) {
-	var paramBytes = paramBytesForAlg[alg];
-	if (paramBytes) {
-		return paramBytes;
-	}
-
-	throw new Error('Unknown algorithm "' + alg + '"');
-}
-
-module.exports = getParamBytesForAlg;
-
-},{}],"qrjx":[function(require,module,exports) {
-
-'use strict';
-
-var Buffer = require('safe-buffer').Buffer;
-
-var getParamBytesForAlg = require('./param-bytes-for-alg');
-
-var MAX_OCTET = 0x80,
-	CLASS_UNIVERSAL = 0,
-	PRIMITIVE_BIT = 0x20,
-	TAG_SEQ = 0x10,
-	TAG_INT = 0x02,
-	ENCODED_TAG_SEQ = (TAG_SEQ | PRIMITIVE_BIT) | (CLASS_UNIVERSAL << 6),
-	ENCODED_TAG_INT = TAG_INT | (CLASS_UNIVERSAL << 6);
-
-function base64Url(base64) {
-	return base64
-		.replace(/=/g, '')
-		.replace(/\+/g, '-')
-		.replace(/\//g, '_');
-}
-
-function signatureAsBuffer(signature) {
-	if (Buffer.isBuffer(signature)) {
-		return signature;
-	} else if ('string' === typeof signature) {
-		return Buffer.from(signature, 'base64');
-	}
-
-	throw new TypeError('ECDSA signature must be a Base64 string or a Buffer');
-}
-
-function derToJose(signature, alg) {
-	signature = signatureAsBuffer(signature);
-	var paramBytes = getParamBytesForAlg(alg);
-
-	// the DER encoded param should at most be the param size, plus a padding
-	// zero, since due to being a signed integer
-	var maxEncodedParamLength = paramBytes + 1;
-
-	var inputLength = signature.length;
-
-	var offset = 0;
-	if (signature[offset++] !== ENCODED_TAG_SEQ) {
-		throw new Error('Could not find expected "seq"');
-	}
-
-	var seqLength = signature[offset++];
-	if (seqLength === (MAX_OCTET | 1)) {
-		seqLength = signature[offset++];
-	}
-
-	if (inputLength - offset < seqLength) {
-		throw new Error('"seq" specified length of "' + seqLength + '", only "' + (inputLength - offset) + '" remaining');
-	}
-
-	if (signature[offset++] !== ENCODED_TAG_INT) {
-		throw new Error('Could not find expected "int" for "r"');
-	}
-
-	var rLength = signature[offset++];
-
-	if (inputLength - offset - 2 < rLength) {
-		throw new Error('"r" specified length of "' + rLength + '", only "' + (inputLength - offset - 2) + '" available');
-	}
-
-	if (maxEncodedParamLength < rLength) {
-		throw new Error('"r" specified length of "' + rLength + '", max of "' + maxEncodedParamLength + '" is acceptable');
-	}
-
-	var rOffset = offset;
-	offset += rLength;
-
-	if (signature[offset++] !== ENCODED_TAG_INT) {
-		throw new Error('Could not find expected "int" for "s"');
-	}
-
-	var sLength = signature[offset++];
-
-	if (inputLength - offset !== sLength) {
-		throw new Error('"s" specified length of "' + sLength + '", expected "' + (inputLength - offset) + '"');
-	}
-
-	if (maxEncodedParamLength < sLength) {
-		throw new Error('"s" specified length of "' + sLength + '", max of "' + maxEncodedParamLength + '" is acceptable');
-	}
-
-	var sOffset = offset;
-	offset += sLength;
-
-	if (offset !== inputLength) {
-		throw new Error('Expected to consume entire buffer, but "' + (inputLength - offset) + '" bytes remain');
-	}
-
-	var rPadding = paramBytes - rLength,
-		sPadding = paramBytes - sLength;
-
-	var dst = Buffer.allocUnsafe(rPadding + rLength + sPadding + sLength);
-
-	for (offset = 0; offset < rPadding; ++offset) {
-		dst[offset] = 0;
-	}
-	signature.copy(dst, offset, rOffset + Math.max(-rPadding, 0), rOffset + rLength);
-
-	offset = paramBytes;
-
-	for (var o = offset; offset < o + sPadding; ++offset) {
-		dst[offset] = 0;
-	}
-	signature.copy(dst, offset, sOffset + Math.max(-sPadding, 0), sOffset + sLength);
-
-	dst = dst.toString('base64');
-	dst = base64Url(dst);
-
-	return dst;
-}
-
-function countPadding(buf, start, stop) {
-	var padding = 0;
-	while (start + padding < stop && buf[start + padding] === 0) {
-		++padding;
-	}
-
-	var needsSign = buf[start + padding] >= MAX_OCTET;
-	if (needsSign) {
-		--padding;
-	}
-
-	return padding;
-}
-
-function joseToDer(signature, alg) {
-	signature = signatureAsBuffer(signature);
-	var paramBytes = getParamBytesForAlg(alg);
-
-	var signatureBytes = signature.length;
-	if (signatureBytes !== paramBytes * 2) {
-		throw new TypeError('"' + alg + '" signatures must be "' + paramBytes * 2 + '" bytes, saw "' + signatureBytes + '"');
-	}
-
-	var rPadding = countPadding(signature, 0, paramBytes);
-	var sPadding = countPadding(signature, paramBytes, signature.length);
-	var rLength = paramBytes - rPadding;
-	var sLength = paramBytes - sPadding;
-
-	var rsBytes = 1 + 1 + rLength + 1 + 1 + sLength;
-
-	var shortLength = rsBytes < MAX_OCTET;
-
-	var dst = Buffer.allocUnsafe((shortLength ? 2 : 3) + rsBytes);
-
-	var offset = 0;
-	dst[offset++] = ENCODED_TAG_SEQ;
-	if (shortLength) {
-		// Bit 8 has value "0"
-		// bits 7-1 give the length.
-		dst[offset++] = rsBytes;
-	} else {
-		// Bit 8 of first octet has value "1"
-		// bits 7-1 give the number of additional length octets.
-		dst[offset++] = MAX_OCTET	| 1;
-		// length, base 256
-		dst[offset++] = rsBytes & 0xff;
-	}
-	dst[offset++] = ENCODED_TAG_INT;
-	dst[offset++] = rLength;
-	if (rPadding < 0) {
-		dst[offset++] = 0;
-		offset += signature.copy(dst, offset, 0, paramBytes);
-	} else {
-		offset += signature.copy(dst, offset, rPadding, paramBytes);
-	}
-	dst[offset++] = ENCODED_TAG_INT;
-	dst[offset++] = sLength;
-	if (sPadding < 0) {
-		dst[offset++] = 0;
-		signature.copy(dst, offset, paramBytes);
-	} else {
-		signature.copy(dst, offset, paramBytes + sPadding);
-	}
-
-	return dst;
-}
-
-module.exports = {
-	derToJose: derToJose,
-	joseToDer: joseToDer
-};
-
-},{"safe-buffer":"Wugr","./param-bytes-for-alg":"JZSy"}],"rdic":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class MissingParametersError extends Error {
-    constructor(message) {
-        super();
-        this.name = 'MissingParametersError';
-        this.message = (message || '');
-    }
-}
-exports.MissingParametersError = MissingParametersError;
-class InvalidTokenError extends Error {
-    constructor(message) {
-        super();
-        this.name = 'InvalidTokenError';
-        this.message = (message || '');
-    }
-}
-exports.InvalidTokenError = InvalidTokenError;
-
-},{}],"BoDh":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const elliptic_1 = require("elliptic");
-const crypto_1 = require("crypto");
-const key_encoder_1 = __importDefault(require("key-encoder"));
-const ecdsa_sig_formatter_1 = require("ecdsa-sig-formatter");
-const errors_1 = require("../errors");
-class SECP256K1Client {
-    constructor() {
-    }
-    static createHash(signingInput) {
-        return crypto_1.createHash('sha256').update(signingInput).digest();
-    }
-    static loadPrivateKey(rawPrivateKey) {
-        if (rawPrivateKey.length === 66) {
-            rawPrivateKey = rawPrivateKey.slice(0, 64);
-        }
-        return SECP256K1Client.ec.keyFromPrivate(rawPrivateKey);
-    }
-    static loadPublicKey(rawPublicKey) {
-        return SECP256K1Client.ec.keyFromPublic(rawPublicKey, 'hex');
-    }
-    static encodePublicKey(publicKey, originalFormat, destinationFormat) {
-        return SECP256K1Client.keyEncoder.encodePublic(publicKey, originalFormat, destinationFormat);
-    }
-    static derivePublicKey(privateKey, compressed = true) {
-        if (typeof privateKey !== 'string') {
-            throw Error('private key must be a string');
-        }
-        if (!(/^[0-9A-F]+$/i.test(privateKey))) {
-            throw Error('private key must be a hex string');
-        }
-        if (privateKey.length == 66) {
-            privateKey = privateKey.slice(0, 64);
-        }
-        else if (privateKey.length <= 64) {
-            // do nothing
-        }
-        else {
-            throw Error('private key must be 66 characters or less');
-        }
-        const keypair = SECP256K1Client.ec.keyFromPrivate(privateKey);
-        return keypair.getPublic(compressed, 'hex');
-    }
-    static signHash(signingInputHash, rawPrivateKey, format = 'jose') {
-        // make sure the required parameters are provided
-        if (!(signingInputHash && rawPrivateKey)) {
-            throw new errors_1.MissingParametersError('a signing input hash and private key are all required');
-        }
-        // prepare the private key
-        const privateKeyObject = SECP256K1Client.loadPrivateKey(rawPrivateKey);
-        // calculate the signature
-        const signatureObject = privateKeyObject.sign(signingInputHash);
-        const derSignature = Buffer.from(signatureObject.toDER());
-        if (format === 'der') {
-            return derSignature.toString('hex');
-        }
-        else if (format === 'jose') {
-            // return the JOSE-formatted signature
-            return ecdsa_sig_formatter_1.derToJose(derSignature, 'ES256');
-        }
-        else {
-            throw Error('Invalid signature format');
-        }
-    }
-    static loadSignature(joseSignature) {
-        // create and return the DER-formatted signature buffer
-        return ecdsa_sig_formatter_1.joseToDer(joseSignature, 'ES256');
-    }
-    static verifyHash(signingInputHash, derSignatureBuffer, rawPublicKey) {
-        // make sure the required parameters are provided
-        if (!(signingInputHash && derSignatureBuffer && rawPublicKey)) {
-            throw new errors_1.MissingParametersError('a signing input hash, der signature, and public key are all required');
-        }
-        // prepare the public key
-        const publicKeyObject = SECP256K1Client.loadPublicKey(rawPublicKey);
-        // verify the token
-        return publicKeyObject.verify(signingInputHash, derSignatureBuffer);
-    }
-}
-SECP256K1Client.ec = new elliptic_1.ec('secp256k1');
-SECP256K1Client.algorithmName = 'ES256K';
-SECP256K1Client.keyEncoder = new key_encoder_1.default({
-    curveParameters: [1, 3, 132, 0, 10],
-    privatePEMOptions: { label: 'EC PRIVATE KEY' },
-    publicPEMOptions: { label: 'PUBLIC KEY' },
-    curve: SECP256K1Client.ec
-});
-exports.SECP256K1Client = SECP256K1Client;
-
-},{"elliptic":"xha3","crypto":"mRF4","key-encoder":"le8S","ecdsa-sig-formatter":"qrjx","../errors":"rdic","buffer":"dskh"}],"GcyT":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const secp256k1_1 = require("./secp256k1");
-exports.SECP256K1Client = secp256k1_1.SECP256K1Client;
-const cryptoClients = {
-    ES256K: secp256k1_1.SECP256K1Client
-};
-exports.cryptoClients = cryptoClients;
-
-},{"./secp256k1":"BoDh"}],"vlzQ":[function(require,module,exports) {
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const base64url_1 = __importDefault(require("base64url"));
-const cryptoClients_1 = require("./cryptoClients");
-const errors_1 = require("./errors");
-function createSigningInput(payload, header) {
-    const tokenParts = [];
-    // add in the header
-    const encodedHeader = base64url_1.default.encode(JSON.stringify(header));
-    tokenParts.push(encodedHeader);
-    // add in the payload
-    const encodedPayload = base64url_1.default.encode(JSON.stringify(payload));
-    tokenParts.push(encodedPayload);
-    // prepare the message
-    const signingInput = tokenParts.join('.');
-    // return the signing input
-    return signingInput;
-}
-function createUnsecuredToken(payload) {
-    const header = { typ: 'JWT', alg: 'none' };
-    return createSigningInput(payload, header) + '.';
-}
-exports.createUnsecuredToken = createUnsecuredToken;
-class TokenSigner {
-    constructor(signingAlgorithm, rawPrivateKey) {
-        if (!(signingAlgorithm && rawPrivateKey)) {
-            throw new errors_1.MissingParametersError('a signing algorithm and private key are required');
-        }
-        if (typeof signingAlgorithm !== 'string') {
-            throw new Error('signing algorithm parameter must be a string');
-        }
-        signingAlgorithm = signingAlgorithm.toUpperCase();
-        if (!cryptoClients_1.cryptoClients.hasOwnProperty(signingAlgorithm)) {
-            throw new Error('invalid signing algorithm');
-        }
-        this.tokenType = 'JWT';
-        this.cryptoClient = cryptoClients_1.cryptoClients[signingAlgorithm];
-        this.rawPrivateKey = rawPrivateKey;
-    }
-    header(header = {}) {
-        const defaultHeader = { typ: this.tokenType,
-            alg: this.cryptoClient.algorithmName };
-        return Object.assign({}, defaultHeader, header);
-    }
-    sign(payload, expanded = false, customHeader = {}) {
-        // generate the token header
-        const header = this.header(customHeader);
-        // prepare the message to be signed
-        const signingInput = createSigningInput(payload, header);
-        const signingInputHash = this.cryptoClient.createHash(signingInput);
-        // sign the message and add in the signature
-        const signature = this.cryptoClient.signHash(signingInputHash, this.rawPrivateKey);
-        if (expanded) {
-            return {
-                'header': [
-                    base64url_1.default.encode(JSON.stringify(header))
-                ],
-                'payload': JSON.stringify(payload),
-                'signature': [
-                    signature
-                ]
-            };
-        }
-        else {
-            return [signingInput, signature].join('.');
-        }
-    }
-}
-exports.TokenSigner = TokenSigner;
-
-},{"base64url":"XVTP","./cryptoClients":"GcyT","./errors":"rdic"}],"ucpS":[function(require,module,exports) {
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const base64url_1 = __importDefault(require("base64url"));
-const cryptoClients_1 = require("./cryptoClients");
-const errors_1 = require("./errors");
-class TokenVerifier {
-    constructor(signingAlgorithm, rawPublicKey) {
-        if (!(signingAlgorithm && rawPublicKey)) {
-            throw new errors_1.MissingParametersError('a signing algorithm and public key are required');
-        }
-        if (typeof signingAlgorithm !== 'string') {
-            throw 'signing algorithm parameter must be a string';
-        }
-        signingAlgorithm = signingAlgorithm.toUpperCase();
-        if (!cryptoClients_1.cryptoClients.hasOwnProperty(signingAlgorithm)) {
-            throw 'invalid signing algorithm';
-        }
-        this.tokenType = 'JWT';
-        this.cryptoClient = cryptoClients_1.cryptoClients[signingAlgorithm];
-        this.rawPublicKey = rawPublicKey;
-    }
-    verify(token) {
-        if (typeof token === 'string') {
-            return this.verifyCompact(token);
-        }
-        else if (typeof token === 'object') {
-            return this.verifyExpanded(token);
-        }
-        else {
-            return false;
-        }
-    }
-    verifyCompact(token) {
-        // decompose the token into parts
-        const tokenParts = token.split('.');
-        // calculate the signing input hash
-        const signingInput = tokenParts[0] + '.' + tokenParts[1];
-        const signingInputHash = this.cryptoClient.createHash(signingInput);
-        // extract the signature as a DER array
-        const derSignatureBuffer = this.cryptoClient.loadSignature(tokenParts[2]);
-        // verify the signed hash
-        return this.cryptoClient.verifyHash(signingInputHash, derSignatureBuffer, this.rawPublicKey);
-    }
-    verifyExpanded(token) {
-        const signingInput = [
-            token['header'].join('.'),
-            base64url_1.default.encode(token['payload'])
-        ].join('.');
-        const signingInputHash = this.cryptoClient.createHash(signingInput);
-        let verified = true;
-        token['signature'].map((signature) => {
-            const derSignatureBuffer = this.cryptoClient.loadSignature(signature);
-            const signatureVerified = this.cryptoClient.verifyHash(signingInputHash, derSignatureBuffer, this.rawPublicKey);
-            if (!signatureVerified) {
-                verified = false;
-            }
-        });
-        return verified;
-    }
-}
-exports.TokenVerifier = TokenVerifier;
-
-},{"base64url":"XVTP","./cryptoClients":"GcyT","./errors":"rdic"}],"ZM9j":[function(require,module,exports) {
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const base64url_1 = __importDefault(require("base64url"));
-function decodeToken(token) {
-    if (typeof token === 'string') {
-        // decompose the token into parts
-        const tokenParts = token.split('.');
-        const header = JSON.parse(base64url_1.default.decode(tokenParts[0]));
-        const payload = JSON.parse(base64url_1.default.decode(tokenParts[1]));
-        const signature = tokenParts[2];
-        // return the token object
-        return {
-            header: header,
-            payload: payload,
-            signature: signature
-        };
-    }
-    else if (typeof token === 'object') {
-        if (typeof token.payload !== 'string') {
-            throw new Error('Expected token payload to be a base64 or json string');
-        }
-        let payload = token.payload;
-        if (token.payload[0] !== '{') {
-            payload = base64url_1.default.decode(payload);
-        }
-        const allHeaders = [];
-        token.header.map((headerValue) => {
-            const header = JSON.parse(base64url_1.default.decode(headerValue));
-            allHeaders.push(header);
-        });
-        return {
-            header: allHeaders,
-            payload: JSON.parse(payload),
-            signature: token.signature
-        };
-    }
-}
-exports.decodeToken = decodeToken;
-
-},{"base64url":"XVTP"}],"ap7v":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var signer_1 = require("./signer");
-exports.TokenSigner = signer_1.TokenSigner;
-exports.createUnsecuredToken = signer_1.createUnsecuredToken;
-var verifier_1 = require("./verifier");
-exports.TokenVerifier = verifier_1.TokenVerifier;
-var decode_1 = require("./decode");
-exports.decodeToken = decode_1.decodeToken;
-var errors_1 = require("./errors");
-exports.MissingParametersError = errors_1.MissingParametersError;
-exports.InvalidTokenError = errors_1.InvalidTokenError;
-var cryptoClients_1 = require("./cryptoClients");
-exports.SECP256K1Client = cryptoClients_1.SECP256K1Client;
-exports.cryptoClients = cryptoClients_1.cryptoClients;
-
-},{"./signer":"vlzQ","./verifier":"ucpS","./decode":"ZM9j","./errors":"rdic","./cryptoClients":"GcyT"}],"DXq1":[function(require,module,exports) {
+},{"crypto":"mRF4","./error":"yXIU","buffer":"dskh"}],"DXq1":[function(require,module,exports) {
 var __filename = "/Users/ankit/Dev/openpay/js-sdk/src/packages/utils.ts";
 var Buffer = require("buffer").Buffer;
 "use strict";
@@ -120660,10 +110611,7 @@ function (_super) {
 
             case 3:
               error_2 = _a.sent();
-              console.log("==error_2 = _a.sent()===")
-              console.log(error_2);
-              console.log(error_2.stack);
-              console.log("========================")
+
               if (error_2 instanceof _packageError.PackageError && error_2.errorCode) {
                 throw error_2;
               } else {

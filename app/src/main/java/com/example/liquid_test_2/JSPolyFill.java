@@ -230,6 +230,8 @@ public class JSPolyFill {
                 FetchTaskParams params = new FetchTaskParams(url, fetchSettings);
                 FetchTask fetchTask = new FetchTask();
                 fetchTask.execute(params);
+
+
                 FetchResponse response = fetchTask.get();
 
                 String uuid = UUID.randomUUID().toString().replace('-', '0');
