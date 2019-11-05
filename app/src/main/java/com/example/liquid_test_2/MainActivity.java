@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         JSContext context = new JSContext();
         JSPolyFill.fixConsoleLog(context);
         JSPolyFill.addFetch(context, androidContextObject);
+        JSPolyFill.fixRandomInt(context);
 //        System.out.println(context.evaluateScript("Response;"));
 //        System.out.println(context.evaluateScript("fetch('https://www.google.com', {method: 'GET', headers:{'a':'asdasd'}}).then(function(res){console.log('Promise.then');console.log(res);console.log(res.content);console.log('=Promise.then over=')}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         context.evaluateScript("window.crypto = {}; window.crypto.getRandomValues = function(size){let all = new Array();for (let i = 0; i < size; i++) {all[i] = crypto.randomInt();};return all;}");
         context.evaluateScript(sdkFile);
         System.out.println("SDK FILE EVALUATED!");
-        System.out.println(context.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', storage: inmemStorageWithClaim, getEncryptionKey: function(){return 'fookey'}})"));
+        System.out.println(context.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', storage: inmemStorage, getEncryptionKey: function(){return 'fookey'}})"));
         System.out.println(context.evaluateScript("cc.init()"));
         System.out.println(context.evaluateScript("cc.getCruxIDState().then(function(res){console.log('getCruxIdState result');console.log(res);}).catch(function(err){console.log('errtime getCruxIDState');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
         System.out.println(context.evaluateScript("cc.getAddressMap().then(function(res){console.log('getAddressMap result');console.log(res);}).catch(function(err){console.log('errtime getAddressMap');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
@@ -58,6 +59,4 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("====== END fetch ========");
         return null;
     }
-
-
 }
