@@ -57,4 +57,9 @@ public class CruxJSBridge {
         promiseThen.call(promise, jsSuccessHandler);
         promiseCatch.call(promise, jsFailureHandler);
     }
+
+    public String objectToJSON(JSObject jsObject) {
+        JSFunction stringify = jsContext.property("JSON").toObject().property("stringify").toFunction();
+        return stringify.call(null, jsObject).toString();
+    }
 }

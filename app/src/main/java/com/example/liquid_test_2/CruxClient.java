@@ -2,6 +2,8 @@ package com.example.liquid_test_2;
 
 import android.content.Context;
 
+import com.google.gson.Gson;
+
 import org.liquidplayer.javascript.JSObject;
 
 import java.io.IOException;
@@ -9,9 +11,11 @@ import java.lang.reflect.Array;
 
 public class CruxClient {
     private final CruxJSBridge jsBridge;
+    private final Gson gson;
 
     CruxClient(String walletName, Context androidContextObject) throws IOException {
         this.jsBridge = new CruxJSBridge(walletName, androidContextObject);
+        this.gson = new Gson();
     }
 
 
@@ -19,7 +23,9 @@ public class CruxClient {
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getCruxIDState", new CruxParams(), new CruxJSBridgeResponseHandler() {
             @Override
             public void onResponse(JSObject successResponse) {
-                handler.onResponse(new CruxIDState("asd", new CruxIDRegistrationStatus("asdd","ggs")));
+                String successResponseJson = jsBridge.objectToJSON(successResponse);
+                CruxIDState responseObject = gson.fromJson(successResponseJson, CruxIDState.class);
+                handler.onResponse(responseObject);
             }
 
             @Override
