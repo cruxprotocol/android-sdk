@@ -24,8 +24,18 @@ class PromiseTaskParams {
     }
 }
 
-class PromiseTask extends AsyncTask<PromiseTaskParams, Void, JSValue> {
-    protected JSValue doInBackground(PromiseTaskParams... params) {
+class PromiseTaskResult {
+    public JSValue successResult;
+    public JSValue failureResult;
+
+    PromiseTaskResult(JSValue successResult, JSValue failureResult) {
+        this.successResult = successResult;
+        this.failureResult = failureResult;
+    }
+}
+
+class PromiseTask extends AsyncTask<PromiseTaskParams, Void, PromiseTaskResult> {
+    protected PromiseTaskResult doInBackground(PromiseTaskParams... params) {
         String uuid = UUID.randomUUID().toString().replace('-', '0');
         String tmpScopeVarName = "tmpPromiseTaskScope" + uuid;
         JSContext jsContext = params[0].context;
@@ -35,22 +45,18 @@ class PromiseTask extends AsyncTask<PromiseTaskParams, Void, JSValue> {
         jsContext.evaluateScript(String.format("%s.currentPromise.then(function(res){%s.successResult=res}).catch(function(err){%s.errorResult=res})", tmpScopeVarName, tmpScopeVarName, tmpScopeVarName));
 
         boolean terminationCondition = false;
-        JSValue finalReturnValue = null;
         Timer t = new Timer();
 
         long startTime = new Date().getTime();
+        PromiseTaskResult taskResult = null;
         while (!terminationCondition) {
 
             JSValue latestSuccessResult = jsContext.evaluateScript(String.format("%s.successResult", tmpScopeVarName));
             JSValue latestFailureResult = jsContext.evaluateScript(String.format("%s.failureResult", tmpScopeVarName));
-            if (!latestSuccessResult.isUndefined()) {
-                finalReturnValue = latestSuccessResult;
-            } else if (!latestFailureResult.isUndefined()){
-                finalReturnValue = latestFailureResult;
-            }
 
-            if (finalReturnValue != null) {
+            if (!latestSuccessResult.isUndefined() || !latestFailureResult.isUndefined()) {
                 terminationCondition = true;
+                taskResult = new PromiseTaskResult(latestSuccessResult, latestFailureResult);
             } else {
 
                 long nowTime = new Date().getTime();
@@ -63,12 +69,9 @@ class PromiseTask extends AsyncTask<PromiseTaskParams, Void, JSValue> {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                //check for timeout
-                //sleep for 100 ms
             }
         }
-
-        return finalReturnValue;
+        return taskResult;
     }
 }
 
@@ -78,18 +81,27 @@ class PromiseSynchronizerTimeout extends Exception {
     }
 }
 
+class PromiseSynchronizerRejected extends Exception {
+    public PromiseSynchronizerRejected(String s) {
+        super(s);
+    }
+}
+
 
 public class PromiseSynchronizer {
 
-    public static Object sync(JSContext jsContext, JSValue promiseObject, Integer timeout) throws ExecutionException, InterruptedException, PromiseSynchronizerTimeout {
+    public static JSValue sync(JSContext jsContext, JSValue promiseObject, Integer timeout) throws ExecutionException, InterruptedException, PromiseSynchronizerTimeout, PromiseSynchronizerRejected {
         PromiseTaskParams taskParams = new PromiseTaskParams(jsContext, promiseObject, timeout);
         PromiseTask promiseTask = new PromiseTask();
         promiseTask.execute(taskParams);
-        JSValue promiseTaskResult = promiseTask.get();
-        if (promiseTaskResult == null) {
-           throw new PromiseSynchronizerTimeout("Promise sync timed out :(");
+        PromiseTaskResult promiseTaskResult = promiseTask.get();
+        if (promiseTaskResult.failureResult.isUndefined() && promiseTaskResult.successResult.isUndefined()) {
+           throw new PromiseSynchronizerTimeout("No successResult or failureResult. Looks like TIMEOUT!");
         }
-        return promiseTaskResult;
+        if(!promiseTaskResult.failureResult.isUndefined()) {
+            throw new PromiseSynchronizerRejected("Promise has been rejected");
+        }
+        return promiseTaskResult.successResult;
     }
 
 }

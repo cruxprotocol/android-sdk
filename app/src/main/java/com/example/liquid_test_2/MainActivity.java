@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+
 import org.liquidplayer.javascript.JSContext;
 import org.liquidplayer.javascript.JSException;
 import org.liquidplayer.javascript.JSFunction;
@@ -33,8 +36,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     public String runScript(final Context androidContextObject) throws IOException {
+        CruxClient client = new CruxClient("cruxdev", androidContextObject);
+        client.getCruxIDState(new CruxClientResponseHandler<CruxIDState>() {
+            @Override
+            public void onResponse(CruxIDState successResponse) {
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println(failureResponse);
+            }
+        });
+
+        return null;
+    }
+
+    public String runScript2(final Context androidContextObject) throws IOException {
         System.out.println("====== START runScript fetch wali ========");
         String sdkFile = GenericUtils.getFromFile(androidContextObject, "cruxpay-sdk-dom.js");
         JSContext context = new JSContext();
@@ -43,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         JSPolyFill.fixRandomInt(context);
 //        System.out.println(context.evaluateScript("Response;"));
 //        System.out.println(context.evaluateScript("fetch('https://www.google.com', {method: 'GET', headers:{'a':'asdasd'}}).then(function(res){console.log('Promise.then');console.log(res);console.log(res.content);console.log('=Promise.then over=')}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
-
+// Request a string response from the provided URL.
 
         System.out.println("\n\n\n\n====+++++====++++====++\n\n\n\n");
         context.evaluateScript("var window = this;");
@@ -54,22 +73,21 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(context.evaluateScript("cc.init()"));
         JSValue cruxIDStatePromise = context.evaluateScript("cc.getCruxIDState()");
         try {
-            PromiseSynchronizer.sync(context, cruxIDStatePromise, 1000);
+            JSValue result = PromiseSynchronizer.sync(context, cruxIDStatePromise, 1000);
+            JSFunction stringify = context.property("JSON.stringify").toFunction();
+            JSValue stringifyResult = stringify.call(result.toObject());
+            String javaString = stringifyResult.toString();
+            System.out.println("!!! javastring !!!");
+            System.out.println(javaString);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (PromiseSynchronizerTimeout promiseSynchronizerTimeout) {
             promiseSynchronizerTimeout.printStackTrace();
+        } catch (PromiseSynchronizerRejected promiseSynchronizerRejected) {
+            promiseSynchronizerRejected.printStackTrace();
         }
-//        System.out.println(context.evaluateScript("cc.getAddressMap().then(function(res){console.log('getAddressMap result');console.log(res);}).catch(function(err){console.log('errtime getAddressMap');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
-//
-//        System.out.println("====== Changeing address map! ========");
-//        System.out.println(context.evaluateScript("cc.putAddressMap({'bitcoin': {'addressHash': '1HX4KvtPdg9QUYwQE1kNqTAjmNaDG7w82V'}, 'ethereum': {'addressHash': '0x0a2311594059b468c9897338b027c8782398b481'}, 'ripple': {'addressHash': 'rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h', 'secIdentifier': '008888'}, 'tron': {'addressHash': 'TG3iFaVvUs34SGpWq8RG9gnagDLTe1jdyz'}}).catch(function(err){console.log('errtime putAddressMap');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
-//        System.out.println(context.evaluateScript("cc.putAddressMap({'btc': {'addressHash': '1HX4KvtPdg9QUYwQE1kNqTAjmNaDG7MMMM'}}).catch(function(err){console.log('errtime putAddressMap');console.log(err.code);console.log(err.message);console.log(err.stack)})"));
-//        System.out.println("====== Getting address map again! ========");
-//        System.out.println(context.evaluateScript("cc.getAddressMap().then(function(res){console.log('getAddressMap result');console.log(res);})"));
-//        System.out.println("====== END fetch ========");
         return null;
     }
 }
