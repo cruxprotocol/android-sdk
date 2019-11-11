@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.crux.cruxsdk.AnkitTest;
-import com.crux.cruxsdk.CruxClient;
-import com.crux.cruxsdk.model.CruxClientError;
-import com.crux.cruxsdk.model.CruxClientResponseHandler;
-import com.crux.cruxsdk.model.CruxIDState;
+import com.crux.sdk.AnkitTest;
+import com.crux.sdk.CruxClient;
+import com.crux.sdk.model.CruxClientError;
+import com.crux.sdk.model.CruxClientResponseHandler;
+import com.crux.sdk.model.CruxIDState;
 
 import java.io.IOException;
 
