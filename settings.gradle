@@ -1,2 +1,2 @@
-include ':app', ':cruxsdk'
+include ':app', ':sdk'
 rootProject.name='Liquid_Test_2'
