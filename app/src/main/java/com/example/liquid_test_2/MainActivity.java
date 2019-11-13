@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.crux.sdk.AnkitTest;
 import com.crux.sdk.CruxClient;
+import com.crux.sdk.model.CruxAddressMapping;
 import com.crux.sdk.model.CruxClientError;
 import com.crux.sdk.model.CruxClientResponseHandler;
 import com.crux.sdk.model.CruxIDState;
@@ -35,9 +36,35 @@ public class MainActivity extends AppCompatActivity {
 
     public String runScript(final Context androidContextObject) throws IOException {
         CruxClient client = new CruxClient("cruxdev", androidContextObject);
-        client.getCruxIDState(new CruxClientResponseHandler<CruxIDState>() {
+//        client.getCruxIDState(new CruxClientResponseHandler<CruxIDState>() {
+//            @Override
+//            public void onResponse(CruxIDState successResponse) {
+//                System.out.println(successResponse);
+//            }
+//
+//            @Override
+//            public void onErrorResponse(CruxClientError failureResponse) {
+//                System.out.println(failureResponse);
+//            }
+//        });
+
+        client.registerCruxID("test_43",new CruxClientResponseHandler<String>() {
             @Override
-            public void onResponse(CruxIDState successResponse) {
+            public void onResponse(String successResponse) {
+                System.out.println("--------RegisterID222-------");
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println(failureResponse);
+            }
+        });
+
+        client.getAddressMap(new CruxClientResponseHandler<CruxAddressMapping>() {
+            @Override
+            public void onResponse(CruxAddressMapping successResponse) {
+                System.out.println("--------RegisterID222-------");
                 System.out.println(successResponse);
             }
 
