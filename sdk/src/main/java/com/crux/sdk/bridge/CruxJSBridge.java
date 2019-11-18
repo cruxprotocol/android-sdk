@@ -41,7 +41,7 @@ public class CruxJSBridge {
 
         JSFunction jsSuccessHandler = new JSFunction(jsContext, "jsSuccessHandler") {
             public void jsSuccessHandler(JSValue successResponse) {
-                request.handler.onResponse(successResponse.toObject());
+                request.handler.onResponse(successResponse);
             }
         };
 

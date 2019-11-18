@@ -49,24 +49,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        client.registerCruxID("test_43",new CruxClientResponseHandler<String>() {
-            @Override
-            public void onResponse(String successResponse) {
-                System.out.println("--------registerCruxID-------");
-                System.out.println(successResponse);
-            }
+//        client.registerCruxID("test_43", new CruxClientResponseHandler<String>() {
+//            @Override
+//            public void onResponse(String successResponse) {
+//                System.out.println("--------registerCruxID-------");
+//                System.out.println(successResponse);
+//            }
+//
+//            @Override
+//            public void onErrorResponse(CruxClientError failureResponse) {
+//                System.out.println(failureResponse);
+//            }
+//        });
+//
+//        client.getAddressMap(new CruxClientResponseHandler<CruxAddressMapping>() {
+//            @Override
+//            public void onResponse(CruxAddressMapping successResponse) {
+//                System.out.println("--------getAddressMap-------");
+//                System.out.println(successResponse);
+//            }
+//
+//            @Override
+//            public void onErrorResponse(CruxClientError failureResponse) {
+//                System.out.println(failureResponse);
+//            }
+//        });
 
+        final String testCruxId = "yadu007";
+        client.isCruxIDAvailable(testCruxId, new CruxClientResponseHandler<Boolean>() {
             @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
-
-        client.getAddressMap(new CruxClientResponseHandler<CruxAddressMapping>() {
-            @Override
-            public void onResponse(CruxAddressMapping successResponse) {
-                System.out.println("--------getAddressMap-------");
+            public void onResponse(Boolean successResponse) {
+                System.out.println("--------isCruxIDAvailable-------");
                 System.out.println(successResponse);
+                if (successResponse == Boolean.TRUE) {
+                    System.out.println(testCruxId + " is available");
+                } else {
+                    System.out.println(testCruxId + " is not available");
+                }
             }
 
             @Override
