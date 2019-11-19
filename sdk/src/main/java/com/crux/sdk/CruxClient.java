@@ -4,6 +4,10 @@ import android.content.Context;
 
 import com.crux.sdk.bridge.CruxJSBridge;
 import com.crux.sdk.bridge.CruxJSBridgeAsyncRequest;
+import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeCruxIDAvailablityResponseHandlerImpl;
+import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeGetAddressMapResponseHandlerImpl;
+import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeRegisterResponseHandlerImpl;
+import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeResponseHandlerImpl;
 import com.crux.sdk.model.CruxAddress;
 import com.crux.sdk.model.CruxAddressMapping;
 import com.crux.sdk.model.CruxClientResponseHandler;

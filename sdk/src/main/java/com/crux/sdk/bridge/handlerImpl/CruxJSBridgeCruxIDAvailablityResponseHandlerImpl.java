@@ -1,4 +1,4 @@
-package com.crux.sdk;
+package com.crux.sdk.bridge.handlerImpl;
 
 import com.crux.sdk.bridge.GenericUtils;
 import com.crux.sdk.model.CruxClientResponseHandler;
