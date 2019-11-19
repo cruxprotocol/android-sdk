@@ -2,6 +2,7 @@ package com.crux.sdk.bridge;
 
 import android.content.Context;
 
+import org.json.JSONObject;
 import org.liquidplayer.javascript.JSContext;
 import org.liquidplayer.javascript.JSFunction;
 import org.liquidplayer.javascript.JSObject;
@@ -15,7 +16,7 @@ public class CruxJSBridge {
 
     public CruxJSBridge(String walletName, Context androidContextObject) throws IOException {
         this.jsContext = this.getContextForClient(androidContextObject);
-        System.out.println(jsContext.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', storage: inmemStorage, getEncryptionKey: function(){return 'fookey'}})"));
+        System.out.println(jsContext.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', privateKey: 'cdf2d276caf0c9c34258ed6ebd0e60e0e8b3d9a7b8a9a717f2e19ed9b37f7c6f', storage: inmemStorage, getEncryptionKey: function(){return 'fookey'}})"));
         System.out.println(jsContext.evaluateScript("cc.init()"));
         this.jsClient = jsContext.property("cc").toObject();
         // TODO This must be blocking here!
@@ -40,14 +41,14 @@ public class CruxJSBridge {
 
 
         JSFunction jsSuccessHandler = new JSFunction(jsContext, "jsSuccessHandler") {
-            public void jsSuccessHandler(JSValue successResponse) {
+            public void jsSuccessHandler(JSValue successResponse) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
                 request.handler.onResponse(successResponse);
             }
         };
 
         JSFunction jsFailureHandler = new JSFunction(jsContext, "jsFailureHandler") {
             public void jsFailureHandler(JSValue failureResponse) {
-                request.handler.onErrorResponse(failureResponse.toObject());
+                request.handler.onErrorResponse(failureResponse);
             }
         };
 

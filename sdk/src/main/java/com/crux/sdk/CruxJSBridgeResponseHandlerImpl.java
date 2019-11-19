@@ -4,12 +4,10 @@ import com.crux.sdk.bridge.CruxJSBridgeResponseHandler;
 import com.crux.sdk.bridge.GenericUtils;
 import com.crux.sdk.model.CruxClientError;
 import com.crux.sdk.model.CruxClientResponseHandler;
-import com.crux.sdk.model.CruxIDState;
 import com.google.gson.Gson;
 
-import org.liquidplayer.javascript.JSObject;
-import org.liquidplayer.javascript.JSValue;
 import org.json.JSONObject;
+import org.liquidplayer.javascript.JSValue;
 
 import java.lang.reflect.Type;
 
@@ -18,7 +16,7 @@ public class CruxJSBridgeResponseHandlerImpl implements CruxJSBridgeResponseHand
 
     private Type returnClass;
     private final Gson gson;
-    private final CruxClientResponseHandler handler;
+    protected final CruxClientResponseHandler handler;
 
     public CruxJSBridgeResponseHandlerImpl (Type returnClass, final CruxClientResponseHandler handler) {
         this.returnClass = returnClass;
@@ -28,17 +26,27 @@ public class CruxJSBridgeResponseHandlerImpl implements CruxJSBridgeResponseHand
 
 
     @Override
-    public void onErrorResponse(JSObject failureResponse) {
-        handler.onErrorResponse(new CruxClientError());
+    public void onErrorResponse(JSValue failureResponse) {
+        String msg = this.convertToString(failureResponse);
+        CruxClientError errorObject = gson.fromJson(msg, CruxClientError.class);
+        errorObject.errorMessage = failureResponse.toString();
+        handler.onErrorResponse(errorObject);
+    }
+
+    public String convertToString(JSValue jsValue) {
+        Object successResponseJson = GenericUtils.toJavaObject(jsValue, JSONObject.class);
+        String msg = successResponseJson.toString();
+        return msg;
     }
 
 
     @Override
     public void onResponse(JSValue successResponse){
-        Object successResponseJson = GenericUtils.toJavaObject(successResponse, JSONObject.class);
-        String msg = successResponseJson.toString();
-        CruxIDState responseObject = gson.fromJson(msg, this.returnClass);
+        String msg = this.convertToString(successResponse);
+        Object responseObject = gson.fromJson(msg, this.returnClass);
         handler.onResponse(responseObject);
     }
 
 }
+
+

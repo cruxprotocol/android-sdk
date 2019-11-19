@@ -39,12 +39,12 @@ public class CruxClient {
     }
 
     public void getAddressMap(final CruxClientResponseHandler<CruxAddressMapping> handler) {
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getAddressMap", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(CruxAddressMapping.class, handler));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getAddressMap", new CruxParams(), new CruxJSBridgeGetAddressMapResponseHandlerImpl(CruxAddressMapping.class, handler));
         jsBridge.executeAsync(bridgeRequest);
     }
 
     public void putAddressMap(CruxAddressMapping newAddressMap, final CruxClientResponseHandler<CruxPutAddressMapSuccess> handler){
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putAddressMap", new CruxParams(newAddressMap), new CruxJSBridgeResponseHandlerImpl(CruxPutAddressMapSuccess.class, handler));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putAddressMap", new CruxParams(newAddressMap.currency), new CruxJSBridgeResponseHandlerImpl(CruxPutAddressMapSuccess.class, handler));
         jsBridge.executeAsync(bridgeRequest);
     }
 
@@ -54,22 +54,7 @@ public class CruxClient {
     }
 
     public void isCruxIDAvailable(String cruxIDSubdomain, final CruxClientResponseHandler<Boolean> handler) {
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("isCruxIDAvailable", new CruxParams(cruxIDSubdomain), new CruxJSBridgeResponseHandler(){
-
-
-            @Override
-            public void onResponse(JSValue successResponse){
-                Object availability = GenericUtils.toJavaObject(successResponse, Boolean.class);
-                handler.onResponse((Boolean) availability);
-            }
-
-            @Override
-            public void onErrorResponse(JSObject failureResponse) {
-                handler.onErrorResponse(new CruxClientError());
-            }
-
-        });
-
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("isCruxIDAvailable", new CruxParams(cruxIDSubdomain), new CruxJSBridgeCruxIDAvailablityResponseHandlerImpl(Boolean.class, handler));
         jsBridge.executeAsync(bridgeRequest);
     }
 
