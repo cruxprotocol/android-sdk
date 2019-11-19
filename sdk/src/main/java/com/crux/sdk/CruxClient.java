@@ -10,6 +10,7 @@ import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeRegisterResponseHandlerImpl;
 import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeResponseHandlerImpl;
 import com.crux.sdk.model.CruxAddress;
 import com.crux.sdk.model.CruxAddressMapping;
+import com.crux.sdk.model.CruxClientInitConfig;
 import com.crux.sdk.model.CruxClientResponseHandler;
 import com.crux.sdk.model.CruxIDState;
 import com.crux.sdk.model.CruxParams;
@@ -23,8 +24,8 @@ import java.io.IOException;
 public class CruxClient {
     private final CruxJSBridge jsBridge;
 
-    public CruxClient(String walletName, Context androidContextObject) throws IOException {
-        this.jsBridge = new CruxJSBridge(walletName, androidContextObject);
+    public CruxClient(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException {
+        this.jsBridge = new CruxJSBridge(configBuilder, androidContextObject);
     }
 
 

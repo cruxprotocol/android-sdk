@@ -9,6 +9,7 @@ import com.crux.sdk.CruxClient;
 import com.crux.sdk.model.CruxAddress;
 import com.crux.sdk.model.CruxAddressMapping;
 import com.crux.sdk.model.CruxClientError;
+import com.crux.sdk.model.CruxClientInitConfig;
 import com.crux.sdk.model.CruxClientResponseHandler;
 import com.crux.sdk.model.CruxIDState;
 import com.crux.sdk.model.CruxPutAddressMapSuccess;
@@ -37,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String runScript(final Context androidContextObject) throws IOException {
-        CruxClient client = new CruxClient("cruxdev", androidContextObject);
+        CruxClientInitConfig.Builder configBuilder = new CruxClientInitConfig.Builder()
+                .setWalletClientName("cruxdev")
+                .setPrivateKey("KxRwDkwabEq5uT9vyPFeT2GQyNzZC5B8HjYpRYXxwcSmZJxKmVH7");
+        CruxClient client = new CruxClient(configBuilder, androidContextObject);
 
         final String testAvailabilityCruxId = "yadu007";
         client.isCruxIDAvailable(testAvailabilityCruxId, new CruxClientResponseHandler<Boolean>() {

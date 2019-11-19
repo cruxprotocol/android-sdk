@@ -2,6 +2,8 @@ package com.crux.sdk.bridge;
 
 import android.content.Context;
 
+import com.crux.sdk.model.CruxClientInitConfig;
+
 import org.json.JSONObject;
 import org.liquidplayer.javascript.JSContext;
 import org.liquidplayer.javascript.JSFunction;
@@ -14,9 +16,14 @@ public class CruxJSBridge {
     private final JSContext jsContext;
     private final JSObject jsClient;
 
-    public CruxJSBridge(String walletName, Context androidContextObject) throws IOException {
+    public CruxJSBridge(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException {
+        CruxClientInitConfig cruxClientInitConfig = configBuilder.create();
+        String cruxClientInitConfigString = cruxClientInitConfig.getCruxClientInitConfigString();
         this.jsContext = this.getContextForClient(androidContextObject);
-        System.out.println(jsContext.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', privateKey: 'KxRwDkwabEq5uT9vyPFeT2GQyNzZC5B8HjYpRYXxwcSmZJxKmVH7', storage: inmemStorage, getEncryptionKey: function(){return 'fookey'}})"));
+        System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
+        System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
+        System.out.println(jsContext.evaluateScript("cruxClientInitConfig['getEncryptionKey'] = function() { return 'fookey';}"));
+        System.out.println(jsContext.evaluateScript("cc = new CruxPay.CruxClient(cruxClientInitConfig)"));
         System.out.println(jsContext.evaluateScript("cc.init()"));
         this.jsClient = jsContext.property("cc").toObject();
         // TODO This must be blocking here!
@@ -37,7 +44,6 @@ public class CruxJSBridge {
     public void executeAsync(final CruxJSBridgeAsyncRequest request) {
         JSFunction jsMethod = jsClient.property(request.method).toFunction();
         JSObject promise = jsMethod.call(null, request.params.args).toObject();
-
 
 
         JSFunction jsSuccessHandler = new JSFunction(jsContext, "jsSuccessHandler") {
