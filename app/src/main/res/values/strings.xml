@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CruxPay</string>
+    <string name="wallet_client">cruxdev</string>
+    <string name="wallet_id">yadu007@cruxdev_crux</string>
+    <string name="crux_id"></string>
+    <string name="id_state"></string>
+    <string name="id_availability"></string>
+    <string name="id_registration"></string>
+    <string name="id_resolve"></string>
+    <string name="button_send">Send</string>
+</resources>
