@@ -6,6 +6,6 @@ public class CruxAddress {
 
     public CruxAddress(String addressHash, String secIdentifier) {
         this.addressHash = addressHash;
-        this.secIdentifier = secIdentifier;
+        this.secIdentifier = secIdentifier != null ? secIdentifier : "";
     }
 }
