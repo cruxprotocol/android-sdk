@@ -17,7 +17,21 @@ import com.crux.sdk.model.CruxPutAddressMapSuccess;
 import java.io.IOException;
 import java.util.HashMap;
 
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 public class MainActivity extends AppCompatActivity {
+
+    Button clientInit;
+    Button checkAvailability;
+    Button registerId;
+    Button getIdState;
+    Button getAddressMap;
+    Button resolveCurrencyAddress;
+    Button putAddressMap;
+
 
 
     @Override
