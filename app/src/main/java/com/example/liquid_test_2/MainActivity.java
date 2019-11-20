@@ -35,7 +35,13 @@ public class MainActivity extends AppCompatActivity {
     Button resolveCurrencyAddress;
     Button putAddressMap;
     EditText cruxId;
-    TextView responseView;
+    EditText resolveCurrencyCruxId;
+    TextView responseViewIdAvailability;
+    TextView responseViewRegisterID;
+    TextView responseViewIdState;
+    TextView responseViewAddressMap;
+    TextView responseViewCurrencyAddress;
+    TextView responseViewPutAddressMap;
 
 
 
@@ -43,8 +49,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        cruxId = (EditText) findViewById(R.id.cruxId);
+        resolveCurrencyCruxId = (EditText) findViewById(R.id.resolveCurrencyCruxId);
         checkAvailability = (Button) findViewById(R.id.checkAvailability);
+        registerId = (Button) findViewById(R.id.registerId);
+        getIdState = (Button) findViewById(R.id.getIdState);
+        getAddressMap = (Button) findViewById(R.id.getAddressMap);
+        resolveCurrencyAddress = (Button) findViewById(R.id.resolveCurrencyAddress);
+        putAddressMap = (Button) findViewById(R.id.putAddressMap);
 
 
 
@@ -62,26 +74,126 @@ public class MainActivity extends AppCompatActivity {
     public String runScript(final Context androidContextObject) throws IOException {
         CruxClientInitConfig.Builder configBuilder = new CruxClientInitConfig.Builder()
                 .setWalletClientName("cruxdev")
-                .setPrivateKey("KxRwDkwabEq5uT9vyPFeT2GQyNzZC5B8HjYpRYXxwcSmZJxKmVH7");
+                .setPrivateKey("KwuSrhqpMeDP3rrULvHhnvjmAeWTD5XTTGvBQnYU5AU856N8cUp5");
         final CruxClient client = new CruxClient(configBuilder, androidContextObject);
-
-//        final String testAvailabilityCruxId = "yadu007";
 
         checkAvailability.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cruxId = (EditText) findViewById(R.id.cruxId);
-                responseView = (TextView) findViewById(R.id.responseView);
+
+                responseViewIdAvailability = (TextView) findViewById(R.id.responseViewIdAvailability);
                 client.isCruxIDAvailable(cruxId.getText().toString(), new CruxClientResponseHandler<Boolean>() {
                     @Override
                     public void onResponse(Boolean successResponse) {
                         System.out.println("--------isCruxIDAvailable-------");
                         System.out.println(successResponse);
                         if (successResponse == Boolean.TRUE) {
-                            responseView.setText(cruxId.getText().toString() + " is available");
+                            responseViewIdAvailability.setText(cruxId.getText().toString() + " is available");
                         } else {
-                            responseView.setText(cruxId.getText().toString() + " is not available");
+                            responseViewIdAvailability.setText(cruxId.getText().toString() + " is not available");
                         }
+                    }
+
+                    @Override
+                    public void onErrorResponse(CruxClientError failureResponse) {
+                        responseViewIdAvailability.setText((CharSequence) failureResponse);
+                    }
+                });
+            }
+        });
+
+        registerId.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  responseViewRegisterID = (TextView) findViewById(R.id.responseViewRegisterID);
+                  client.registerCruxID(cruxId.getText().toString(), new CruxClientResponseHandler<Void>() {
+                      @Override
+                      public void onResponse(Void successResponse) {
+                          System.out.println("--------registerCruxID-------");
+                          System.out.println(successResponse);
+                          responseViewIdAvailability.setText(cruxId.getText().toString() + " registration was received");
+                      }
+
+                      @Override
+                      public void onErrorResponse(CruxClientError failureResponse) {
+                          System.out.println("--------registerCruxIDxxxxxxx-------");
+                          System.out.println(failureResponse);
+                          responseViewIdAvailability.setText("Private key linked to another account");
+                      }
+                  });
+              }
+        });
+
+
+        getIdState.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  responseViewIdState = (TextView) findViewById(R.id.responseViewIdState);
+                  client.getCruxIDState(new CruxClientResponseHandler<CruxIDState>() {
+                      @Override
+                      public void onResponse(CruxIDState successResponse) {
+                          System.out.println("--------getCruxIDState-------");
+                          System.out.println(successResponse);
+                      }
+
+                      @Override
+                      public void onErrorResponse(CruxClientError failureResponse) {
+                          System.out.println(failureResponse);
+                      }
+                  });
+              }
+        });
+
+        getAddressMap.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  responseViewAddressMap = (TextView) findViewById(R.id.responseViewAddressMap);
+                  client.getAddressMap(new CruxClientResponseHandler<CruxAddressMapping>() {
+                      @Override
+                      public void onResponse(CruxAddressMapping successResponse) {
+                          System.out.println("--------getAddressMap-------");
+                          System.out.println(successResponse);
+                      }
+
+                      @Override
+                      public void onErrorResponse(CruxClientError failureResponse) {
+                          System.out.println(failureResponse);
+                      }
+                  });
+              }
+        });
+
+        resolveCurrencyAddress.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 responseViewCurrencyAddress = (TextView) findViewById(R.id.responseViewCurrencyAddress);
+                 client.resolveCurrencyAddressForCruxID(resolveCurrencyCruxId.getText().toString(), "xrp", new CruxClientResponseHandler<CruxAddress>() {
+                     @Override
+                     public void onResponse(CruxAddress successResponse) {
+                         System.out.println("--------resolveCurrencyAddressForCruxID-------");
+                         System.out.println(successResponse);
+                     }
+
+                     @Override
+                     public void onErrorResponse(CruxClientError failureResponse) {
+                         System.out.println(failureResponse);
+                     }
+                 });
+             }
+        });
+
+
+
+        putAddressMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CruxAddressMapping newAddressMap = getCruxAddressMapping();
+                responseViewPutAddressMap = (TextView) findViewById(R.id.responseViewPutAddressMap);
+                client.putAddressMap(newAddressMap, new CruxClientResponseHandler<CruxPutAddressMapSuccess>() {
+                    @Override
+                    public void onResponse(CruxPutAddressMapSuccess successResponse) {
+                        System.out.println("--------putAddressMap-------");
+                        System.out.println(successResponse);
                     }
 
                     @Override
@@ -89,92 +201,6 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println(failureResponse);
                     }
                 });
-            }
-        });
-
-//        client.isCruxIDAvailable(testAvailabilityCruxId, new CruxClientResponseHandler<Boolean>() {
-//            @Override
-//            public void onResponse(Boolean successResponse) {
-//                System.out.println("--------isCruxIDAvailable-------");
-//                System.out.println(successResponse);
-//                if (successResponse == Boolean.TRUE) {
-//                    System.out.println(testAvailabilityCruxId + " is available");
-//                } else {
-//                    System.out.println(testAvailabilityCruxId + " is not available");
-//                }
-//            }
-//
-//            @Override
-//            public void onErrorResponse(CruxClientError failureResponse) {
-//                System.out.println(failureResponse);
-//            }
-//        });
-
-        client.registerCruxID("dev_umang2", new CruxClientResponseHandler<Void>() {
-            @Override
-            public void onResponse(Void successResponse) {
-                System.out.println("--------registerCruxID-------");
-                System.out.println(successResponse);
-            }
-
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
-
-        client.getCruxIDState(new CruxClientResponseHandler<CruxIDState>() {
-            @Override
-            public void onResponse(CruxIDState successResponse) {
-                System.out.println("--------getCruxIDState-------");
-                System.out.println(successResponse);
-            }
-
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
-
-        client.getAddressMap(new CruxClientResponseHandler<CruxAddressMapping>() {
-            @Override
-            public void onResponse(CruxAddressMapping successResponse) {
-                System.out.println("--------getAddressMap-------");
-                System.out.println(successResponse);
-            }
-
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
-
-        final String testResolveAddressCruxId = "mascot6699@cruxdev.crux";
-        client.resolveCurrencyAddressForCruxID(testResolveAddressCruxId, "xrp", new CruxClientResponseHandler<CruxAddress>() {
-            @Override
-            public void onResponse(CruxAddress successResponse) {
-                System.out.println("--------resolveCurrencyAddressForCruxID-------");
-                System.out.println(successResponse);
-            }
-
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
-
-        CruxAddressMapping newAddressMap = getCruxAddressMapping();
-
-        client.putAddressMap(newAddressMap, new CruxClientResponseHandler<CruxPutAddressMapSuccess>() {
-            @Override
-            public void onResponse(CruxPutAddressMapSuccess successResponse) {
-                System.out.println("--------putAddressMap-------");
-                System.out.println(successResponse);
-            }
-
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
             }
         });
 
