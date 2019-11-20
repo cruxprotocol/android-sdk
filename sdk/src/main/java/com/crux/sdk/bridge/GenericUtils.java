@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 import org.liquidplayer.javascript.JSValue;
 
@@ -17,7 +18,7 @@ import org.liquidplayer.javascript.JSValue;
 public class GenericUtils {
     public static String getFromFile(Context androidContextObject, String fileName) throws IOException {
         AssetManager assetManager = androidContextObject.getAssets();
-        System.out.println(assetManager.list("/"));
+        System.out.println(Arrays.toString(assetManager.list("/")));
         InputStream is = assetManager.open(fileName);
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader input = new BufferedReader(isr);
