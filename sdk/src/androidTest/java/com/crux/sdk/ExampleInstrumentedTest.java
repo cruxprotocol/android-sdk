@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.crux.cruxsdk.test", appContext.getPackageName());
+        assertEquals("com.crux.sdk.test", appContext.getPackageName());
     }
 }
