@@ -1,7 +1,9 @@
 package com.example.liquid_test_2;
 
+
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
 
     Button clientInit;
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     Button getAddressMap;
     Button resolveCurrencyAddress;
     Button putAddressMap;
+    EditText cruxId;
+    TextView responseView;
 
 
 
@@ -38,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        checkAvailability = (Button) findViewById(R.id.checkAvailability);
+
 
 
         try {
@@ -55,26 +63,52 @@ public class MainActivity extends AppCompatActivity {
         CruxClientInitConfig.Builder configBuilder = new CruxClientInitConfig.Builder()
                 .setWalletClientName("cruxdev")
                 .setPrivateKey("KxRwDkwabEq5uT9vyPFeT2GQyNzZC5B8HjYpRYXxwcSmZJxKmVH7");
-        CruxClient client = new CruxClient(configBuilder, androidContextObject);
+        final CruxClient client = new CruxClient(configBuilder, androidContextObject);
 
-        final String testAvailabilityCruxId = "yadu007";
-        client.isCruxIDAvailable(testAvailabilityCruxId, new CruxClientResponseHandler<Boolean>() {
-            @Override
-            public void onResponse(Boolean successResponse) {
-                System.out.println("--------isCruxIDAvailable-------");
-                System.out.println(successResponse);
-                if (successResponse == Boolean.TRUE) {
-                    System.out.println(testAvailabilityCruxId + " is available");
-                } else {
-                    System.out.println(testAvailabilityCruxId + " is not available");
-                }
-            }
+//        final String testAvailabilityCruxId = "yadu007";
 
+        checkAvailability.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+            public void onClick(View v) {
+                cruxId = (EditText) findViewById(R.id.cruxId);
+                responseView = (TextView) findViewById(R.id.responseView);
+                client.isCruxIDAvailable(cruxId.getText().toString(), new CruxClientResponseHandler<Boolean>() {
+                    @Override
+                    public void onResponse(Boolean successResponse) {
+                        System.out.println("--------isCruxIDAvailable-------");
+                        System.out.println(successResponse);
+                        if (successResponse == Boolean.TRUE) {
+                            responseView.setText(cruxId.getText().toString() + " is available");
+                        } else {
+                            responseView.setText(cruxId.getText().toString() + " is not available");
+                        }
+                    }
+
+                    @Override
+                    public void onErrorResponse(CruxClientError failureResponse) {
+                        System.out.println(failureResponse);
+                    }
+                });
             }
         });
+
+//        client.isCruxIDAvailable(testAvailabilityCruxId, new CruxClientResponseHandler<Boolean>() {
+//            @Override
+//            public void onResponse(Boolean successResponse) {
+//                System.out.println("--------isCruxIDAvailable-------");
+//                System.out.println(successResponse);
+//                if (successResponse == Boolean.TRUE) {
+//                    System.out.println(testAvailabilityCruxId + " is available");
+//                } else {
+//                    System.out.println(testAvailabilityCruxId + " is not available");
+//                }
+//            }
+//
+//            @Override
+//            public void onErrorResponse(CruxClientError failureResponse) {
+//                System.out.println(failureResponse);
+//            }
+//        });
 
         client.registerCruxID("dev_umang2", new CruxClientResponseHandler<Void>() {
             @Override
