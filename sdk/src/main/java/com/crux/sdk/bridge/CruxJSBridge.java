@@ -3,33 +3,45 @@ package com.crux.sdk.bridge;
 import java.io.IOException;
 import android.content.Context;
 
+import org.json.JSONException;
 import org.liquidplayer.javascript.JSContext;
 import org.liquidplayer.javascript.JSFunction;
 import org.liquidplayer.javascript.JSObject;
 import org.liquidplayer.javascript.JSValue;
 
+import com.crux.sdk.model.AndroidCruxClientErrorCode;
+import com.crux.sdk.model.CruxClientError;
 import com.crux.sdk.model.CruxClientInitConfig;
 
 
 public class CruxJSBridge {
     private final JSContext jsContext;
-    private final JSObject jsClient;
+    private JSObject jsClient;
 
-    public CruxJSBridge(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException {
+
+    public CruxJSBridge(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
         this.jsContext = this.getContextForClient(androidContextObject);
         prepareCruxClientInitConfig(configBuilder);
-        System.out.println(jsContext.evaluateScript("cc = new CruxPay.CruxClient(cruxClientInitConfig)"));
-        System.out.println(jsContext.evaluateScript("cc.init()"));
-        this.jsClient = jsContext.property("cc").toObject();
-        // TODO This must be blocking here!
+        System.out.println(jsContext.evaluateScript("cruxClient = new CruxPay.CruxClient(cruxClientInitConfig)"));
+        this.jsClient = jsContext.property("cruxClient").toObject();
+        System.out.println("initCruxClient Complete");
     }
 
-    private void prepareCruxClientInitConfig(CruxClientInitConfig.Builder configBuilder) {
+    private void prepareCruxClientInitConfig(CruxClientInitConfig.Builder configBuilder) throws CruxClientError {
         CruxClientInitConfig cruxClientInitConfig = configBuilder.create();
-        String cruxClientInitConfigString = cruxClientInitConfig.getCruxClientInitConfigString();
-        System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
-        System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
-        System.out.println(jsContext.evaluateScript("cruxClientInitConfig['getEncryptionKey'] = function() { return 'fookey';}"));
+        String cruxClientInitConfigString;
+        try {
+            cruxClientInitConfigString = cruxClientInitConfig.getCruxClientInitConfigString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.getCruxClientInitConfigStringFailed);
+        }
+        if (!cruxClientInitConfigString.isEmpty()) {
+            System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
+            System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
+            System.out.println(jsContext.evaluateScript("cruxClientInitConfig['getEncryptionKey'] = function() { return 'fookey';}"));
+        }
+
     }
 
     private JSContext getContextForClient(Context androidContextObject) throws IOException {
@@ -45,6 +57,7 @@ public class CruxJSBridge {
     }
 
     public void executeAsync(final CruxJSBridgeAsyncRequest request) {
+
         JSFunction jsMethod = jsClient.property(request.method).toFunction();
         JSObject promise = jsMethod.call(null, request.params.args).toObject();
 

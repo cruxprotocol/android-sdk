@@ -1,8 +1,11 @@
 package com.crux.sdk.bridge.handlerImpl;
 
 import com.crux.sdk.bridge.GenericUtils;
+import com.crux.sdk.model.AndroidCruxClientErrorCode;
+import com.crux.sdk.model.CruxClientError;
 import com.crux.sdk.model.CruxClientResponseHandler;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.liquidplayer.javascript.JSValue;
 
@@ -19,11 +22,12 @@ public class CruxJSBridgeGetAddressMapResponseHandlerImpl extends CruxJSBridgeRe
         JSONObject cruxAddressMapping = new JSONObject();
         try {
             cruxAddressMapping.put("currency", successResponseJson);
-        } catch (Exception e) {
-            System.out.println("s");
+        } catch (JSONException e) {
+            e.printStackTrace();
+            CruxClientError errorObject = CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.cruxAddressMappingConversionFailed);
+            handler.onErrorResponse(errorObject);
         }
-        String msg = cruxAddressMapping.toString();
-        return msg;
+        return cruxAddressMapping.toString();
     }
 
 }

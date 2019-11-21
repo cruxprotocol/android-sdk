@@ -1,5 +1,6 @@
 package com.crux.sdk.model;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CruxClientInitConfig {
@@ -46,23 +47,13 @@ public class CruxClientInitConfig {
         this._encryptionKeyValue = builder._encryptionKeyValue;
     }
 
-    public String getCruxClientInitConfigString() {
-
-        // { walletClientName: 'cruxdev', privateKey: 'KxRwDkwabEq5uT9vyPFeT2GQyNzZC5B8HjYpRYXxwcSmZJxKmVH7', storage: inmemStorage, getEncryptionKey: }
-
+    public String getCruxClientInitConfigString() throws JSONException {
         JSONObject cruxClientInitConfigObject = new JSONObject();
-        try {
-            cruxClientInitConfigObject.put("walletClientName", this.walletClientName);
-            // cruxClientInitConfigObject.put("storage", "inmemStorage");
-            // cruxClientInitConfigObject.put("getEncryptionKey", "function(){return '"+ this._encryptionKeyValue +"'}");
-            if (this.privateKey != null) {
-                cruxClientInitConfigObject.put("privateKey", this.privateKey);
-            }
-        } catch (Exception e) {
-            System.out.println("s");
+        cruxClientInitConfigObject.put("walletClientName", this.walletClientName);
+        if (this.privateKey != null) {
+            cruxClientInitConfigObject.put("privateKey", this.privateKey);
         }
         return cruxClientInitConfigObject.toString();
-
     }
 
 }

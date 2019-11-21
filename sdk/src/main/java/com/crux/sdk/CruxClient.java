@@ -6,10 +6,11 @@ import com.crux.sdk.bridge.CruxJSBridge;
 import com.crux.sdk.bridge.CruxJSBridgeAsyncRequest;
 import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeCruxIDAvailablityResponseHandlerImpl;
 import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeGetAddressMapResponseHandlerImpl;
-import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeRegisterResponseHandlerImpl;
+import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeVoidResponseHandlerImpl;
 import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeResponseHandlerImpl;
 import com.crux.sdk.model.CruxAddress;
 import com.crux.sdk.model.CruxAddressMapping;
+import com.crux.sdk.model.CruxClientError;
 import com.crux.sdk.model.CruxClientInitConfig;
 import com.crux.sdk.model.CruxClientResponseHandler;
 import com.crux.sdk.model.CruxIDState;
@@ -24,10 +25,14 @@ import java.io.IOException;
 public class CruxClient {
     private final CruxJSBridge jsBridge;
 
-    public CruxClient(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException {
+    public CruxClient(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
         this.jsBridge = new CruxJSBridge(configBuilder, androidContextObject);
     }
 
+    public void init(final CruxClientResponseHandler<Void> handler) {
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("init", new CruxParams(), new CruxJSBridgeVoidResponseHandlerImpl(null, handler));
+        jsBridge.executeAsync(bridgeRequest);
+    }
 
     public void getCruxIDState(final CruxClientResponseHandler<CruxIDState> handler) {
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getCruxIDState", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(CruxIDState.class, handler));
@@ -35,7 +40,7 @@ public class CruxClient {
     }
 
     public void registerCruxID(String cruxIDSubdomain, final CruxClientResponseHandler<Void> handler) {
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("registerCruxID", new CruxParams(cruxIDSubdomain), new CruxJSBridgeRegisterResponseHandlerImpl(null, handler));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("registerCruxID", new CruxParams(cruxIDSubdomain), new CruxJSBridgeVoidResponseHandlerImpl(null, handler));
         jsBridge.executeAsync(bridgeRequest);
     }
 
