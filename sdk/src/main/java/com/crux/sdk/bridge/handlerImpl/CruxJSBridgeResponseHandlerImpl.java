@@ -27,7 +27,8 @@ public class CruxJSBridgeResponseHandlerImpl implements CruxJSBridgeResponseHand
 
     @Override
     public void onErrorResponse(JSValue failureResponse) {
-        String msg = this.convertToString(failureResponse);
+        Object successResponseJson = GenericUtils.toJavaObject(failureResponse, JSONObject.class);
+        String msg = successResponseJson.toString();
         CruxClientError errorObject = gson.fromJson(msg, CruxClientError.class);
         errorObject.errorMessage = failureResponse.toString();
         handler.onErrorResponse(errorObject);

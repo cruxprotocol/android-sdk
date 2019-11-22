@@ -116334,7 +116334,7 @@ function () {
 
   Encryption.encryptText = function (plainText, password) {
     return __awaiter(void 0, void 0, Promise, function () {
-      var ptUtf8, pwUtf8, encrypt, hash, pwHash, _a, getRandomValuesPolyfill, iv;
+      var ptUtf8, pwUtf8, encrypt, hash, pwHash, _a, iv;
 
       return __generator(this, function (_b) {
         switch (_b.label) {
@@ -116361,16 +116361,7 @@ function () {
 
           case 1:
             pwHash = _a.apply(void 0, [_b.sent()]);
-
-            getRandomValuesPolyfill = function getRandomValuesPolyfill(array) {
-              for (var i = 0, l = array.length; i < l; i++) {
-                array[i] = Math.floor(Math.random() * 256);
-              }
-
-              return array;
-            };
-
-            iv = getRandomValuesPolyfill(new Uint8Array(12));
+            iv = crypto.getRandomValues(new Uint8Array(12));
             return [2
             /*return*/
             , encrypt(ptUtf8, iv, pwHash)];
@@ -117139,7 +117130,37 @@ var cryptoClients_1 = require("./cryptoClients");
 exports.SECP256K1Client = cryptoClients_1.SECP256K1Client;
 exports.cryptoClients = cryptoClients_1.cryptoClients;
 
-},{"./signer":"vlzQ","./verifier":"ucpS","./decode":"ZM9j","./errors":"rdic","./cryptoClients":"GcyT"}],"DXq1":[function(require,module,exports) {
+},{"./signer":"vlzQ","./verifier":"ucpS","./decode":"ZM9j","./errors":"rdic","./cryptoClients":"GcyT"}],"KBaF":[function(require,module,exports) {
+
+"use strict"; // ref: https://github.com/tc39/proposal-global
+
+var getGlobal = function () {
+  // the only reliable means to get the global object is
+  // `Function('return this')()`
+  // However, this causes CSP violations in Chrome apps.
+  if (typeof self !== 'undefined') {
+    return self;
+  }
+
+  if (typeof window !== 'undefined') {
+    return window;
+  }
+
+  if (typeof global !== 'undefined') {
+    return global;
+  }
+
+  throw new Error('unable to locate global object');
+};
+
+var global = getGlobal();
+module.exports = exports = global.fetch; // Needed for TypeScript and Webpack.
+
+exports.default = global.fetch.bind(global);
+exports.Headers = global.Headers;
+exports.Request = global.Request;
+exports.Response = global.Response;
+},{}],"DXq1":[function(require,module,exports) {
 var __filename = "/Users/shadow/Umang/coinswitch/js-sdk/src/packages/utils.ts";
 var Buffer = require("buffer").Buffer;
 "use strict";
@@ -117151,9 +117172,13 @@ exports.getKeyPairFromPrivKey = exports.cachedFunctionCall = exports.sanitizePri
 
 var bitcoin = _interopRequireWildcard(require("bitcoinjs-lib"));
 
+var _nodeFetch = _interopRequireDefault(require("node-fetch"));
+
 var _index = require("../index");
 
 var _error = require("./error");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -117312,7 +117337,7 @@ var httpJSONRequest = function httpJSONRequest(options) {
         url = _a.url,
         fetchOptions = _a.fetchOptions;
 
-    fetch(url, fetchOptions).then(function (res) {
+    (0, _nodeFetch.default)(url, fetchOptions).then(function (res) {
       return res.json();
     }).then(function (json) {
       return resolve(json);
@@ -117487,7 +117512,7 @@ var getKeyPairFromPrivKey = function getKeyPairFromPrivKey(privKey) {
 };
 
 exports.getKeyPairFromPrivKey = getKeyPairFromPrivKey;
-},{"bitcoinjs-lib":"bZOe","../index":"QCba","./error":"yXIU","buffer":"dskh"}],"Svqq":[function(require,module,exports) {
+},{"bitcoinjs-lib":"bZOe","node-fetch":"KBaF","../index":"QCba","./error":"yXIU","buffer":"dskh"}],"Svqq":[function(require,module,exports) {
 var __filename = "/Users/shadow/Umang/coinswitch/js-sdk/src/packages/gaia-service/index.ts";
 "use strict";
 
@@ -119817,7 +119842,6 @@ var fetchPendingRegistrationsByAddress = function fetchPendingRegistrationsByAdd
 };
 },{"assert":"DlZn","../..":"QCba","../error":"yXIU","../identity-utils":"j93N","../utils":"DXq1"}],"EjPX":[function(require,module,exports) {
 var __filename = "/Users/shadow/Umang/coinswitch/js-sdk/src/packages/name-service/blockstack-service.ts";
-var Buffer = require("buffer").Buffer;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -119834,6 +119858,8 @@ var _bitcoinjsLib = require("bitcoinjs-lib");
 var blockstack = _interopRequireWildcard(require("blockstack"));
 
 var _2 = require("../..");
+
+var _crypto = require("crypto");
 
 var _encryption = require("../encryption");
 
@@ -120460,18 +120486,8 @@ function (_super) {
       });
     };
 
-    _this._getRandomValuesPolyfill = function (arraySize) {
-      var array = new Uint8Array(arraySize);
-
-      for (var i = 0, l = array.length; i < l; i++) {
-        array[i] = Math.floor(Math.random() * 256);
-      }
-
-      return new Buffer(array);
-    };
-
     _this._generateMnemonic = function () {
-      return bip39.generateMnemonic(128, _this._getRandomValuesPolyfill);
+      return bip39.generateMnemonic(128, _crypto.randomBytes);
     };
 
     _this._generateIdentityKeyPair = function (mnemonic) {
@@ -120732,7 +120748,7 @@ function (_super) {
 }(nameService.NameService);
 
 exports.BlockstackService = BlockstackService;
-},{"@mojotech/json-type-validation":"jcIg","bip39":"tCYT","bitcoinjs-lib":"bZOe","blockstack":"OVDV","../..":"QCba","../encryption":"m5br","../error":"yXIU","../error/package-error":"Z94C","../gaia-service":"Svqq","../gaia-service/utils":"arWQ","../identity-utils":"j93N","../utils":"DXq1","./index":"gpdj","./utils":"rxEh","buffer":"dskh"}],"arWQ":[function(require,module,exports) {
+},{"@mojotech/json-type-validation":"jcIg","bip39":"tCYT","bitcoinjs-lib":"bZOe","blockstack":"OVDV","../..":"QCba","crypto":"mRF4","../encryption":"m5br","../error":"yXIU","../error/package-error":"Z94C","../gaia-service":"Svqq","../gaia-service/utils":"arWQ","../identity-utils":"j93N","../utils":"DXq1","./index":"gpdj","./utils":"rxEh"}],"arWQ":[function(require,module,exports) {
 var __filename = "/Users/shadow/Umang/coinswitch/js-sdk/src/packages/gaia-service/utils.ts";
 "use strict";
 
@@ -123374,7 +123390,7 @@ function () {
 }();
 
 exports.CruxClient = CruxClient;
-},{"js-logger":"nnXn","path":"UUq2","regenerator-runtime/runtime":"QVnC","./config":"C9JJ","./packages":"LrjU","./packages/name-service/utils":"rxEh"}],"C2Oq":[function(require,module,exports) {
+},{"js-logger":"nnXn","path":"UUq2","regenerator-runtime/runtime":"QVnC","./config":"C9JJ","./packages":"LrjU","./packages/name-service/utils":"rxEh"}],"FicS":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -123382,13 +123398,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.InMemStorage = void 0;
 
-var CruxPay = _interopRequireWildcard(require("./index"));
-
-var _storage = require("./packages/storage");
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var _storage = require("./storage");
 
 var __extends = void 0 && (void 0).__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
@@ -123596,12 +123606,18 @@ function (_super) {
 }(_storage.StorageService);
 
 exports.InMemStorage = InMemStorage;
-window.inmemStorage = new InMemStorage();
-window.inmemStorageWithClaim = new InMemStorage();
-window.inmemStorageWithClaim.setItem("payIDClaim", JSON.stringify({
-  identitySecrets: "{\"iv\":\"59ZAnVm5vyC6zIZz\",\"encBuffer\":\"1JstBA1vk8LpSfI9kPlGtWytcAZUbGN51g5E8NA/OVXjSsygdjdceeW0bb/2GbR9qkkq4P7nuP9lCjxbXWcsJaj/0AWUOA82AmZnbP7yUH8ATQwdSgyhUQDGboSVsO2JYFg1tPg2P+kA0jIoRYYGpAlcT8hhEe5jRSp9NBZ2cFWV/z3yDRMZtXHUQtwY/bPenREqBv7iBgwnqWLzrDMoY+KrjOXzUC3BWCByYfj02WkXLq6tQnJyPepCl1OGhpfoDCBgRbrIZ+uJxDp0RrAbp52OSREPaHPF/6oShTm5Pre1ZswBxufqwWMfNARY0wA=\"}",
-  virtualAddress: "yadu007@cruxdev.crux"
-}));
+},{"./storage":"KZir"}],"C2Oq":[function(require,module,exports) {
+"use strict";
+
+var CruxPay = _interopRequireWildcard(require("./index"));
+
+var _inmemStorage = require("./packages/inmem-storage");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 window.CruxPay = CruxPay;
-},{"./index":"QCba","./packages/storage":"KZir"}]},{},["C2Oq"], null)
+window.inmemStorage = new _inmemStorage.InMemStorage();
+},{"./index":"QCba","./packages/inmem-storage":"FicS"}]},{},["C2Oq"], null)
 //# sourceMappingURL=/cruxpay-sdk-dom.js.map
