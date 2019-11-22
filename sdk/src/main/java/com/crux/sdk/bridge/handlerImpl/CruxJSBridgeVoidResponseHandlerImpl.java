@@ -6,10 +6,10 @@ import org.liquidplayer.javascript.JSValue;
 
 import java.lang.reflect.Type;
 
-public class CruxJSBridgeRegisterResponseHandlerImpl extends CruxJSBridgeResponseHandlerImpl {
+public class CruxJSBridgeVoidResponseHandlerImpl extends CruxJSBridgeResponseHandlerImpl {
 
 
-    public CruxJSBridgeRegisterResponseHandlerImpl(Type returnClass, CruxClientResponseHandler handler) {
+    public CruxJSBridgeVoidResponseHandlerImpl(Type returnClass, CruxClientResponseHandler handler) {
         super(returnClass, handler);
     }
 

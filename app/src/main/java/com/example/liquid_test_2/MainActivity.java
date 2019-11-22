@@ -25,110 +25,122 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         try {
             runScript(this);
-        } catch (IOException e) {
+        } catch (IOException | CruxClientError e) {
             e.printStackTrace();
         }
-//        catch (JSException e) {
-//            System.out.println("JSEXCEPTION DETECTED");
-//            System.out.println(e.stack());
-//        }
+
     }
 
-    public String runScript(final Context androidContextObject) throws IOException {
+    public String runScript(final Context androidContextObject) throws IOException, CruxClientError {
+
         CruxClientInitConfig.Builder configBuilder = new CruxClientInitConfig.Builder()
                 .setWalletClientName("cruxdev")
-                .setPrivateKey("KxRwDkwabEq5uT9vyPFeT2GQyNzZC5B8HjYpRYXxwcSmZJxKmVH7");
-        CruxClient client = new CruxClient(configBuilder, androidContextObject);
+                .setPrivateKey("cdf2d276caf0c9c34258ed6ebd0e60e0e8b3d9a7b8a9a717f2e19ed9b37f7c6f");
 
-        final String testAvailabilityCruxId = "yadu007";
-        client.isCruxIDAvailable(testAvailabilityCruxId, new CruxClientResponseHandler<Boolean>() {
-            @Override
-            public void onResponse(Boolean successResponse) {
-                System.out.println("--------isCruxIDAvailable-------");
-                System.out.println(successResponse);
-                if (successResponse == Boolean.TRUE) {
-                    System.out.println(testAvailabilityCruxId + " is available");
-                } else {
-                    System.out.println(testAvailabilityCruxId + " is not available");
-                }
-            }
+        final CruxClient client = new CruxClient(configBuilder, androidContextObject);
 
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
-
-        client.registerCruxID("dev_umang2", new CruxClientResponseHandler<Void>() {
+        CruxClientResponseHandler initHandler = new CruxClientResponseHandler<Void>() {
             @Override
             public void onResponse(Void successResponse) {
-                System.out.println("--------registerCruxID-------");
-                System.out.println(successResponse);
+                System.out.println("--------initHandler-------");
+
+                final String testAvailabilityCruxId = "yadu007";
+                client.isCruxIDAvailable(testAvailabilityCruxId, new CruxClientResponseHandler<Boolean>() {
+                    @Override
+                    public void onResponse(Boolean successResponse) {
+                        System.out.println("--------isCruxIDAvailable-------");
+                        System.out.println(successResponse);
+                        if (successResponse == Boolean.TRUE) {
+                            System.out.println(testAvailabilityCruxId + " is available");
+                        } else {
+                            System.out.println(testAvailabilityCruxId + " is not available");
+                        }
+                    }
+
+                    @Override
+                    public void onErrorResponse(CruxClientError failureResponse) {
+                        System.out.println(failureResponse);
+                    }
+                });
+
+                client.registerCruxID("dev_umang2", new CruxClientResponseHandler<Void>() {
+                    @Override
+                    public void onResponse(Void successResponse) {
+                        System.out.println("--------registerCruxID-------");
+                        System.out.println(successResponse);
+                    }
+
+                    @Override
+                    public void onErrorResponse(CruxClientError failureResponse) {
+                        System.out.println(failureResponse);
+                    }
+                });
+
+                client.getCruxIDState(new CruxClientResponseHandler<CruxIDState>() {
+                    @Override
+                    public void onResponse(CruxIDState successResponse) {
+                        System.out.println("--------getCruxIDState-------");
+                        System.out.println(successResponse);
+                    }
+
+                    @Override
+                    public void onErrorResponse(CruxClientError failureResponse) {
+                        System.out.println(failureResponse);
+                    }
+                });
+
+                client.getAddressMap(new CruxClientResponseHandler<CruxAddressMapping>() {
+                    @Override
+                    public void onResponse(CruxAddressMapping successResponse) {
+                        System.out.println("--------getAddressMap-------");
+                        System.out.println(successResponse);
+                    }
+
+                    @Override
+                    public void onErrorResponse(CruxClientError failureResponse) {
+                        System.out.println(failureResponse);
+                    }
+                });
+
+                final String testResolveAddressCruxId = "mascot6699@cruxdev.crux";
+                client.resolveCurrencyAddressForCruxID(testResolveAddressCruxId, "xrp", new CruxClientResponseHandler<CruxAddress>() {
+                    @Override
+                    public void onResponse(CruxAddress successResponse) {
+                        System.out.println("--------resolveCurrencyAddressForCruxID-------");
+                        System.out.println(successResponse);
+                    }
+
+                    @Override
+                    public void onErrorResponse(CruxClientError failureResponse) {
+                        System.out.println(failureResponse);
+                    }
+                });
+
+                CruxAddressMapping newAddressMap = getCruxAddressMapping();
+
+                client.putAddressMap(newAddressMap, new CruxClientResponseHandler<CruxPutAddressMapSuccess>() {
+                    @Override
+                    public void onResponse(CruxPutAddressMapSuccess successResponse) {
+                        System.out.println("--------putAddressMap-------");
+                        System.out.println(successResponse);
+                    }
+
+                    @Override
+                    public void onErrorResponse(CruxClientError failureResponse) {
+                        System.out.println(failureResponse);
+                    }
+                });
+
             }
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
                 System.out.println(failureResponse);
             }
-        });
-
-        client.getCruxIDState(new CruxClientResponseHandler<CruxIDState>() {
-            @Override
-            public void onResponse(CruxIDState successResponse) {
-                System.out.println("--------getCruxIDState-------");
-                System.out.println(successResponse);
-            }
-
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
-
-        client.getAddressMap(new CruxClientResponseHandler<CruxAddressMapping>() {
-            @Override
-            public void onResponse(CruxAddressMapping successResponse) {
-                System.out.println("--------getAddressMap-------");
-                System.out.println(successResponse);
-            }
-
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
-
-        final String testResolveAddressCruxId = "mascot6699@cruxdev.crux";
-        client.resolveCurrencyAddressForCruxID(testResolveAddressCruxId, "xrp", new CruxClientResponseHandler<CruxAddress>() {
-            @Override
-            public void onResponse(CruxAddress successResponse) {
-                System.out.println("--------resolveCurrencyAddressForCruxID-------");
-                System.out.println(successResponse);
-            }
-
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
-
-        CruxAddressMapping newAddressMap = getCruxAddressMapping();
-
-        client.putAddressMap(newAddressMap, new CruxClientResponseHandler<CruxPutAddressMapSuccess>() {
-            @Override
-            public void onResponse(CruxPutAddressMapSuccess successResponse) {
-                System.out.println("--------putAddressMap-------");
-                System.out.println(successResponse);
-            }
-
-            @Override
-            public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
-            }
-        });
+        };
+        client.init(initHandler);
 
         return null;
     }
