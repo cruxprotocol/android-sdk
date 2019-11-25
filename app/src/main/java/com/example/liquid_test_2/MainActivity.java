@@ -133,12 +133,13 @@ public class MainActivity extends AppCompatActivity {
                       @Override
                       public void onResponse(CruxIDState successResponse) {
                           System.out.println("--------getCruxIDState-------");
-                          System.out.println(successResponse);
+                          responseViewIdState.setText(successResponse.status.statusDetail.toString());
                       }
 
                       @Override
                       public void onErrorResponse(CruxClientError failureResponse) {
                           System.out.println(failureResponse);
+                          responseViewIdState.setText(failureResponse.errorCode.toString() + failureResponse.errorMessage.toString());
                       }
                   });
               }
@@ -153,11 +154,13 @@ public class MainActivity extends AppCompatActivity {
                       public void onResponse(CruxAddressMapping successResponse) {
                           System.out.println("--------getAddressMap-------");
                           System.out.println(successResponse);
+                          responseViewAddressMap.setText(successResponse.currency.toString());
                       }
 
                       @Override
                       public void onErrorResponse(CruxClientError failureResponse) {
                           System.out.println(failureResponse);
+                          responseViewAddressMap.setText(failureResponse.errorCode.toString() + failureResponse.errorMessage.toString());
                       }
                   });
               }
@@ -172,11 +175,13 @@ public class MainActivity extends AppCompatActivity {
                      public void onResponse(CruxAddress successResponse) {
                          System.out.println("--------resolveCurrencyAddressForCruxID-------");
                          System.out.println(successResponse);
+                         responseViewCurrencyAddress.setText(successResponse.addressHash.toString());
                      }
 
                      @Override
                      public void onErrorResponse(CruxClientError failureResponse) {
                          System.out.println(failureResponse);
+                         responseViewCurrencyAddress.setText(failureResponse.errorCode.toString() + failureResponse.errorMessage.toString());
                      }
                  });
              }
@@ -194,11 +199,13 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(CruxPutAddressMapSuccess successResponse) {
                         System.out.println("--------putAddressMap-------");
                         System.out.println(successResponse);
+                        responseViewPutAddressMap.setText(successResponse.hashCode());
                     }
 
                     @Override
                     public void onErrorResponse(CruxClientError failureResponse) {
                         System.out.println(failureResponse);
+                        responseViewPutAddressMap.setText(failureResponse.errorCode.toString() + failureResponse.errorMessage.toString());
                     }
                 });
             }
