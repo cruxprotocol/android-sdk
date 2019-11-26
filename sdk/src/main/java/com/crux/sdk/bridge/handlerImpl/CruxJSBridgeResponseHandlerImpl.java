@@ -27,23 +27,15 @@ public class CruxJSBridgeResponseHandlerImpl implements CruxJSBridgeResponseHand
 
     @Override
     public void onErrorResponse(JSValue failureResponse) {
-        Object successResponseJson = GenericUtils.toJavaObject(failureResponse, JSONObject.class);
-        String msg = successResponseJson.toString();
+        String msg = GenericUtils.toJavaString(failureResponse);
         CruxClientError errorObject = gson.fromJson(msg, CruxClientError.class);
         errorObject.errorMessage = failureResponse.toString();
         handler.onErrorResponse(errorObject);
     }
 
-    public String convertToString(JSValue jsValue) {
-        Object successResponseJson = GenericUtils.toJavaObject(jsValue, JSONObject.class);
-        String msg = successResponseJson.toString();
-        return msg;
-    }
-
-
     @Override
-    public void onResponse(JSValue successResponse){
-        String msg = this.convertToString(successResponse);
+    public void onResponse(JSValue successResponse) {
+        String msg = GenericUtils.toJavaString(successResponse);
         Object responseObject = gson.fromJson(msg, this.returnClass);
         handler.onResponse(responseObject);
     }
