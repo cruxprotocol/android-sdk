@@ -122395,6 +122395,666 @@ function () {
 
     this.init = function () {
       return __awaiter(_this, void 0, Promise, function () {
+        return __generator(this, function (_a) {
+          switch (_a.label) {
+            case 0:
+              return [4
+              /*yield*/
+              , this.initPromise];
+
+            case 1:
+              return [2
+              /*return*/
+              , _a.sent()];
+          }
+        });
+      });
+    }; // For backward compatibility
+
+
+    this.hasPayIDClaim = function () {
+      return Boolean(_this._payIDClaim);
+    };
+
+    this.getPayIDClaim = function () {
+      return _this._payIDClaim;
+    };
+
+    this.updatePassword = function (oldEncryptionKey, newEncryptionKey) {
+      return __awaiter(_this, void 0, Promise, function () {
+        var _this = this;
+
+        return __generator(this, function (_a) {
+          return [2
+          /*return*/
+          , this.initPromise.then(function () {
+            return __awaiter(_this, void 0, void 0, function () {
+              var err_1, err_2;
+              return __generator(this, function (_a) {
+                switch (_a.label) {
+                  case 0:
+                    _a.trys.push([0, 11,, 12]);
+
+                    return [4
+                    /*yield*/
+                    , this._hasPayIDClaimStored()];
+
+                  case 1:
+                    if (!_a.sent()) return [3
+                    /*break*/
+                    , 9];
+                    return [4
+                    /*yield*/
+                    , this._payIDClaim.decrypt(oldEncryptionKey)];
+
+                  case 2:
+                    _a.sent();
+
+                    _a.label = 3;
+
+                  case 3:
+                    _a.trys.push([3, 5,, 7]);
+
+                    return [4
+                    /*yield*/
+                    , this._payIDClaim.encrypt(newEncryptionKey)];
+
+                  case 4:
+                    _a.sent();
+
+                    return [3
+                    /*break*/
+                    , 7];
+
+                  case 5:
+                    err_1 = _a.sent();
+                    return [4
+                    /*yield*/
+                    , this._payIDClaim.encrypt(oldEncryptionKey)];
+
+                  case 6:
+                    _a.sent();
+
+                    return [2
+                    /*return*/
+                    , false];
+
+                  case 7:
+                    return [4
+                    /*yield*/
+                    , this._payIDClaim.save(this._storage)];
+
+                  case 8:
+                    _a.sent();
+
+                    return [2
+                    /*return*/
+                    , true];
+
+                  case 9:
+                    return [2
+                    /*return*/
+                    , true];
+
+                  case 10:
+                    return [3
+                    /*break*/
+                    , 12];
+
+                  case 11:
+                    err_2 = _a.sent();
+                    throw _packages.errors.CruxClientError.fromError(err_2);
+
+                  case 12:
+                    return [2
+                    /*return*/
+                    ];
+                }
+              });
+            });
+          }).catch(function (err) {
+            throw err;
+          })];
+        });
+      });
+    };
+
+    this.isCruxIDAvailable = function (cruxIDSubdomain) {
+      return __awaiter(_this, void 0, Promise, function () {
+        var _this = this;
+
+        return __generator(this, function (_a) {
+          return [2
+          /*return*/
+          , this.initPromise.then(function () {
+            return __awaiter(_this, void 0, void 0, function () {
+              return __generator(this, function (_a) {
+                try {
+                  _packages.identityUtils.validateSubdomain(cruxIDSubdomain);
+
+                  return [2
+                  /*return*/
+                  , this._nameService.getNameAvailability(cruxIDSubdomain)];
+                } catch (err) {
+                  throw _packages.errors.CruxClientError.fromError(err);
+                }
+
+                return [2
+                /*return*/
+                ];
+              });
+            });
+          }).catch(function (err) {
+            throw err;
+          })];
+        });
+      });
+    };
+
+    this.resolveCurrencyAddressForCruxID = function (fullCruxID, walletCurrencySymbol) {
+      return __awaiter(_this, void 0, Promise, function () {
+        var _this = this;
+
+        return __generator(this, function (_a) {
+          return [2
+          /*return*/
+          , this.initPromise.then(function () {
+            return __awaiter(_this, void 0, void 0, function () {
+              var correspondingAssetId, addressMap, address, err_3;
+              return __generator(this, function (_a) {
+                switch (_a.label) {
+                  case 0:
+                    _a.trys.push([0, 3,, 4]);
+
+                    if (!(this._configService && this._nameService)) {
+                      throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.ClientNotInitialized);
+                    }
+
+                    walletCurrencySymbol = walletCurrencySymbol.toLowerCase();
+                    correspondingAssetId = "";
+                    return [4
+                    /*yield*/
+                    , this._translateSymbolToAssetId(walletCurrencySymbol)];
+
+                  case 1:
+                    correspondingAssetId = _a.sent();
+
+                    if (!correspondingAssetId) {
+                      throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.AssetIDNotAvailable);
+                    }
+
+                    return [4
+                    /*yield*/
+                    , this._nameService.getAddressMapping(fullCruxID)];
+
+                  case 2:
+                    addressMap = _a.sent();
+                    log.debug("Address map: ", addressMap);
+
+                    if (!addressMap[correspondingAssetId]) {
+                      throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.AddressNotAvailable);
+                    }
+
+                    address = addressMap[correspondingAssetId] || addressMap[correspondingAssetId.toLowerCase()];
+                    log.debug("Address:", address);
+                    return [2
+                    /*return*/
+                    , address];
+
+                  case 3:
+                    err_3 = _a.sent();
+                    throw _packages.errors.CruxClientError.fromError(err_3);
+
+                  case 4:
+                    return [2
+                    /*return*/
+                    ];
+                }
+              });
+            });
+          }).catch(function (err) {
+            throw err;
+          })];
+        });
+      });
+    };
+
+    this.getCruxIDState = function () {
+      return __awaiter(_this, void 0, Promise, function () {
+        var _this = this;
+
+        return __generator(this, function (_a) {
+          return [2
+          /*return*/
+          , this.initPromise.then(function () {
+            return __awaiter(_this, void 0, void 0, function () {
+              var fullCruxID, status, err_4;
+              return __generator(this, function (_a) {
+                switch (_a.label) {
+                  case 0:
+                    _a.trys.push([0, 2,, 3]);
+
+                    fullCruxID = this.hasPayIDClaim() ? this.getPayIDClaim().virtualAddress : undefined;
+
+                    if (!fullCruxID) {
+                      return [2
+                      /*return*/
+                      , {
+                        cruxID: null,
+                        status: {
+                          status: "NONE",
+                          statusDetail: ""
+                        }
+                      }];
+                    }
+
+                    return [4
+                    /*yield*/
+                    , this._getIDStatus()];
+
+                  case 1:
+                    status = _a.sent();
+                    return [2
+                    /*return*/
+                    , {
+                      cruxID: fullCruxID,
+                      status: status
+                    }];
+
+                  case 2:
+                    err_4 = _a.sent();
+                    throw _packages.errors.CruxClientError.fromError(err_4);
+
+                  case 3:
+                    return [2
+                    /*return*/
+                    ];
+                }
+              });
+            });
+          }).catch(function (err) {
+            throw err;
+          })];
+        });
+      });
+    };
+
+    this.registerCruxID = function (cruxIDSubdomain) {
+      return __awaiter(_this, void 0, Promise, function () {
+        var _this = this;
+
+        return __generator(this, function (_a) {
+          // TODO: add isCruxIDAvailable check before
+          return [2
+          /*return*/
+          , this.initPromise.then(function () {
+            return __awaiter(_this, void 0, void 0, function () {
+              var identityClaim, _a, _b, _c, registeredPublicID, err_5;
+
+              return __generator(this, function (_d) {
+                switch (_d.label) {
+                  case 0:
+                    _d.trys.push([0, 12,, 13]); // Subdomain validation
+
+
+                    _packages.identityUtils.validateSubdomain(cruxIDSubdomain);
+
+                    return [4
+                    /*yield*/
+                    , this.isCruxIDAvailable(cruxIDSubdomain)];
+
+                  case 1:
+                    // Validate if the subdomain is available
+                    if (!_d.sent()) {
+                      throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.CruxIDUnavailable, cruxIDSubdomain);
+                    }
+
+                    if (!this._payIDClaim) return [3
+                    /*break*/
+                    , 3];
+
+                    if (this._payIDClaim.virtualAddress) {
+                      // Do not allow multiple registrations using same payIDClaim
+                      throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.ExistingCruxIDFound, this._payIDClaim.virtualAddress);
+                    }
+
+                    return [4
+                    /*yield*/
+                    , this._payIDClaim.decrypt()];
+
+                  case 2:
+                    _d.sent();
+
+                    _d.label = 3;
+
+                  case 3:
+                    identityClaim = void 0;
+                    if (!this._payIDClaim) return [3
+                    /*break*/
+                    , 4];
+                    identityClaim = {
+                      secrets: this._payIDClaim.identitySecrets
+                    };
+                    return [3
+                    /*break*/
+                    , 8];
+
+                  case 4:
+                    if (!this._keyPair) return [3
+                    /*break*/
+                    , 5];
+                    identityClaim = {
+                      secrets: {
+                        identityKeyPair: this._keyPair
+                      }
+                    };
+                    return [3
+                    /*break*/
+                    , 8];
+
+                  case 5:
+                    _b = (_a = this._nameService).generateIdentity;
+                    _c = [this._storage];
+                    return [4
+                    /*yield*/
+                    , this._getEncryptionKey()];
+
+                  case 6:
+                    return [4
+                    /*yield*/
+                    , _b.apply(_a, _c.concat([_d.sent()]))];
+
+                  case 7:
+                    identityClaim = _d.sent();
+                    _d.label = 8;
+
+                  case 8:
+                    return [4
+                    /*yield*/
+                    , this._nameService.registerName(identityClaim, cruxIDSubdomain)];
+
+                  case 9:
+                    registeredPublicID = _d.sent(); // Setup the payIDClaim locally
+
+                    this._setPayIDClaim(new PayIDClaim({
+                      virtualAddress: registeredPublicID,
+                      identitySecrets: identityClaim.secrets
+                    }, {
+                      getEncryptionKey: this._getEncryptionKey
+                    })); // await this._payIDClaim.setPasscode(passcode)
+
+
+                    return [4
+                    /*yield*/
+                    , this._payIDClaim.encrypt()];
+
+                  case 10:
+                    // await this._payIDClaim.setPasscode(passcode)
+                    _d.sent();
+
+                    return [4
+                    /*yield*/
+                    , this._payIDClaim.save(this._storage)];
+
+                  case 11:
+                    _d.sent();
+
+                    return [2
+                    /*return*/
+                    ];
+
+                  case 12:
+                    err_5 = _d.sent();
+                    throw _packages.errors.CruxClientError.fromError(err_5);
+
+                  case 13:
+                    return [2
+                    /*return*/
+                    ];
+                }
+              });
+            });
+          }).catch(function (err) {
+            throw err;
+          })];
+        });
+      });
+    };
+
+    this.putAddressMap = function (newAddressMap) {
+      return __awaiter(_this, void 0, Promise, function () {
+        var _this = this;
+
+        return __generator(this, function (_a) {
+          return [2
+          /*return*/
+          , this.initPromise.then(function () {
+            return __awaiter(_this, void 0, void 0, function () {
+              var _a, assetAddressMap, success, failures, err_6;
+
+              return __generator(this, function (_b) {
+                switch (_b.label) {
+                  case 0:
+                    _b.trys.push([0, 5,, 6]);
+
+                    return [4
+                    /*yield*/
+                    , this._getAssetAddressMapFromCurrencyAddressMap(newAddressMap)];
+
+                  case 1:
+                    _a = _b.sent(), assetAddressMap = _a.assetAddressMap, success = _a.success, failures = _a.failures;
+                    return [4
+                    /*yield*/
+                    , this._payIDClaim.decrypt()];
+
+                  case 2:
+                    _b.sent();
+
+                    return [4
+                    /*yield*/
+                    , this._nameService.putAddressMapping({
+                      secrets: this._payIDClaim.identitySecrets
+                    }, assetAddressMap)];
+
+                  case 3:
+                    _b.sent();
+
+                    return [4
+                    /*yield*/
+                    , this._payIDClaim.encrypt()];
+
+                  case 4:
+                    _b.sent();
+
+                    return [2
+                    /*return*/
+                    , {
+                      success: success,
+                      failures: failures
+                    }];
+
+                  case 5:
+                    err_6 = _b.sent();
+                    throw _packages.errors.CruxClientError.fromError(err_6);
+
+                  case 6:
+                    return [2
+                    /*return*/
+                    ];
+                }
+              });
+            });
+          }).catch(function (err) {
+            throw err;
+          })];
+        });
+      });
+    };
+
+    this.getAddressMap = function () {
+      return __awaiter(_this, void 0, Promise, function () {
+        var _this = this;
+
+        return __generator(this, function (_a) {
+          return [2
+          /*return*/
+          , this.initPromise.then(function () {
+            return __awaiter(_this, void 0, void 0, function () {
+              var currencyAddressMap, userAssetIdToAddressMap, _a, _b, assetId, _c, e_1_1, err_7;
+
+              var e_1, _d;
+
+              return __generator(this, function (_e) {
+                switch (_e.label) {
+                  case 0:
+                    _e.trys.push([0, 12,, 13]);
+
+                    currencyAddressMap = {};
+                    if (!(this._payIDClaim && this._payIDClaim.virtualAddress && this._configService)) return [3
+                    /*break*/
+                    , 10];
+                    return [4
+                    /*yield*/
+                    , this._nameService.getAddressMapping(this._payIDClaim.virtualAddress)];
+
+                  case 1:
+                    userAssetIdToAddressMap = _e.sent();
+                    _e.label = 2;
+
+                  case 2:
+                    _e.trys.push([2, 7, 8, 9]);
+
+                    _a = __values(Object.keys(userAssetIdToAddressMap)), _b = _a.next();
+                    _e.label = 3;
+
+                  case 3:
+                    if (!!_b.done) return [3
+                    /*break*/
+                    , 6];
+                    assetId = _b.value;
+                    _c = currencyAddressMap;
+                    return [4
+                    /*yield*/
+                    , this._translateAssetIdToSymbol(assetId)];
+
+                  case 4:
+                    _c[_e.sent()] = userAssetIdToAddressMap[assetId];
+                    _e.label = 5;
+
+                  case 5:
+                    _b = _a.next();
+                    return [3
+                    /*break*/
+                    , 3];
+
+                  case 6:
+                    return [3
+                    /*break*/
+                    , 9];
+
+                  case 7:
+                    e_1_1 = _e.sent();
+                    e_1 = {
+                      error: e_1_1
+                    };
+                    return [3
+                    /*break*/
+                    , 9];
+
+                  case 8:
+                    try {
+                      if (_b && !_b.done && (_d = _a.return)) _d.call(_a);
+                    } finally {
+                      if (e_1) throw e_1.error;
+                    }
+
+                    return [7
+                    /*endfinally*/
+                    ];
+
+                  case 9:
+                    return [2
+                    /*return*/
+                    , currencyAddressMap];
+
+                  case 10:
+                    return [2
+                    /*return*/
+                    , {}];
+
+                  case 11:
+                    return [3
+                    /*break*/
+                    , 13];
+
+                  case 12:
+                    err_7 = _e.sent();
+
+                    if (err_7.errorCode && err_7.errorCode === _packages.errors.PackageErrorCode.GaiaEmptyResponse) {
+                      return [2
+                      /*return*/
+                      , {}];
+                    }
+
+                    throw _packages.errors.CruxClientError.fromError(err_7);
+
+                  case 13:
+                    return [2
+                    /*return*/
+                    ];
+                }
+              });
+            });
+          }).catch(function (err) {
+            throw err;
+          })];
+        });
+      });
+    };
+
+    this.getAssetMap = function () {
+      return __awaiter(_this, void 0, Promise, function () {
+        var _this = this;
+
+        return __generator(this, function (_a) {
+          return [2
+          /*return*/
+          , this.initPromise.then(function () {
+            return __awaiter(_this, void 0, void 0, function () {
+              return __generator(this, function (_a) {
+                try {
+                  // @ts-ignore
+                  return [2
+                  /*return*/
+                  , this._configService.resolvedClientAssetMap];
+                } catch (err) {
+                  throw _packages.errors.CruxClientError.fromError(err);
+                }
+
+                return [2
+                /*return*/
+                ];
+              });
+            });
+          }).catch(function (err) {
+            throw err;
+          })];
+        });
+      });
+    };
+
+    this.getAssetMapping = function () {
+      return _this.getAssetMap;
+    }; // For backward compatibility
+
+
+    this._setPayIDClaim = function (payIDClaim) {
+      _this._payIDClaim = payIDClaim;
+      delete _this._keyPair;
+    };
+
+    this._init = function () {
+      return __awaiter(_this, void 0, Promise, function () {
         var payIDClaim, registeredCruxID, registeredCruxID, payIDClaim;
 
         var _this = this;
@@ -122497,540 +123157,13 @@ function () {
             case 9:
               _a.sent();
 
-              log.info("CruxPayPeer: Done init");
+              log.info("CruxPayClient: _init complete");
               return [2
               /*return*/
               ];
           }
         });
       });
-    };
-
-    this.hasPayIDClaim = function () {
-      return Boolean(_this._payIDClaim);
-    };
-
-    this.getPayIDClaim = function () {
-      return _this._payIDClaim;
-    };
-
-    this.updatePassword = function (oldEncryptionKey, newEncryptionKey) {
-      return __awaiter(_this, void 0, Promise, function () {
-        var err_1, err_2;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              _a.trys.push([0, 11,, 12]);
-
-              return [4
-              /*yield*/
-              , this._hasPayIDClaimStored()];
-
-            case 1:
-              if (!_a.sent()) return [3
-              /*break*/
-              , 9];
-              return [4
-              /*yield*/
-              , this._payIDClaim.decrypt(oldEncryptionKey)];
-
-            case 2:
-              _a.sent();
-
-              _a.label = 3;
-
-            case 3:
-              _a.trys.push([3, 5,, 7]);
-
-              return [4
-              /*yield*/
-              , this._payIDClaim.encrypt(newEncryptionKey)];
-
-            case 4:
-              _a.sent();
-
-              return [3
-              /*break*/
-              , 7];
-
-            case 5:
-              err_1 = _a.sent();
-              return [4
-              /*yield*/
-              , this._payIDClaim.encrypt(oldEncryptionKey)];
-
-            case 6:
-              _a.sent();
-
-              return [2
-              /*return*/
-              , false];
-
-            case 7:
-              return [4
-              /*yield*/
-              , this._payIDClaim.save(this._storage)];
-
-            case 8:
-              _a.sent();
-
-              return [2
-              /*return*/
-              , true];
-
-            case 9:
-              return [2
-              /*return*/
-              , true];
-
-            case 10:
-              return [3
-              /*break*/
-              , 12];
-
-            case 11:
-              err_2 = _a.sent();
-              throw _packages.errors.CruxClientError.fromError(err_2);
-
-            case 12:
-              return [2
-              /*return*/
-              ];
-          }
-        });
-      });
-    };
-
-    this.isCruxIDAvailable = function (cruxIDSubdomain) {
-      try {
-        _packages.identityUtils.validateSubdomain(cruxIDSubdomain);
-
-        return _this._nameService.getNameAvailability(cruxIDSubdomain);
-      } catch (err) {
-        throw _packages.errors.CruxClientError.fromError(err);
-      }
-    };
-
-    this.resolveCurrencyAddressForCruxID = function (fullCruxID, walletCurrencySymbol) {
-      return __awaiter(_this, void 0, Promise, function () {
-        var correspondingAssetId, addressMap, address, err_3;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              _a.trys.push([0, 3,, 4]);
-
-              if (!(this._configService && this._nameService)) {
-                throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.ClientNotInitialized);
-              }
-
-              walletCurrencySymbol = walletCurrencySymbol.toLowerCase();
-              correspondingAssetId = "";
-              return [4
-              /*yield*/
-              , this._translateSymbolToAssetId(walletCurrencySymbol)];
-
-            case 1:
-              correspondingAssetId = _a.sent();
-
-              if (!correspondingAssetId) {
-                throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.AssetIDNotAvailable);
-              }
-
-              return [4
-              /*yield*/
-              , this._nameService.getAddressMapping(fullCruxID)];
-
-            case 2:
-              addressMap = _a.sent();
-              log.debug("Address map: ", addressMap);
-
-              if (!addressMap[correspondingAssetId]) {
-                throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.AddressNotAvailable);
-              }
-
-              address = addressMap[correspondingAssetId] || addressMap[correspondingAssetId.toLowerCase()];
-              log.debug("Address:", address);
-              return [2
-              /*return*/
-              , address];
-
-            case 3:
-              err_3 = _a.sent();
-              throw _packages.errors.CruxClientError.fromError(err_3);
-
-            case 4:
-              return [2
-              /*return*/
-              ];
-          }
-        });
-      });
-    };
-
-    this.getCruxIDState = function () {
-      return __awaiter(_this, void 0, Promise, function () {
-        var fullCruxID, status, err_4;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              _a.trys.push([0, 2,, 3]);
-
-              fullCruxID = this.hasPayIDClaim() ? this.getPayIDClaim().virtualAddress : undefined;
-
-              if (!fullCruxID) {
-                return [2
-                /*return*/
-                , {
-                  cruxID: null,
-                  status: {
-                    status: "NONE",
-                    statusDetail: ""
-                  }
-                }];
-              }
-
-              return [4
-              /*yield*/
-              , this._getIDStatus()];
-
-            case 1:
-              status = _a.sent();
-              return [2
-              /*return*/
-              , {
-                cruxID: fullCruxID,
-                status: status
-              }];
-
-            case 2:
-              err_4 = _a.sent();
-              throw _packages.errors.CruxClientError.fromError(err_4);
-
-            case 3:
-              return [2
-              /*return*/
-              ];
-          }
-        });
-      });
-    };
-
-    this.registerCruxID = function (cruxIDSubdomain) {
-      return __awaiter(_this, void 0, Promise, function () {
-        var identityClaim, _a, _b, _c, registeredPublicID, err_5;
-
-        return __generator(this, function (_d) {
-          switch (_d.label) {
-            case 0:
-              _d.trys.push([0, 12,, 13]); // Subdomain validation
-
-
-              _packages.identityUtils.validateSubdomain(cruxIDSubdomain);
-
-              return [4
-              /*yield*/
-              , this.isCruxIDAvailable(cruxIDSubdomain)];
-
-            case 1:
-              // Validate if the subdomain is available
-              if (!_d.sent()) {
-                throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.CruxIDUnavailable, cruxIDSubdomain);
-              }
-
-              if (!this._payIDClaim) return [3
-              /*break*/
-              , 3];
-
-              if (this._payIDClaim.virtualAddress) {
-                // Do not allow multiple registrations using same payIDClaim
-                throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.ExistingCruxIDFound, this._payIDClaim.virtualAddress);
-              }
-
-              return [4
-              /*yield*/
-              , this._payIDClaim.decrypt()];
-
-            case 2:
-              _d.sent();
-
-              _d.label = 3;
-
-            case 3:
-              identityClaim = void 0;
-              if (!this._payIDClaim) return [3
-              /*break*/
-              , 4];
-              identityClaim = {
-                secrets: this._payIDClaim.identitySecrets
-              };
-              return [3
-              /*break*/
-              , 8];
-
-            case 4:
-              if (!this._keyPair) return [3
-              /*break*/
-              , 5];
-              identityClaim = {
-                secrets: {
-                  identityKeyPair: this._keyPair
-                }
-              };
-              return [3
-              /*break*/
-              , 8];
-
-            case 5:
-              _b = (_a = this._nameService).generateIdentity;
-              _c = [this._storage];
-              return [4
-              /*yield*/
-              , this._getEncryptionKey()];
-
-            case 6:
-              return [4
-              /*yield*/
-              , _b.apply(_a, _c.concat([_d.sent()]))];
-
-            case 7:
-              identityClaim = _d.sent();
-              _d.label = 8;
-
-            case 8:
-              return [4
-              /*yield*/
-              , this._nameService.registerName(identityClaim, cruxIDSubdomain)];
-
-            case 9:
-              registeredPublicID = _d.sent(); // Setup the payIDClaim locally
-
-              this._setPayIDClaim(new PayIDClaim({
-                virtualAddress: registeredPublicID,
-                identitySecrets: identityClaim.secrets
-              }, {
-                getEncryptionKey: this._getEncryptionKey
-              })); // await this._payIDClaim.setPasscode(passcode)
-
-
-              return [4
-              /*yield*/
-              , this._payIDClaim.encrypt()];
-
-            case 10:
-              // await this._payIDClaim.setPasscode(passcode)
-              _d.sent();
-
-              return [4
-              /*yield*/
-              , this._payIDClaim.save(this._storage)];
-
-            case 11:
-              _d.sent();
-
-              return [2
-              /*return*/
-              ];
-
-            case 12:
-              err_5 = _d.sent();
-              throw _packages.errors.CruxClientError.fromError(err_5);
-
-            case 13:
-              return [2
-              /*return*/
-              ];
-          }
-        });
-      });
-    };
-
-    this.putAddressMap = function (newAddressMap) {
-      return __awaiter(_this, void 0, Promise, function () {
-        var _a, assetAddressMap, success, failures, err_6;
-
-        return __generator(this, function (_b) {
-          switch (_b.label) {
-            case 0:
-              _b.trys.push([0, 5,, 6]);
-
-              return [4
-              /*yield*/
-              , this._getAssetAddressMapFromCurrencyAddressMap(newAddressMap)];
-
-            case 1:
-              _a = _b.sent(), assetAddressMap = _a.assetAddressMap, success = _a.success, failures = _a.failures;
-              return [4
-              /*yield*/
-              , this._payIDClaim.decrypt()];
-
-            case 2:
-              _b.sent();
-
-              return [4
-              /*yield*/
-              , this._nameService.putAddressMapping({
-                secrets: this._payIDClaim.identitySecrets
-              }, assetAddressMap)];
-
-            case 3:
-              _b.sent();
-
-              return [4
-              /*yield*/
-              , this._payIDClaim.encrypt()];
-
-            case 4:
-              _b.sent();
-
-              return [2
-              /*return*/
-              , {
-                success: success,
-                failures: failures
-              }];
-
-            case 5:
-              err_6 = _b.sent();
-              throw _packages.errors.CruxClientError.fromError(err_6);
-
-            case 6:
-              return [2
-              /*return*/
-              ];
-          }
-        });
-      });
-    };
-
-    this.getAddressMap = function () {
-      return __awaiter(_this, void 0, Promise, function () {
-        var currencyAddressMap, userAssetIdToAddressMap, _a, _b, assetId, _c, e_1_1, err_7;
-
-        var e_1, _d;
-
-        return __generator(this, function (_e) {
-          switch (_e.label) {
-            case 0:
-              _e.trys.push([0, 12,, 13]);
-
-              currencyAddressMap = {};
-              if (!(this._payIDClaim && this._payIDClaim.virtualAddress && this._configService)) return [3
-              /*break*/
-              , 10];
-              return [4
-              /*yield*/
-              , this._nameService.getAddressMapping(this._payIDClaim.virtualAddress)];
-
-            case 1:
-              userAssetIdToAddressMap = _e.sent();
-              _e.label = 2;
-
-            case 2:
-              _e.trys.push([2, 7, 8, 9]);
-
-              _a = __values(Object.keys(userAssetIdToAddressMap)), _b = _a.next();
-              _e.label = 3;
-
-            case 3:
-              if (!!_b.done) return [3
-              /*break*/
-              , 6];
-              assetId = _b.value;
-              _c = currencyAddressMap;
-              return [4
-              /*yield*/
-              , this._translateAssetIdToSymbol(assetId)];
-
-            case 4:
-              _c[_e.sent()] = userAssetIdToAddressMap[assetId];
-              _e.label = 5;
-
-            case 5:
-              _b = _a.next();
-              return [3
-              /*break*/
-              , 3];
-
-            case 6:
-              return [3
-              /*break*/
-              , 9];
-
-            case 7:
-              e_1_1 = _e.sent();
-              e_1 = {
-                error: e_1_1
-              };
-              return [3
-              /*break*/
-              , 9];
-
-            case 8:
-              try {
-                if (_b && !_b.done && (_d = _a.return)) _d.call(_a);
-              } finally {
-                if (e_1) throw e_1.error;
-              }
-
-              return [7
-              /*endfinally*/
-              ];
-
-            case 9:
-              return [2
-              /*return*/
-              , currencyAddressMap];
-
-            case 10:
-              return [2
-              /*return*/
-              , {}];
-
-            case 11:
-              return [3
-              /*break*/
-              , 13];
-
-            case 12:
-              err_7 = _e.sent();
-
-              if (err_7.errorCode && err_7.errorCode === _packages.errors.PackageErrorCode.GaiaEmptyResponse) {
-                return [2
-                /*return*/
-                , {}];
-              }
-
-              throw _packages.errors.CruxClientError.fromError(err_7);
-
-            case 13:
-              return [2
-              /*return*/
-              ];
-          }
-        });
-      });
-    };
-
-    this.getAssetMap = function () {
-      try {
-        if (_this._configService) {
-          return _this._configService.resolvedClientAssetMap;
-        } else {
-          throw _packages.errors.ErrorHelper.getPackageError(_packages.errors.PackageErrorCode.ClientNotInitialized);
-        }
-      } catch (err) {
-        throw _packages.errors.CruxClientError.fromError(err);
-      }
-    };
-
-    this.getAssetMapping = function () {
-      return _this.getAssetMap;
-    }; // For backward compatibility
-
-
-    this._setPayIDClaim = function (payIDClaim) {
-      _this._payIDClaim = payIDClaim;
-      delete _this._keyPair;
     };
 
     this._getIDStatus = function () {
@@ -123375,7 +123508,8 @@ function () {
 
     exports.cacheStorage = cacheStorage = this._storage;
     log.info("Config mode:", _config.default.CONFIG_MODE);
-    log.info("CruxPayPeer Initialised");
+    log.info("CruxPayClient: constructor called");
+    this.initPromise = this._init();
   }
 
   CruxClient.validateCruxIDByWallet = function (walletClientName, cruxIDString) {
