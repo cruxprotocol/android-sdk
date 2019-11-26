@@ -30,11 +30,6 @@ public class CruxClient {
         this.jsBridge = new CruxJSBridge(configBuilder, androidContextObject);
     }
 
-    public void init(final CruxClientResponseHandler<Void> handler) {
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("init", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(null, handler));
-        jsBridge.executeAsync(bridgeRequest);
-    }
-
     public void getCruxIDState(final CruxClientResponseHandler<CruxIDState> handler) {
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getCruxIDState", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(CruxIDState.class, handler));
         jsBridge.executeAsync(bridgeRequest);
