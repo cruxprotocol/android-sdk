@@ -38,13 +38,13 @@ public class CruxClient {
         jsBridge.executeAsync(bridgeRequest);
     }
 
-    public void getAddressMap(final CruxClientResponseHandler<HashMap> handler) {
+    public void getAddressMap(final CruxClientResponseHandler<HashMap<String, CruxAddress>> handler) {
         Type type = new TypeToken<HashMap<String, CruxAddress>>(){}.getType();
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getAddressMap", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(type, handler));
         jsBridge.executeAsync(bridgeRequest);
     }
 
-    public void putAddressMap(HashMap newAddressMap, final CruxClientResponseHandler<CruxPutAddressMapSuccess> handler){
+    public void putAddressMap(HashMap<String, CruxAddress> newAddressMap, final CruxClientResponseHandler<CruxPutAddressMapSuccess> handler){
         Gson gson = new Gson();
         CruxParams params = new CruxParams(jsBridge.JSONtoObject(gson.toJson(newAddressMap)));
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putAddressMap", params, new CruxJSBridgeResponseHandlerImpl(CruxPutAddressMapSuccess.class, handler));

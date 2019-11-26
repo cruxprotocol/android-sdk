@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         CruxClientInitConfig.Builder configBuilder = new CruxClientInitConfig.Builder()
                 .setWalletClientName("cruxdev")
-                .setPrivateKey("KzcbJRbZHcEjw8AX3E85otgTU9Jq5Dr3rcpzeqejHfLXAsE3sxWT");
+                .setPrivateKey("cdf2d276caf0c9c34258ed6ebd0e60e0e8b3d9a7b8a9a717f2e19ed9b37f7c6f");
 
         final CruxClient client = new CruxClient(configBuilder, androidContextObject);
 
@@ -85,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        client.getAddressMap(new CruxClientResponseHandler<HashMap>() {
+        client.getAddressMap(new CruxClientResponseHandler<HashMap<String, CruxAddress>>() {
             @Override
-            public void onResponse(HashMap successResponse) {
+            public void onResponse(HashMap<String, CruxAddress> successResponse) {
                 System.out.println("--------getAddressMap-------");
                 System.out.println(successResponse);
             }
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        HashMap newAddressMap = getCurrencyMap();
+        HashMap<String, CruxAddress> newAddressMap = getCurrencyMap();
 
         client.putAddressMap(newAddressMap, new CruxClientResponseHandler<CruxPutAddressMapSuccess>() {
             @Override
@@ -130,13 +130,13 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-    private HashMap getCurrencyMap() {
+    private HashMap<String, CruxAddress> getCurrencyMap() {
         HashMap<String, CruxAddress> currencyMap = new HashMap<String, CruxAddress>();
         // Add currency and address
         currencyMap.put("btc", new CruxAddress("1HX4KvtPdg9QUYwQE1kNqTAjmNaDG7w82V", null));
         currencyMap.put("eth", new CruxAddress("0x0a2311594059b468c9897338b027c8782398b481", null));
         currencyMap.put("tron", new CruxAddress("TG3iFaVvUs34SGpWq8RG9gnagDLTe1jdyz", null));
-        currencyMap.put("xrp", new CruxAddress("rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h", "4444"));
+        currencyMap.put("xrp", new CruxAddress("rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h", "5555"));
         return currencyMap;
     }
 
