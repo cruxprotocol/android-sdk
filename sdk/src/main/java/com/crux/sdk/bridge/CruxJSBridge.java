@@ -39,7 +39,6 @@ public class CruxJSBridge {
         if (!cruxClientInitConfigString.isEmpty()) {
             System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
             System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
-            System.out.println(jsContext.evaluateScript("cruxClientInitConfig['getEncryptionKey'] = function() { return 'fookey';}"));
         }
 
     }
