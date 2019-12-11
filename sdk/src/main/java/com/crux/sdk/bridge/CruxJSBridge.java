@@ -39,13 +39,12 @@ public class CruxJSBridge {
         if (!cruxClientInitConfigString.isEmpty()) {
             System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
             System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
-            System.out.println(jsContext.evaluateScript("cruxClientInitConfig['getEncryptionKey'] = function() { return 'fookey';}"));
         }
 
     }
 
     private JSContext getContextForClient(Context androidContextObject) throws IOException {
-        String sdkFile = GenericUtils.getFromFile(androidContextObject, "cruxpay-sdk-dom.js");
+        String sdkFile = GenericUtils.getFromFile(androidContextObject, "cruxpay-0.1.5.js");
         JSContext jsContext = new JSContext();
         JSPolyFill.fixConsoleLog(jsContext);
         JSPolyFill.addFetch(jsContext, androidContextObject);
