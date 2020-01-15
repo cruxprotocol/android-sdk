@@ -14,6 +14,8 @@ import com.crux.sdk.model.CruxClientResponseHandler;
 import com.crux.sdk.model.CruxIDState;
 import com.crux.sdk.model.CruxParams;
 import com.crux.sdk.model.CruxPutAddressMapSuccess;
+import com.crux.sdk.security.AntiDebug;
+import com.crux.sdk.security.AntiEmulator;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -28,7 +30,7 @@ public class CruxClient {
 
     public CruxClient(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
         if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
-            if (Debug.isDebuggerConnected()) {
+            if (AntiDebug.isDebugging() || AntiEmulator.isEmulator()) {
                 throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.getCruxClientDebuggerFailed);
             }
         }
