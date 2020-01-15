@@ -10,12 +10,10 @@ public class CruxClientInitConfig {
         //        private String storage;
         //        private String encryption;
         //        private String nameService;
-        private String _encryptionKeyValue;
         private String walletClientName;
         private String privateKey;
 
         public Builder() {
-            this._encryptionKeyValue = "fookey";
         }
 
         public Builder setWalletClientName(String walletClientName) {
@@ -37,14 +35,12 @@ public class CruxClientInitConfig {
     private Builder builder;
     private String privateKey;
     private String walletClientName;
-    private String _encryptionKeyValue;
 
 
     protected CruxClientInitConfig(Builder builder) {
         this.builder = builder;
         this.privateKey = builder.privateKey;
         this.walletClientName = builder.walletClientName;
-        this._encryptionKeyValue = builder._encryptionKeyValue;
     }
 
     public String getCruxClientInitConfigString() throws JSONException {
