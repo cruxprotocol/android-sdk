@@ -1,28 +1,50 @@
 package com.crux.sdk.bridge;
 
+import java.io.IOException;
 import android.content.Context;
 
+import org.json.JSONException;
 import org.liquidplayer.javascript.JSContext;
 import org.liquidplayer.javascript.JSFunction;
 import org.liquidplayer.javascript.JSObject;
 import org.liquidplayer.javascript.JSValue;
 
-import java.io.IOException;
+import com.crux.sdk.model.AndroidCruxClientErrorCode;
+import com.crux.sdk.model.CruxClientError;
+import com.crux.sdk.model.CruxClientInitConfig;
+
 
 public class CruxJSBridge {
     private final JSContext jsContext;
-    private final JSObject jsClient;
+    private JSObject jsClient;
 
-    public CruxJSBridge(String walletName, Context androidContextObject) throws IOException {
+
+    public CruxJSBridge(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
         this.jsContext = this.getContextForClient(androidContextObject);
-        System.out.println(jsContext.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', storage: inmemStorage, getEncryptionKey: function(){return 'fookey'}})"));
-        System.out.println(jsContext.evaluateScript("cc.init()"));
-        this.jsClient = jsContext.property("cc").toObject();
-        // TODO This must be blocking here!
+        prepareCruxClientInitConfig(configBuilder);
+        System.out.println(jsContext.evaluateScript("cruxClient = new CruxPay.CruxClient(cruxClientInitConfig)"));
+        this.jsClient = jsContext.property("cruxClient").toObject();
+        System.out.println("initCruxClient Complete");
+    }
+
+    private void prepareCruxClientInitConfig(CruxClientInitConfig.Builder configBuilder) throws CruxClientError {
+        CruxClientInitConfig cruxClientInitConfig = configBuilder.create();
+        String cruxClientInitConfigString;
+        try {
+            cruxClientInitConfigString = cruxClientInitConfig.getCruxClientInitConfigString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.getCruxClientInitConfigStringFailed);
+        }
+        if (!cruxClientInitConfigString.isEmpty()) {
+            System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
+            System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
+        }
+
     }
 
     private JSContext getContextForClient(Context androidContextObject) throws IOException {
-        String sdkFile = GenericUtils.getFromFile(androidContextObject, "cruxpay-sdk-dom.js");
+        String sdkFile = GenericUtils.getFromFile(androidContextObject, "cruxpay-0.1.5.js");
         JSContext jsContext = new JSContext();
         JSPolyFill.fixConsoleLog(jsContext);
         JSPolyFill.addFetch(jsContext, androidContextObject);
@@ -34,20 +56,20 @@ public class CruxJSBridge {
     }
 
     public void executeAsync(final CruxJSBridgeAsyncRequest request) {
+
         JSFunction jsMethod = jsClient.property(request.method).toFunction();
         JSObject promise = jsMethod.call(null, request.params.args).toObject();
 
 
-
         JSFunction jsSuccessHandler = new JSFunction(jsContext, "jsSuccessHandler") {
-            public void jsSuccessHandler(JSValue successResponse) {
-                request.handler.onResponse(successResponse.toObject());
+            public void jsSuccessHandler(JSValue successResponse) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+                request.handler.onResponse(successResponse);
             }
         };
 
         JSFunction jsFailureHandler = new JSFunction(jsContext, "jsFailureHandler") {
             public void jsFailureHandler(JSValue failureResponse) {
-                request.handler.onErrorResponse(failureResponse.toObject());
+                request.handler.onErrorResponse(failureResponse);
             }
         };
 
@@ -58,8 +80,14 @@ public class CruxJSBridge {
         promiseCatch.call(promise, jsFailureHandler);
     }
 
-    public String objectToJSON(JSObject jsObject) {
-        JSFunction stringify = jsContext.property("JSON").toObject().property("stringify").toFunction();
-        return stringify.call(null, jsObject).toString();
+    public Object JSONtoObject(String jsonString) {
+        JSFunction parse = jsContext.property("JSON").toObject().property("parse").toFunction();
+        return parse.call(null, jsonString).toObject();
     }
+
+//    public String objectToJSON(JSObject jsObject) {
+//        JSFunction stringify = jsContext.property("JSON").toObject().property("stringify").toFunction();
+//        return stringify.call(null, jsObject).toString();
+//    }
+
 }

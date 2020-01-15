@@ -1,8 +1,8 @@
 package com.crux.sdk.bridge;
 
-import org.liquidplayer.javascript.JSObject;
+import org.liquidplayer.javascript.JSValue;
 
 public interface CruxJSBridgeResponseHandler {
-    void onResponse(JSObject successResponse);
-    void onErrorResponse(JSObject failureResponse);
+    void onResponse(JSValue successResponse);
+    void onErrorResponse(JSValue failureResponse);
 }

@@ -5,13 +5,16 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.crux.sdk.AnkitTest;
 import com.crux.sdk.CruxClient;
+import com.crux.sdk.model.CruxAddress;
 import com.crux.sdk.model.CruxClientError;
+import com.crux.sdk.model.CruxClientInitConfig;
 import com.crux.sdk.model.CruxClientResponseHandler;
 import com.crux.sdk.model.CruxIDState;
+import com.crux.sdk.model.CruxPutAddressMapSuccess;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,23 +24,100 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         try {
             runScript(this);
-        } catch (IOException e) {
+        } catch (IOException | CruxClientError e) {
             e.printStackTrace();
         }
-//        catch (JSException e) {
-//            System.out.println("JSEXCEPTION DETECTED");
-//            System.out.println(e.stack());
-//        }
+
     }
 
-    public String runScript(final Context androidContextObject) throws IOException {
-        CruxClient client = new CruxClient("cruxdev", androidContextObject);
+    public String runScript(final Context androidContextObject) throws IOException, CruxClientError {
+
+        CruxClientInitConfig.Builder configBuilder = new CruxClientInitConfig.Builder()
+                .setWalletClientName("cruxdev")
+                .setPrivateKey("cdf2d276caf0c9c34258ed6ebd0e60e0e8b3d9a7b8a9a717f2e19ed9b37f7c6f");
+
+        final CruxClient client = new CruxClient(configBuilder, androidContextObject);
+
+        final String testAvailabilityCruxId = "yadu007";
+        client.isCruxIDAvailable(testAvailabilityCruxId, new CruxClientResponseHandler<Boolean>() {
+            @Override
+            public void onResponse(Boolean successResponse) {
+                System.out.println("--------isCruxIDAvailable-------");
+                System.out.println(successResponse);
+                if (successResponse == Boolean.TRUE) {
+                    System.out.println(testAvailabilityCruxId + " is available");
+                } else {
+                    System.out.println(testAvailabilityCruxId + " is not available");
+                }
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println(failureResponse);
+            }
+        });
+
+        client.registerCruxID("dev_umang5", new CruxClientResponseHandler<Void>() {
+            @Override
+            public void onResponse(Void successResponse) {
+                System.out.println("--------registerCruxID-------");
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println(failureResponse);
+            }
+        });
+
         client.getCruxIDState(new CruxClientResponseHandler<CruxIDState>() {
             @Override
             public void onResponse(CruxIDState successResponse) {
+                System.out.println("--------getCruxIDState-------");
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println(failureResponse);
+            }
+        });
+
+        client.getAddressMap(new CruxClientResponseHandler<HashMap<String, CruxAddress>>() {
+            @Override
+            public void onResponse(HashMap<String, CruxAddress> successResponse) {
+                System.out.println("--------getAddressMap-------");
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println(failureResponse);
+            }
+        });
+
+        final String testResolveAddressCruxId = "mascot6699@cruxdev.crux";
+        client.resolveCurrencyAddressForCruxID(testResolveAddressCruxId, "xrp", new CruxClientResponseHandler<CruxAddress>() {
+            @Override
+            public void onResponse(CruxAddress successResponse) {
+                System.out.println("--------resolveCurrencyAddressForCruxID-------");
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println(failureResponse);
+            }
+        });
+
+        HashMap<String, CruxAddress> newAddressMap = getCurrencyMap();
+
+        client.putAddressMap(newAddressMap, new CruxClientResponseHandler<CruxPutAddressMapSuccess>() {
+            @Override
+            public void onResponse(CruxPutAddressMapSuccess successResponse) {
+                System.out.println("--------putAddressMap-------");
                 System.out.println(successResponse);
             }
 
@@ -50,48 +130,14 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-
-
-    public String runScript2(final Context androidContextObject) throws IOException {
-        System.out.println(new AnkitTest().foo());
-        return null;
+    private HashMap<String, CruxAddress> getCurrencyMap() {
+        HashMap<String, CruxAddress> currencyMap = new HashMap<String, CruxAddress>();
+        // Add currency and address
+        currencyMap.put("btc", new CruxAddress("1HX4KvtPdg9QUYwQE1kNqTAjmNaDG7w82V", null));
+        currencyMap.put("eth", new CruxAddress("0x0a2311594059b468c9897338b027c8782398b481", null));
+        currencyMap.put("tron", new CruxAddress("TG3iFaVvUs34SGpWq8RG9gnagDLTe1jdyz", null));
+        currencyMap.put("xrp", new CruxAddress("rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h", "5555"));
+        return currencyMap;
     }
 
-//    public String runScript2(final Context androidContextObject) throws IOException {
-//        System.out.println("====== START runScript fetch wali ========");
-//        String sdkFile = GenericUtils.getFromFile(androidContextObject, "cruxpay-sdk-dom.js");
-//        JSContext context = new JSContext();
-//        JSPolyFill.fixConsoleLog(context);
-//        JSPolyFill.addFetch(context, androidContextObject);
-//        JSPolyFill.fixRandomInt(context);
-////        System.out.println(context.evaluateScript("Response;"));
-////        System.out.println(context.evaluateScript("fetch('https://www.google.com', {method: 'GET', headers:{'a':'asdasd'}}).then(function(res){console.log('Promise.then');console.log(res);console.log(res.content);console.log('=Promise.then over=')}).catch(function(err){console.log('Promise.catch');console.log(err)})"));
-//// Request a string response from the provided URL.
-//
-//        System.out.println("\n\n\n\n====+++++====++++====++\n\n\n\n");
-//        context.evaluateScript("var window = this;");
-//        context.evaluateScript("window.crypto = {}; window.crypto.getRandomValues = function(size){let all = new Array();for (let i = 0; i < size; i++) {all[i] = crypto.randomInt();};return all;}");
-//        context.evaluateScript(sdkFile);
-//        System.out.println("SDK FILE EVALUATED!");
-//        System.out.println(context.evaluateScript("cc = new CruxPay.CruxClient({ walletClientName: 'cruxdev', storage: inmemStorage, getEncryptionKey: function(){return 'fookey'}})"));
-//        System.out.println(context.evaluateScript("cc.init()"));
-//        JSValue cruxIDStatePromise = context.evaluateScript("cc.getCruxIDState()");
-//        try {
-//            JSValue result = PromiseSynchronizer.sync(context, cruxIDStatePromise, 1000);
-//            JSFunction stringify = context.property("JSON.stringify").toFunction();
-//            JSValue stringifyResult = stringify.call(result.toObject());
-//            String javaString = stringifyResult.toString();
-//            System.out.println("!!! javastring !!!");
-//            System.out.println(javaString);
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (PromiseSynchronizerTimeout promiseSynchronizerTimeout) {
-//            promiseSynchronizerTimeout.printStackTrace();
-//        } catch (PromiseSynchronizerRejected promiseSynchronizerRejected) {
-//            promiseSynchronizerRejected.printStackTrace();
-//        }
-//        return null;
-//    }
 }

@@ -97,14 +97,24 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, FetchResponse> {
             }
             int responseCode = conn.getResponseCode();
             System.out.println("The response is: " + responseCode);
-            is = conn.getInputStream();
+            if (responseCode >= 200 && responseCode <400) {
+                is = conn.getInputStream();
 
-            // Convert the InputStream into a string
-            String contentAsString = convert(is);
-            Map<String, List<String>> headerFields = conn.getHeaderFields();
+                // Convert the InputStream into a string
+                String contentAsString = convert(is);
+                Map<String, List<String>> headerFields = conn.getHeaderFields();
 
-            FetchResponse response = new FetchResponse(url.toString(), responseCode, contentAsString, headerFields);
-            return response;
+                FetchResponse response = new FetchResponse(url.toString(), responseCode, contentAsString, headerFields);
+                return response;
+            }
+            else{
+                is = conn.getErrorStream();
+                String contentAsString = convert(is);
+                Map<String, List<String>> headerFields = conn.getHeaderFields();
+
+                FetchResponse response = new FetchResponse(url.toString(), responseCode, contentAsString, headerFields);
+                return response;
+            }
         } finally {
             if (is != null) {
                 is.close();
