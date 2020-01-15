@@ -1,10 +1,12 @@
 package com.crux.sdk;
 
 import android.content.Context;
+import android.os.Debug;
 
 import com.crux.sdk.bridge.CruxJSBridge;
 import com.crux.sdk.bridge.CruxJSBridgeAsyncRequest;
 import com.crux.sdk.bridge.handlerImpl.CruxJSBridgeResponseHandlerImpl;
+import com.crux.sdk.model.AndroidCruxClientErrorCode;
 import com.crux.sdk.model.CruxAddress;
 import com.crux.sdk.model.CruxClientError;
 import com.crux.sdk.model.CruxClientInitConfig;
@@ -25,6 +27,11 @@ public class CruxClient {
     private final CruxJSBridge jsBridge;
 
     public CruxClient(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
+        if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
+            if (Debug.isDebuggerConnected()) {
+                throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.getCruxClientDebuggerFailed);
+            }
+        }
         this.jsBridge = new CruxJSBridge(configBuilder, androidContextObject);
     }
 
