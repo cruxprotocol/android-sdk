@@ -40,7 +40,7 @@ public class CruxJSBridge {
         if (!cruxClientInitConfigString.isEmpty()) {
             System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
             System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
-            cruxClientInitConfigString = ""
+            cruxClientInitConfigString = "";
         }
         configBuilder = null;
     }
