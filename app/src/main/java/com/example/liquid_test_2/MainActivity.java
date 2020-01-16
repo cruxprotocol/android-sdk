@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             client = new CruxClient(configBuilder, androidContextObject);
         } catch(CruxClientError e) {
-            Toast.makeText(androidContextObject, "Debug from vm detected.", 5).show();
+            Toast.makeText(androidContextObject, "Client caught and reraised:" + e.errorMessage, Toast.LENGTH_LONG).show();
+            System.out.println("use debug version for development");
             return null;
         }
 
@@ -133,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(failureResponse);
             }
         });
-
 
         return null;
     }

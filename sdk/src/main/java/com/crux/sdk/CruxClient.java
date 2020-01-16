@@ -14,8 +14,7 @@ import com.crux.sdk.model.CruxClientResponseHandler;
 import com.crux.sdk.model.CruxIDState;
 import com.crux.sdk.model.CruxParams;
 import com.crux.sdk.model.CruxPutAddressMapSuccess;
-import com.crux.sdk.security.AntiDebug;
-import com.crux.sdk.security.AntiEmulator;
+import com.crux.sdk.security.SdkSafety;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -29,13 +28,14 @@ public class CruxClient {
     private final CruxJSBridge jsBridge;
 
     public CruxClient(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
-        if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
-            if (AntiDebug.isDebugging() || AntiEmulator.isEmulator()) {
-                throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.getCruxClientDebuggerFailed);
-            }
+
+        SdkSafety sf = new SdkSafety(androidContextObject);
+        if (sf.checkSafety()) {
+            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.runningInUnsafeEnvironment);
         }
         this.jsBridge = new CruxJSBridge(configBuilder, androidContextObject);
     }
+
 
     public void getCruxIDState(final CruxClientResponseHandler<CruxIDState> handler) {
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getCruxIDState", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(CruxIDState.class, handler));

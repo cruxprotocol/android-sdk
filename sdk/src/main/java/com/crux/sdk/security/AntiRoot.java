@@ -26,9 +26,12 @@ public class AntiRoot {
 
     public boolean isRooted() {
 
-        return _detectTestKeys() || _detectRootManagementApps(null)
-                || _detectPotentiallyDangerousApps(null) || _checkSuExists() || _checkForBinary(AntiRootConst.BINARY_SU)
-                || _checkForBinary(AntiRootConst.BINARY_BUSYBOX) || _checkForBinary(AntiRootConst.MAGISK);
+        return _detectTestKeys()
+                || _detectRootManagementApps(null)
+                || _detectPotentiallyDangerousApps(null)
+                || _detectRootCloakingApps(null)
+                || (!_checkForBinary(AntiRootConst.BINARY_SU) || !_checkForBinary(AntiRootConst.BINARY_BUSYBOX) || !_checkForBinary(AntiRootConst.MAGISK))
+                || _checkSuExists();
 
         // || _checkForRWPaths()
     }
@@ -84,7 +87,6 @@ public class AntiRoot {
         return isAnyPackageFromListInstalled(packages);
     }
 
-
     /**
      * Using the PackageManager, check for a list of well known apps that require root. @link {AntiRootConst.knownRootAppsPackages}
      * @param additionalDangerousApps - array of additional packagenames to search for
@@ -99,6 +101,16 @@ public class AntiRoot {
             packages.addAll(Arrays.asList(additionalDangerousApps));
         }
 
+        return isAnyPackageFromListInstalled(packages);
+    }
+
+    public boolean _detectRootCloakingApps(String[] additionalRootCloakingApps) {
+        // Create a list of package names to iterate over from constants any others provided
+        ArrayList<String> packages = new ArrayList<>();
+        packages.addAll(Arrays.asList(AntiRootConst.knownRootCloakingPackages));
+        if (additionalRootCloakingApps!=null && additionalRootCloakingApps.length>0){
+            packages.addAll(Arrays.asList(additionalRootCloakingApps));
+        }
         return isAnyPackageFromListInstalled(packages);
     }
 
@@ -129,7 +141,7 @@ public class AntiRoot {
 
         String[] pathsArray = AntiRootConst.suPaths;
 
-        boolean result = false;
+        boolean result = true;
 
         for (String path : pathsArray) {
             String completePath = path + filename;
@@ -137,11 +149,11 @@ public class AntiRoot {
             boolean fileExists = f.exists();
             if (fileExists) {
                 Log.v(TAG, completePath + " binary detected!");
-                result = true;
+                result = false;
             }
         }
 
-        return result;
+        return !result;
     }
 
 
