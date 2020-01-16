@@ -41,6 +41,7 @@ public class CruxClientInitConfig {
         this.builder = builder;
         this.privateKey = builder.privateKey;
         this.walletClientName = builder.walletClientName;
+        builder = null;
     }
 
     public String getCruxClientInitConfigString() throws JSONException {
