@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -69,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -82,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -95,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -124,7 +128,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -137,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         currencyMap.put("btc", new CruxAddress("1HX4KvtPdg9QUYwQE1kNqTAjmNaDG7w82V", null));
         currencyMap.put("eth", new CruxAddress("0x0a2311594059b468c9897338b027c8782398b481", null));
         currencyMap.put("tron", new CruxAddress("TG3iFaVvUs34SGpWq8RG9gnagDLTe1jdyz", null));
-        currencyMap.put("xrp", new CruxAddress("rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h", "5555"));
+        currencyMap.put("xrp", new CruxAddress("rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h", "7777"));
         return currencyMap;
     }
 
