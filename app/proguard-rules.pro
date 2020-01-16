@@ -19,3 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# To fix errors and force R8 to keep certain code, add a -keep line in the ProGuard rules file. For example:
+# -keep public class MyClass
+-dontwarn com.crux.sdk.**
+-keep class com.crux.sdk.** {*;}

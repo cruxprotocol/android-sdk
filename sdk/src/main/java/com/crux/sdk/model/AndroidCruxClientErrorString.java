@@ -9,6 +9,7 @@ public class AndroidCruxClientErrorString {
     static {
         errorCodeToErrorStringMap = new HashMap<Integer, String>();
         errorCodeToErrorStringMap.put(AndroidCruxClientErrorCode.getCruxClientInitConfigStringFailed, "Could not initialize cruxClientConfig");
+        errorCodeToErrorStringMap.put(AndroidCruxClientErrorCode.runningInUnsafeEnvironment, "CRUX SDK should not run in unsafe environment");
         errorCodeToErrorStringMap.put(AndroidCruxClientErrorCode.cruxAddressMappingConversionFailed, "Could not create CruxAddressMapping");
     }
 }

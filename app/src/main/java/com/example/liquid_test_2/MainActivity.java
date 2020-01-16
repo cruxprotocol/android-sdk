@@ -2,6 +2,7 @@ package com.example.liquid_test_2;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
                 .setWalletClientName("cruxdev")
                 .setPrivateKey("cdf2d276caf0c9c34258ed6ebd0e60e0e8b3d9a7b8a9a717f2e19ed9b37f7c6f");
 
-        final CruxClient client = new CruxClient(configBuilder, androidContextObject);
+        CruxClient client;
+        try {
+            client = new CruxClient(configBuilder, androidContextObject);
+        } catch(CruxClientError e) {
+            Toast.makeText(androidContextObject, "Client caught and reraised:" + e.errorMessage, Toast.LENGTH_LONG).show();
+            System.out.println("use debug version for development");
+            return null;
+        }
 
         final String testAvailabilityCruxId = "yadu007";
         client.isCruxIDAvailable(testAvailabilityCruxId, new CruxClientResponseHandler<Boolean>() {
