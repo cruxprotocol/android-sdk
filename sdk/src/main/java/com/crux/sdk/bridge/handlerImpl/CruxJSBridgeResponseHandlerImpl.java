@@ -18,9 +18,9 @@ public class CruxJSBridgeResponseHandlerImpl implements CruxJSBridgeResponseHand
     private final Gson gson;
     protected final CruxClientResponseHandler handler;
 
-    public CruxJSBridgeResponseHandlerImpl (Type returnClass, final CruxClientResponseHandler handler) {
+    public CruxJSBridgeResponseHandlerImpl (Type returnClass, final CruxClientResponseHandler handler, final Gson gson) {
         this.returnClass = returnClass;
-        this.gson = new Gson();
+        this.gson = gson;
         this.handler = handler;
     }
 

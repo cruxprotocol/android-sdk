@@ -23,41 +23,42 @@ import java.util.HashMap;
 
 public class CruxClient {
     private final CruxJSBridge jsBridge;
+    private final Gson gson = new Gson();
 
     public CruxClient(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
         this.jsBridge = new CruxJSBridge(configBuilder, androidContextObject);
     }
 
     public void getCruxIDState(final CruxClientResponseHandler<CruxIDState> handler) {
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getCruxIDState", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(CruxIDState.class, handler));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getCruxIDState", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(CruxIDState.class, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
     }
 
     public void registerCruxID(String cruxIDSubdomain, final CruxClientResponseHandler<Void> handler) {
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("registerCruxID", new CruxParams(cruxIDSubdomain), new CruxJSBridgeResponseHandlerImpl(null, handler));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("registerCruxID", new CruxParams(cruxIDSubdomain), new CruxJSBridgeResponseHandlerImpl(null, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
     }
 
     public void getAddressMap(final CruxClientResponseHandler<HashMap<String, CruxAddress>> handler) {
         Type type = new TypeToken<HashMap<String, CruxAddress>>(){}.getType();
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getAddressMap", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(type, handler));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getAddressMap", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(type, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
     }
 
     public void putAddressMap(HashMap<String, CruxAddress> newAddressMap, final CruxClientResponseHandler<CruxPutAddressMapSuccess> handler){
         Gson gson = new Gson();
         CruxParams params = new CruxParams(jsBridge.JSONtoObject(gson.toJson(newAddressMap)));
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putAddressMap", params, new CruxJSBridgeResponseHandlerImpl(CruxPutAddressMapSuccess.class, handler));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putAddressMap", params, new CruxJSBridgeResponseHandlerImpl(CruxPutAddressMapSuccess.class, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
     }
 
     public void resolveCurrencyAddressForCruxID(String fullCruxID, String walletCurrencySymbol, final CruxClientResponseHandler<CruxAddress> handler){
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("resolveCurrencyAddressForCruxID", new CruxParams(fullCruxID, walletCurrencySymbol), new CruxJSBridgeResponseHandlerImpl(CruxAddress.class, handler));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("resolveCurrencyAddressForCruxID", new CruxParams(fullCruxID, walletCurrencySymbol), new CruxJSBridgeResponseHandlerImpl(CruxAddress.class, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
     }
 
     public void isCruxIDAvailable(String cruxIDSubdomain, final CruxClientResponseHandler<Boolean> handler) {
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("isCruxIDAvailable", new CruxParams(cruxIDSubdomain), new CruxJSBridgeResponseHandlerImpl(Boolean.class, handler));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("isCruxIDAvailable", new CruxParams(cruxIDSubdomain), new CruxJSBridgeResponseHandlerImpl(Boolean.class, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
     }
 

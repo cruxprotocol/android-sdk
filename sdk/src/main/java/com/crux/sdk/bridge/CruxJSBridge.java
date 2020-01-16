@@ -17,6 +17,7 @@ import com.crux.sdk.model.CruxClientInitConfig;
 public class CruxJSBridge {
     private final JSContext jsContext;
     private JSObject jsClient;
+    private final cruxJsFileName = "cruxpay-0.1.9.js";
 
 
     public CruxJSBridge(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
@@ -44,7 +45,7 @@ public class CruxJSBridge {
     }
 
     private JSContext getContextForClient(Context androidContextObject) throws IOException {
-        String sdkFile = GenericUtils.getFromFile(androidContextObject, "cruxpay-0.1.5.js");
+        String sdkFile = GenericUtils.getFromFile(androidContextObject, cruxJsFileName);
         JSContext jsContext = new JSContext();
         JSPolyFill.fixConsoleLog(jsContext);
         JSPolyFill.addFetch(jsContext, androidContextObject);
