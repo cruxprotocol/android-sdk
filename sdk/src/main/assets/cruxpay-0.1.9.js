@@ -847,9 +847,9 @@ try {
 
 },{}],"BrLT":[function(require,module,exports) {
 module.exports = {
-  "CONFIG_MODE": "DEV",
+  "CONFIG_MODE": "PROD",
   "BLOCKSTACK": {
-    "SUBDOMAIN_REGISTRAR": "https://registrar.coinswitch.co:3000",
+    "SUBDOMAIN_REGISTRAR": "https://registrar.cruxpay.com",
     "GAIA_HUB": "https://hub.cruxpay.com",
     "BNS_NODES": ["https://core.blockstack.org", "https://bns.cruxpay.com"]
   }

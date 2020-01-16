@@ -40,8 +40,9 @@ public class CruxJSBridge {
         if (!cruxClientInitConfigString.isEmpty()) {
             System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
             System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
+            cruxClientInitConfigString = ""
         }
-
+        configBuilder = null;
     }
 
     private JSContext getContextForClient(Context androidContextObject) throws IOException {
