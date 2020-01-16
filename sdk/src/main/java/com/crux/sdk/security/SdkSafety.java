@@ -41,7 +41,7 @@ public class SdkSafety {
         AntiRoot ar = new AntiRoot(mContext);
 
         Random rand = new Random();
-        int randomizeCheck = 7; // rand.nextInt(1000)/7;
+        int randomizeCheck = rand.nextInt(1000)/7;
         switch (randomizeCheck) {
             case 1:
                 if (AntiEmulator.isEmulator()) {
