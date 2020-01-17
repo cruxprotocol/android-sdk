@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.zip.CRC32;
+import java.util.zip.Checksum;
 
 import org.liquidplayer.javascript.JSValue;
 
@@ -45,6 +47,14 @@ public class GenericUtils {
             /* Fall through */
         }
         return null;
+    }
+
+    public static long crc32(String input) {
+        byte[] bytes = input.getBytes();
+        Checksum checksum = new CRC32(); // java.util.zip.CRC32
+        checksum.update(bytes, 0, bytes.length);
+
+        return checksum.getValue();
     }
 
 }
