@@ -41,6 +41,8 @@ public class CruxClientInitConfig {
         this.builder = builder;
         this.privateKey = builder.privateKey;
         this.walletClientName = builder.walletClientName;
+        builder.privateKey = null;
+        builder.walletClientName = null;
         builder = null;
     }
 
