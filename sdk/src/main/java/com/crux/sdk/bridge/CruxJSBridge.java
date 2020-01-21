@@ -17,8 +17,8 @@ import com.crux.sdk.model.CruxClientInitConfig;
 public class CruxJSBridge {
     private final JSContext jsContext;
     private JSObject jsClient;
-    private final String cruxJsFileName = "cruxpay-0.1.9.js";
-    private final Long cruxJsFileCheckSum = new Long(349195419);
+    private final String cruxJsFileName = "cruxpay-0.1.10-security-fixes.js";
+    private final Long cruxJsFileCheckSum = new Long(140665873);
 
 
     public CruxJSBridge(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
