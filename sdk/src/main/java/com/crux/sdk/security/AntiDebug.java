@@ -3,6 +3,7 @@ package com.crux.sdk.security;
 import android.content.Context;
 import android.os.Debug;
 import android.content.pm.ApplicationInfo;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -31,12 +32,11 @@ public class AntiDebug {
     //**************************************** TracerPid begin ************************************
 
     public static boolean isTracerPid() {
-
+        String tracerPid = getTracerPid();
         if (isLocalPortUsing(23946)) {
             return true;
         }
 
-        String tracerPid = getTracerPid();
         if (!"0".equals(tracerPid)) {
             return true;
         }
@@ -99,6 +99,7 @@ public class AntiDebug {
                 }
             }
         }
+        Log.d("getTracerPid",  readLine);
         return readLine;
     }
     //**************************************** TracerPid end **************************************

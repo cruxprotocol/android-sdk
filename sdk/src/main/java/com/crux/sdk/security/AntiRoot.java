@@ -30,7 +30,7 @@ public class AntiRoot {
                 || _detectRootManagementApps(null)
                 || _detectPotentiallyDangerousApps(null)
                 || _detectRootCloakingApps(null)
-                || (!_checkForBinary(AntiRootConst.BINARY_SU) || !_checkForBinary(AntiRootConst.BINARY_BUSYBOX) || !_checkForBinary(AntiRootConst.MAGISK))
+                || (_checkForBinary(AntiRootConst.BINARY_SU) || _checkForBinary(AntiRootConst.BINARY_BUSYBOX) || _checkForBinary(AntiRootConst.MAGISK))
                 || _checkSuExists();
 
         // || _checkForRWPaths()
@@ -141,7 +141,7 @@ public class AntiRoot {
 
         String[] pathsArray = AntiRootConst.suPaths;
 
-        boolean result = true;
+        boolean result = false;
 
         for (String path : pathsArray) {
             String completePath = path + filename;
@@ -149,11 +149,11 @@ public class AntiRoot {
             boolean fileExists = f.exists();
             if (fileExists) {
                 Log.v(TAG, completePath + " binary detected!");
-                result = false;
+                result = true;
             }
         }
 
-        return !result;
+        return result;
     }
 
 
