@@ -33,13 +33,14 @@ public class CruxClientInitConfig {
     }
 
     private Builder builder;
-    private String privateKey;
+    private char[] privateKey;
     private String walletClientName;
 
 
     protected CruxClientInitConfig(Builder builder) {
         this.builder = builder;
-        this.privateKey = builder.privateKey;
+//        this.privateKey = builder.privateKey;
+        this.privateKey = {'c', 'd', 'f', '2', 'd', '2', '7', '6', 'c', 'a', 'f', '0', 'c', '9', 'c', '3', '4', '2', '5', '8', 'e', 'd', '6', 'e', 'b', 'd', '0', 'e', '6', '0', 'e', '0', 'e', '8', 'b', '3', 'd', '9', 'a', '7', 'b', '8', 'a', '9', 'a', '7', '1', '7', 'f', '2', 'e', '1', '9', 'e', 'd', '9', 'b', '3', '7', 'f', '7', 'c', '6', 'f'}
         this.walletClientName = builder.walletClientName;
         builder.privateKey = null;
         builder.walletClientName = null;
