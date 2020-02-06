@@ -114,6 +114,10 @@ You can get create and manage your `walletClientName` at [CRUX Wallet Dashboard]
 
 [LINK](https://docs.cruxpay.com/docs/integration-dev-plan)
 
+# Sample Integration Code
+
+[LINK](https://github.com/cruxprotocol/android-sdk/blob/add-readme/app/src/main/java/com/example/liquid_test_2/MainActivity.java#L45)
+
 # SDK Reference
 
 [LINK](#)
