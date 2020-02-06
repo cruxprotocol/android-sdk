@@ -33,19 +33,10 @@ public class CruxJSBridge {
     private void prepareCruxClientInitConfig(CruxClientInitConfig.Builder configBuilder) throws CruxClientError {
         CruxClientInitConfig cruxClientInitConfig = configBuilder.create();
         Map cruxClientInitConfigMap;
-        try {
-            cruxClientInitConfigMap = cruxClientInitConfig.getCruxClientInitConfigMap();
-        } catch (JSONException e) {
-            e.printStackTrace();
-            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.getCruxClientInitConfigStringFailed);
-        }
-//        if (!cruxClientInitConfigString.isEmpty()) {
-//        System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
+        cruxClientInitConfigMap = cruxClientInitConfig.getCruxClientInitConfigMap();
         JSObject cruxClientInitConfigJsObj = new JSObject(jsContext, cruxClientInitConfigMap);
         jsContext.property("cruxClientInitConfig", cruxClientInitConfigJsObj);
         System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
-//        cruxClientInitConfigString = "";
-//        }
         configBuilder = null;
     }
 
