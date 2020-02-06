@@ -48,9 +48,9 @@ public class CruxJSBridge {
 
     private JSContext getContextForClient(Context androidContextObject) throws IOException, CruxClientError {
         String sdkFile = GenericUtils.getFromFile(androidContextObject, cruxJsFileName);
-        if (GenericUtils.crc32(sdkFile) != cruxJsFileCheckSum) {
-            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.runningInUnsafeEnvironment);
-        }
+//        if (GenericUtils.crc32(sdkFile) != cruxJsFileCheckSum) {
+//            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.runningInUnsafeEnvironment);
+//        }
         JSContext jsContext = new JSContext();
         JSPolyFill.fixConsoleLog(jsContext);
         JSPolyFill.addFetch(jsContext, androidContextObject);
