@@ -59,12 +59,12 @@ public class CruxClientInitConfig {
         return cruxClientInitConfigObject.toString();
     }
 
-    public Map<String, char[]> getCruxClientInitConfigMap() throws JSONException {
+    public Map<String, String> getCruxClientInitConfigMap() throws JSONException {
 //        JSONObject cruxClientInitConfigObject = new JSONObject();
-        Map<String, char[]> cruxClientInitConfigObject = new HashMap<String, char[]>();
-        cruxClientInitConfigObject.put("walletClientName", this.walletClientName.toCharArray());
+        Map<String, String> cruxClientInitConfigObject = new HashMap<String, String>();
+        cruxClientInitConfigObject.put("walletClientName", this.walletClientName);
         if (this.privateKey != null) {
-            cruxClientInitConfigObject.put("privateKey", this.privateKey);
+            cruxClientInitConfigObject.put("privateKey", String.valueOf(this.privateKey));
         }
         return cruxClientInitConfigObject;
     }
