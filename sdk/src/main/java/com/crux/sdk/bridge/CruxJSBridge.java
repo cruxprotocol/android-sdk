@@ -17,7 +17,7 @@ import com.crux.sdk.model.CruxClientInitConfig;
 public class CruxJSBridge {
     private final JSContext jsContext;
     private JSObject jsClient;
-    private final String cruxJsFileName = "cruxpay-0.1.9.js";
+    private final String cruxJsFileName = "cruxpay-0.2.0.js";
     private final Long cruxJsFileCheckSum = new Long(349195419);
 
 
