@@ -2,6 +2,7 @@ package com.crux.sdk.bridge;
 
 import java.io.IOException;
 import android.content.Context;
+import java.util.Map;
 
 import org.json.JSONException;
 import org.liquidplayer.javascript.JSContext;
@@ -40,8 +41,8 @@ public class CruxJSBridge {
         }
 //        if (!cruxClientInitConfigString.isEmpty()) {
 //        System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
-        JSObject cruxClientInitConfig = new JSObject(jsContext, cruxClientInitConfigMap);
-        jsContext.property('cruxClientInitConfig', cruxClientInitConfig)
+        JSObject cruxClientInitConfigJsObj = new JSObject(jsContext, cruxClientInitConfigMap);
+        jsContext.property("cruxClientInitConfig", cruxClientInitConfigJsObj);
         System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
 //        cruxClientInitConfigString = "";
 //        }
