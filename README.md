@@ -126,4 +126,4 @@ You can get create and manage your `walletClientName` at [CRUX Wallet Dashboard]
 
 # SDK Reference
 
-[LINK](#)
+[LINK](https://s3-ap-southeast-1.amazonaws.com/files.coinswitch.co/cruxpay/android-sdk-docs/javadoc/com/crux/sdk/CruxClient.html)
