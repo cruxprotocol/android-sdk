@@ -8,13 +8,19 @@ Official SDK Quickstart docs - https://docs.cruxpay.com/docs/quickstart
 
 ## 1. Install
 
+Add the JitPack repository to your build file in your root build.gradle at the end of repositories.
+Then add `com.github.cruxprotocol:android-sdk:v0.1` as dependency.
+
+NOTE: Check latest release version at https://github.com/cruxprotocol/android-sdk/releases
+
+
 ```
     repositories {
           maven { url 'https://jitpack.io' }
     }
 
     dependencies {
-        implementation 'com.github.cruxprotocol:android-sdk:Tag'
+        implementation 'com.github.cruxprotocol:android-sdk:v0.1'
     }
 ```
 
