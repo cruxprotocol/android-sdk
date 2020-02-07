@@ -5,6 +5,7 @@ public class CruxClientError extends Throwable {
 
     public Integer errorCode;
     public String errorMessage;
+    public String stack;
 
     public CruxClientError(Integer errorCode, String errorMessage) {
         this.errorCode = errorCode;
