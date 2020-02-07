@@ -30,8 +30,8 @@ public class SdkSafety {
     }
 
     private boolean isReleaseVersion() {
-         // return true;
-         return BuildConfig.BUILD_TYPE.contentEquals("release");
+         return false;
+//         return BuildConfig.BUILD_TYPE.contentEquals("release");
     }
 
     private boolean _checkSafety() {

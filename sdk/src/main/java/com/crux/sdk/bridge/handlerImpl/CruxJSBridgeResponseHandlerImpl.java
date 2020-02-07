@@ -7,6 +7,7 @@ import com.crux.sdk.model.CruxClientResponseHandler;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;
+import org.liquidplayer.javascript.JSObject;
 import org.liquidplayer.javascript.JSValue;
 
 import java.lang.reflect.Type;
@@ -28,8 +29,10 @@ public class CruxJSBridgeResponseHandlerImpl implements CruxJSBridgeResponseHand
     @Override
     public void onErrorResponse(JSValue failureResponse) {
         String msg = GenericUtils.toJavaString(failureResponse);
+        String stack = ((JSObject) failureResponse).property("stack").toString();
         CruxClientError errorObject = gson.fromJson(msg, CruxClientError.class);
         errorObject.errorMessage = failureResponse.toString();
+        errorObject.stack = stack;
         handler.onErrorResponse(errorObject);
     }
 

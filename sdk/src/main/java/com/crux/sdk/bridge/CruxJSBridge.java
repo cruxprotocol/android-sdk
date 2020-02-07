@@ -17,8 +17,8 @@ import com.crux.sdk.model.CruxClientInitConfig;
 public class CruxJSBridge {
     private final JSContext jsContext;
     private JSObject jsClient;
-    private final String cruxJsFileName = "cruxpay-0.1.9.js";
-    private final Long cruxJsFileCheckSum = new Long(349195419);
+    private final String cruxJsFileName = "cruxpay-0.2.4.js";
+    private final Long cruxJsFileCheckSum = Long.valueOf(349195419);
 
 
     public CruxJSBridge(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
@@ -48,9 +48,9 @@ public class CruxJSBridge {
 
     private JSContext getContextForClient(Context androidContextObject) throws IOException, CruxClientError {
         String sdkFile = GenericUtils.getFromFile(androidContextObject, cruxJsFileName);
-        if (GenericUtils.crc32(sdkFile) != cruxJsFileCheckSum) {
-            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.runningInUnsafeEnvironment);
-        }
+//        if (GenericUtils.crc32(sdkFile) != cruxJsFileCheckSum) {
+//            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.runningInUnsafeEnvironment);
+//        }
         JSContext jsContext = new JSContext();
         JSPolyFill.fixConsoleLog(jsContext);
         JSPolyFill.addFetch(jsContext, androidContextObject);
