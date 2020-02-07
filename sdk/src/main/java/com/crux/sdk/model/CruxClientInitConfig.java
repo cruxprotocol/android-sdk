@@ -1,5 +1,8 @@
 package com.crux.sdk.model;
 
+import java.util.Map;
+import java.util.HashMap;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -46,13 +49,13 @@ public class CruxClientInitConfig {
         builder = null;
     }
 
-    public String getCruxClientInitConfigString() throws JSONException {
-        JSONObject cruxClientInitConfigObject = new JSONObject();
+    public Map<String, String> getCruxClientInitConfigMap() {
+        Map<String, String> cruxClientInitConfigObject = new HashMap<String, String>();
         cruxClientInitConfigObject.put("walletClientName", this.walletClientName);
         if (this.privateKey != null) {
             cruxClientInitConfigObject.put("privateKey", this.privateKey);
         }
-        return cruxClientInitConfigObject.toString();
+        return cruxClientInitConfigObject;
     }
 
 }

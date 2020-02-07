@@ -2,6 +2,7 @@ package com.crux.sdk.bridge;
 
 import java.io.IOException;
 import android.content.Context;
+import java.util.Map;
 
 import org.json.JSONException;
 import org.liquidplayer.javascript.JSContext;
@@ -31,18 +32,11 @@ public class CruxJSBridge {
 
     private void prepareCruxClientInitConfig(CruxClientInitConfig.Builder configBuilder) throws CruxClientError {
         CruxClientInitConfig cruxClientInitConfig = configBuilder.create();
-        String cruxClientInitConfigString;
-        try {
-            cruxClientInitConfigString = cruxClientInitConfig.getCruxClientInitConfigString();
-        } catch (JSONException e) {
-            e.printStackTrace();
-            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.getCruxClientInitConfigStringFailed);
-        }
-        if (!cruxClientInitConfigString.isEmpty()) {
-            System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
-            System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
-            cruxClientInitConfigString = "";
-        }
+        Map cruxClientInitConfigMap;
+        cruxClientInitConfigMap = cruxClientInitConfig.getCruxClientInitConfigMap();
+        JSObject cruxClientInitConfigJsObj = new JSObject(jsContext, cruxClientInitConfigMap);
+        jsContext.property("cruxClientInitConfig", cruxClientInitConfigJsObj);
+        System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
         configBuilder = null;
     }
 
