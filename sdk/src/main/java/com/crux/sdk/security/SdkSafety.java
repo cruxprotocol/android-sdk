@@ -1,6 +1,7 @@
 package com.crux.sdk.security;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 import com.crux.sdk.BuildConfig;
 
@@ -30,7 +31,7 @@ public class SdkSafety {
     }
 
     private boolean isReleaseVersion() {
-         // return true;
+//         return true;
          return BuildConfig.BUILD_TYPE.contentEquals("release");
     }
 
@@ -40,8 +41,14 @@ public class SdkSafety {
         AntiDebug ad = new AntiDebug(mContext);
         AntiRoot ar = new AntiRoot(mContext);
 
+        String msg = "Emulator: " + AntiEmulator.isEmulator() + "\nisTracerPid: "
+                + AntiDebug.isTracerPid() + "\nhookDetected: " + at.hookDetected()
+                + "\nisRooted: " + ar.isRooted() + "\ncheckGrabData: " + AntiDebug.checkGrabData()
+                + "\nisDebugging: " + ad.isDebugging();
+        Log.d("SdkSafety",  msg);
+
         Random rand = new Random();
-        int randomizeCheck = rand.nextInt(1000)/7;
+        int randomizeCheck = rand.nextInt(1000)%7;
         switch (randomizeCheck) {
             case 1:
                 if (AntiEmulator.isEmulator()) {
