@@ -25,9 +25,8 @@ public class CruxJSBridge {
     public CruxJSBridge(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
         this.jsContext = this.getContextForClient(androidContextObject);
         prepareCruxClientInitConfig(configBuilder);
-        System.out.println(jsContext.evaluateScript("cruxClient = new CruxPay.CruxClient(cruxClientInitConfig)"));
+        jsContext.evaluateScript("cruxClient = new CruxPay.CruxClient(cruxClientInitConfig)");
         this.jsClient = jsContext.property("cruxClient").toObject();
-        System.out.println("initCruxClient Complete");
     }
 
     private void prepareCruxClientInitConfig(CruxClientInitConfig.Builder configBuilder) throws CruxClientError {
