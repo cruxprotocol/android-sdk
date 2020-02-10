@@ -137,9 +137,6 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, FetchResponse> {
         FetchResponse response = null;
         try {
             response = downloadContent(params[0].url, params[0].settings);
-//            content = "Asd";
-//            content = testfunc("https://googlelolol", params[0].settings);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -216,8 +213,6 @@ public class JSPolyFill {
                 String uuid = UUID.randomUUID().toString().replace('-', '0');
                 String bodyVarName = "tmpJsValForBody_" + uuid;
 
-                context.property(bodyVarName, response.body);
-                context.evaluateScript(bodyVarName);
                 String responseCreation = String.format("new Response('%s',%s,%s,new Headers([]))", response.urlString, response.code, bodyVarName);
                 JSValue globalResponse = context.evaluateScript(responseCreation);
                 return globalResponse;
