@@ -35,7 +35,7 @@ public class CruxJSBridge {
         cruxClientInitConfigMap = cruxClientInitConfig.getCruxClientInitConfigMap();
         JSObject cruxClientInitConfigJsObj = new JSObject(jsContext, cruxClientInitConfigMap);
         jsContext.property("cruxClientInitConfig", cruxClientInitConfigJsObj);
-        System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
+        jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;");
         configBuilder = null;
     }
 
