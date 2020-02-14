@@ -73,7 +73,6 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, FetchResponse> {
     }
 
     private FetchResponse downloadContent(String myurl, FetchTaskSettings settings) throws IOException {
-        System.out.println(">>>" + myurl + " " + settings.method);
         InputStream is = null;
 
         if (settings.method == null) {
@@ -96,7 +95,6 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, FetchResponse> {
                 op.write(bodyBytes);
             }
             int responseCode = conn.getResponseCode();
-            System.out.println("The response is: " + responseCode);
             if (responseCode >= 200 && responseCode <400) {
                 is = conn.getInputStream();
 
@@ -137,22 +135,9 @@ class FetchTask extends AsyncTask<FetchTaskParams, Void, FetchResponse> {
     protected FetchResponse doInBackground(FetchTaskParams... params) {
 
         FetchResponse response = null;
-        System.out.println("FetchTask doInBackground start");
         try {
-            System.out.println("=DownloadContent starting");
             response = downloadContent(params[0].url, params[0].settings);
-//            content = "Asd";
-//            content = testfunc("https://googlelolol", params[0].settings);
-            System.out.println("DownloadContent ended");
-            System.out.println("FetchTask Printing Response");
-            System.out.println(response.body);
-            System.out.println(response.code);
-            System.out.println(response.headers);
-            System.out.println(response.urlString);
-            System.out.println("FetchTask doInBackground stop");
-
         } catch (Exception e) {
-            System.out.println("IPExc");
             e.printStackTrace();
         }
         return response;
@@ -228,11 +213,8 @@ public class JSPolyFill {
                 String uuid = UUID.randomUUID().toString().replace('-', '0');
                 String bodyVarName = "tmpJsValForBody_" + uuid;
 
-                context.property(bodyVarName, response.body);
-                System.out.println(context.evaluateScript(bodyVarName));
                 String responseCreation = String.format("new Response('%s',%s,%s,new Headers([]))", response.urlString, response.code, bodyVarName);
                 JSValue globalResponse = context.evaluateScript(responseCreation);
-                System.out.println("global response created");
                 return globalResponse;
             }
         };
