@@ -2,16 +2,18 @@ package com.example.liquid_test_2;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.crux.sdk.CruxClient;
-import com.crux.sdk.model.CruxAddress;
-import com.crux.sdk.model.CruxClientError;
-import com.crux.sdk.model.CruxClientInitConfig;
-import com.crux.sdk.model.CruxClientResponseHandler;
-import com.crux.sdk.model.CruxIDState;
-import com.crux.sdk.model.CruxPutAddressMapSuccess;
+import com.crux.sdk.model.*;
+//import com.crux.sdk.model.CruxAddress;
+//import com.crux.sdk.model.CruxClientError;
+//import com.crux.sdk.model.CruxClientInitConfig;
+//import com.crux.sdk.model.CruxClientResponseHandler;
+//import com.crux.sdk.model.CruxIDState;
+//import com.crux.sdk.model.CruxPutAddressMapSuccess;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -38,7 +40,14 @@ public class MainActivity extends AppCompatActivity {
                 .setWalletClientName("cruxdev")
                 .setPrivateKey("cdf2d276caf0c9c34258ed6ebd0e60e0e8b3d9a7b8a9a717f2e19ed9b37f7c6f");
 
-        final CruxClient client = new CruxClient(configBuilder, androidContextObject);
+        CruxClient client;
+        try {
+            client = new CruxClient(configBuilder, androidContextObject);
+        } catch(CruxClientError e) {
+            Toast.makeText(androidContextObject, "Client caught and reraised:" + e.errorMessage, Toast.LENGTH_LONG).show();
+            System.out.println("use debug version for development");
+            return null;
+        }
 
         final String testAvailabilityCruxId = "yadu007";
         client.isCruxIDAvailable(testAvailabilityCruxId, new CruxClientResponseHandler<Boolean>() {
@@ -55,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -68,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -81,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -94,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -123,7 +136,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println(failureResponse);
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
             }
         });
 
@@ -136,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         currencyMap.put("btc", new CruxAddress("1HX4KvtPdg9QUYwQE1kNqTAjmNaDG7w82V", null));
         currencyMap.put("eth", new CruxAddress("0x0a2311594059b468c9897338b027c8782398b481", null));
         currencyMap.put("tron", new CruxAddress("TG3iFaVvUs34SGpWq8RG9gnagDLTe1jdyz", null));
-        currencyMap.put("xrp", new CruxAddress("rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h", "5555"));
+        currencyMap.put("xrp", new CruxAddress("rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h", "7777"));
         return currencyMap;
     }
 

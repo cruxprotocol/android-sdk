@@ -1,5 +1,8 @@
 package com.crux.sdk.model;
 
+import java.util.Map;
+import java.util.HashMap;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -10,12 +13,10 @@ public class CruxClientInitConfig {
         //        private String storage;
         //        private String encryption;
         //        private String nameService;
-        private String _encryptionKeyValue;
         private String walletClientName;
         private String privateKey;
 
         public Builder() {
-            this._encryptionKeyValue = "fookey";
         }
 
         public Builder setWalletClientName(String walletClientName) {
@@ -37,23 +38,24 @@ public class CruxClientInitConfig {
     private Builder builder;
     private String privateKey;
     private String walletClientName;
-    private String _encryptionKeyValue;
 
 
     protected CruxClientInitConfig(Builder builder) {
         this.builder = builder;
         this.privateKey = builder.privateKey;
         this.walletClientName = builder.walletClientName;
-        this._encryptionKeyValue = builder._encryptionKeyValue;
+        builder.privateKey = null;
+        builder.walletClientName = null;
+        builder = null;
     }
 
-    public String getCruxClientInitConfigString() throws JSONException {
-        JSONObject cruxClientInitConfigObject = new JSONObject();
+    public Map<String, String> getCruxClientInitConfigMap() {
+        Map<String, String> cruxClientInitConfigObject = new HashMap<String, String>();
         cruxClientInitConfigObject.put("walletClientName", this.walletClientName);
         if (this.privateKey != null) {
             cruxClientInitConfigObject.put("privateKey", this.privateKey);
         }
-        return cruxClientInitConfigObject.toString();
+        return cruxClientInitConfigObject;
     }
 
 }

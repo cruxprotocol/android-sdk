@@ -10,7 +10,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.zip.CRC32;
+import java.util.zip.Checksum;
 
 import org.liquidplayer.javascript.JSValue;
 
@@ -18,7 +19,6 @@ import org.liquidplayer.javascript.JSValue;
 public class GenericUtils {
     public static String getFromFile(Context androidContextObject, String fileName) throws IOException {
         AssetManager assetManager = androidContextObject.getAssets();
-        System.out.println(Arrays.toString(assetManager.list("/")));
         InputStream is = assetManager.open(fileName);
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader input = new BufferedReader(isr);
@@ -45,6 +45,14 @@ public class GenericUtils {
             /* Fall through */
         }
         return null;
+    }
+
+    public static long crc32(String input) {
+        byte[] bytes = input.getBytes();
+        Checksum checksum = new CRC32(); // java.util.zip.CRC32
+        checksum.update(bytes, 0, bytes.length);
+
+        return checksum.getValue();
     }
 
 }

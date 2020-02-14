@@ -2,6 +2,7 @@ package com.crux.sdk.bridge;
 
 import java.io.IOException;
 import android.content.Context;
+import java.util.Map;
 
 import org.json.JSONException;
 import org.liquidplayer.javascript.JSContext;
@@ -17,34 +18,32 @@ import com.crux.sdk.model.CruxClientInitConfig;
 public class CruxJSBridge {
     private final JSContext jsContext;
     private JSObject jsClient;
+    private final String cruxJsFileName = "cruxpay-0.1.10-security-fixes.js";
+    private final Long cruxJsFileCheckSum = new Long(140665873);
 
 
     public CruxJSBridge(CruxClientInitConfig.Builder configBuilder, Context androidContextObject) throws IOException, CruxClientError {
         this.jsContext = this.getContextForClient(androidContextObject);
         prepareCruxClientInitConfig(configBuilder);
-        System.out.println(jsContext.evaluateScript("cruxClient = new CruxPay.CruxClient(cruxClientInitConfig)"));
+        jsContext.evaluateScript("cruxClient = new CruxPay.CruxClient(cruxClientInitConfig)");
         this.jsClient = jsContext.property("cruxClient").toObject();
-        System.out.println("initCruxClient Complete");
     }
 
     private void prepareCruxClientInitConfig(CruxClientInitConfig.Builder configBuilder) throws CruxClientError {
         CruxClientInitConfig cruxClientInitConfig = configBuilder.create();
-        String cruxClientInitConfigString;
-        try {
-            cruxClientInitConfigString = cruxClientInitConfig.getCruxClientInitConfigString();
-        } catch (JSONException e) {
-            e.printStackTrace();
-            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.getCruxClientInitConfigStringFailed);
-        }
-        if (!cruxClientInitConfigString.isEmpty()) {
-            System.out.println(jsContext.evaluateScript("cruxClientInitConfig = " + cruxClientInitConfigString + ";"));
-            System.out.println(jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;"));
-        }
-
+        Map cruxClientInitConfigMap;
+        cruxClientInitConfigMap = cruxClientInitConfig.getCruxClientInitConfigMap();
+        JSObject cruxClientInitConfigJsObj = new JSObject(jsContext, cruxClientInitConfigMap);
+        jsContext.property("cruxClientInitConfig", cruxClientInitConfigJsObj);
+        jsContext.evaluateScript("cruxClientInitConfig['storage'] = inmemStorage;");
+        configBuilder = null;
     }
 
-    private JSContext getContextForClient(Context androidContextObject) throws IOException {
-        String sdkFile = GenericUtils.getFromFile(androidContextObject, "cruxpay-0.1.5.js");
+    private JSContext getContextForClient(Context androidContextObject) throws IOException, CruxClientError {
+        String sdkFile = GenericUtils.getFromFile(androidContextObject, cruxJsFileName);
+        if (GenericUtils.crc32(sdkFile) != cruxJsFileCheckSum) {
+            throw CruxClientError.getCruxClientError(AndroidCruxClientErrorCode.runningInUnsafeEnvironment);
+        }
         JSContext jsContext = new JSContext();
         JSPolyFill.fixConsoleLog(jsContext);
         JSPolyFill.addFetch(jsContext, androidContextObject);
