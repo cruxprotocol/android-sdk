@@ -55,7 +55,6 @@ public class CruxClient {
     }
 
     public void putAddressMap(HashMap<String, CruxAddress> newAddressMap, final CruxClientResponseHandler<CruxPutAddressMapSuccess> handler){
-        Gson gson = new Gson();
         CruxParams params = new CruxParams(jsBridge.JSONtoObject(gson.toJson(newAddressMap)));
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putAddressMap", params, new CruxJSBridgeResponseHandlerImpl(CruxPutAddressMapSuccess.class, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
@@ -68,6 +67,25 @@ public class CruxClient {
 
     public void isCruxIDAvailable(String cruxIDSubdomain, final CruxClientResponseHandler<Boolean> handler) {
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("isCruxIDAvailable", new CruxParams(cruxIDSubdomain), new CruxJSBridgeResponseHandlerImpl(Boolean.class, handler, gson));
+        jsBridge.executeAsync(bridgeRequest);
+    }
+
+    public void resolveAssetAddressForCruxID(String fullCruxID, HashMap<String, String> assetMatcher, final CruxClientResponseHandler<CruxAddress> handler){
+        Object assetMatcherJsObj = jsBridge.JSONtoObject(gson.toJson(assetMatcher));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("resolveAssetAddressForCruxID", new CruxParams(fullCruxID, assetMatcherJsObj), new CruxJSBridgeResponseHandlerImpl(CruxAddress.class, handler, gson));
+        jsBridge.executeAsync(bridgeRequest);
+    }
+
+    public void getEnabledAssetGroups(final CruxClientResponseHandler<String[]> handler) {
+        Type type = new TypeToken<String[]>(){}.getType();
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getEnabledAssetGroups", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(type, handler, gson));
+        jsBridge.executeAsync(bridgeRequest);
+    }
+
+    public void putEnabledAssetGroups(String[] symbolAssetGroups, final CruxClientResponseHandler<String[]> handler) {
+        Object symbolAssetGroupsJsObj = jsBridge.JSONtoObject(gson.toJson(symbolAssetGroups));
+        Type type = new TypeToken<String[]>(){}.getType();
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putEnabledAssetGroups", new CruxParams(symbolAssetGroupsJsObj), new CruxJSBridgeResponseHandlerImpl(type, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
     }
 
