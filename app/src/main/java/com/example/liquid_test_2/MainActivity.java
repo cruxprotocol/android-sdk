@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------isCruxIDAvailable-Failed----------");
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------registerCruxID-Failed---------");
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------getCruxIDState-Failed---------");
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -100,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------getAddressMap-Failed--------");
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -114,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------getEnabledAssetGroups-Failed----------");
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -129,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------putEnabledAssetGroups-Failed---------");
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -144,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------resolveCurrencyAddressForCruxID-Failed--------");
                 System.out.println(failureResponse);
             }
         });
@@ -158,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------resolveAssetAddressForCruxID-Failed--------");
                 System.out.println(failureResponse);
             }
         });
@@ -173,6 +181,25 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------putAddressMap-Failed--------");
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
+            }
+        });
+
+        HashMap<String, CruxAddress> newAddressMapPrivate = new HashMap<String, CruxAddress>();
+        newAddressMapPrivate.put("btc", new CruxAddress("bc1q34aq5drpuwy3wgl9lhup9892qp6svr8ldzyy7c", null));
+
+        client.putPrivateAddressMap("mascot6699@cruxdev.crux", newAddressMapPrivate, new CruxClientResponseHandler<CruxPutAddressMapSuccess>() {
+            @Override
+            public void onResponse(CruxPutAddressMapSuccess successResponse) {
+                System.out.println("--------putPrivateAddressMap-------");
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println("--------putPrivateAddressMap-Failed--------");
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }

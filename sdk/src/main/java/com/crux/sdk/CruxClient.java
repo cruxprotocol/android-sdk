@@ -89,4 +89,10 @@ public class CruxClient {
         jsBridge.executeAsync(bridgeRequest);
     }
 
+    public void putPrivateAddressMap(String fullCruxID, HashMap<String, CruxAddress> newAddressMap, final CruxClientResponseHandler<CruxPutAddressMapSuccess> handler){
+        Object addressMap = jsBridge.JSONtoObject(gson.toJson(newAddressMap));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putPrivateAddressMap", new CruxParams(fullCruxID, addressMap), new CruxJSBridgeResponseHandlerImpl(CruxPutAddressMapSuccess.class, handler, gson));
+        jsBridge.executeAsync(bridgeRequest);
+    }
+
 }
