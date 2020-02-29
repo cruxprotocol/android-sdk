@@ -35,18 +35,16 @@ public class GenericUtils {
 
     // Minimal implementation form https://github.com/LiquidPlayer/LiquidCore/blob/master/LiquidV8/src/main/java/org/liquidplayer/javascript/JSValue.java#L411
     public static String toJavaString(JSValue val) {
-        try {
-            if (val.isBoolean())
-                return val.toBoolean().toString();
-            else if (val.isUndefined())
-                return null;
-            else if (val.isObject())
-                return new JSONObject(val.toJSON()).toString();
-
-        } catch (JSONException e) {
-            /* Fall through */
-        }
-        return null;
+        if (val.isBoolean())
+            return val.toBoolean().toString();
+        else if (val.isUndefined())
+            return null;
+//        else if (val.isArray())
+//            return val.toJSON();
+//        else if (val.isObject())
+//            return new JSONObject(val.toJSON()).toString();
+        else
+            return val.toJSON();
     }
 
     public static long crc32(String input) {

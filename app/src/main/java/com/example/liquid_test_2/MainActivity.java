@@ -8,12 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.crux.sdk.CruxClient;
 import com.crux.sdk.model.*;
-//import com.crux.sdk.model.CruxAddress;
-//import com.crux.sdk.model.CruxClientError;
-//import com.crux.sdk.model.CruxClientInitConfig;
-//import com.crux.sdk.model.CruxClientResponseHandler;
-//import com.crux.sdk.model.CruxIDState;
-//import com.crux.sdk.model.CruxPutAddressMapSuccess;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -111,11 +105,54 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        client.getEnabledAssetGroups(new CruxClientResponseHandler<String[]>() {
+            @Override
+            public void onResponse(String[] successResponse) {
+                System.out.println("--------getEnabledAssetGroups-------");
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
+            }
+        });
+
+        final String[] assetGroups = {"ERC20_eth"};
+        client.putEnabledAssetGroups(assetGroups, new CruxClientResponseHandler<String[]>() {
+            @Override
+            public void onResponse(String[] successResponse) {
+                System.out.println("--------putEnabledAssetGroups-------");
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.err.println(failureResponse.errorCode);
+                System.err.println(failureResponse.errorMessage);
+            }
+        });
+
         final String testResolveAddressCruxId = "mascot6699@cruxdev.crux";
         client.resolveCurrencyAddressForCruxID(testResolveAddressCruxId, "xrp", new CruxClientResponseHandler<CruxAddress>() {
             @Override
             public void onResponse(CruxAddress successResponse) {
                 System.out.println("--------resolveCurrencyAddressForCruxID-------");
+                System.out.println(successResponse);
+            }
+
+            @Override
+            public void onErrorResponse(CruxClientError failureResponse) {
+                System.out.println(failureResponse);
+            }
+        });
+
+        HashMap<String, String> assetMatcher = getAssetMatcher();
+        client.resolveAssetAddressForCruxID(testResolveAddressCruxId, assetMatcher, new CruxClientResponseHandler<CruxAddress>() {
+            @Override
+            public void onResponse(CruxAddress successResponse) {
+                System.out.println("--------resolveAssetAddressForCruxID-------");
                 System.out.println(successResponse);
             }
 
@@ -152,6 +189,13 @@ public class MainActivity extends AppCompatActivity {
         currencyMap.put("tron", new CruxAddress("TG3iFaVvUs34SGpWq8RG9gnagDLTe1jdyz", null));
         currencyMap.put("xrp", new CruxAddress("rpfKAA2Ezqoq5wWo3XENdLYdZ8YGziz48h", "7777"));
         return currencyMap;
+    }
+
+    private HashMap<String, String> getAssetMatcher() {
+        HashMap<String, String> assetMatcher = new HashMap<>();
+        assetMatcher.put("assetGroup", "ERC20_ETH");
+//        assetMatcher.put("assetIdentifierValue", "0xE41d2489571d322189246DaFA5ebDe1F4699F498")
+        return assetMatcher;
     }
 
 }
