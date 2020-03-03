@@ -10,6 +10,7 @@ import com.crux.sdk.CruxClient;
 import com.crux.sdk.model.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 .setPrivateKey("cdf2d276caf0c9c34258ed6ebd0e60e0e8b3d9a7b8a9a717f2e19ed9b37f7c6f");
 
         CruxClient client;
+        final Boolean[] success = {true};
+        final ArrayList<String> failures = new ArrayList<>();
         try {
             client = new CruxClient(configBuilder, androidContextObject);
         } catch(CruxClientError e) {
@@ -58,7 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------isCruxIDAvailable-Failed----------");
+                String failureString = "--------isCruxIDAvailable-Failed----------";
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -73,7 +79,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------registerCruxID-Failed---------");
+                String failureString = "--------registerCruxID-Failed---------";
+                // Commenting because already registered and will always fail
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -88,7 +98,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------getCruxIDState-Failed---------");
+                String failureString = "--------getCruxIDState-Failed---------";
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -103,7 +116,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------getAddressMap-Failed--------");
+                String failureString = "--------getAddressMap-Failed--------";
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -118,7 +134,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------getEnabledAssetGroups-Failed----------");
+                String failureString = "--------getEnabledAssetGroups-Failed----------";
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -134,7 +153,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------putEnabledAssetGroups-Failed---------");
+                String failureString = "--------putEnabledAssetGroups-Failed---------";
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -150,7 +172,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------resolveCurrencyAddressForCruxID-Failed--------");
+                String failureString = "--------resolveCurrencyAddressForCruxID-Failed--------";
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.out.println(failureResponse);
             }
         });
@@ -165,7 +190,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------resolveAssetAddressForCruxID-Failed--------");
+                String failureString = "--------resolveAssetAddressForCruxID-Failed--------";
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.out.println(failureResponse);
             }
         });
@@ -181,7 +209,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------putAddressMap-Failed--------");
+                String failureString = "--------putAddressMap-Failed--------";
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
@@ -189,21 +220,32 @@ public class MainActivity extends AppCompatActivity {
 
         HashMap<String, CruxAddress> newAddressMapPrivate = new HashMap<String, CruxAddress>();
         newAddressMapPrivate.put("btc", new CruxAddress("bc1q34aq5drpuwy3wgl9lhup9892qp6svr8ldzyy7c", null));
-
-        client.putPrivateAddressMap("mascot6699@cruxdev.crux", newAddressMapPrivate, new CruxClientResponseHandler<CruxPutAddressMapSuccess>() {
+        String[] fullCruxIDs = {"mascot6699@cruxdev.crux"};
+        client.putPrivateAddressMap(fullCruxIDs, newAddressMapPrivate, new CruxClientResponseHandler<CruxPutPrivateAddressMapResult>() {
             @Override
-            public void onResponse(CruxPutAddressMapSuccess successResponse) {
+            public void onResponse(CruxPutPrivateAddressMapResult successResponse) {
                 System.out.println("--------putPrivateAddressMap-------");
                 System.out.println(successResponse);
             }
 
             @Override
             public void onErrorResponse(CruxClientError failureResponse) {
-                System.out.println("--------putPrivateAddressMap-Failed--------");
+                String failureString = "--------putPrivateAddressMap-Failed--------";
+                success[0] = false;
+                failures.add(failureString);
+                System.out.println(failureString);
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
             }
         });
+
+        if (!success[0]) {
+            System.out.println("=========FAILED============!!");
+            System.out.println(failures);
+        } else {
+            System.out.println("=========SUCCESS============!!");
+        }
+
 
         return null;
     }

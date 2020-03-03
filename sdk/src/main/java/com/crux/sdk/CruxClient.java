@@ -14,6 +14,7 @@ import com.crux.sdk.model.CruxClientResponseHandler;
 import com.crux.sdk.model.CruxIDState;
 import com.crux.sdk.model.CruxParams;
 import com.crux.sdk.model.CruxPutAddressMapSuccess;
+import com.crux.sdk.model.CruxPutPrivateAddressMapResult;
 import com.crux.sdk.security.SdkSafety;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -89,9 +90,9 @@ public class CruxClient {
         jsBridge.executeAsync(bridgeRequest);
     }
 
-    public void putPrivateAddressMap(String fullCruxID, HashMap<String, CruxAddress> newAddressMap, final CruxClientResponseHandler<CruxPutAddressMapSuccess> handler){
+    public void putPrivateAddressMap(String[] fullCruxIDs, HashMap<String, CruxAddress> newAddressMap, final CruxClientResponseHandler<CruxPutPrivateAddressMapResult> handler){
         Object addressMap = jsBridge.JSONtoObject(gson.toJson(newAddressMap));
-        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putPrivateAddressMap", new CruxParams(fullCruxID, addressMap), new CruxJSBridgeResponseHandlerImpl(CruxPutAddressMapSuccess.class, handler, gson));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putPrivateAddressMap", new CruxParams(fullCruxIDs, addressMap), new CruxJSBridgeResponseHandlerImpl(CruxPutPrivateAddressMapResult.class, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
     }
 
