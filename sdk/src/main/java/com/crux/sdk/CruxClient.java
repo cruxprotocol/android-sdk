@@ -14,6 +14,7 @@ import com.crux.sdk.model.CruxClientResponseHandler;
 import com.crux.sdk.model.CruxIDState;
 import com.crux.sdk.model.CruxParams;
 import com.crux.sdk.model.CruxPutAddressMapSuccess;
+import com.crux.sdk.model.CruxPutPrivateAddressMapResult;
 import com.crux.sdk.security.SdkSafety;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -55,7 +56,6 @@ public class CruxClient {
     }
 
     public void putAddressMap(HashMap<String, CruxAddress> newAddressMap, final CruxClientResponseHandler<CruxPutAddressMapSuccess> handler){
-        Gson gson = new Gson();
         CruxParams params = new CruxParams(jsBridge.JSONtoObject(gson.toJson(newAddressMap)));
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putAddressMap", params, new CruxJSBridgeResponseHandlerImpl(CruxPutAddressMapSuccess.class, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
@@ -68,6 +68,31 @@ public class CruxClient {
 
     public void isCruxIDAvailable(String cruxIDSubdomain, final CruxClientResponseHandler<Boolean> handler) {
         CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("isCruxIDAvailable", new CruxParams(cruxIDSubdomain), new CruxJSBridgeResponseHandlerImpl(Boolean.class, handler, gson));
+        jsBridge.executeAsync(bridgeRequest);
+    }
+
+    public void resolveAssetAddressForCruxID(String fullCruxID, HashMap<String, String> assetMatcher, final CruxClientResponseHandler<CruxAddress> handler){
+        Object assetMatcherJsObj = jsBridge.JSONtoObject(gson.toJson(assetMatcher));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("resolveAssetAddressForCruxID", new CruxParams(fullCruxID, assetMatcherJsObj), new CruxJSBridgeResponseHandlerImpl(CruxAddress.class, handler, gson));
+        jsBridge.executeAsync(bridgeRequest);
+    }
+
+    public void getEnabledAssetGroups(final CruxClientResponseHandler<String[]> handler) {
+        Type type = new TypeToken<String[]>(){}.getType();
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("getEnabledAssetGroups", new CruxParams(), new CruxJSBridgeResponseHandlerImpl(type, handler, gson));
+        jsBridge.executeAsync(bridgeRequest);
+    }
+
+    public void putEnabledAssetGroups(String[] symbolAssetGroups, final CruxClientResponseHandler<String[]> handler) {
+        Object symbolAssetGroupsJsObj = jsBridge.JSONtoObject(gson.toJson(symbolAssetGroups));
+        Type type = new TypeToken<String[]>(){}.getType();
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putEnabledAssetGroups", new CruxParams(symbolAssetGroupsJsObj), new CruxJSBridgeResponseHandlerImpl(type, handler, gson));
+        jsBridge.executeAsync(bridgeRequest);
+    }
+
+    public void putPrivateAddressMap(String[] fullCruxIDs, HashMap<String, CruxAddress> newAddressMap, final CruxClientResponseHandler<CruxPutPrivateAddressMapResult> handler){
+        Object addressMap = jsBridge.JSONtoObject(gson.toJson(newAddressMap));
+        CruxJSBridgeAsyncRequest bridgeRequest = new CruxJSBridgeAsyncRequest("putPrivateAddressMap", new CruxParams(fullCruxIDs, addressMap), new CruxJSBridgeResponseHandlerImpl(CruxPutPrivateAddressMapResult.class, handler, gson));
         jsBridge.executeAsync(bridgeRequest);
     }
 
