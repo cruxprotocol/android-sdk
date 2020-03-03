@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(CruxClientError failureResponse) {
                 String failureString = "--------registerCruxID-Failed---------";
                 // Commenting because already registered and will always fail
-                success[0] = false;
-                failures.add(failureString);
+//                success[0] = false;
+//                failures.add(failureString);
                 System.out.println(failureString);
                 System.err.println(failureResponse.errorCode);
                 System.err.println(failureResponse.errorMessage);
