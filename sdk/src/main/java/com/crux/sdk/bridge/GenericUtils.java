@@ -40,6 +40,8 @@ public class GenericUtils {
                 return val.toBoolean().toString();
             else if (val.isUndefined())
                 return null;
+            else if (val.isArray())
+                return val.toJSON();
             else if (val.isObject())
                 return new JSONObject(val.toJSON()).toString();
 
